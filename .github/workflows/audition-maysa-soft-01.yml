@@ -1,16 +1,20 @@
 name: Maysa soft voice audition 01
 
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/audition-maysa-soft-01.yml]
+  workflow_dispatch:
+    inputs:
+      confirm_generation:
+        description: Authorize one short Maysa sample and applicable API usage
+        type: boolean
+        required: true
+        default: false
 
 permissions:
   contents: read
 
 jobs:
   audition:
-    if: github.event.head_commit.message == 'audition-maysa-soft-01'
+    if: inputs.confirm_generation
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
