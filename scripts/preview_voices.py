@@ -1,4 +1,4 @@
-"""Generate at most three explicitly requested Thai samples; never a full episode."""
+"""Generate at most four explicitly requested Thai samples; never a full episode."""
 import base64
 import io
 import json
@@ -59,8 +59,8 @@ def main():
         if config["model"] != MODEL:
             raise ValueError("Unexpected model")
         samples = config["samples"]
-        allowed = {"nox", "manager", "lin"}
-        if len(samples) != 3 or {s["id"] for s in samples} != allowed:
+        allowed = {"maysa", "nox", "manager", "lin"}
+        if len(samples) != 4 or {s["id"] for s in samples} != allowed:
             raise ValueError("Unexpected samples")
         if any(not s["text"].strip() or len(s["text"]) > 450 for s in samples):
             raise ValueError("Invalid sample length")
