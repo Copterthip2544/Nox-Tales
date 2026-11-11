@@ -1,0 +1,9 @@
+{
+  "all_111_turns_present": true,
+  "speech_seconds": 630.56,
+  "reference_seconds": 667.61,
+  "generated_this_run": 4,
+  "final_video_duration_verified": false,
+  "listening_and_visual_review": "pending",
+  "note": "Reference omits staged holds, phone rings, effects and final mixing. Do not claim it is a final 10\u201315 minute film."
+}
