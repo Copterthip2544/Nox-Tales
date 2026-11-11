@@ -8,7 +8,7 @@ permissions:
   actions: read
 jobs:
   align:
-    if: github.event.head_commit.message == 'align-hotel13-opening-01'
+    if: github.event.head_commit.message == 'align-hotel13-opening-02'
     runs-on: ubuntu-latest
     timeout-minutes: 10
     steps:
@@ -25,7 +25,8 @@ jobs:
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
         run: python3 scripts/align_opening_audio.py
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: hotel13-opening-alignment
           path: opening-alignment/
