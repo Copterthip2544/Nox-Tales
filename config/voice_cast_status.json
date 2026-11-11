@@ -1,0 +1,27 @@
+{
+  "episode": "hotel13",
+  "script_version": "1.3",
+  "model": "gemini-3.8-flash-tts",
+  "approved_reference_run": 42966887368,
+  "characters": {
+    "nox": {
+      "voice": "Charon",
+      "status": "user_approved"
+    },
+    "manager": {
+      "voice": "Gacrux",
+      "status": "user_approved"
+    },
+    "lin": {
+      "voice": "Leda",
+      "status": "user_approved"
+    },
+    "maysa": {
+      "voice": "Achernar",
+      "status": "awaiting_user_listening_review",
+      "direction": "soft, gentle, warm adult Thai woman about 25",
+      "audition_run": 42967390014,
+      "previous_voice": "Kore"
+    }
+  }
+}
