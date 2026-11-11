@@ -96,7 +96,7 @@ def main():
         manifest['turns'][tid].update({'duration_seconds':round(duration,4),'request_state':'complete','listening_review':'pending'})
         save();generated+=1;print(f'Saved {tid} {turn["speaker"]}: {duration:.2f}s',flush=True)
         # Modest pace; do not overlap generation or retry billable requests automatically.
-        time.sleep(2)
+        time.sleep(7)
     # Reference assembly is speech + short conversational gaps, not the final sound edit.
     sample_rate=24000;timeline=[];position=0
     reference=OUT/'dialogue_reference.wav'
