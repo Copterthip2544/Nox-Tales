@@ -1,0 +1,35 @@
+name: Audition main cast 01
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/audition-main-cast-01.yml]
+
+permissions:
+  contents: read
+
+jobs:
+  audition:
+    # One explicit four-sample request. Ordinary future edits must not generate audio.
+    if: github.event.head_commit.message == 'audio: audition main cast 01'
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Generate the four user-requested character previews
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SAMPLE_CHARACTER: all
+          CONFIRM_GENERATION: 'true'
+        run: python3 scripts/preview_voices.py
+      - name: Save previews including partial results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nox-voice-previews
+          path: voice-previews/
+          if-no-files-found: ignore
+          retention-days: 7
