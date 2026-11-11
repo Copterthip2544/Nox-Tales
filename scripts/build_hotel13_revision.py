@@ -20,7 +20,7 @@ def main():
  rows=list(csv.DictReader((a.audio/'speech_timeline.csv').open(encoding='utf-8-sig')))
  parts={}
  for k,t in patches.items():
-  src=a.patch/pm['turns'][k]['file'];assert hashlib.sha256(src.read_bytes()).hexdigest()==pm['turns'][k]['sha256'];x=wavread(src);parts[k]=x;wavwrite(audio/(k+'_nox.wav'),x)
+  src=a.patch/pm['turns'][k]['file'];assert hashlib.sha256(src.read_bytes()).hexdigest()==pm['turns'][k]['sha256'];x=wavread(src);rms=float(np.sqrt(np.mean(x*x)));x*=min(2.,max(.5,.085/max(rms,1e-8)));parts[k]=x;wavwrite(audio/(k+'_nox.wav'),x)
  merged=[];offset=0;newpars=[]
  for j,k in enumerate(['R125A','R125B','R125C']):
   x=parts[k];newpars.append({'index':j,'start_seconds':offset,'end_seconds':offset+len(x)/SR,'text':patches[k]['text']});merged.append(x);offset+=len(x)/SR
@@ -156,7 +156,7 @@ def mix_audio(events,holds,rings,duration,audio,out):
    for sec in np.arange(1.,length,beat*8):put(note(587.33,3.,'piano'),sec,.035)
   fade=min(2.,length/3);f=round(fade*SR);bus[:f]*=np.linspace(0,1,f);bus[-f:]*=np.linspace(1,0,f)
   # Normalize cue RMS, keeping true peaks restrained and dialogue dominant.
-  rms=float(np.sqrt(np.mean(bus*bus)));target=.014 if urgent else .011 if tense else .008
+  rms=float(np.sqrt(np.mean(bus*bus)));target=.040 if urgent else .028 if tense else .020
   if rms:bus*=target/rms
   if urgent:bus*=np.linspace(.75,1.15,len(bus))
   add(score,bus,start);music_report.append({'start':round(start,3),'end':round(end,3),'cue':kind,'bpm':bpm,'target_rms_dbfs':round(20*math.log10(target),1)})

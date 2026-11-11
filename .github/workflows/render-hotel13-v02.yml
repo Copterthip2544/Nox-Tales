@@ -9,7 +9,7 @@ permissions:
   actions: read
 concurrency:
   group: hotel13-full-v02
-  cancel-in-progress: false
+  cancel-in-progress: true
 jobs:
   render:
     if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'render-hotel13-v02-01')
