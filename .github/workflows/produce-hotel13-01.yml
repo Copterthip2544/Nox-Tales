@@ -1,9 +1,6 @@
 name: Hotel 13 full audio production 01
 
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/produce-hotel13-01.yml]
   workflow_dispatch:
     inputs:
       confirm_generation:
@@ -13,7 +10,7 @@ on:
       resume_run_id:
         description: Previous run ID with hotel13-full-audio artifact (optional)
         type: string
-        default: '42971965116'
+        default: '42976247403'
 
 permissions:
   contents: read
@@ -21,7 +18,7 @@ permissions:
 
 jobs:
   audio:
-    if: github.event.head_commit.message == 'produce-hotel13-remaining-19' || inputs.confirm_generation
+    if: inputs.confirm_generation
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -31,12 +28,12 @@ jobs:
       - name: Install audio assembly tool
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Restore completed turns for explicit resume
-        if: github.event_name == 'push' || inputs.resume_run_id != ''
+        if: inputs.resume_run_id != ''
         uses: actions/download-artifact@v4
         with:
           name: hotel13-full-audio
           path: production-output
-          run-id: ${{ inputs.resume_run_id || '42971965116' }}
+          run-id: ${{ inputs.resume_run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate and verify v1.3 speech
         env:
