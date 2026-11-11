@@ -10,7 +10,7 @@ on:
       resume_run_id:
         description: Previous run ID with hotel13-full-audio artifact (optional)
         type: string
-        default: '42976247403'
+        default: '42983299790'
 
 permissions:
   contents: read
