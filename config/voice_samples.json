@@ -1,0 +1,26 @@
+{
+  "model": "gemini-3.8-flash-tts",
+  "samples": [
+    {
+      "id": "nox",
+      "character": "Nox",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant voice, calm and intimate, measured natural pace, clear Thai pronunciation, restrained suspense, no exaggerated whispering.",
+      "text": "โรงแรมส่วนใหญ่ กลัวแขกไม่ยอมกลับ แต่โรงแรมแห่งนี้ กลับกลัวว่าแขกบางคนจะออกไปได้"
+    },
+    {
+      "id": "manager",
+      "character": "ผู้จัดการ",
+      "voice": "Gacrux",
+      "style": "An older Thai male hotel manager, mature low register, composed and authoritative, natural conversational pace, clear Thai pronunciation, restrained performance.",
+      "text": "ยังไม่สี่ทุ่ม คุณมาตรงเวลา ส่วนห้องสิบสาม มีเรื่องที่ต้องจำสามข้อ"
+    },
+    {
+      "id": "lin",
+      "character": "ลิน",
+      "voice": "Leda",
+      "style": "A fictional young girl speaking Thai, gentle youthful voice, quiet and sincere, natural pitch rather than squeaky or cartoonish, clear words, restrained unsettling calm.",
+      "text": "พี่คะ รับให้แม่หน่อย ดีจัง หนูไม่อยากขึ้นไป ตอนที่ยังมีกลิ่นไหม้"
+    }
+  ]
+}
