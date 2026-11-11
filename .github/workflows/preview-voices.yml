@@ -1,0 +1,42 @@
+name: Preview Thai character voices
+
+on:
+  workflow_dispatch:
+    inputs:
+      character:
+        description: Choose one character or all three (maximum three requests)
+        type: choice
+        options: [all, nox, manager, lin]
+        default: all
+      confirm_generation:
+        description: Authorize these short Gemini TTS samples and applicable API usage
+        type: boolean
+        required: true
+        default: false
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Generate requested samples only
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          SAMPLE_CHARACTER: ${{ inputs.character }}
+          CONFIRM_GENERATION: ${{ inputs.confirm_generation }}
+        run: python3 scripts/preview_voices.py
+      - name: Save previews (including partial results)
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4.6.2
+        with:
+          name: nox-voice-previews
+          path: voice-previews/
+          if-no-files-found: ignore
+          retention-days: 7
