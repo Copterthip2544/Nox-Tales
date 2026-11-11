@@ -90,9 +90,10 @@
     {
       "id": "E01_Maysa_archive",
       "image": "../assets/E01_Maysa_archive.png",
-      "sha256": "61c83fe1479003ccdfa5ee073ec5a4cd651699f49f846705ed82c5047f39b790",
+      "sha256": "cda2e253cb6b18870ac70ca9099ff460401a2703df26f0ecc7609843938b01e9",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "approved",
+      "revision": 3
     },
     {
       "id": "D07_Maysa_mobile",

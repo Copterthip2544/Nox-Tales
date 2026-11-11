@@ -130,11 +130,13 @@
     },
     "E01_Maysa_archive": {
       "file": "assets/E01_Maysa_archive.png",
-      "sha256": "61c83fe1479003ccdfa5ee073ec5a4cd651699f49f846705ed82c5047f39b790",
+      "sha256": "cda2e253cb6b18870ac70ca9099ff460401a2703df26f0ecc7609843938b01e9",
       "status": "reviewed_for_edit",
-      "visual_review": "Two hands and shoulder-arm paths clear, old book pulled from shelf, correct vest/blouse and skirt edge; no trousers.",
-      "source_generation": "exec-c18d7aa9-ea1f-4fb1-8f81-787d770857e3.png",
-      "user_approval": "pending"
+      "user_approval": "approved",
+      "visual_review": "User approved v3: pronated left hand, four fingers over cover, thumb on near/lower edge. Saved as E01_Maysa_archive.png.",
+      "github_integration": "approved_by_user",
+      "image_revision": 3,
+      "source_generation": "exec-1f2906d8-e7f6-4529-bc51-8976dab41c4d.png"
     },
     "D07_Maysa_mobile": {
       "file": "assets/D07_Maysa_mobile.png",
@@ -447,6 +449,23 @@
       "visual_review": "User-marked hand/cuff/arm removed from outer door, wood restored, corresponding arm occluded behind door; awaits user review.",
       "source_generation": "exec-0cde037e-f27c-43c3-843a-501fcbb4d566.png",
       "user_approval": "pending"
+    },
+    "E01_Maysa_archive_v2": {
+      "file": "archive/E01_Maysa_archive_v2.png",
+      "sha256": "c125a060b40ed7e59589d4b7118eca2a90e242085936239de6c1eba187619f3e",
+      "status": "rejected",
+      "user_approval": "not_applicable",
+      "visual_review": "User rejected handedness at x68.6%,y65.3%; supporting grip still reads as wrong hand.",
+      "github_integration": "archive_only",
+      "source_generation": "exec-0fd889d4-5f99-4a8d-bb0d-61ef15c0bff6.png"
+    },
+    "E01_Maysa_archive_original": {
+      "file": "archive/E01_Maysa_archive_original.png",
+      "sha256": "61c83fe1479003ccdfa5ee073ec5a4cd651699f49f846705ed82c5047f39b790",
+      "status": "rejected",
+      "visual_review": "Original malformed left-hand grip replaced by user-approved v3 under canonical filename.",
+      "user_approval": "not_applicable",
+      "source_generation": "exec-c18d7aa9-ea1f-4fb1-8f81-787d770857e3.png"
     }
   },
   "remaining": [
@@ -466,5 +485,25 @@
   "user_visual_correction": "When Maysa writes/reads, the book and baselines must face her naturally. Writing-shot data need not be readable; prioritize natural hand/pen/page orientation.",
   "hand_QA_correction": "Close hand shots require counting thumb bases and nails, not just overall silhouette. Reject duplicate thumb specifically at I04 x39.5%,y42.7%.",
   "user_review_gate": "User must inspect scene images before any further editing/rendering. Upload latest images and make GitHub gallery. No final film export until user approves.",
+  "github_review": {
+    "commit": "118ee28b55722f1f28635b876423707f030ac9d3",
+    "url": "https://github.com/Copterthip2544/Nox-Tales/blob/main/episodes/hotel13/v1.3/production/full/review/README.md",
+    "current_images": 43,
+    "archived_images": 12,
+    "batches": 9,
+    "verified_image_bytes": 55
+  },
+  "pending_github_integrations": {},
+  "preview_history": {
+    "E01_Maysa_archive_v3": {
+      "file": "/workspace/hotel13_full/assets/E01_Maysa_archive_v3.png",
+      "source": "/workspace/generated_images/exec-1f2906d8-e7f6-4529-bc51-8976dab41c4d.png",
+      "sha256": "cda2e253cb6b18870ac70ca9099ff460401a2703df26f0ecc7609843938b01e9",
+      "status": "awaiting_visual_review",
+      "user_approval": "pending",
+      "visual_review": "Preview changed to pronated left-hand overhand grip: dorsal knuckles visible, four fingers over top cover, single thumb at near/lower edge. Await user review; do not claim approval.",
+      "github_integration": "blocked_until_user_approves_preview"
+    }
+  },
   "user_approval": "pending"
 }

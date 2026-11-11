@@ -14,3 +14,5 @@
 - [I04_Pim_key_grip](I04_Pim_key_grip.png): User pinpointed extra thumb at x39.5%,y42.7%; previous visual review missed it. Must replace before edit.
 - [I06_Maysa_returnskey](I06_Maysa_returnskey.png): Maysa anatomy/key return good, but telephone handset missing from base after call ended; restore handset for continuity.
 - [I08_manager_trapped](I08_manager_trapped.png): User correction: hand at x60.6%,y35.7% appears through door. Replaced by v2 with hidden arm.
+- [E01_Maysa_archive_v2](E01_Maysa_archive_v2.png): User rejected handedness at x68.6%,y65.3%; supporting grip still reads as wrong hand.
+- [E01_Maysa_archive_original](E01_Maysa_archive_original.png): Original malformed left-hand grip replaced by user-approved v3 under canonical filename.
