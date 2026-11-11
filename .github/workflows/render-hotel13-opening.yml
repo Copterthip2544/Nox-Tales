@@ -1,0 +1,39 @@
+name: Frame Tales - Hotel 13 opening assembly
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/render-hotel13-opening.yml]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  render:
+    if: github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'render-hotel13-opening-01'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install video renderer
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Restore approved audio (no TTS calls)
+        uses: actions/download-artifact@v4
+        with:
+          name: hotel13-full-audio
+          path: production-output
+          run-id: 42983299790
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Render opening motion slideshow
+        run: python3 scripts/render_hotel13_opening.py
+      - name: Save opening assembly
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hotel13-opening-assembly
+          path: opening-output/
+          if-no-files-found: error
+          retention-days: 14
