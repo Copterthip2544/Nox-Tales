@@ -1,0 +1,13 @@
+{
+  "brand": "Frame Tales",
+  "character": "Nox",
+  "language": "th-TH",
+  "tts_provider": "Gemini",
+  "tts_model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "status": "user_confirmed_primary_voice",
+  "scope": "All Frame Tales episodes",
+  "direction": "Thai male horror storyteller, warm resonant voice, calm and intimate, measured natural pace, clear Thai pronunciation, restrained suspense, no exaggerated whispering.",
+  "change_policy": "Keep Charon as Nox's primary voice unless the user explicitly requests a change.",
+  "confirmed_on": "2026-11-11"
+}

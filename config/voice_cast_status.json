@@ -6,7 +6,10 @@
   "characters": {
     "nox": {
       "voice": "Charon",
-      "status": "user_approved"
+      "status": "user_approved",
+      "default_for_character": true,
+      "scope": "Frame Tales — all episodes",
+      "change_policy": "Keep Charon as Nox's primary voice unless the user explicitly requests a change."
     },
     "manager": {
       "voice": "Gacrux",
