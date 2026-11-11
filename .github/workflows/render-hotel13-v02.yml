@@ -55,6 +55,7 @@ jobs:
           import json,os
           p=json.load(open(os.environ['FILM_ROOT']+'/outputs/full_edit_plan.json'))
           e={v['event_id']:v for v in p['events']}
+          assert all(s['end_frame']-s['start_frame']>=24 for s in p['shots'])
           for r in p['rings']:
               if r['kind']=='mobile': continue
               answer=e[r['answer_event']]['start']

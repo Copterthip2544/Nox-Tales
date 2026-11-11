@@ -29,7 +29,7 @@ def main():
  for row in rows:
   if row['event_id']!='E125':shutil.copy2(a.audio/row['file'],audio/Path(row['file']).name)
  events=[];holds=[];cursor=0.;prev=0.;ringstart={}
- extra=dict(base.EXTRA);extra.update({121:.4,124:.25,125:.15,129:.25,135:.15,137:.1,140:.2,143:.15,147:5.4})
+ extra=dict(base.EXTRA);extra.update({121:.4,124:.25,125:.15,129:.25,135:0.,137:.1,140:0.,143:0.,147:5.4})
  after={38:['R039'],109:['R110'],111:['R112'],133:['R134'],135:['R136'],138:['R139'],141:['R142A','R142B','R142C'],145:['R146']}
  def addpatch(k):
   nonlocal cursor
@@ -74,6 +74,7 @@ def main():
   if c['asset']=='I06_Maysa_returnskey_v2' and k/FPS>=ev['R142C']['start']-.1:overlay='05:59'
   if shots and shots[-1]['asset']==c['asset'] and shots[-1]['overlay']==overlay and c['motion'] is None:shots[-1]['end_frame']=end;continue
   shots.append({'id':f'SH{len(shots)+1:03}','start_frame':k,'end_frame':end,'asset':c['asset'],'cue':c['cue'],'motion':c['motion'] or ['zoom_in','pan_right','pan_left'][len(shots)%3],'overlay':overlay})
+ assert all(s['end_frame']-s['start_frame']>=24 for s in shots), 'Flash cut detected'
  plan={'script_version':'1.4','edit_version':'v02','duration_seconds':duration,'fps':FPS,'events':events,'holds':holds,'rings':rings,'shots':shots,'timing':'Measured approved and newly generated Charon WAVs. Phone waits elided explicitly in narration; audible rings differ from story count.'}
  (out/'full_edit_plan.json').write_text(json.dumps(plan,ensure_ascii=False,indent=2))
  with (out/'shot_list.csv').open('w',encoding='utf-8-sig',newline='') as f:w=csv.DictWriter(f,fieldnames=list(shots[0]));w.writeheader();w.writerows(shots)
