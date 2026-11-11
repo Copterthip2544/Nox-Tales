@@ -18,6 +18,10 @@ def main():
     try:
         with urlopen(req,timeout=180) as r:response=json.load(r)
         content=''.join(p.get('text','') for p in response['candidates'][0]['content']['parts'] if not p.get('thought'))
+        out=Path('opening-alignment');out.mkdir(exist_ok=True)
+        (out/'response_text.txt').write_text(content)
+        content=content.strip()
+        if content.startswith('```'):content=content.split('\n',1)[1].rsplit('```',1)[0]
         data=json.loads(content);items=data['paragraphs'];assert len(items)==len(paragraphs)
         previous=0
         for i,item in enumerate(items):
