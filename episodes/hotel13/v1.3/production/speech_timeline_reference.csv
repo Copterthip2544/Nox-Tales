@@ -1,0 +1,174 @@
+﻿event_id,source_v12,speaker,voice,start_seconds,end_seconds,text,file,time_status
+E001,T001,nox,Charon,0.0,61.32,"โรงแรมส่วนใหญ่ กลัวแขกไม่ยอมกลับ
+
+แต่โรงแรมแห่งนี้ กลับกลัวว่าแขกบางคนจะออกไปได้
+
+ผมชื่อ น็อกซ์ คืนนี้ผมมีกุญแจดอกหนึ่งให้คุณดู ป้ายทองเหลืองของมันมีเลขสิบสาม ส่วนคนที่เคยถือมัน บางคนก็ไม่ได้กลับออกมาเล่าเรื่องของตัวเองอีกเลย
+
+ครั้งแรกที่เมษาเห็นโรงแรม เธอคิดว่าคนขับรถพามาผิดที่
+
+อาคารเก่าตั้งอยู่สุดถนน หลังแนวต้นสนสูง หน้าต่างเกือบทุกบานมืดสนิท มีเพียงโคมไฟสองดวงเหนือทางเข้า เธอก้มตรวจที่อยู่ในโทรศัพท์อีกครั้ง ตรงกัน
+
+เงินเดือนสูงกว่างานต้อนรับทั่วไปเกือบเท่าตัว มีที่พักให้ เริ่มงานได้ทันที สำหรับคนที่เหลือเงินไม่ถึงสองพันบาท เงื่อนไขอื่นจึงกลายเป็นเรื่องรอง
+
+ในล็อบบี้มีกลิ่นไม้เก่ากับน้ำยาขัดพื้น หลังเคาน์เตอร์ ชายในสูทสีเลือดหมูยืนรออยู่",turns/E001_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E003,T002,manager,Gacrux,61.87,63.87,คุณเมษาใช่ไหมครับ,turns/E003_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E004,T003,maysa,Kore,64.17,68.97,ค่ะ ขอโทษด้วยนะคะ ฝนตกแล้วรถก็ติด,turns/E004_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E005,T004,manager,Gacrux,69.27,72.35,ยังไม่สี่ทุ่ม คุณมาตรงเวลา,turns/E005_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E006,T005,nox,Charon,72.65,81.33,ไม่มีการสัมภาษณ์เพิ่มเติม มีเพียงสัญญาจ้างหนึ่งแผ่น เมื่อเมษาเซ็นชื่อ ผู้จัดการก็เริ่มสอนงานทันที,turns/E006_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E008,T006,maysa,Kore,81.88,85.04,ที่นี่ไม่ได้ลงข้อมูลในคอมเหรอคะ,turns/E008_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E009,T008,manager,Gacrux,85.34,87.46,เราใช้สมุดมาตลอด,turns/E009_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E011,T010,manager,Gacrux,87.76,97.0,แขกจะออก คุณก็ลงเวลา รับกุญแจ แล้วเซ็นชื่อพนักงานตรงนี้ ต้องครบทั้งสามอย่าง งานถึงจะเรียบร้อยนะครับ,turns/E011_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E013,T012,manager,Gacrux,97.3,101.98,ส่วนห้องสิบสาม มีเรื่องที่ต้องจำสามข้อ,turns/E013_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E014,T013,manager,Gacrux,102.28,106.24,ข้อแรก อย่าส่งกุญแจให้คนที่ยังไม่ยอมให้เห็นหน้า,turns/E014_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E015,T014,manager,Gacrux,106.54,112.42,ข้อสอง ถ้าโทรศัพท์จากห้องสิบสามดัง รอให้ครบสิบสามครั้งค่อยรับ,turns/E015_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E016,T015,manager,Gacrux,112.72,120.84,ข้อสุดท้าย ห้ามเช็กเอาต์ห้องนี้ก่อนหกโมงเช้า ถ้าแขกขอ ให้บอกว่ากรุณารอผู้จัดการ,turns/E016_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E018,T017,maysa,Kore,121.14,125.34,ต้องนับจริง ๆ เหรอคะ ถ้าเขาวางก่อนล่ะ,turns/E018_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E019,T018,manager,Gacrux,125.64,127.44,ก็อย่าโทรกลับครับ,turns/E019_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E021,T020,manager,Gacrux,127.74,132.02,อีกอย่าง อย่าเอากุญแจออกไปไหน ถ้าไม่จำเป็น,turns/E021_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E022,T021,nox,Charon,132.32,141.56,"สองชั่วโมงแรกผ่านไปโดยไม่มีแขกเข้ามาสักคน
+
+ใกล้เที่ยงคืน เสียงรองเท้าหนังดังขึ้นหน้าล็อบบี้",turns/E022_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E024,T022,phakhin,Algieba,142.11,145.27,กุญแจห้องสิบสามครับ,turns/E024_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E026,T024,maysa,Kore,145.57,148.53,รบกวนขยับเข้ามาหน่อยได้ไหมคะ,turns/E026_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E028,T026,maysa,Kore,148.83,150.71,ขอชื่อด้วยค่ะ,turns/E028_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E030,T028,phakhin,Algieba,151.01,154.33,คุณเพิ่งมาใหม่ใช่ไหม,turns/E030_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E031,T029,maysa,Kore,154.63,156.51,ค่ะ คืนแรก,turns/E031_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E033,T031,phakhin,Algieba,156.81,164.57,เก็บไว้ก่อน ถ้ามีเด็กลงมา อย่าส่งเธอกลับขึ้นไปคนเดียว เธอกลัวความมืด,turns/E033_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E034,T032,nox,Charon,164.87,182.63,"พอเมษาหันกลับ ชายคนนั้นก็ไม่อยู่แล้ว
+
+ประตูทางเข้ายังปิด กระดิ่งไม่ดัง และบนพื้นไม่มีรอยน้ำสักหยด ทั้งที่ปลายเสื้อโค้ตของเขาเปียกฝน
+
+เวลาตีสองสิบสามนาที โทรศัพท์จากห้องสิบสามดังขึ้น",turns/E034_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E036,T033,lin,Leda,183.18,186.3,พี่คะ รับให้แม่หน่อย,turns/E036_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E037,T035,maysa,Kore,186.6,189.16,หนูลงมาตั้งแต่เมื่อไหร่จ๊ะ,turns/E037_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E038,T037,lin,Leda,189.46,191.38,แม่รอนานแล้ว,turns/E038_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E040,T039,pim,Achernar,191.68,193.2,ลูกฉันอยู่ตรงนั้นไหมคะ,turns/E040_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E041,T040,maysa,Kore,193.5,197.02,อยู่ค่ะ คุณแม่พักห้องสิบสามใช่ไหม,turns/E041_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E042,T041,pim,Achernar,197.32,199.52,อย่าให้เขาพาลูกขึ้นมา,turns/E042_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E044,T043,maysa,Kore,199.82,201.42,ใครคะ,turns/E044_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E046,T045,pim,Achernar,201.72,203.6,คนที่บอกให้คุณรอ,turns/E046_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E048,T047,lin,Leda,203.9,206.62,แม่ว่าอะไรคะ,turns/E048_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E049,T049,maysa,Kore,206.92,209.76,แม่บอกให้หนูอยู่กับพี่ก่อน,turns/E049_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E051,T051,lin,Leda,210.06,214.54,ดีจัง หนูไม่อยากขึ้นไป ตอนที่ยังมีกลิ่นไหม้,turns/E051_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E053,T053,maysa,Kore,214.84,216.72,หนูชื่ออะไรจ๊ะ,turns/E053_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E054,T054,lin,Leda,217.02,221.5,ลินค่ะ พ่อไปเอารถ แม่บอกให้รอข้างล่าง,turns/E054_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E055,T055,nox,Charon,221.8,231.28,"ผู้จัดการไม่รับสาย ส่วนมือถือของเมษาก็ไม่มีสัญญาณ
+
+ขณะกำลังจะลองอีกครั้ง เสียงที่เธอจำได้ก็ดังจากข้างเสา",turns/E055_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E056,T056,mimic_phakhin,Algieba,231.83,234.91,กุญแจห้องสิบสามครับ,turns/E056_mimic_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E057,T058,maysa,Kore,235.21,238.41,ช่วยขยับมาให้เห็นหน้าหน่อยค่ะ,turns/E057_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E058,T059,mimic_phakhin,Algieba,238.71,242.63,ไม่ต้องหรอก ผมเอง เอากุญแจมา,turns/E058_mimic_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E060,T061,lin,Leda,242.93,247.01,อย่าให้เขานะคะ พ่อหนูไม่เคยพูดแบบนั้น,turns/E060_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E062,T063,maysa,Kore,247.31,251.47,ฉันให้ไม่ได้ค่ะ ถ้าคุณไม่ยอมให้เห็นหน้า,turns/E062_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E063,T064,nox,Charon,251.77,260.09,"เงานั้นค่อย ๆ ถอยหายเข้าไปในผนัง
+
+เมษาดึงเก้าอี้ของลินมาใกล้ตัวกว่าเดิม",turns/E063_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E065,T065,lin,Leda,260.64,266.08,คุณลุงคนนั้นบอกว่า ถ้าไม่คืนกุญแจก็ออกไปไม่ได้,turns/E065_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E066,T066,nox,Charon,266.38,278.94,ภาพที่ลินชี้ เป็นรูปพนักงานในวันเปิดกิจการ ผู้จัดการยืนอยู่ตรงกลาง แต่ดูอ่อนกว่าตอนนี้มาก วันที่ใต้ภาพระบุไว้เมื่อยี่สิบสามปีก่อน,turns/E066_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E067,T067,maysa,Kore,279.49,281.97,หนูเข้าพักวันไหนจ๊ะ,turns/E067_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E068,T068,nox,Charon,282.27,336.79,"ลินบอกวันที่ ตรงกับวันนี้ แต่เป็นเมื่อยี่สิบปีก่อน
+
+เมษาค้นทะเบียนเก่าในตู้ใต้เคาน์เตอร์ เล่มที่ต้องการถูกดันไว้ลึกที่สุด ขอบปกมีรอยดำเหมือนถูกไฟ
+
+ห้องสิบสาม นายภาคิน นางพิม และเด็กหญิงลลิน ชำระครบแล้ว แต่ช่องเช็กเอาต์ยังว่าง
+
+หมึกส่วนอื่นซีดจนแทบอ่านไม่ออก มีเพียงชื่อสามคนนี้ที่ดำเข้ม เหมือนเพิ่งเขียนลงไป
+
+ระหว่างหน้ามีข่าวไฟไหม้โรงแรม ผู้เสียชีวิตสามราย แม่กับลูกติดอยู่ในทางเดินชั้นสอง ส่วนพ่อกลับเข้าอาคารเพื่อช่วยครอบครัว
+
+ภาพเล็ก ๆ ข้างข่าว ทำให้เมษาหยุดหายใจไปชั่วขณะ
+
+เด็กอุ้มกระต่าย ผู้หญิงชุดสีอ่อน และชายที่มาขอกุญแจตอนเที่ยงคืน",turns/E068_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E069,T069,phakhin,Algieba,337.34,339.22,ผมกลับมาไม่ทัน,turns/E069_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E071,T071,phakhin,Algieba,339.52,348.04,ผมจอดรถรอแล้ว แต่ไม่มีใครลงมา พอขึ้นไป ควันก็เต็มบันได,turns/E071_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E073,T073,phakhin,Algieba,348.34,359.94,ทุกปีเรากลับมาตรงนี้ พิมโทรลงมา ลูกเดินลงบันได ส่วนผมมาขอกุญแจ,turns/E073_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E074,T074,maysa,Kore,360.24,362.36,ทำไมต้องขอกุญแจคะ,turns/E074_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E075,T075,phakhin,Algieba,362.66,370.62,ประตูทางเดินหน้าห้องเราถูกล็อกจากข้างนอก คนที่ดูแลกุญแจอยู่ข้างล่าง,turns/E075_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E077,T077,phakhin,Algieba,370.92,373.56,ผมพยายามเปิดแล้ว,turns/E077_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E078,T079,maysa,Kore,373.86,375.86,คุณภาคินใช่ไหมคะ,turns/E078_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E079,T081,manager,Gacrux,376.16,378.56,เขาไม่ควรเล่าเรื่องนั้นให้คุณฟัง,turns/E079_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E081,T083,manager,Gacrux,378.86,381.26,เก็บเข้าที่ แล้วกลับไปทำงาน,turns/E081_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E082,T085,maysa,Kore,381.56,384.68,พวกเขาตายแล้วใช่ไหมคะ,turns/E082_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E083,T086,manager,Gacrux,384.98,386.06,ใช่,turns/E083_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E084,T087,maysa,Kore,386.36,388.32,แล้วทำไมยังอยู่ที่นี่,turns/E084_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E085,T088,manager,Gacrux,388.62,392.82,บางคนไม่ยอมไป เราถึงต้องมีกฎ,turns/E085_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E087,T090,manager,Gacrux,393.12,394.56,เอาสมุดมา,turns/E087_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E089,T092,maysa,Kore,394.86,398.38,คืนนั้นใครล็อกประตูคะ,turns/E089_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E091,T094,maysa,Kore,398.68,403.64,ข่าวบอกว่าพวกเขาออกมาถึงทางเดินแล้ว ทำไมลงบันไดไม่ได้,turns/E091_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E092,T095,manager,Gacrux,403.94,408.34,คืนนั้นมีของหาย ผมแค่ล็อกทางเดินไว้รอตรวจ,turns/E092_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E093,T097,manager,Gacrux,408.64,412.84,ผมไม่รู้ว่าไฟจะลาม ผมไม่ได้ตั้งใจให้ใครตาย,turns/E093_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E094,T099,manager,Gacrux,413.14,417.42,แค่รอให้เช้า คุณก็รับเงินแล้วกลับบ้านได้,turns/E094_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E095,T100,maysa,Kore,417.72,419.68,แล้วเด็กคนนั้นล่ะคะ,turns/E095_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E096,T102,maysa,Kore,419.98,422.02,พรุ่งนี้เธอก็ต้องรออีกใช่ไหม,turns/E096_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E098,T104,manager,Gacrux,422.32,426.36,ถ้าอยากกลับออกไปดี ๆ ก็อยู่เฉย ๆ จนเช้า,turns/E098_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E099,T105,nox,Charon,426.66,438.5,"หลังประตูสำนักงานปิด เมษาลองเปิดประตูทางเข้า
+
+มันไม่ได้ล็อก ฝนหยุดแล้ว เธอเดินออกไปถึงถนนใหญ่ได้ ไม่มีใครขวาง",turns/E099_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E101,T106,lin,Leda,439.05,443.41,แม่ หนูรอไม่ไหวแล้ว,turns/E101_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E102,T107,nox,Charon,443.71,461.15,"เมษากลับมานั่งข้างลิน
+
+ใกล้เช้าแล้ว แต่เธอเพิ่งเข้าใจว่า สำหรับคนบางคน เช้าอาจมาไม่ถึงเลย
+
+ตีห้าสิบเจ็ดนาที โทรศัพท์จากห้องสิบสามดังขึ้นอีกครั้ง",turns/E102_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E105,T108,mimic_manager,Gacrux,461.7,463.98,เมษา รับสาย,turns/E105_mimic_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E107,T110,mimic_manager,Gacrux,464.28,466.48,มีเรื่องด่วน รับเดี๋ยวนี้,turns/E107_mimic_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E109,T112,mimic_manager,Gacrux,466.78,468.38,เด็กหายไปแล้ว,turns/E109_mimic_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E111,T114,mimic_manager,Gacrux,468.68,469.72,อย่ารอ,turns/E111_mimic_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E113,T116,pim,Achernar,470.02,471.46,คุณยังอยู่,turns/E113_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E114,T118,maysa,Kore,471.76,474.36,ฉันจะช่วยพาลูกคุณออกไปค่ะ,turns/E114_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E115,T119,pim,Achernar,474.66,478.86,ต้องลงทะเบียนออกก่อน เขาเก็บชื่อเราไว้ตั้งแต่คืนนั้น,turns/E115_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E116,T120,maysa,Kore,479.16,481.2,สมุดอยู่กับผู้จัดการ,turns/E116_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E117,T121,pim,Achernar,481.5,485.5,ฉันรู้ ฉันจะพาเขาขึ้นมา คุณรีบไปเอานะ,turns/E117_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E118,T122,maysa,Kore,485.8,488.84,เดี๋ยวค่ะ คุณชื่อพิมใช่ไหม,turns/E118_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E119,T124,pim,Achernar,489.14,492.5,ฉันไม่ได้ยินใครเรียกชื่อนั้นมานานแล้ว,turns/E119_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E121,T126,pim,Achernar,492.8,497.4,คุณผู้จัดการคะ ช่วยขึ้นมาเปิดประตูให้ฉันหน่อย,turns/E121_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E122,T127,nox,Charon,497.7,509.74,"เสียงเรียกดังซ้ำเป็นระยะ ผู้จัดการยังไม่ออกมา
+
+จนเกือบตีห้าห้าสิบ ประตูสำนักงานจึงเปิดออก ในมือเขามีกุญแจห้องสิบสาม",turns/E122_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E124,T128,manager,Gacrux,510.29,511.53,อยู่ตรงนี้,turns/E124_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E125,T129,nox,Charon,511.83,535.87,"ทันทีที่เสียงรองเท้าพ้นชานพัก เมษาก็เข้าสำนักงาน
+
+สมุดเปิดค้างอยู่บนโต๊ะ ข้างกันมีรายงานไฟไหม้ คำให้การ และจดหมายหลายฉบับ ทุกฉบับขึ้นต้นถึงครอบครัวผู้เสียชีวิต แต่ไม่มีฉบับไหนเขียนจบ
+
+เธอคว้าสมุดกับปากกา กลับมาที่เคาน์เตอร์ตอนตีห้าห้าสิบสี่นาที",turns/E125_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E127,T130,lin,Leda,536.42,538.3,แม่กำลังมา,turns/E127_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E129,T132,manager,Gacrux,538.6,540.0,กลับเข้าห้อง,turns/E129_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E130,T134,pim,Achernar,540.3,542.86,เราจ่ายค่าห้องแล้ว,turns/E130_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E131,T135,manager,Gacrux,543.16,544.56,กลับเข้าไป,turns/E131_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E132,T136,pim,Achernar,544.86,547.3,เราขอกุญแจแล้ว,turns/E132_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E133,T138,pim,Achernar,547.6,549.64,เรารอคุณแล้ว,turns/E133_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E135,T140,manager,Gacrux,549.94,550.78,หยุด,turns/E135_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E137,T142,phakhin,Algieba,551.08,554.64,คืนนั้นคุณก็บอกให้ผมรอ,turns/E137_phakhin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E138,T144,manager,Gacrux,554.94,557.78,ถ้าพวกเขาออกไป ผมจะต้อง,turns/E138_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E140,T146,manager,Gacrux,558.08,560.72,ผมขอโทษ,turns/E140_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E141,T148,pim,Achernar,561.02,563.54,คุณควรพูด ตอนที่เราเคาะประตู,turns/E141_pim.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E143,T150,maysa,Kore,563.84,565.84,รับคืนกุญแจแล้วค่ะ,turns/E143_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E145,T152,lin,Leda,566.14,568.14,พี่ไม่ต้องรอแล้วนะ,turns/E145_lin.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E147,T154,manager,Gacrux,568.44,572.24,คุณเมษา ช่วยเรียกใครมารับผมหน่อย,turns/E147_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E149,T156,manager,Gacrux,572.54,574.06,เมษา,turns/E149_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E150,T157,nox,Charon,574.36,583.64,"พอสัญญาณโทรศัพท์กลับมา เมษาก็แจ้งตำรวจ
+
+แต่หลังเจ้าหน้าที่เข้าไปตรวจ เขากลับมีคำถามที่เธอไม่คิดว่าจะได้ยิน",turns/E150_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E152,T158,police,Iapetus,584.19,586.35,แน่ใจนะครับว่าเมื่อคืนเป็นที่นี่,turns/E152_police.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E154,T160,police,Iapetus,586.65,589.13,โรงแรมปิดมาหลายปีแล้วครับ,turns/E154_police.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E155,T161,maysa,Kore,589.43,592.03,แล้วผู้จัดการล่ะคะ,turns/E155_maysa.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E156,T162,police,Iapetus,592.33,597.85,ถ้าหมายถึงเจ้าของเดิม เสียตั้งแต่ปีก่อน ญาติกำลังจะขายที่,turns/E156_police.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E157,T163,nox,Charon,598.15,652.83,"ประตูทางเดินเปิดได้ ข้างในไม่มีใคร โทรศัพท์สีงาช้างในห้องถูกตัดสายไปแล้ว
+
+แต่ลูกบิดด้านในมีรอยข่วนใหม่ ใต้ประตูมีเศษเล็บติดอยู่หนึ่งชิ้น
+
+เมษาไม่กลับไปที่โรงแรมอีก แผลใช้เวลาหลายสัปดาห์กว่าจะหาย ส่วนหน้าทะเบียนที่เธอเก็บมา ยังมีชื่อทั้งสามคนกับลายเซ็นของเธอ เวลาเช็กเอาต์ ห้านาฬิกาห้าสิบเก้านาที
+
+ใต้ลงไป ในบรรทัดที่เคยว่าง มีชื่อผู้เข้าพักคนใหม่
+
+เป็นชื่อผู้จัดการ ห้องสิบสาม ไม่ระบุวันออก
+
+เธอคิดว่ามันจบแล้ว จนกระทั่งครบรอบหนึ่งปี
+
+ตีสองสิบสามนาที โทรศัพท์มือถือของเมษาดังขึ้น ไม่มีเบอร์ผู้โทร มีเพียงเลขสิบสาม",turns/E157_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E159,T164,manager,Gacrux,653.38,655.26,คุณเมษา,turns/E159_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E161,T166,manager,Gacrux,655.56,657.88,หกโมงหรือยังครับ,turns/E161_manager.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
+E162,T167,nox,Charon,658.18,667.06,"ถ้าคืนนี้มีใครโทรมาถามเวลา…
+
+ดูให้แน่ใจก่อนนะครับ ว่าเขารอเช้าอยู่ที่ไหน",turns/E162_nox.wav,MEASURED_REFERENCE_NOT_FINAL_EDIT
