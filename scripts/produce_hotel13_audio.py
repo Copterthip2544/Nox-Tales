@@ -1,5 +1,5 @@
 """Produce approved v1.3 speech turns, with verified resumable artifacts."""
-import base64, csv, hashlib, io, json, os, subprocess, sys, time, wave
+import base64, csv, hashlib, io, json, os, re, subprocess, sys, time, wave
 from pathlib import Path
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError, URLError
@@ -60,7 +60,31 @@ def main():
             data=json.dumps(payload,ensure_ascii=False).encode(),method='POST',
             headers={'x-goog-api-key':key,'Content-Type':'application/json'})
         try:
-            with urlopen(req,timeout=180) as response:result=json.load(response)
+            # HTTP 429 rejects the request before generation. Only this status is safe
+            # to retry automatically. Timeouts and ambiguous responses still stop.
+            for attempt in range(7):
+                try:
+                    with urlopen(req,timeout=180) as response:result=json.load(response)
+                    break
+                except HTTPError as error:
+                    if error.code!=429:raise
+                    details=[]
+                    try:details=json.loads(error.read()).get('error',{}).get('details',[])
+                    except Exception:pass
+                    wait=65
+                    quota=[]
+                    for detail in details:
+                        if str(detail.get('@type','')).endswith('RetryInfo'):
+                            match=re.fullmatch(r'(\d+(?:\.\d+)?)s',str(detail.get('retryDelay','')))
+                            if match:wait=max(wait,int(float(match.group(1)))+2)
+                        if str(detail.get('@type','')).endswith('QuotaFailure'):
+                            for violation in detail.get('violations',[]):
+                                quota.append({k:violation[k] for k in ['quotaMetric','quotaId','quotaValue'] if k in violation})
+                    manifest['turns'][tid]['quota_diagnostics']=quota;save()
+                    if any('perday' in str(q).lower().replace('_','') for q in quota) or attempt==6 or wait>180:
+                        raise
+                    print(f'{tid}: rate limited; waiting {wait}s before retrying rejected request. Quota: {json.dumps(quota)}',flush=True)
+                    time.sleep(wait)
             data=audio_bytes(result)
             temporary=dest.with_suffix('.tmp');temporary.write_bytes(data);temporary.replace(dest)
             duration=wav_duration(dest)
