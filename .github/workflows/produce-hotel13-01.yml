@@ -1,0 +1,53 @@
+name: Hotel 13 full audio production 01
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/produce-hotel13-01.yml]
+  workflow_dispatch:
+    inputs:
+      confirm_generation:
+        description: Authorize remaining v1.3 speech generation
+        type: boolean
+        default: false
+      resume_run_id:
+        description: Previous run ID with hotel13-full-audio artifact (optional)
+        type: string
+        default: ''
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  audio:
+    if: github.event.head_commit.message == 'produce-hotel13-01' || inputs.confirm_generation
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install audio assembly tool
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Restore completed turns for explicit resume
+        if: inputs.resume_run_id != '' && github.event_name == 'workflow_dispatch'
+        uses: actions/download-artifact@v4
+        with:
+          name: hotel13-full-audio
+          path: production-output
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Generate and verify v1.3 speech
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CONFIRM_GENERATION: 'true'
+        run: python3 -u scripts/produce_hotel13_audio.py
+      - name: Save full or partial production output
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hotel13-full-audio
+          path: production-output/
+          if-no-files-found: ignore
+          retention-days: 14
