@@ -1,0 +1,29 @@
+[
+  {
+    "file": "L01_lobby_master.png",
+    "width": 1672,
+    "height": 941,
+    "kind": "environment_master",
+    "characters_present": false,
+    "purpose": "ล็อบบี้กลางคืน; เคาน์เตอร์ขวา บันไดกลาง นาฬิกาซ้าย",
+    "qa": "layout_and_lighting_checked; character reference sheets not used because scenes are empty"
+  },
+  {
+    "file": "L02_landing_master.png",
+    "width": 1672,
+    "height": 941,
+    "kind": "environment_master",
+    "characters_present": false,
+    "purpose": "ชานพักหน้าประตูทางเดินห้อง 13; กลอนฝั่งชานพัก",
+    "qa": "layout_and_lighting_checked; character reference sheets not used because scenes are empty"
+  },
+  {
+    "file": "L03_exterior_master.png",
+    "width": 1672,
+    "height": 941,
+    "kind": "environment_master",
+    "characters_present": false,
+    "purpose": "ภายนอกโรงแรมสองชั้นกลางฝน; ไฟหน้าประตูสองดวง",
+    "qa": "layout_and_lighting_checked; character reference sheets not used because scenes are empty"
+  }
+]
