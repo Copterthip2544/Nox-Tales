@@ -11,7 +11,7 @@ permissions:
 jobs:
   audition:
     # One explicit four-sample request. Ordinary future edits must not generate audio.
-    if: github.event.head_commit.message == 'audio: audition main cast 01'
+    if: github.event.head_commit.message == 'audition-main-cast-01'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     steps:
