@@ -1,0 +1,24 @@
+{
+  "approved_voice_turns": 111,
+  "sequential_speech_no_overlaps": true,
+  "continuous_picture_timeline": true,
+  "phone_sequences": [
+    {
+      "rings": 13,
+      "answer_event": "E040",
+      "answer_after_last_ring_seconds": 0.5
+    },
+    {
+      "rings": 13,
+      "answer_event": "E113",
+      "answer_after_last_ring_seconds": 0.5
+    },
+    {
+      "rings": 13,
+      "answer_event": "E159",
+      "answer_after_last_ring_seconds": 0.5
+    }
+  ],
+  "final_frame": 23318,
+  "last_speech_end": 771.74
+}

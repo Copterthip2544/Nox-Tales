@@ -1,0 +1,22 @@
+{
+  "file": "Frame_Tales_Hotel13_Full_v01.mp4",
+  "bytes": 312776816,
+  "sha256": "af5d1d7a50ac51ef0e1bbbcdf4a742561e0b617b938e663b2384cdd4bef54353",
+  "duration_seconds": 777.266667,
+  "picture_audio_end_difference_seconds": 0.026667,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "scene_images_github_commit": "6ae464b5be7b30a25a699c776a4e203d5cbb63de",
+  "remote_film_backup_run": "https://github.com/Copterthip2544/Nox-Tales/actions/runs/43018086112",
+  "remote_film_backup_status": "rendering",
+  "full_video_decode": "passed; ffmpeg error level emitted no errors",
+  "reviewed_render_frames": [
+    "I02 writing orientation",
+    "I04 corrected manager thumb and 05:58 overlay",
+    "J06 correct names and checkout fields",
+    "J08 home phone and hands"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "file": "Frame_Tales_Hotel13_Full_v01.mp4",
+  "duration_seconds": 777.2399999999984,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "shots": 137,
+  "unique_reviewed_images": 64,
+  "speech_turns": 111,
+  "audio_loudness": {
+    "input_i": "-21.18",
+    "input_tp": "-0.64",
+    "input_lra": "8.80",
+    "input_thresh": "-33.00",
+    "output_i": "-16.28",
+    "output_tp": "-1.50",
+    "output_lra": "7.80",
+    "output_thresh": "-27.94",
+    "normalization_type": "dynamic",
+    "target_offset": "0.28"
+  },
+  "motion": "Single direction horizontal pan OR gentle zoom, no shake, 7680 sampling canvas",
+  "tts_regenerated": false,
+  "script_version": "1.3",
+  "brand": "Frame Tales"
+}
