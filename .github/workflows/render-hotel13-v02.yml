@@ -1,0 +1,71 @@
+name: Render Hotel13 Full Film v02
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: [.github/workflows/render-hotel13-v02.yml]
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: hotel13-full-v02
+  cancel-in-progress: false
+jobs:
+  render:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'render-hotel13-v02-01')
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      FILM_BASE: episodes/hotel13/v1.3/production/full
+      FILM_ROOT: episodes/hotel13/v1.4
+      FILM_MASTERS: episodes/hotel13/v1.3/production/masters
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install rendering tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-dejavu-core
+          python -m pip install 'numpy==2.3.5' 'scipy==1.17.0'
+      - name: Restore original approved voices
+        uses: actions/download-artifact@v4
+        with:
+          name: hotel13-full-audio
+          path: original-audio
+          run-id: 42983299790
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Restore fourteen completed Charon patches
+        uses: actions/download-artifact@v4
+        with:
+          name: hotel13-v02-narration
+          path: revision-audio
+          run-id: 43025310456
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build revised edit and scene score without new API calls
+        run: |
+          AUDIO_DIR="$(dirname "$(find original-audio -name speech_timeline.csv -print -quit)")"
+          python scripts/build_hotel13_revision.py --base-root "$FILM_BASE" --root "$FILM_ROOT" --audio "$AUDIO_DIR" --patch revision-audio
+      - name: Render v02 in 1080p
+        run: python scripts/render_hotel13_revision.py --root "$FILM_ROOT" --masters "$FILM_MASTERS" --workers 2
+      - name: Verify complete file decode
+        run: |
+          ffprobe -v error -show_entries format=duration,size:stream=codec_name,width,height,r_frame_rate,sample_rate -of json "$FILM_ROOT/outputs/Frame_Tales_Hotel13_Full_v02.mp4" > "$FILM_ROOT/outputs/ffprobe.json"
+          ffmpeg -v error -i "$FILM_ROOT/outputs/Frame_Tales_Hotel13_Full_v02.mp4" -f null -
+      - name: Upload complete revised film and reports
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hotel13-full-film-v02
+          retention-days: 14
+          if-no-files-found: error
+          path: |
+            episodes/hotel13/v1.4/outputs/Frame_Tales_Hotel13_Full_v02.mp4
+            episodes/hotel13/v1.4/outputs/render_report.json
+            episodes/hotel13/v1.4/outputs/sound_report.json
+            episodes/hotel13/v1.4/outputs/shot_list.csv
+            episodes/hotel13/v1.4/outputs/full_edit_plan.json
+            episodes/hotel13/v1.4/outputs/used_visual_QA.json
+            episodes/hotel13/v1.4/outputs/ffprobe.json
