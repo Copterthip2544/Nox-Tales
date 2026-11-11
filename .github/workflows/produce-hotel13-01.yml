@@ -21,7 +21,7 @@ permissions:
 
 jobs:
   audio:
-    if: github.event.head_commit.message == 'produce-hotel13-resume-01' || inputs.confirm_generation
+    if: github.event.head_commit.message == 'produce-hotel13-paid-resume-01' || inputs.confirm_generation
     runs-on: ubuntu-latest
     timeout-minutes: 90
     steps:
@@ -36,7 +36,7 @@ jobs:
         with:
           name: hotel13-full-audio
           path: production-output
-          run-id: ${{ inputs.resume_run_id || '42970172066' }}
+          run-id: ${{ inputs.resume_run_id || '42970849252' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate and verify v1.3 speech
         env:
