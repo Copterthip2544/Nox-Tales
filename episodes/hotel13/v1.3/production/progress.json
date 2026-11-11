@@ -1,25 +1,27 @@
 {
+  "channel": "Frame Tales",
   "episode": "hotel13",
   "script_version": "1.3",
-  "last_audio_run": 42976247403,
-  "audio_completed": 97,
+  "last_audio_run": 42983299790,
+  "audio_completed": 111,
   "audio_total": 111,
-  "remaining": 14,
-  "measured_generated_speech_seconds": 528.92,
-  "blocked_by": {
-    "http_status": 429,
-    "quota_id": "GenerateRequestsPerDayPerProjectPerModel",
-    "quota_per_day": 100,
-    "model": "gemini-3.8-flash-tts"
+  "remaining": 0,
+  "measured_generated_speech_seconds": 630.56,
+  "measured_reference_seconds": 667.61,
+  "batch_sizes": [
+    5,
+    5,
+    4
+  ],
+  "blocked_by": null,
+  "audio_artifact": {
+    "id": 13838911091,
+    "name": "hotel13-full-audio",
+    "run_url": "https://github.com/Copterthip2544/Nox-Tales/actions/runs/42983299790"
   },
-  "resume": {
-    "workflow": "Hotel 13 full audio production 01",
-    "source_run_id": 42976247403,
-    "automatic_retry": false,
-    "next_action": "Raise daily model quota or wait for confirmed quota reset; resume artifact without regenerating completed turns."
-  },
-  "visual_masters_complete": 3,
+  "technical_qa": "111 WAV files and timing rows checked; no format, empty-audio or clipping flags",
+  "listening_review": "pending",
+  "visual_masters_complete": 4,
   "final_video_exists": false,
-  "character_reference_files_pending": true,
   "all_successful_audio_preserved": true
 }
