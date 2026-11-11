@@ -59,7 +59,7 @@ def main():
  def cut(t,aid,cue):cuts[round(t*FPS)]={'asset':aid,'cue':cue,'motion':None}
  for e in events:
   if e['event_id'] not in patches:continue
-  k=e['event_id'];images=patches[k]['assets']
+  k=e['event_id'];images=['A14_phone_insert'] if k=='R039' else patches[k]['assets']
   for j,aid in enumerate(images):cut(e['start']+e['duration']*j/len(images),aid,k+f' visual {j+1}')
  for r in rings:cut(r['start'],'J07_phone13' if r['kind']=='mobile' else 'A14_phone_insert','Time-elided thirteen-ring sequence')
  # Preserve first phone's child interaction; third call changes shots at the near-answer.

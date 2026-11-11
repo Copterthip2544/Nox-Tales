@@ -49,6 +49,19 @@ jobs:
         run: |
           AUDIO_DIR="$(dirname "$(find original-audio -name speech_timeline.csv -print -quit)")"
           python scripts/build_hotel13_revision.py --base-root "$FILM_BASE" --root "$FILM_ROOT" --audio "$AUDIO_DIR" --patch revision-audio
+      - name: Check handset continuity against the thirteen-ring rule
+        run: |
+          python - <<'PYCHECK'
+          import json,os
+          p=json.load(open(os.environ['FILM_ROOT']+'/outputs/full_edit_plan.json'))
+          e={v['event_id']:v for v in p['events']}
+          for r in p['rings']:
+              if r['kind']=='mobile': continue
+              answer=e[r['answer_event']]['start']
+              bad=[s for s in p['shots'] if s['start_frame']/30<answer-.001 and s['end_frame']/30>r['start'] and s['asset'] in {'D03_Maysa_receiver','D04_Pim_phone_shadow'}]
+              assert not bad
+          print('Handset remains down until the thirteenth ring and answer.')
+          PYCHECK
       - name: Render v02 in 1080p
         run: python scripts/render_hotel13_revision.py --root "$FILM_ROOT" --masters "$FILM_MASTERS" --workers 2
       - name: Verify complete file decode
