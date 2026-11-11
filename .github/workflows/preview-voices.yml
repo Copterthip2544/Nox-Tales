@@ -4,9 +4,9 @@ on:
   workflow_dispatch:
     inputs:
       character:
-        description: Choose one character or all three (maximum three requests)
+        description: Choose one character or all four (maximum four requests)
         type: choice
-        options: [all, nox, manager, lin]
+        options: [all, maysa, nox, manager, lin]
         default: all
       confirm_generation:
         description: Authorize these short Gemini TTS samples and applicable API usage
