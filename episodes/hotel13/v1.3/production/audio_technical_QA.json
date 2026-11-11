@@ -1,0 +1,9 @@
+{
+  "completed": 111,
+  "exact_script_text_and_voice_mapping": true,
+  "wav_format": "PCM16 mono 24000 Hz",
+  "timing_rows": 111,
+  "technical_flags": [],
+  "listening_review": "pending",
+  "final_video_render": "not_created"
+}
