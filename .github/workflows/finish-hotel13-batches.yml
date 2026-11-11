@@ -1,0 +1,90 @@
+name: Frame Tales - finish Hotel 13 in batches of five
+
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/finish-hotel13-batches.yml]
+  workflow_dispatch:
+    inputs:
+      confirm_generation:
+        description: Authorize remaining v1.3 speech in batches of at most five
+        type: boolean
+        default: false
+      resume_run_id:
+        description: Saved run containing completed Hotel 13 audio
+        type: string
+        default: '42976247403'
+
+permissions:
+  contents: read
+  actions: read
+
+jobs:
+  finish:
+    if: github.event.head_commit.message == 'finish-hotel13-batches-5-5-4' || inputs.confirm_generation
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Wait for the documented daily reset window if still before it
+        run: |
+          python3 -u - <<'PY'
+          from datetime import datetime, timezone
+          import time
+          reset=datetime(2026,11,11,8,0,10,tzinfo=timezone.utc)
+          while (left:=(reset-datetime.now(timezone.utc)).total_seconds())>0:
+              if left>600:
+                  raise SystemExit("Reset more than ten minutes away; review schedule.")
+              print(f"Waiting for quota reset: {left:.0f}s",flush=True)
+              time.sleep(min(left,30))
+          print("Reset window reached; actual API response will determine availability.")
+          PY
+      - name: Install assembly tool
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+      - name: Restore saved audio
+        uses: actions/download-artifact@v4
+        with:
+          name: hotel13-full-audio
+          path: production-output
+          run-id: ${{ inputs.resume_run_id || '42976247403' }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify the 97 existing turns are retained
+        run: |
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('production-output')
+          m=json.loads((p/'manifest.json').read_text())
+          completed=[x for x in m['turns'].values() if x.get('request_state')=='complete']
+          assert len(completed)>=97
+          assert all((p/x['file']).exists() for x in completed)
+          print(f"Restored {len(completed)} completed turns.")
+          PY
+      - name: Batch 1 - at most five new turns
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CONFIRM_GENERATION: 'true'
+          MAX_NEW_TURNS: '5'
+        run: python3 -u scripts/produce_hotel13_audio_batch5.py
+      - name: Batch 2 - at most five new turns
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CONFIRM_GENERATION: 'true'
+          MAX_NEW_TURNS: '5'
+        run: python3 -u scripts/produce_hotel13_audio_batch5.py
+      - name: Batch 3 - remaining turns and reference assembly
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CONFIRM_GENERATION: 'true'
+          MAX_NEW_TURNS: '5'
+        run: python3 -u scripts/produce_hotel13_audio_batch5.py
+      - name: Preserve all completed audio and reports
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hotel13-full-audio
+          path: production-output/
+          if-no-files-found: ignore
+          retention-days: 14
