@@ -21,9 +21,9 @@ permissions:
 
 jobs:
   audio:
-    if: github.event.head_commit.message == 'produce-hotel13-01' || inputs.confirm_generation
+    if: github.event.head_commit.message == 'produce-hotel13-resume-01' || inputs.confirm_generation
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -31,12 +31,12 @@ jobs:
       - name: Install audio assembly tool
         run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
       - name: Restore completed turns for explicit resume
-        if: inputs.resume_run_id != '' && github.event_name == 'workflow_dispatch'
+        if: inputs.resume_run_id != '' || github.event_name == 'push'
         uses: actions/download-artifact@v4
         with:
           name: hotel13-full-audio
           path: production-output
-          run-id: ${{ inputs.resume_run_id }}
+          run-id: ${{ inputs.resume_run_id || '42970172066' }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Generate and verify v1.3 speech
         env:
