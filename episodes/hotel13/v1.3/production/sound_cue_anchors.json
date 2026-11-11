@@ -1,0 +1,38 @@
+{
+  "first_phone": {
+    "start_after": "E034",
+    "child_appears_after_ring": 5,
+    "child_turns": [
+      "E036",
+      "E037",
+      "E038"
+    ],
+    "mother_turn_starts_after_ring13": "E040",
+    "ring_count": 13
+  },
+  "second_phone": {
+    "start_after": "E102",
+    "ring_4_turn": "E105",
+    "ring_6_turn": "E107",
+    "ring_9_turn": "E109",
+    "ring_12_turn": "E111",
+    "mother_turn_starts_after_ring13": "E113",
+    "ring_count": 13
+  },
+  "ending_phone": {
+    "start_after": "E157",
+    "auto_answer_after_ring": 13,
+    "first_voice": "E159",
+    "ring_count": 13
+  },
+  "clock": {
+    "event": "E146",
+    "strike_count": 6,
+    "prerequisite": "Family crosses exit threshold before first strike"
+  },
+  "key": {
+    "return_confirmed_by": "E143",
+    "must_precede_exit_open": true
+  },
+  "time_status": "semantic anchors only, final seconds must be computed after audio assembly"
+}
