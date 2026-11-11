@@ -1,3 +1,3 @@
 Nox Tales GitHub connection test
-Stage: created
-Temporary file; remove after verification.
+Stage: updated
+Create and edit verified. Remove after verification.
