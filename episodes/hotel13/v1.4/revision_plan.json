@@ -1,0 +1,166 @@
+{
+  "script_version": "1.4",
+  "edit_version": "v02",
+  "base_script": "1.3",
+  "model": "gemini-3.8-flash-tts",
+  "voice": "Charon",
+  "turns": [
+    {
+      "id": "R039",
+      "anchor": "E039",
+      "text": "เมษารอจนเสียงเรียกครั้งที่สิบสามจบลง แล้วจึงยกหู",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Keep suspense, concise connective narration.",
+      "assets": [
+        "A14_phone_insert",
+        "D03_Maysa_receiver"
+      ]
+    },
+    {
+      "id": "R110",
+      "anchor": "E110",
+      "text": "ลินยังหลับอยู่ข้างเธอ เสียงในโทรศัพท์กำลังโกหก",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Quiet dawning certainty, controlled tension.",
+      "assets": [
+        "G02_Lin_sleep_solo",
+        "G04_Maysa_waiting"
+      ]
+    },
+    {
+      "id": "R112",
+      "anchor": "E112",
+      "text": "เธอรอ จนเสียงเรียกครั้งที่สิบสามจบลง",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Determined and taut, without a long pause.",
+      "assets": [
+        "A14_phone_insert"
+      ]
+    },
+    {
+      "id": "R125A",
+      "anchor": "E125",
+      "text": "พอผู้จัดการขึ้นพ้นบันได เมษาก็รีบเข้าไปในสำนักงาน สมุดที่เธอต้องการเปิดค้างอยู่บนโต๊ะ",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Urgent but intelligible, brisk forward momentum.",
+      "assets": [
+        "H02_manager_key_stairs",
+        "H04_Maysa_takes_ledger"
+      ]
+    },
+    {
+      "id": "R125B",
+      "anchor": "E125",
+      "text": "ข้างสมุดมีรายงานไฟไหม้กับจดหมายถึงครอบครัวผู้เสียชีวิต ทุกฉบับเขียนค้างไว้ เธอไม่มีเวลาอ่านต่อ",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Tense discovery, keep moving, no lingering at sentence breaks.",
+      "assets": [
+        "H03_office_papers_v2"
+      ]
+    },
+    {
+      "id": "R125C",
+      "anchor": "E125",
+      "text": "เมษาคว้าสมุดกับปากกา กลับไปที่เคาน์เตอร์ ตอนนั้นตีห้าห้าสิบสี่แล้ว",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Controlled urgency; emphasize the time naturally.",
+      "assets": [
+        "H04_Maysa_takes_ledger",
+        "I02_Maysa_writing_v2"
+      ]
+    },
+    {
+      "id": "R134",
+      "anchor": "E134",
+      "text": "เมษารีบลงเวลาแล้วเซ็นชื่อ แต่ช่องรับคืนกุญแจยังว่าง กุญแจดอกนั้นยังอยู่ในมือผู้จัดการ",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Increasing pressure, slightly quicker, clearly explain the obstacle.",
+      "assets": [
+        "I02_Maysa_writing_v2",
+        "I04_Pim_key_grip_v2"
+      ]
+    },
+    {
+      "id": "R136",
+      "anchor": "E136",
+      "text": "เขาพุ่งกลับลงมา แต่ภาคินก้าวขวางทางลงบันไดไว้",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Immediate danger; brisk without shouting.",
+      "assets": [
+        "I01_landing_confront",
+        "I03_Phakhin_blocks_v2"
+      ]
+    },
+    {
+      "id": "R139",
+      "anchor": "E139",
+      "text": "ตีห้าห้าสิบแปดแล้ว อีกไม่ถึงสองนาที เธอต้องรับกุญแจคืนให้ได้",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Taut countdown; stronger emphasis, no exaggerated whisper.",
+      "assets": [
+        "I04_Pim_key_grip_v2",
+        "I02_Maysa_writing_v2"
+      ]
+    },
+    {
+      "id": "R142A",
+      "anchor": "E142",
+      "text": "พิมค่อย ๆ คลายนิ้วที่กำแน่น กุญแจหลุดจากมือเขา ตกลงบนพรม",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Build, then release on the falling key.",
+      "assets": [
+        "I04_Pim_key_grip_v2",
+        "I05_key_fallen"
+      ]
+    },
+    {
+      "id": "R142B",
+      "anchor": "E142",
+      "text": "เมษารีบคว้ามันขึ้นมา ความร้อนแล่นเข้าฝ่ามือ แต่เธอไม่ยอมปล่อย",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Sharp pain and determination, move briskly.",
+      "assets": [
+        "I05_key_fallen",
+        "I06_Maysa_returnskey_v2"
+      ]
+    },
+    {
+      "id": "R142C",
+      "anchor": "E142",
+      "text": "เธอแขวนกุญแจคืนแผง แล้วทำเครื่องหมายช่องสุดท้าย ห้านาฬิกาห้าสิบเก้านาที",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Intense to relieved, land the final time cleanly.",
+      "assets": [
+        "I06_Maysa_returnskey_v2"
+      ]
+    },
+    {
+      "id": "R146",
+      "anchor": "E146",
+      "text": "พิมกับภาคินพาลินเดินออกไป ทันทีที่ทั้งสามพ้นประตู นาฬิกาก็เริ่มตีหกโมง",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Gentle release, final words hold a trace of unease.",
+      "assets": [
+        "I07_family_exit_v2"
+      ]
+    },
+    {
+      "id": "R158",
+      "anchor": "E158",
+      "text": "เมษาปล่อยให้มันดังจนครบสิบสามครั้ง เธอยังไม่ทันแตะ โทรศัพท์ก็รับสายเอง",
+      "voice": "Charon",
+      "style": "Thai male horror storyteller, warm resonant Charon voice, calm and intimate, clear standard Thai. Natural short-film narration, no theatrical announcer voice. Quiet fear returns, measured but no drawn out pauses.",
+      "assets": [
+        "J07_phone13",
+        "J08_Maysa_home_fear_v2",
+        "J07_phone13"
+      ]
+    }
+  ],
+  "replaced_events": [
+    "E125"
+  ],
+  "preserve_all_other_dialogue": true,
+  "phone_edit": "Time elision: opening rings, intervening dialogue/narration, last (13th) ring. Not thirteen accelerated rings. Characters still wait until thirteen. Displayed/audible rings are reported separately.",
+  "music": "Original instrumental arrangement: mystery, discovery, suspense, urgent countdown, release, final dread. Automated gentle ducking beneath all speech, near-silence on key lines."
+}

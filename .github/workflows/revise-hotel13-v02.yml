@@ -1,0 +1,41 @@
+name: Hotel13 v02 - Charon narration revision
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/revise-hotel13-v02.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  narration:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'hotel13-v02-narration-01')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Generate at most five Charon segments - batch 1
+        run: python3 -u scripts/generate_hotel13_revision.py
+      - name: Generate at most five Charon segments - batch 2
+        run: python3 -u scripts/generate_hotel13_revision.py
+      - name: Generate remaining Charon segments - batch 3
+        run: python3 -u scripts/generate_hotel13_revision.py
+      - name: Verify all fourteen patches
+        run: |
+          python3 - <<'PY'
+          import json
+          m=json.load(open('revision-audio/manifest.json'))
+          assert len(m['turns'])==14
+          assert all(v['status']=='complete' for v in m['turns'].values())
+          PY
+      - name: Save every completed patch even on failure
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hotel13-v02-narration
+          path: revision-audio/
+          if-no-files-found: error
+          retention-days: 14
