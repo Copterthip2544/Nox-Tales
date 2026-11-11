@@ -1,0 +1,35 @@
+name: Frame Tales - align full approved narration
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/align-hotel13-narration.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+jobs:
+  align:
+    if: github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'align-hotel13-narration-01'
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: hotel13-full-audio
+          path: production-output
+          run-id: 42983299790
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Estimate paragraph times from actual recordings
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/align_hotel13_narration.py
+      - if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hotel13-full-narration-alignment
+          path: narration-alignment/
+          if-no-files-found: error
+          retention-days: 14
