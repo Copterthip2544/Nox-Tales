@@ -17,11 +17,15 @@
       "status": "user_approved"
     },
     "maysa": {
-      "voice": "Achernar",
-      "status": "awaiting_user_listening_review",
-      "direction": "soft, gentle, warm adult Thai woman about 25",
-      "audition_run": 42967390014,
-      "previous_voice": "Kore"
+      "voice": "Kore",
+      "status": "user_approved",
+      "direction": "A young adult Thai woman, natural conversational delivery, polite and slightly nervous, clear standard Thai, grounded short-film acting, not a narrator and not a child.",
+      "approved_reference_run": 42966887368,
+      "approved_reference_file": "maysa.wav",
+      "rejected_alternative": {
+        "voice": "Achernar",
+        "audition_run": 42967390014
+      }
     }
   }
 }
