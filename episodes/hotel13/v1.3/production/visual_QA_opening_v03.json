@@ -1,0 +1,76 @@
+{
+  "version": "opening-v03",
+  "review_method": "Direct visual inspection of each full-resolution still before rendering; not an automated guarantee of perfect anatomy.",
+  "checks": [
+    "Visible shoulder-elbow-wrist continuity",
+    "Extra or detached limbs/hands",
+    "Visible fingers and object grip",
+    "Face/hair/wardrobe against available character references",
+    "Narrated action and shot readability"
+  ],
+  "rejected_assets": [
+    {
+      "asset": "A04_Maysa_phone.png",
+      "sha256": "29506ac6c873c28c21f3b09d5202c3633f037230ccc9f085a3733377ccd8135a",
+      "reason": "Ambiguous duplicated sleeve/arm junction in phone-check pose; do not reuse."
+    }
+  ],
+  "assets": {
+    "A01_NOX_host.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "60a6a88edf40b4ecb9202909653d8a4856476896886606ca0777f0fb13ac7170",
+      "observations": "Two front paws visible on desk; no extra visible paw. Stylized cat anatomy intentionally differs from human."
+    },
+    "A02_key13_insert.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "9158388c0f7c50719b027c173af1ccc1e1536424511617f2423998e6d4039b8a",
+      "observations": "Key/tag ring attachments and physical numeral 13 reviewed; no human limb in frame."
+    },
+    "A03_Maysa_arrival.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "c3a51ff26dd50ecb7afeb7ea88c1bf13c2667f1c96621758afec792134f311dd",
+      "observations": "Two separate shoulder-arm chains: one lowered phone hand and one bag-strap hand; no duplicated arm visible."
+    },
+    "A04_Maysa_phone_v03.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "633f6dea25b8f7309421fad422123f7c52d04c4007a87e2e540d9bd3613eee1a",
+      "observations": "Replacement frontal pose: one continuous arm from each shoulder. Right elbow bent holding phone; left arm relaxed beside thigh. No overlapping duplicate sleeve. Face, hair and pre-uniform blouse checked against sheet."
+    },
+    "A05_phone_map.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "6a28339b05abec0e9c2f52c88bebf54fd389a803470475f8ab4f78cdd844d339",
+      "observations": "Visible grip reviewed: thumb and four fingertips wrap one phone; wrist continues into one sleeve. No detached extra hand."
+    },
+    "A06_Maysa_hope.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "d8e08597fdb51680f8b7130d8806884c02e5edcb8c97ce21cdfe93850d4c2562",
+      "observations": "Face/neck/visible shoulder silhouette reviewed. Hands and most arms are outside crop; no claim about hidden anatomy."
+    },
+    "A07_Maysa_steps.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "337aef8ba65e7effc9954f39b865d9a06babec6082cbaf0a0dda22d0d6b8e70e",
+      "observations": "Rear full-body pose: two legs with distinct stair contacts, two arm chains; phone hand and bag strap separated."
+    },
+    "A08_lobby_entry.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "56a137da6a9410b82d2e64bdfe1b7cff61da763a3687364b47b6689d54b18572",
+      "observations": "Rear Maysa silhouette and two manager arms reviewed at original resolution. No obvious duplicated limb found in this view."
+    },
+    "A09_manager_waiting.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "7d482bce18c74c992af124a8925c83d37705f1acaf23aea29a4f41f591399ed5",
+      "observations": "Two forearms, one watch hand, one ledger hand. Visible fingers reviewed; obscured fingers not inferred."
+    },
+    "L02_landing_master.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "b39ca40d738cca700854808ea90535356520abd29826db93e841c0913e564ef6",
+      "observations": "Environment-only; rail, door and exterior bolt reviewed. No person present."
+    },
+    "L03_exterior_master.png": {
+      "status": "reviewed_for_edit",
+      "sha256": "256167cfa62c3d6a2fdbe7106d561c616f3e4fa6d79f2c370d501fdb6799b83f",
+      "observations": "Environment-only; hotel entrance and two lamps reviewed. No person present."
+    }
+  },
+  "scope": "Opening E001 only. Future stills require their own visual inspection and hash entry before editing."
+}

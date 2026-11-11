@@ -1,4 +1,4 @@
-name: Frame Tales - Hotel 13 smooth opening v02
+name: Frame Tales - Hotel 13 smooth opening v03
 on:
   push:
     branches: [main]
@@ -9,7 +9,7 @@ permissions:
   actions: read
 jobs:
   render:
-    if: github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'render-hotel13-opening-02'
+    if: github.event_name == 'workflow_dispatch' || github.event.head_commit.message == 'render-hotel13-opening-03'
     runs-on: ubuntu-latest
     timeout-minutes: 20
     steps:
@@ -26,14 +26,14 @@ jobs:
           run-id: 42983299790
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Render 13 shots with smooth motion
-        run: python3 scripts/render_hotel13_opening_v02.py
+        run: python3 scripts/render_hotel13_opening_v03.py
       - name: Save revised opening
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: hotel13-opening-assembly-v02
+          name: hotel13-opening-assembly-v03
           path: |
-            opening-output-v02/Frame_Tales_Hotel13_Opening_Assembly_v02.mp4
-            opening-output-v02/opening_report.json
-            opening-output-v02/shot_list.csv
+            opening-output-v03/Frame_Tales_Hotel13_Opening_Assembly_v03.mp4
+            opening-output-v03/opening_report.json
+            opening-output-v03/shot_list.csv
           if-no-files-found: error
           retention-days: 14
