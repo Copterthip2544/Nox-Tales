@@ -1,16 +1,9 @@
-# Frame Tales — ฉากเปิดฉบับประกอบภาพและเสียง
+# Opening assembly v02 — Frame Tales
 
-[ดาวน์โหลดวิดีโอจากผลรัน](https://github.com/Copterthip2544/Nox-Tales/actions/runs/42986352573)
+Replaces the rejected four-shot v01. Thirteen shots / eleven unique stills across the approved E001 narration (61.32 seconds). Eight new or revised generated images: Maysa arrival, phone check, map insert, worried/hopeful close-up, steps, lobby entry, manager, and physical brass key tag engraved 13.
 
-Artifacts → hotel13-opening-assembly → ดาวน์โหลด ZIP → เปิด Frame_Tales_Hotel13_Opening_Assembly_v01.mp4
+Motion: one slow horizontal pan OR gentle 2.5% zoom per shot. Still is supersampled to 7680×4320 before motion sampling to reduce integer crop jitter; 1920×1080 / 30fps export. No shake effects. Character sheets supplied in Charactersheet.zip were extracted locally and used as image references. Maysa has no uniform waistcoat/badge yet; manager remains in burgundy. Lobby reception stays screen right, stairs center, clock left.
 
-- ความยาวจริงประมาณ 61.33 วินาที ใช้เสียง E001 ที่ผู้ใช้ตรวจผ่านแล้ว
-- MP4 H.264 1920×1080 24 fps / AAC 48 kHz
-- ภาพ NOX → กุญแจ → ภายนอกโรงแรม → ล็อบบี้ พร้อมซูมช้า
-- การเปลี่ยนภาพเป็นตำแหน่งตัดต่อร่าง ยังไม่ใช่ word-level alignment
-- ยังไม่มีเพลง เสียงบรรยากาศ และเลเยอร์เลข13บนป้ายกุญแจ
-- ยังไม่ใช่วิดีโอเต็ม 10–15 นาที
+Timing uses audio-estimated paragraph boundaries and editorial subparagraph placement; it is not word-level forced alignment. Original approved E001 speech reused; no TTS regeneration. This is an opening assembly, not the complete film. Final music/ambience/SFX and remaining sections are still pending.
 
-เสียงแยกครบ111ช่วงอยู่ในผลรัน42983299790 และมีภาพต้นแบบจริงเพิ่มเติม A02_key_insert.png / A14_phone_insert.png ใน masters/
-
-ก่อนสร้างช็อตใบหน้าตัวละครต่อ ต้องนำ character sheets เมษา ผู้จัดการ ภาคิน พิม และลินมาเก็บเป็นไฟล์ในพื้นที่ทำงาน โดยให้ผู้ใช้แนบ ZIP รวมภาพ จะอ้างอิงตรงกับ ChatGPT ได้และไม่ต้องใช้การส่งไฟล์อ้างอิงไปบริการภาพอื่น
+Workflow artifact: hotel13-opening-assembly-v02. Includes MP4, measured duration/motion report, and CSV shot list. Continue subsequent production in groups of five narration/dialogue turns using the same motion and literal-action coverage rules.
