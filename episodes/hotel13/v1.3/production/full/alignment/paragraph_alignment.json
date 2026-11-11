@@ -1,0 +1,300 @@
+{
+  "events": {
+    "E022": {
+      "duration": 9.24,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.34,
+          "end_seconds": 4.14,
+          "text": "สองชั่วโมงแรกผ่านไปโดยไม่มีแขกเข้ามาสักคน"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.94,
+          "end_seconds": 8.93,
+          "text": "ใกล้เที่ยงคืน เสียงรองเท้าหนังดังขึ้นหน้าล็อบบี้"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E034": {
+      "duration": 17.76,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.3,
+          "end_seconds": 3.76,
+          "text": "พอเมษาหันกลับ ชายคนนั้นก็ไม่อยู่แล้ว"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.6,
+          "end_seconds": 11.7,
+          "text": "ประตูทางเข้ายังปิด กระดิ่งไม่ดัง และบนพื้นไม่มีรอยน้ำสักหยด ทั้งที่ปลายเสื้อโค้ตของเขาเปียกฝน"
+        },
+        {
+          "index": 2,
+          "start_seconds": 12.9,
+          "end_seconds": 17.3,
+          "text": "เวลาตีสองสิบสามนาที โทรศัพท์จากห้องสิบสามดังขึ้น"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E055": {
+      "duration": 9.48,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.0,
+          "end_seconds": 4.56,
+          "text": "ผู้จัดการไม่รับสาย ส่วนมือถือของเมษาก็ไม่มีสัญญาณ"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.56,
+          "end_seconds": 9.48,
+          "text": "ขณะกำลังจะลองอีกครั้ง เสียงที่เธอจำได้ก็ดังจากข้างเสา"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E063": {
+      "duration": 8.32,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.44,
+          "end_seconds": 3.76,
+          "text": "เงานั้นค่อย ๆ ถอยหายเข้าไปในผนัง"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.58,
+          "end_seconds": 8.16,
+          "text": "เมษาดึงเก้าอี้ของลินมาใกล้ตัวกว่าเดิม"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E068": {
+      "duration": 54.52,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.4,
+          "end_seconds": 4.8,
+          "text": "ลินบอกวันที่ ตรงกับวันนี้ แต่เป็นเมื่อยี่สิบปีก่อน"
+        },
+        {
+          "index": 1,
+          "start_seconds": 5.5,
+          "end_seconds": 14.3,
+          "text": "เมษาค้นทะเบียนเก่าในตู้ใต้เคาน์เตอร์ เล่มที่ต้องการถูกดันไว้ลึกที่สุด ขอบปกมีรอยดำเหมือนถูกไฟ"
+        },
+        {
+          "index": 2,
+          "start_seconds": 15.2,
+          "end_seconds": 24.8,
+          "text": "ห้องสิบสาม นายภาคิน นางพิม และเด็กหญิงลลิน ชำระครบแล้ว แต่ช่องเช็กเอาต์ยังว่าง"
+        },
+        {
+          "index": 3,
+          "start_seconds": 25.8,
+          "end_seconds": 32.8,
+          "text": "หมึกส่วนอื่นซีดจนแทบอ่านไม่ออก มีเพียงชื่อสามคนนี้ที่ดำเข้ม เหมือนเพิ่งเขียนลงไป"
+        },
+        {
+          "index": 4,
+          "start_seconds": 33.5,
+          "end_seconds": 43.2,
+          "text": "ระหว่างหน้ามีข่าวไฟไหม้โรงแรม ผู้เสียชีวิตสามราย แม่กับลูกติดอยู่ในทางเดินชั้นสอง ส่วนพ่อกลับเข้าอาคารเพื่อช่วยครอบครัว"
+        },
+        {
+          "index": 5,
+          "start_seconds": 44.1,
+          "end_seconds": 47.7,
+          "text": "ภาพเล็ก ๆ ข้างข่าว ทำให้เมษาหยุดหายใจไปชั่วขณะ"
+        },
+        {
+          "index": 6,
+          "start_seconds": 48.4,
+          "end_seconds": 54.1,
+          "text": "เด็กอุ้มกระต่าย ผู้หญิงชุดสีอ่อน และชายที่มาขอกุญแจตอนเที่ยงคืน"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E099": {
+      "duration": 11.84,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.0,
+          "end_seconds": 4.437,
+          "text": "หลังประตูสำนักงานปิด เมษาลองเปิดประตูทางเข้า"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.98,
+          "end_seconds": 11.455,
+          "text": "มันไม่ได้ล็อก ฝนหยุดแล้ว เธอเดินออกไปถึงถนนใหญ่ได้ ไม่มีใครขวาง"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E102": {
+      "duration": 17.44,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.0,
+          "end_seconds": 1.9,
+          "text": "เมษากลับมานั่งข้างลิน"
+        },
+        {
+          "index": 1,
+          "start_seconds": 2.55,
+          "end_seconds": 10.4,
+          "text": "ใกล้เช้าแล้ว แต่เธอเพิ่งเข้าใจว่า สำหรับคนบางคน เช้าอาจมาไม่ถึงเลย"
+        },
+        {
+          "index": 2,
+          "start_seconds": 11.4,
+          "end_seconds": 17.15,
+          "text": "ตีห้าสิบเจ็ดนาที โทรศัพท์จากห้องสิบสามดังขึ้นอีกครั้ง"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E125": {
+      "duration": 24.04,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.0,
+          "end_seconds": 4.56,
+          "text": "ทันทีที่เสียงรองเท้าพ้นชานพัก เมษาก็เข้าสำนักงาน"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.56,
+          "end_seconds": 19.06,
+          "text": "สมุดเปิดค้างอยู่บนโต๊ะ ข้างกันมีรายงานไฟไหม้ คำให้การ และจดหมายหลายฉบับ ทุกฉบับขึ้นต้นถึงครอบครัวผู้เสียชีวิต แต่ไม่มีฉบับไหนเขียนจบ"
+        },
+        {
+          "index": 2,
+          "start_seconds": 19.06,
+          "end_seconds": 24.04,
+          "text": "เธอคว้าสมุดกับปากกา กลับมาที่เคาน์เตอร์ตอนตีห้าห้าสิบสี่นาที"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E150": {
+      "duration": 9.28,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.0,
+          "end_seconds": 3.75,
+          "text": "พอสัญญาณโทรศัพท์กลับมา เมษาก็แจ้งตำรวจ"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.13,
+          "end_seconds": 8.84,
+          "text": "แต่หลังเจ้าหน้าที่เข้าไปตรวจ เขากลับมีคำถามที่เธอไม่คิดว่าจะได้ยิน"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E157": {
+      "duration": 54.68,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.0,
+          "end_seconds": 7.7,
+          "text": "ประตูทางเดินเปิดได้ ข้างในไม่มีใคร โทรศัพท์สีงาช้างในห้องถูกตัดสายไปแล้ว"
+        },
+        {
+          "index": 1,
+          "start_seconds": 7.7,
+          "end_seconds": 15.2,
+          "text": "แต่ลูกบิดด้านในมีรอยข่วนใหม่ ใต้ประตูมีเศษเล็บติดอยู่หนึ่งชิ้น"
+        },
+        {
+          "index": 2,
+          "start_seconds": 15.2,
+          "end_seconds": 30.5,
+          "text": "เมษาไม่กลับไปที่โรงแรมอีก แผลใช้เวลาหลายสัปดาห์กว่าจะหาย ส่วนหน้าทะเบียนที่เธอเก็บมา ยังมีชื่อทั้งสามคนกับลายเซ็นของเธอ เวลาเช็กเอาต์ ห้านาฬิกาห้าสิบเก้านาที"
+        },
+        {
+          "index": 3,
+          "start_seconds": 30.5,
+          "end_seconds": 35.8,
+          "text": "ใต้ลงไป ในบรรทัดที่เคยว่าง มีชื่อผู้เข้าพักคนใหม่"
+        },
+        {
+          "index": 4,
+          "start_seconds": 35.8,
+          "end_seconds": 41.2,
+          "text": "เป็นชื่อผู้จัดการ ห้องสิบสาม ไม่ระบุวันออก"
+        },
+        {
+          "index": 5,
+          "start_seconds": 41.2,
+          "end_seconds": 45.7,
+          "text": "เธอคิดว่ามันจบแล้ว จนกระทั่งครบรอบหนึ่งปี"
+        },
+        {
+          "index": 6,
+          "start_seconds": 45.7,
+          "end_seconds": 54.34,
+          "text": "ตีสองสิบสามนาที โทรศัพท์มือถือของเมษาดังขึ้น ไม่มีเบอร์ผู้โทร มีเพียงเลขสิบสาม"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E162": {
+      "duration": 8.88,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.32,
+          "end_seconds": 3.4,
+          "text": "ถ้าคืนนี้มีใครโทรมาถามเวลา…"
+        },
+        {
+          "index": 1,
+          "start_seconds": 4.35,
+          "end_seconds": 8.45,
+          "text": "ดูให้แน่ใจก่อนนะครับ ว่าเขารอเช้าอยู่ที่ไหน"
+        }
+      ],
+      "method": "Gemini acoustic estimate; not word-level forced alignment"
+    },
+    "E122": {
+      "duration": 12.04,
+      "paragraphs": [
+        {
+          "index": 0,
+          "start_seconds": 0.3,
+          "end_seconds": 4.32,
+          "text": "เสียงเรียกดังซ้ำเป็นระยะ ผู้จัดการยังไม่ออกมา"
+        },
+        {
+          "index": 1,
+          "start_seconds": 5.06,
+          "end_seconds": 11.7,
+          "text": "จนเกือบตีห้าห้าสิบ ประตูสำนักงานจึงเปิดออก ในมือเขามีกุญแจห้องสิบสาม"
+        }
+      ],
+      "method": "Gemini acoustic estimates recovered from malformed raw JSON; manually validated bounds"
+    }
+  },
+  "failures": {},
+  "scope": "Already approved Thai Nox narration; no speech generated."
+}

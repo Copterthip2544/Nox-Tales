@@ -1,0 +1,470 @@
+{
+  "episode": "โรงแรมห้อง 13 — แขกที่ห้ามเช็กเอาต์",
+  "brand": "Frame Tales",
+  "script": "v1.3",
+  "priority": "Quality first; 19:00 Bangkok is desired, not a reason to skip QA",
+  "stage": "paused_for_user_image_review",
+  "audio": "111 approved turns ready, do not regenerate",
+  "opening": "v03 approved, preserve 13 shots and corrected phone image",
+  "style": "16:9 cinematic illustrated storytelling, single-direction pan OR gentle zoom; no shake",
+  "assets": {
+    "B01_contract": {
+      "file": "assets/B01_contract.png",
+      "sha256": "cb891ceb632874f2b268e9702495c204966d200e9de7c87a07b9c53f495d4223",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two coherent Maysa arms and separated signing/resting hands. Manager clasped hands plausible. Folded vest and badge remain off body. Lobby geometry retained.",
+      "source_generation": "exec-82b0ca18-499c-4aa6-b614-525cb6776b60.png",
+      "user_approval": "pending"
+    },
+    "B02_Maysa_uniform": {
+      "file": "assets/B02_Maysa_uniform.png",
+      "sha256": "a4ee1108f68b5342a745b858e02a63812fa87a05c4932fd64a96330edb4b9ab3",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two arms continuous with separate relaxed hands, uniform matches sheet and no bag. Ivory pushbutton telephone, ledger, key rack remain consistent.",
+      "source_generation": "exec-da415120-4d70-44d6-993f-da11196dc330.png",
+      "user_approval": "pending"
+    },
+    "B03_checkout_ledger": {
+      "file": "archive/B03_checkout_ledger.png",
+      "sha256": "e64de8cdeea598ec33fc6cca5722d6ddbe812e150434b0c4b92c0bd550a37765",
+      "status": "rejected",
+      "visual_review": "Ledger pictograms and changed round key tag are unsuitable; use v2.",
+      "source_generation": "exec-540b5cd6-613a-4cf3-9fc0-725fb8f14efa.png",
+      "user_approval": "not_applicable"
+    },
+    "C01_Phakhin_shadow": {
+      "file": "assets/C01_Phakhin_shadow.png",
+      "sha256": "d25c659b2012cb91e16e70b7e14207b332db1a57413d3731801cc26bf9e979ad",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two coherent arms and two legs, face intentionally concealed in shadow, dry floor and guest-side column geography retained.",
+      "source_generation": "exec-4cf8a784-1605-4986-82c4-45aa6abce19d.png",
+      "user_approval": "pending"
+    },
+    "B03_checkout_ledger_v2": {
+      "file": "assets/B03_checkout_ledger_v2.png",
+      "sha256": "636a6e1b5e66ebcaad17f0fe4a6d9a12b50ba1f73f4d6e338997e63d7902d15b",
+      "status": "reviewed_for_edit",
+      "visual_review": "Normal pointing hand reviewed; believable fine ruled ledger replaces icon version. Key omitted to avoid prop mismatch.",
+      "source_generation": "exec-5e167c18-c51e-4e36-9cf0-0ee04e4c9b03.png",
+      "user_approval": "pending"
+    },
+    "C02_Phakhin_lit": {
+      "file": "assets/C02_Phakhin_lit.png",
+      "sha256": "715aa47e14ab15d38bc589c24d5a0cb18a5dcef6e15d0ff2ca7b3a4b6e9a156f",
+      "status": "reviewed_for_edit",
+      "visual_review": "Face visible and matches sheet; no hands in crop, no duplicated visible limbs.",
+      "source_generation": "exec-3e609887-3b16-4f18-809a-fbd1355d1266.png",
+      "user_approval": "pending"
+    },
+    "C03_Maysa_key": {
+      "file": "archive/C03_Maysa_key.png",
+      "sha256": "1b61236b99c414e3c53cf30fb04da484be891b4d093fdef7b28212f6b5fb61ca",
+      "status": "rejected",
+      "visual_review": "Tag aspect ratio inconsistent with master; replaced by v2.",
+      "source_generation": "exec-cd07c04b-727b-4f2a-968a-b8303ae4d5b5.png",
+      "user_approval": "not_applicable"
+    },
+    "D01_Lin_arrives": {
+      "file": "assets/D01_Lin_arrives.png",
+      "sha256": "cccfb572afedb40dbeda8b5db5b0d6ea097c8298ac5e9c3c1d6f585b520149b5",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two child arms cradle one rabbit, two feet and correct dress/bows; phone on base before ring13. No obvious duplicated limb.",
+      "source_generation": "exec-3c9a7cf3-8643-4564-af41-8db7956f7287.png",
+      "user_approval": "pending"
+    },
+    "D02_Lin_close": {
+      "file": "assets/D02_Lin_close.png",
+      "sha256": "e948f52e7f019e93a5683d2e520e5fc6f4d452940f790c53a6525112e080302c",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two child hands around single rabbit, face and red bows consistent; no obvious extra digits in visible grip.",
+      "source_generation": "exec-e7c87eed-34dc-46f9-b49e-30e23915989d.png",
+      "user_approval": "pending"
+    },
+    "D03_Maysa_receiver": {
+      "file": "assets/D03_Maysa_receiver.png",
+      "sha256": "3e41edbd2c3a45e103fe6816f1bf221bd3e0cdad997c2b0ae46965077b67ff12",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two separate arms; raised receiver held at right ear, left hand rests on desk. Cradle correctly empty, coiled cord continuous.",
+      "source_generation": "exec-40879d15-d88d-448e-88d4-718e952d3f97.png",
+      "user_approval": "pending"
+    },
+    "D04_Pim_phone_shadow": {
+      "file": "assets/D04_Pim_phone_shadow.png",
+      "sha256": "6e64642806bcd9c70c3b73a3e49c3d2d7cbdff8ff09b275b10517ccbcf672433",
+      "status": "reviewed_for_edit",
+      "visual_review": "One visible raised arm holding one handset, empty base and continuous cord. Mother face intentionally unrevealed, off-white lace retained.",
+      "source_generation": "exec-0d7d8d57-0453-40ab-846d-2ffaa7bd0817.png",
+      "user_approval": "pending"
+    },
+    "D06_Maysa_Lin_blanket": {
+      "file": "archive/D06_Maysa_Lin_blanket.png",
+      "sha256": "da24467fc378225e4c688480f78bea611dd727bc330b93feb0742feeda6a7422",
+      "status": "rejected",
+      "visual_review": "Maysa incorrectly wears trousers; replacing with seated black pencil skirt pose.",
+      "source_generation": "exec-a8822f46-40a5-40b1-b514-3f5b603790bb.png",
+      "user_approval": "not_applicable"
+    },
+    "D06_Maysa_Lin_blanket_v2": {
+      "file": "assets/D06_Maysa_Lin_blanket_v2.png",
+      "sha256": "b84df83dd856fd46a986bef9acda0e8269864ddc33736330ab19c92a0f4a3186",
+      "status": "reviewed_for_edit",
+      "visual_review": "Maysa correctly in black knee-length pencil skirt, two bare calves and pumps; two hands on knees, child two hands/rabbit intact.",
+      "source_generation": "exec-2bc96dfb-c327-4ff2-8104-4dc3b03385c9.png",
+      "user_approval": "pending"
+    },
+    "D08_faceless_shadow": {
+      "file": "assets/D08_faceless_shadow.png",
+      "sha256": "ef46e7db8fb29de34a7f04b93d5a6e52224b5187d04478886a9597b02d689524",
+      "status": "reviewed_for_edit",
+      "visual_review": "Impostor intentionally unlit face; visible limbs coherent; same guest-side column and wall.",
+      "source_generation": "exec-7e502841-265d-4b6d-a40c-9d77673ce17e.png",
+      "user_approval": "pending"
+    },
+    "D09_old_staff_photo": {
+      "file": "assets/D09_old_staff_photo.png",
+      "sha256": "48450f8373f5b97c577240eaeaba099c2a918dca1213b47d88c15a6177f2b0f7",
+      "status": "reviewed_for_edit",
+      "visual_review": "Recognizably younger manager centered in physical faded staff photo; no extra foreground people or malformed visible limbs.",
+      "source_generation": "exec-e6010cab-9a04-4f36-a4b4-c71d2320f566.png",
+      "user_approval": "pending"
+    },
+    "E01_Maysa_archive": {
+      "file": "assets/E01_Maysa_archive.png",
+      "sha256": "61c83fe1479003ccdfa5ee073ec5a4cd651699f49f846705ed82c5047f39b790",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two hands and shoulder-arm paths clear, old book pulled from shelf, correct vest/blouse and skirt edge; no trousers.",
+      "source_generation": "exec-c18d7aa9-ea1f-4fb1-8f81-787d770857e3.png",
+      "user_approval": "pending"
+    },
+    "D07_Maysa_mobile": {
+      "file": "assets/D07_Maysa_mobile.png",
+      "sha256": "1d471798c17ee2ed8884acbcb9f33858c9289b1272345eb949c141adc5200811",
+      "status": "reviewed_for_edit",
+      "visual_review": "Correct separate arms and normal phone grip, uniform retained, left arm down; no duplicated sleeves.",
+      "source_generation": "exec-82374e0d-9ed8-422c-822c-14b48402df21.png",
+      "user_approval": "pending"
+    },
+    "E02_charred_ledger": {
+      "file": "archive/E02_charred_ledger.png",
+      "sha256": "0d6f831bb419751014c69049dd14b3d79909e5d3d28de66e309ec10289a39237",
+      "status": "rejected",
+      "visual_review": "Names and blank cells correct, but checkout column labels wrongly say Cleaned/Inspected/Completed; replace labels with Time/Signature/Key.",
+      "source_generation": "exec-a08951db-7ebd-4428-b9a6-da6f579c56ea.png",
+      "user_approval": "not_applicable"
+    },
+    "E02_charred_ledger_v2": {
+      "file": "assets/E02_charred_ledger_v2.png",
+      "sha256": "93aba5def8c030c41c7e00fa3ceaa2e18273836ecdeed6fb14d2d57eadc8aa25",
+      "status": "reviewed_for_edit",
+      "visual_review": "Physical names and room13 correct, Payment tick, Time/Signature/Key columns all blank, no hands.",
+      "source_generation": "exec-b3ef68c3-7670-4fee-963f-470e65c70e9b.png",
+      "user_approval": "pending"
+    },
+    "E03_news_family": {
+      "file": "archive/E03_news_family.png",
+      "sha256": "38eb48d3c5b45a6d33abefb99fb9384d1a9726d9cac88109f24150364b5da5e8",
+      "status": "rejected",
+      "visual_review": "Unrequested living characters outside clipping reveal whole family together too early; must be document-only insert.",
+      "source_generation": "exec-1dbc0b54-5fac-4f7b-bfc8-0f4b60bdcc4f.png",
+      "user_approval": "not_applicable"
+    },
+    "E03_news_family_v2": {
+      "file": "assets/E03_news_family_v2.png",
+      "sha256": "aedb23f4880dbfae050eae2b0b63344f19b91be686d7485fb200a261921abe66",
+      "status": "reviewed_for_edit",
+      "visual_review": "Document-only insert now correct: three family portraits only within photo, Thai headline correct, no living figures outside paper. No extra visible limbs.",
+      "source_generation": "exec-0287ce11-9e34-455c-b212-000a6bf2c3bd.png",
+      "user_approval": "pending"
+    },
+    "E04_fire_corridor": {
+      "file": "assets/E04_fire_corridor.png",
+      "sha256": "261dcabb2ad8329db316a5ec65e5a48dd875321f320be00bb1ded49c514b0645",
+      "status": "reviewed_for_edit",
+      "visual_review": "Environment-only memory insert: external bolt clearly engaged, scorched door matches geography. No child in danger depicted.",
+      "source_generation": "exec-3500a430-ebc8-4a82-b8c3-9c9f9a6b79d1.png",
+      "user_approval": "pending"
+    },
+    "E05_Phakhin_sad": {
+      "file": "assets/E05_Phakhin_sad.png",
+      "sha256": "1b1d05649dca1da3616611a26ac3b323095cd65192a38ed98112bbf368a018d8",
+      "status": "reviewed_for_edit",
+      "visual_review": "Identity and black coat match; grief expression appropriate; hands outside crop, no visible malformed anatomy.",
+      "source_generation": "exec-f4c9c146-5010-4c67-b2f6-3a51a671cba5.png",
+      "user_approval": "pending"
+    },
+    "E06_burned_hand": {
+      "file": "archive/E06_burned_hand.png",
+      "sha256": "c2915691f53e04476c45896d62e80d99a6166201f21086001f9f1e06cf82cbc5",
+      "status": "rejected",
+      "visual_review": "Five digits correct but adds Phakhin and Maysa at upstairs door, breaking current lobby dialogue geography; replace with hand-only insert.",
+      "source_generation": "exec-8aca72cb-b62e-442d-9017-d82d5a6abc10.png",
+      "user_approval": "not_applicable"
+    },
+    "F01_manager_office": {
+      "file": "assets/F01_manager_office.png",
+      "sha256": "382343bee0fe8b5ffb564e421d254ad9b26ff62460a7a484b0eea0aff656cbf6",
+      "status": "reviewed_for_edit",
+      "visual_review": "Manager matches sheet, two arms down naturally, exact office/keyrack/stair geography retained.",
+      "source_generation": "exec-185f7e34-3787-4b3c-b4be-e5e19cc8ef2b.png",
+      "user_approval": "pending"
+    },
+    "E06_burned_hand_v2": {
+      "file": "assets/E06_burned_hand_v2.png",
+      "sha256": "16592b8465c34236cb29e64d9d441b856692488c64f9e9db798a88d957a226a5",
+      "status": "reviewed_for_edit",
+      "visual_review": "Hand-only insert corrected; five normal digits, continuous wrist/sleeve, soot without wounds, no extraneous figures.",
+      "source_generation": "exec-1d6e428c-355a-4ae1-acb3-8339476b6f4d.png",
+      "user_approval": "pending"
+    },
+    "F02_Maysa_confront": {
+      "file": "assets/F02_Maysa_confront.png",
+      "sha256": "788791ce316553e55a19ea3f878fa32cca7c2806be0c20300f0fa1306569ad2a",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two coherent arms and separate normal hands pressing page edges; correct uniform and determined dialogue expression.",
+      "source_generation": "exec-f41af248-0b73-4be4-8f89-a901576c935e.png",
+      "user_approval": "pending"
+    },
+    "F03_manager_guilt": {
+      "file": "assets/F03_manager_guilt.png",
+      "sha256": "e51c574a1e6849a7198c91e7044974393e4d1cf58b766ace3ab5ff0300e1be19",
+      "status": "reviewed_for_edit",
+      "visual_review": "Face/glasses/hair/suit consistent, defensive guilt readable, only low partial hand visible.",
+      "source_generation": "exec-af5ee644-2683-436d-ba4a-4012913c07bb.png",
+      "user_approval": "pending"
+    },
+    "F04_manager_takes_ledger": {
+      "file": "assets/F04_manager_takes_ledger.png",
+      "sha256": "f28dbf0f916953d062b37de0ca083d47754c39cdc53a07fb4b69c234dbed948f",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two arms with separate coherent hands; one ledger and single key wide rectangular13 tag. Office behind reception consistent.",
+      "source_generation": "exec-fe026ebc-d18b-419f-a0ce-2376fa226314.png",
+      "user_approval": "pending"
+    },
+    "G01_Maysa_exit": {
+      "file": "assets/G01_Maysa_exit.png",
+      "sha256": "48385a81e64a7861aa62fc7a25d73c1ea44c628d5bd0e779a4612e68c1114929",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two arms and legs coherent, correct skirt/pumps, open main door and rain stopped as script.",
+      "source_generation": "exec-8ae37df8-c322-4305-afae-0ff591bb6559.png",
+      "user_approval": "pending"
+    },
+    "G02_Lin_sleep": {
+      "file": "assets/G02_Lin_sleep.png",
+      "sha256": "efbe8d3ec0b1765349e6cd50d090833eeda4fe80cdcd52081d0ed308fb2abdaa",
+      "status": "reviewed_for_edit",
+      "visual_review": "Sleeping child and rabbit anatomy clear; Maysa beside her matches return scene E102. Use solo child variation while Maysa is outside.",
+      "source_generation": "exec-550de678-b7c8-40bd-85d7-fbaf72b59fa2.png",
+      "user_approval": "pending"
+    },
+    "G02_Lin_sleep_solo": {
+      "file": "assets/G02_Lin_sleep_solo.png",
+      "sha256": "053d4eb14d1c6f32e24da713228b6c4a0b3078926bd74e3f2664d8e964102754",
+      "status": "reviewed_for_edit",
+      "visual_review": "Solo sleeping child variation correct; two resting hands/rabbit, no adult while Maysa outside.",
+      "source_generation": "exec-9dd82f13-9abf-43f4-b8e3-ca6ffb32511b.png",
+      "user_approval": "pending"
+    },
+    "G04_Maysa_waiting": {
+      "file": "assets/G04_Maysa_waiting.png",
+      "sha256": "6149cc3408c5c2c6b9a5473156c4880423d8e691279749d3800a418aaeb709a8",
+      "status": "reviewed_for_edit",
+      "visual_review": "Phone stays ON base and both hands visibly away; two coherent arms; use for mimic call before ring13.",
+      "source_generation": "exec-6a3a4e10-37be-4797-a4af-1133216d1076.png",
+      "user_approval": "pending"
+    },
+    "H01_Pim_landing": {
+      "file": "assets/H01_Pim_landing.png",
+      "sha256": "31ab29aed43f0da1ef803a6bd9b19921bcc44daf1e2e101edf3384b11012b39b",
+      "status": "reviewed_for_edit",
+      "visual_review": "Pim face/long hair/lace dress/bare feet consistent; two arms down, two feet, exact landing/door geometry.",
+      "source_generation": "exec-3d9aab3a-d81d-4c57-8f51-c9824e8dc322.png",
+      "user_approval": "pending"
+    },
+    "H02_manager_key_stairs": {
+      "file": "assets/H02_manager_key_stairs.png",
+      "sha256": "6cd47d9f2f372d0f78033ec065e4483e7bb534bb80ec12bac63222bf168cce2c",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two arms/legs coherent on stairs, key remains with manager and tag wide rectangular; office open. Background counter ledger is ordinary current register, not charred archive ledger in office.",
+      "source_generation": "exec-333c2e9a-3bcd-4f05-8fe5-8844ac3b9b0b.png",
+      "user_approval": "pending"
+    },
+    "H03_office_papers": {
+      "file": "archive/H03_office_papers.png",
+      "sha256": "93b6e43fff16c68b45b1f38a462824d033de8931c179cc937337c6357dabe611",
+      "status": "rejected",
+      "visual_review": "Letters readable in English rather than Thai address specified by narration; replace only letter headings.",
+      "source_generation": "exec-0bb0efa5-432d-4390-913f-09735c18d3bc.png",
+      "user_approval": "not_applicable"
+    },
+    "C03_Maysa_key_v2": {
+      "file": "assets/C03_Maysa_key_v2.png",
+      "sha256": "e33b414251791ac7e817a2358fe99541aaa205dfbab53de15e2e1c8da52ddf7f",
+      "status": "reviewed_for_edit",
+      "visual_review": "Wide horizontal brass tag13 now matches key master; original correct two arms/hands/pose preserved.",
+      "source_generation": "exec-1aaed2eb-9918-4689-8a39-79fa64171077.png",
+      "user_approval": "pending"
+    },
+    "H03_office_papers_v2": {
+      "file": "assets/H03_office_papers_v2.png",
+      "sha256": "78c671bbbdc7a884d7d102c3583baec5571852678ffdbcfd2e361dddf5458f5b",
+      "status": "reviewed_for_edit",
+      "visual_review": "Thai openings correct, unfinished letters and no key, one book/pen.",
+      "source_generation": "exec-214a959d-4059-47b9-b2dd-913b40c65bbd.png",
+      "user_approval": "pending"
+    },
+    "I01_landing_confront": {
+      "file": "assets/I01_landing_confront.png",
+      "sha256": "063f351dd5f5199d458b88a93a82a048633e2f8ed14bec5b81d4586e19ff347e",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two coherent separate figures on landing, key manager fist, thin smoke.",
+      "source_generation": "exec-e0e566ad-f7d5-4649-b2a3-14829b8606dc.png",
+      "user_approval": "pending"
+    },
+    "H04_Maysa_takes_ledger": {
+      "file": "assets/H04_Maysa_takes_ledger.png",
+      "sha256": "8342760e9d43160793c79779ffbb190b38b043094e88668d2e33d2526c412966",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two distinct hands support single open book, pen in fold, uniform and office reference retained, no key.",
+      "source_generation": "exec-e82dc9fa-1155-46a2-bd20-6ae10316b6db.png",
+      "user_approval": "pending"
+    },
+    "I02_Maysa_writing": {
+      "file": "archive/I02_Maysa_writing.png",
+      "sha256": "712d9b5562dd0fd7b99ea5979d402811c761b5cb61f582ea477600f002f0bfd2",
+      "status": "rejected",
+      "visual_review": "Wrong guest name Maysa and invented date; replace row with family names, separate staff signature and incomplete minutes, key cell empty.",
+      "source_generation": "exec-6a70cfd5-4ee3-4676-9af9-bf754b7950e6.png",
+      "user_approval": "not_applicable"
+    },
+    "I03_Phakhin_blocks": {
+      "file": "archive/I03_Phakhin_blocks.png",
+      "sha256": "165d33da9e2ef01ec2549cc2ada6201033c16619892c2f78867c9688e77d011b",
+      "status": "rejected",
+      "visual_review": "Blank hero key tag replaced by v2 with numeral13.",
+      "source_generation": "exec-ed3e87a3-a1ec-49fe-b2f1-cb714b3a7b1d.png",
+      "user_approval": "not_applicable"
+    },
+    "I02_Maysa_writing_v2": {
+      "file": "assets/I02_Maysa_writing_v2.png",
+      "sha256": "664339a501c23423357a9d5f979ca61a3d6a8f9019bb72f01de7c538cae28a67",
+      "status": "reviewed_for_edit",
+      "visual_review": "Over-shoulder view: page top away from Maysa and baselines face her. Natural tripod right pen grip touching row, separate left hand steadies page. No readable data needed per user.",
+      "source_generation": "exec-7bf84939-df5c-407e-a9a6-fd2b3d7ad0ea.png",
+      "user_approval": "pending"
+    },
+    "I03_Phakhin_blocks_v2": {
+      "file": "assets/I03_Phakhin_blocks_v2.png",
+      "sha256": "fe44e5de9847b1a4864f1278add1306e554a9d609f4e4444ce9751f0a5cc9fb9",
+      "status": "reviewed_for_edit",
+      "visual_review": "Physical tag13 now present, two coherent bodies and arms preserved.",
+      "source_generation": "exec-9ced12ca-9fa0-453e-a01b-1b3e9222aa66.png",
+      "user_approval": "pending"
+    },
+    "I09_manager_pleading": {
+      "file": "assets/I09_manager_pleading.png",
+      "sha256": "30a6a5c568208f36694b10ad7dc90b3a88dc1d861b07aced65b587f9ce493e46",
+      "status": "reviewed_for_edit",
+      "visual_review": "Same manager face/glasses/suit in upstairs landing background, remorse/tears readable, no visible hands.",
+      "source_generation": "exec-2708ae6e-63fa-4333-b5f3-f422de48aba7.png",
+      "user_approval": "pending"
+    },
+    "H05_Pim_close": {
+      "file": "assets/H05_Pim_close.png",
+      "sha256": "c3eec3c34d831a7888dd5c035401e65fbea7b15cfa051001b2df0bec72658e88",
+      "status": "reviewed_for_edit",
+      "visual_review": "Same Pim identity/hair/lace, sorrowful resolve on landing, no hands in crop.",
+      "source_generation": "exec-b065c644-acc1-4be7-b562-a172e9e982b3.png",
+      "user_approval": "pending"
+    },
+    "I04_Pim_key_grip": {
+      "file": "archive/I04_Pim_key_grip.png",
+      "sha256": "76fd09a04a886cdee798bdcb49e03269062b24556dfeff80f9c796720514fb51",
+      "status": "rejected",
+      "visual_review": "User pinpointed extra thumb at x39.5%,y42.7%; previous visual review missed it. Must replace before edit.",
+      "source_generation": "exec-7e1421f9-9c17-46ac-bb0b-33c5c3cb803c.png",
+      "user_approval": "not_applicable"
+    },
+    "I10_Lin_touch_hand": {
+      "file": "assets/I10_Lin_touch_hand.png",
+      "sha256": "b106f694e10cd47e4d2ea21c33ec0dc63eedba1d720ab4c11fbd5151e95e4f78",
+      "status": "reviewed_for_edit",
+      "visual_review": "One adult palm-up hand and one small child hand; separate sleeves/wrists, visible fingers coherent with natural occlusion, no manager in shot.",
+      "source_generation": "exec-cd642425-cde9-4fbc-854b-ddc0b1365599.png",
+      "user_approval": "pending"
+    },
+    "I04_Pim_key_grip_v2": {
+      "file": "assets/I04_Pim_key_grip_v2.png",
+      "sha256": "2c46c78339ff3fca9e55773188be5e9a7671f8195015b65aa67b3fa932e3e8aa",
+      "status": "reviewed_for_edit",
+      "visual_review": "User-marked duplicate thumb protrusion removed. Manager now has one visible thumb over ring and coherent curled fingers below; Pim hand remains separate.",
+      "source_generation": "exec-ac8d5be3-6ea4-471d-859e-0cc92993d76c.png",
+      "user_approval": "pending"
+    },
+    "I05_key_fallen": {
+      "file": "assets/I05_key_fallen.png",
+      "sha256": "7372c9355ad71c8807e59c68128e0b04d97cfc5ff85d92dc4062ea913c7f4bf2",
+      "status": "reviewed_for_edit",
+      "visual_review": "Single key and wide brass13 tag match hero master; rests on rug below stair, no limb.",
+      "source_generation": "exec-35dd3050-de56-4d0a-b2cd-aaa7469eeeff.png",
+      "user_approval": "pending"
+    },
+    "I06_Maysa_returnskey": {
+      "file": "archive/I06_Maysa_returnskey.png",
+      "sha256": "27fcf679f38e942a4badf61794b04f6c485c8cdaf5c034d4bf0f3d427db5cf12",
+      "status": "rejected",
+      "visual_review": "Maysa anatomy/key return good, but telephone handset missing from base after call ended; restore handset for continuity.",
+      "source_generation": "exec-7eb3f126-41ef-44bd-9d37-38772ac28a90.png",
+      "user_approval": "not_applicable"
+    },
+    "I06_Maysa_returnskey_v2": {
+      "file": "assets/I06_Maysa_returnskey_v2.png",
+      "sha256": "80bd26069be954bace620319a2bbcec8c21a224e5af30a29a00175bb8bbefff1",
+      "status": "reviewed_for_edit",
+      "visual_review": "Phone handset restored to base, key and Maysa arms unchanged; awaits user review.",
+      "source_generation": "exec-6aca627a-b22d-4f3d-b938-2f28571c3093.png",
+      "user_approval": "pending"
+    },
+    "I07_family_exit": {
+      "file": "assets/I07_family_exit.png",
+      "sha256": "c614e332290a611a2c599a3393867d43af1d80023a88bcc595193d847514a161",
+      "status": "awaiting_visual_review",
+      "visual_review": "Candidate awaiting user review; inspect Lin footwear/proportions and family silhouettes.",
+      "source_generation": "exec-0b9ea3da-bc3c-4687-8ca3-5556cd6d0024.png",
+      "user_approval": "pending"
+    },
+    "I08_manager_trapped": {
+      "file": "archive/I08_manager_trapped.png",
+      "sha256": "f627fdca2b4f7e9a126879361aa4773f648895159c2112c8fdd11b895c1ca61d",
+      "status": "rejected",
+      "visual_review": "User correction: hand at x60.6%,y35.7% appears through door. Replaced by v2 with hidden arm.",
+      "source_generation": "exec-ca230175-ca03-4755-bb95-d073a852e415.png",
+      "user_approval": "not_applicable"
+    },
+    "I08_manager_trapped_v2": {
+      "file": "assets/I08_manager_trapped_v2.png",
+      "sha256": "ecc5e5d9279f7a979277f73995f8e6aaa4db5a9e0c45e760fb9fa0ef4167b3a2",
+      "status": "reviewed_for_edit",
+      "visual_review": "User-marked hand/cuff/arm removed from outer door, wood restored, corresponding arm occluded behind door; awaits user review.",
+      "source_generation": "exec-0cde037e-f27c-43c3-843a-501fcbb4d566.png",
+      "user_approval": "pending"
+    }
+  },
+  "remaining": [
+    "Generate and visually inspect scene stills",
+    "Build performance timeline with all three 13-ring sequences",
+    "Edit full film against actual voice durations",
+    "Mix ambience and original restrained sound bed",
+    "Render 1080p 30fps H264/AAC",
+    "Check continuity, technical integrity and deliver downloadable MP4"
+  ],
+  "measured_full_plan": {
+    "duration_seconds": 777.24,
+    "shots": 135,
+    "unique_images": 63,
+    "voice_turns": 111
+  },
+  "user_visual_correction": "When Maysa writes/reads, the book and baselines must face her naturally. Writing-shot data need not be readable; prioritize natural hand/pen/page orientation.",
+  "hand_QA_correction": "Close hand shots require counting thumb bases and nails, not just overall silhouette. Reject duplicate thumb specifically at I04 x39.5%,y42.7%.",
+  "user_review_gate": "User must inspect scene images before any further editing/rendering. Upload latest images and make GitHub gallery. No final film export until user approves.",
+  "user_approval": "pending"
+}
