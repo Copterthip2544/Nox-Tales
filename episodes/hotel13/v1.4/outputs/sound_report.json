@@ -1,0 +1,162 @@
+{
+  "duration_seconds": 782.2299999999994,
+  "speech_clips": 122,
+  "new_charon_requests": 14,
+  "score_source": "Original locally composed instrumental music synthesized with piano-like, plucked, sustained string-like and bass/percussion timbres; no external music recording.",
+  "music_cues": [
+    {
+      "start": 0,
+      "end": 145.91,
+      "cue": "mystery",
+      "bpm": 54,
+      "target_rms_dbfs": -34.0
+    },
+    {
+      "start": 145.91,
+      "end": 268.39,
+      "cue": "unease",
+      "bpm": 62,
+      "target_rms_dbfs": -34.0
+    },
+    {
+      "start": 268.39,
+      "end": 396.88,
+      "cue": "discovery",
+      "bpm": 56,
+      "target_rms_dbfs": -34.0
+    },
+    {
+      "start": 396.88,
+      "end": 450.98,
+      "cue": "pressure",
+      "bpm": 68,
+      "target_rms_dbfs": -31.1
+    },
+    {
+      "start": 450.98,
+      "end": 488.92,
+      "cue": "decision",
+      "bpm": 56,
+      "target_rms_dbfs": -34.0
+    },
+    {
+      "start": 488.92,
+      "end": 529.54,
+      "cue": "suspense",
+      "bpm": 76,
+      "target_rms_dbfs": -31.1
+    },
+    {
+      "start": 529.54,
+      "end": 574.17,
+      "cue": "suspense",
+      "bpm": 82,
+      "target_rms_dbfs": -31.1
+    },
+    {
+      "start": 574.17,
+      "end": 605.71,
+      "cue": "urgent",
+      "bpm": 94,
+      "target_rms_dbfs": -28.0
+    },
+    {
+      "start": 605.71,
+      "end": 640.23,
+      "cue": "countdown",
+      "bpm": 104,
+      "target_rms_dbfs": -28.0
+    },
+    {
+      "start": 640.23,
+      "end": 654.27,
+      "cue": "release",
+      "bpm": 52,
+      "target_rms_dbfs": -34.0
+    },
+    {
+      "start": 654.27,
+      "end": 668.29,
+      "cue": "dread",
+      "bpm": 54,
+      "target_rms_dbfs": -34.0
+    },
+    {
+      "start": 668.29,
+      "end": 750.4,
+      "cue": "aftermath",
+      "bpm": 54,
+      "target_rms_dbfs": -34.0
+    },
+    {
+      "start": 750.4,
+      "end": 782.23,
+      "cue": "final_dread",
+      "bpm": 64,
+      "target_rms_dbfs": -31.1
+    }
+  ],
+  "phone_sequences": [
+    {
+      "kind": "hotel",
+      "start": 187.57999999999998,
+      "story_count": 13,
+      "audible_numbers": [
+        1,
+        2,
+        13
+      ],
+      "audible_times": [
+        187.57999999999998,
+        189.17999999999998,
+        202.1
+      ],
+      "answer_event": "E040"
+    },
+    {
+      "kind": "hotel",
+      "start": 487.71999999999986,
+      "story_count": 13,
+      "audible_numbers": [
+        1,
+        4,
+        6,
+        9,
+        12,
+        13
+      ],
+      "audible_times": [
+        487.71999999999986,
+        488.67,
+        491.25,
+        493.75,
+        501.43,
+        505.16
+      ],
+      "answer_event": "E113"
+    },
+    {
+      "kind": "mobile",
+      "start": 750.4599999999996,
+      "story_count": 13,
+      "audible_numbers": [
+        1,
+        2,
+        12,
+        13
+      ],
+      "audible_times": [
+        750.4599999999996,
+        752.0599999999996,
+        754.6999999999999,
+        758.1
+      ],
+      "answer_event": "E159"
+    }
+  ],
+  "phone_edit": "Narrated time elision, never answer before story ring13",
+  "six_strikes_start": 654.2700000000001,
+  "final_single_ring": 779.0299999999994,
+  "dialogue_ducking": true,
+  "no_shake": true
+}

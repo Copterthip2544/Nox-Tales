@@ -1,0 +1,92 @@
+{
+  "duration_seconds": 782.2299999999994,
+  "shots": 147,
+  "speech_clips": 122,
+  "unchanged_original_voice_files": 110,
+  "new_charon_generated_segments": 14,
+  "all_other_character_dialogue_preserved": true,
+  "no_overlapping_speech": true,
+  "no_flash_cuts": true,
+  "rings_story_counts": [
+    13,
+    13,
+    13
+  ],
+  "rings_audible_numbers": [
+    [
+      1,
+      2,
+      13
+    ],
+    [
+      1,
+      4,
+      6,
+      9,
+      12,
+      13
+    ],
+    [
+      1,
+      2,
+      12,
+      13
+    ]
+  ],
+  "music_rms": [
+    {
+      "cue": "mystery",
+      "rms_dbfs": -38.7
+    },
+    {
+      "cue": "unease",
+      "rms_dbfs": -38.2
+    },
+    {
+      "cue": "discovery",
+      "rms_dbfs": -38.3
+    },
+    {
+      "cue": "pressure",
+      "rms_dbfs": -35.4
+    },
+    {
+      "cue": "decision",
+      "rms_dbfs": -38.5
+    },
+    {
+      "cue": "suspense",
+      "rms_dbfs": -35.8
+    },
+    {
+      "cue": "suspense",
+      "rms_dbfs": -35.7
+    },
+    {
+      "cue": "urgent",
+      "rms_dbfs": -33.8
+    },
+    {
+      "cue": "countdown",
+      "rms_dbfs": -33.6
+    },
+    {
+      "cue": "release",
+      "rms_dbfs": -38.8
+    },
+    {
+      "cue": "dread",
+      "rms_dbfs": -36.3
+    },
+    {
+      "cue": "aftermath",
+      "rms_dbfs": -38.3
+    },
+    {
+      "cue": "final_dread",
+      "rms_dbfs": -35.7
+    }
+  ],
+  "musical_peak_dbfs": -17.3,
+  "note": "Technical checks do not replace user listening review."
+}

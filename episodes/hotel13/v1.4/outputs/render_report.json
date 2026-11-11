@@ -1,0 +1,28 @@
+{
+  "file": "Frame_Tales_Hotel13_Full_v02.mp4",
+  "duration_seconds": 782.2299999999994,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "shots": 147,
+  "unique_reviewed_images": 64,
+  "speech_turns": 122,
+  "audio_loudness": {
+    "input_i": "-21.45",
+    "input_tp": "-0.64",
+    "input_lra": "7.70",
+    "input_thresh": "-33.01",
+    "output_i": "-16.34",
+    "output_tp": "-1.50",
+    "output_lra": "6.40",
+    "output_thresh": "-27.74",
+    "normalization_type": "dynamic",
+    "target_offset": "0.34"
+  },
+  "motion": "Single direction horizontal pan OR gentle zoom, no shake, 7680 sampling canvas",
+  "tts_regenerated": "Only fourteen requested Charon patches; other approved voices reused",
+  "script_version": "1.4",
+  "brand": "Frame Tales"
+}
