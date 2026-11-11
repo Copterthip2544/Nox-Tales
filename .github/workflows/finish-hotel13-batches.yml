@@ -1,9 +1,6 @@
 name: Frame Tales - finish Hotel 13 in batches of five
 
 on:
-  push:
-    branches: [main]
-    paths: [.github/workflows/finish-hotel13-batches.yml]
   workflow_dispatch:
     inputs:
       confirm_generation:
@@ -13,7 +10,7 @@ on:
       resume_run_id:
         description: Saved run containing completed Hotel 13 audio
         type: string
-        default: '42976247403'
+        default: '42983299790'
 
 permissions:
   contents: read
@@ -21,7 +18,7 @@ permissions:
 
 jobs:
   finish:
-    if: github.event.head_commit.message == 'finish-hotel13-batches-5-5-4' || inputs.confirm_generation
+    if: inputs.confirm_generation
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
@@ -48,7 +45,7 @@ jobs:
         with:
           name: hotel13-full-audio
           path: production-output
-          run-id: ${{ inputs.resume_run_id || '42976247403' }}
+          run-id: ${{ inputs.resume_run_id }}
           github-token: ${{ secrets.GITHUB_TOKEN }}
       - name: Verify the 97 existing turns are retained
         run: |
