@@ -1,0 +1,2377 @@
+{
+  "episode": "hotel13",
+  "script_version": "1.3",
+  "performance_revision": "1",
+  "model": "gemini-3.8-flash-tts",
+  "status": "directions_prepared_no_audio_generated",
+  "notes": [
+    "Keep approved vocal identities. Adjust acting per turn.",
+    "Do not read emotional labels, role names, or stage directions aloud.",
+    "Unselected voices must be chosen before generating those roles.",
+    "All durations and pause hints require listening review and retiming; do not pad to old timestamps."
+  ],
+  "events": [
+    {
+      "event_id": "E001",
+      "source_v12": "T001",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "โรงแรมส่วนใหญ่ กลัวแขกไม่ยอมกลับ\n\nแต่โรงแรมแห่งนี้ กลับกลัวว่าแขกบางคนจะออกไปได้\n\nผมชื่อ น็อกซ์ คืนนี้ผมมีกุญแจดอกหนึ่งให้คุณดู ป้ายทองเหลืองของมันมีเลขสิบสาม ส่วนคนที่เคยถือมัน บางคนก็ไม่ได้กลับออกมาเล่าเรื่องของตัวเองอีกเลย\n\nครั้งแรกที่เมษาเห็นโรงแรม เธอคิดว่าคนขับรถพามาผิดที่\n\nอาคารเก่าตั้งอยู่สุดถนน หลังแนวต้นสนสูง หน้าต่างเกือบทุกบานมืดสนิท มีเพียงโคมไฟสองดวงเหนือทางเข้า เธอก้มตรวจที่อยู่ในโทรศัพท์อีกครั้ง ตรงกัน\n\nเงินเดือนสูงกว่างานต้อนรับทั่วไปเกือบเท่าตัว มีที่พักให้ เริ่มงานได้ทันที สำหรับคนที่เหลือเงินไม่ถึงสองพันบาท เงื่อนไขอื่นจึงกลายเป็นเรื่องรอง\n\nในล็อบบี้มีกลิ่นไม้เก่ากับน้ำยาขัดพื้น หลังเคาน์เตอร์ ชายในสูทสีเลือดหมูยืนรออยู่",
+      "performance": {
+        "emotion_th": "ชวนติดตามและค่อย ๆ สร้างความระแวง",
+        "intensity_1_to_5": 2,
+        "delivery": "Warm intimate storytelling, measured natural pace, subtly ominous, never over-whisper.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Warm intimate storytelling, measured natural pace, subtly ominous, never over-whisper.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E002",
+      "source_v12": "T001",
+      "type": "direction",
+      "speaker": null,
+      "text": "ล็อบบี้: เคาน์เตอร์ขวาภาพ แผงกุญแจและสำนักงานด้านหลัง บันไดกลางภาพ นาฬิกาลูกตุ้มซ้ายบันได ผู้จัดการปิดนาฬิกาพก มองเมษา"
+    },
+    {
+      "event_id": "E003",
+      "source_v12": "T002",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "คุณเมษาใช่ไหมครับ",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E004",
+      "source_v12": "T003",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ค่ะ ขอโทษด้วยนะคะ ฝนตกแล้วรถก็ติด",
+      "performance": {
+        "emotion_th": "สุภาพและเป็นธรรมชาติ",
+        "intensity_1_to_5": 1,
+        "delivery": "Conversational, courteous, relaxed young adult Thai speech; no narration cadence.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Conversational, courteous, relaxed young adult Thai speech; no narration cadence.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E005",
+      "source_v12": "T004",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ยังไม่สี่ทุ่ม คุณมาตรงเวลา",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E006",
+      "source_v12": "T005",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "ไม่มีการสัมภาษณ์เพิ่มเติม มีเพียงสัญญาจ้างหนึ่งแผ่น เมื่อเมษาเซ็นชื่อ ผู้จัดการก็เริ่มสอนงานทันที",
+      "performance": {
+        "emotion_th": "เชื่อมเหตุการณ์อย่างสุขุม",
+        "intensity_1_to_5": 1,
+        "delivery": "Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E007",
+      "source_v12": "T005",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการวางเสื้อกั๊กกับป้ายชื่อ เมษาเซ็นสัญญา เปลี่ยนเป็นเครื่องแบบ โทรศัพท์สีงาช้างอยู่ข้างกระดิ่ง สมุดอยู่ใต้เคาน์เตอร์"
+    },
+    {
+      "event_id": "E008",
+      "source_v12": "T006",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ที่นี่ไม่ได้ลงข้อมูลในคอมเหรอคะ",
+      "performance": {
+        "emotion_th": "สุภาพและเป็นธรรมชาติ",
+        "intensity_1_to_5": 1,
+        "delivery": "Conversational, courteous, relaxed young adult Thai speech; no narration cadence.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Conversational, courteous, relaxed young adult Thai speech; no narration cadence.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E009",
+      "source_v12": "T008",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "เราใช้สมุดมาตลอด",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E010",
+      "source_v12": "T009",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการเปิดสมุด ชี้ช่องลงเวลา ลายเซ็น และรับคืนกุญแจ"
+    },
+    {
+      "event_id": "E011",
+      "source_v12": "T010",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "แขกจะออก คุณก็ลงเวลา รับกุญแจ แล้วเซ็นชื่อพนักงานตรงนี้ ต้องครบทั้งสามอย่าง งานถึงจะเรียบร้อยนะครับ",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E012",
+      "source_v12": "T011",
+      "type": "direction",
+      "speaker": null,
+      "text": "เขาวางกระดาษกฎสามข้อทับหน้าสมุด"
+    },
+    {
+      "event_id": "E013",
+      "source_v12": "T012",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ส่วนห้องสิบสาม มีเรื่องที่ต้องจำสามข้อ",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E014",
+      "source_v12": "T013",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ข้อแรก อย่าส่งกุญแจให้คนที่ยังไม่ยอมให้เห็นหน้า",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E015",
+      "source_v12": "T014",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ข้อสอง ถ้าโทรศัพท์จากห้องสิบสามดัง รอให้ครบสิบสามครั้งค่อยรับ",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E016",
+      "source_v12": "T015",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ข้อสุดท้าย ห้ามเช็กเอาต์ห้องนี้ก่อนหกโมงเช้า ถ้าแขกขอ ให้บอกว่ากรุณารอผู้จัดการ",
+      "performance": {
+        "emotion_th": "สุภาพแต่คุมสถานการณ์",
+        "intensity_1_to_5": 2,
+        "delivery": "Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Composed authority. Matter-of-fact, clipped but courteous. Do not telegraph a villain.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E017",
+      "source_v12": "T016",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษาหัวเราะอย่างเกรงใจ ก่อนถาม"
+    },
+    {
+      "event_id": "E018",
+      "source_v12": "T017",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ต้องนับจริง ๆ เหรอคะ ถ้าเขาวางก่อนล่ะ",
+      "performance": {
+        "emotion_th": "สงสัยปนขำเกรงใจ",
+        "intensity_1_to_5": 2,
+        "delivery": "A tentative light smile in the voice, genuinely checking an odd instruction. Do not add a spoken laugh.",
+        "post_pause_ms": 350,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. A tentative light smile in the voice, genuinely checking an odd instruction. Do not add a spoken laugh.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E019",
+      "source_v12": "T018",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ก็อย่าโทรกลับครับ",
+      "performance": {
+        "emotion_th": "เย็นชาและจริงจัง",
+        "intensity_1_to_5": 2,
+        "delivery": "Answer firmly without raising volume. Leave a short uncomfortable silence after the warning.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Answer firmly without raising volume. Leave a short uncomfortable silence after the warning.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E020",
+      "source_v12": "T020",
+      "type": "direction",
+      "speaker": null,
+      "text": "หลังตอบเรื่องโทรศัพท์ ผู้จัดการเลื่อนสมุดเก็บ เมษาหุบยิ้ม ไม่มีเสียง Nox แทรก"
+    },
+    {
+      "event_id": "E021",
+      "source_v12": "T020",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "อีกอย่าง อย่าเอากุญแจออกไปไหน ถ้าไม่จำเป็น",
+      "performance": {
+        "emotion_th": "เย็นชาและจริงจัง",
+        "intensity_1_to_5": 2,
+        "delivery": "Answer firmly without raising volume. Leave a short uncomfortable silence after the warning.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Answer firmly without raising volume. Leave a short uncomfortable silence after the warning.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E022",
+      "source_v12": "T021",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "สองชั่วโมงแรกผ่านไปโดยไม่มีแขกเข้ามาสักคน\n\nใกล้เที่ยงคืน เสียงรองเท้าหนังดังขึ้นหน้าล็อบบี้",
+      "performance": {
+        "emotion_th": "เชื่อมเหตุการณ์อย่างสุขุม",
+        "intensity_1_to_5": 1,
+        "delivery": "Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E023",
+      "source_v12": "T021",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการเข้าสำนักงาน เหลือเสียงลูกตุ้ม ชายโค้ตดำหยุดข้างเสา ใบหน้าอยู่ในเงา"
+    },
+    {
+      "event_id": "E024",
+      "source_v12": "T022",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "กุญแจห้องสิบสามครับ",
+      "performance": {
+        "emotion_th": "สงวนท่าทีและลึกลับ",
+        "intensity_1_to_5": 2,
+        "delivery": "Reserved, watchful, quiet adult male voice, no threatening growl.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Reserved, watchful, quiet adult male voice, no threatening growl.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E025",
+      "source_v12": "T023",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษาเอื้อมไปทางกุญแจแล้วหยุด มองใบหน้าที่อยู่ในเงา"
+    },
+    {
+      "event_id": "E026",
+      "source_v12": "T024",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "รบกวนขยับเข้ามาหน่อยได้ไหมคะ",
+      "performance": {
+        "emotion_th": "สุภาพแต่ระวังตัว",
+        "intensity_1_to_5": 2,
+        "delivery": "Professional courtesy with a little hesitation; keep the request clear.",
+        "post_pause_ms": 300,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Professional courtesy with a little hesitation; keep the request clear.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E027",
+      "source_v12": "T025",
+      "type": "direction",
+      "speaker": null,
+      "text": "ชายก้าวเข้าแสง เมษาหยิบกุญแจ แต่ถือไว้ฝั่งพนักงาน"
+    },
+    {
+      "event_id": "E028",
+      "source_v12": "T026",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ขอชื่อด้วยค่ะ",
+      "performance": {
+        "emotion_th": "สุภาพแต่ระวังตัว",
+        "intensity_1_to_5": 2,
+        "delivery": "Professional courtesy with a little hesitation; keep the request clear.",
+        "post_pause_ms": 300,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Professional courtesy with a little hesitation; keep the request clear.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E029",
+      "source_v12": "T027",
+      "type": "direction",
+      "speaker": null,
+      "text": "สายตาชายเลื่อนไปที่กระดาษกฎ"
+    },
+    {
+      "event_id": "E030",
+      "source_v12": "T028",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "คุณเพิ่งมาใหม่ใช่ไหม",
+      "performance": {
+        "emotion_th": "สงวนท่าทีและลึกลับ",
+        "intensity_1_to_5": 2,
+        "delivery": "Reserved, watchful, quiet adult male voice, no threatening growl.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Reserved, watchful, quiet adult male voice, no threatening growl.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E031",
+      "source_v12": "T029",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ค่ะ คืนแรก",
+      "performance": {
+        "emotion_th": "สุภาพและเป็นธรรมชาติ",
+        "intensity_1_to_5": 1,
+        "delivery": "Conversational, courteous, relaxed young adult Thai speech; no narration cadence.",
+        "post_pause_ms": 250,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Conversational, courteous, relaxed young adult Thai speech; no narration cadence.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E032",
+      "source_v12": "T030",
+      "type": "direction",
+      "speaker": null,
+      "text": "ชายมองกุญแจ ขยับมือเหมือนจะรับ ก่อนปล่อยลง"
+    },
+    {
+      "event_id": "E033",
+      "source_v12": "T031",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "เก็บไว้ก่อน ถ้ามีเด็กลงมา อย่าส่งเธอกลับขึ้นไปคนเดียว เธอกลัวความมืด",
+      "performance": {
+        "emotion_th": "ห่วงลูกและลังเล",
+        "intensity_1_to_5": 3,
+        "delivery": "Start with hesitation, then sincere protective concern for the child.",
+        "post_pause_ms": 600,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Start with hesitation, then sincere protective concern for the child.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E034",
+      "source_v12": "T032",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "พอเมษาหันกลับ ชายคนนั้นก็ไม่อยู่แล้ว\n\nประตูทางเข้ายังปิด กระดิ่งไม่ดัง และบนพื้นไม่มีรอยน้ำสักหยด ทั้งที่ปลายเสื้อโค้ตของเขาเปียกฝน\n\nเวลาตีสองสิบสามนาที โทรศัพท์จากห้องสิบสามดังขึ้น",
+      "performance": {
+        "emotion_th": "ระแวงและเผยความผิดปกติ",
+        "intensity_1_to_5": 2,
+        "delivery": "Slow very slightly around the clue, restrained suspense, do not announce every detail as a shock.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Slow very slightly around the clue, restrained suspense, do not announce every detail as a shock.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E035",
+      "source_v12": "T032",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษาหันไปมองบันไดแล้วหันกลับ ชายหายไป แทรกภาพพื้นแห้ง เมษาวางกุญแจฝั่งพนักงาน; โทรศัพท์ชุดแรกดังครบ 13 ครั้ง เริ่มเสียงเคาะหน้าเคาน์เตอร์หลังครั้งที่ 5 ลินปรากฏพร้อมกระต่าย"
+    },
+    {
+      "event_id": "E036",
+      "source_v12": "T033",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "พี่คะ รับให้แม่หน่อย",
+      "performance": {
+        "emotion_th": "รอคอยและเป็นห่วงแม่",
+        "intensity_1_to_5": 2,
+        "delivery": "A gentle child asking sincerely, quiet impatience from worry, no creepy cackle.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. A gentle child asking sincerely, quiet impatience from worry, no creepy cackle.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E037",
+      "source_v12": "T035",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "หนูลงมาตั้งแต่เมื่อไหร่จ๊ะ",
+      "performance": {
+        "emotion_th": "ตกใจและเริ่มระแวง",
+        "intensity_1_to_5": 3,
+        "delivery": "Trying to remain calm while frightened, slight breath tension, no screaming.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Trying to remain calm while frightened, slight breath tension, no screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E038",
+      "source_v12": "T037",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "แม่รอนานแล้ว",
+      "performance": {
+        "emotion_th": "รอคอยและเป็นห่วงแม่",
+        "intensity_1_to_5": 2,
+        "delivery": "A gentle child asking sincerely, quiet impatience from worry, no creepy cackle.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. A gentle child asking sincerely, quiet impatience from worry, no creepy cackle.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E039",
+      "source_v12": "T038",
+      "type": "direction",
+      "speaker": null,
+      "text": "ภาพน้ำหยดจากชายชุดลิน หลังเสียงเรียกครั้งที่ 13 จึงให้เมษายกหู ห้ามเริ่มบทพิมก่อนครบ"
+    },
+    {
+      "event_id": "E040",
+      "source_v12": "T039",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "ลูกฉันอยู่ตรงนั้นไหมคะ",
+      "performance": {
+        "emotion_th": "ห่วงลูกและกลัว",
+        "intensity_1_to_5": 3,
+        "delivery": "An anxious mother trying to keep her voice down. Urgent, clear, protective, not seductive or theatrical.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. An anxious mother trying to keep her voice down. Urgent, clear, protective, not seductive or theatrical.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E041",
+      "source_v12": "T040",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "อยู่ค่ะ คุณแม่พักห้องสิบสามใช่ไหม",
+      "performance": {
+        "emotion_th": "ตกใจและเริ่มระแวง",
+        "intensity_1_to_5": 3,
+        "delivery": "Trying to remain calm while frightened, slight breath tension, no screaming.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Trying to remain calm while frightened, slight breath tension, no screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E042",
+      "source_v12": "T041",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "อย่าให้เขาพาลูกขึ้นมา",
+      "performance": {
+        "emotion_th": "ห่วงลูกและกลัว",
+        "intensity_1_to_5": 3,
+        "delivery": "An anxious mother trying to keep her voice down. Urgent, clear, protective, not seductive or theatrical.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. An anxious mother trying to keep her voice down. Urgent, clear, protective, not seductive or theatrical.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E043",
+      "source_v12": "T042",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษากำหูโทรศัพท์ สีหน้าเครียด"
+    },
+    {
+      "event_id": "E044",
+      "source_v12": "T043",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ใครคะ",
+      "performance": {
+        "emotion_th": "ตกใจและเริ่มระแวง",
+        "intensity_1_to_5": 3,
+        "delivery": "Trying to remain calm while frightened, slight breath tension, no screaming.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Trying to remain calm while frightened, slight breath tension, no screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E045",
+      "source_v12": "T044",
+      "type": "direction",
+      "speaker": null,
+      "text": "เสียงโลหะครูดจากสาย ตามด้วยเสียงไอ ห้ามอ่านคำกำกับนี้"
+    },
+    {
+      "event_id": "E046",
+      "source_v12": "T045",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "คนที่บอกให้คุณรอ",
+      "performance": {
+        "emotion_th": "ห่วงลูกและกลัว",
+        "intensity_1_to_5": 3,
+        "delivery": "An anxious mother trying to keep her voice down. Urgent, clear, protective, not seductive or theatrical.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. An anxious mother trying to keep her voice down. Urgent, clear, protective, not seductive or theatrical.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E047",
+      "source_v12": "T047",
+      "type": "direction",
+      "speaker": null,
+      "text": "สายตัด เมษาวางหู ลินเงยหน้ารอฟัง"
+    },
+    {
+      "event_id": "E048",
+      "source_v12": "T047",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "แม่ว่าอะไรคะ",
+      "performance": {
+        "emotion_th": "สงสัยอย่างไร้เดียงสา",
+        "intensity_1_to_5": 1,
+        "delivery": "Simple sincere curiosity, natural youthful tone.",
+        "post_pause_ms": 350,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. Simple sincere curiosity, natural youthful tone.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E049",
+      "source_v12": "T049",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "แม่บอกให้หนูอยู่กับพี่ก่อน",
+      "performance": {
+        "emotion_th": "อ่อนโยนและปลอบเด็ก",
+        "intensity_1_to_5": 2,
+        "delivery": "Gentle reassuring warmth, softer volume but fully voiced and adult.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Gentle reassuring warmth, softer volume but fully voiced and adult.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E050",
+      "source_v12": "T051",
+      "type": "direction",
+      "speaker": null,
+      "text": "ลินยิ้มบาง ๆ พูดอย่างโล่งใจ ไม่เล่นเสียงขู่"
+    },
+    {
+      "event_id": "E051",
+      "source_v12": "T051",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "ดีจัง หนูไม่อยากขึ้นไป ตอนที่ยังมีกลิ่นไหม้",
+      "performance": {
+        "emotion_th": "ไว้ใจและโล่งใจ",
+        "intensity_1_to_5": 2,
+        "delivery": "A small relieved smile, innocent literal delivery. Let the words create the unease.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. A small relieved smile, innocent literal delivery. Let the words create the unease.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E052",
+      "source_v12": "T052",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษาพาลินนั่งเก้าอี้ข้างเคาน์เตอร์ ห่มเสื้อคลุมให้ กระต่ายยังอยู่ในอ้อมแขน"
+    },
+    {
+      "event_id": "E053",
+      "source_v12": "T053",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "หนูชื่ออะไรจ๊ะ",
+      "performance": {
+        "emotion_th": "อ่อนโยนและปลอบเด็ก",
+        "intensity_1_to_5": 2,
+        "delivery": "Gentle reassuring warmth, softer volume but fully voiced and adult.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Gentle reassuring warmth, softer volume but fully voiced and adult.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E054",
+      "source_v12": "T054",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "ลินค่ะ พ่อไปเอารถ แม่บอกให้รอข้างล่าง",
+      "performance": {
+        "emotion_th": "ไว้ใจและโล่งใจ",
+        "intensity_1_to_5": 2,
+        "delivery": "A small relieved smile, innocent literal delivery. Let the words create the unease.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. A small relieved smile, innocent literal delivery. Let the words create the unease.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E055",
+      "source_v12": "T055",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "ผู้จัดการไม่รับสาย ส่วนมือถือของเมษาก็ไม่มีสัญญาณ\n\nขณะกำลังจะลองอีกครั้ง เสียงที่เธอจำได้ก็ดังจากข้างเสา",
+      "performance": {
+        "emotion_th": "เชื่อมเหตุการณ์อย่างสุขุม",
+        "intensity_1_to_5": 1,
+        "delivery": "Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E056",
+      "source_v12": "T056",
+      "type": "speech",
+      "speaker": "mimic_phakhin",
+      "text": "กุญแจห้องสิบสามครับ",
+      "performance": {
+        "emotion_th": "เย็นชาและบังคับ",
+        "intensity_1_to_5": 3,
+        "delivery": "Familiar voice with an increasingly impatient cold demand, precise consonants.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Imitate the established Phakhin character's vocal identity when selected; increasingly cold insistence, clear words. Add supernatural filtering in postproduction, not by making speech unintelligible. Familiar voice with an increasingly impatient cold demand, precise consonants.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E057",
+      "source_v12": "T058",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ช่วยขยับมาให้เห็นหน้าหน่อยค่ะ",
+      "performance": {
+        "emotion_th": "ระแวงและตั้งขอบเขต",
+        "intensity_1_to_5": 3,
+        "delivery": "Polite at first, then a firmer refusal. The fear is underneath the words.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Polite at first, then a firmer refusal. The fear is underneath the words.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E058",
+      "source_v12": "T059",
+      "type": "speech",
+      "speaker": "mimic_phakhin",
+      "text": "ไม่ต้องหรอก ผมเอง เอากุญแจมา",
+      "performance": {
+        "emotion_th": "เย็นชาและบังคับ",
+        "intensity_1_to_5": 3,
+        "delivery": "Familiar voice with an increasingly impatient cold demand, precise consonants.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Imitate the established Phakhin character's vocal identity when selected; increasingly cold insistence, clear words. Add supernatural filtering in postproduction, not by making speech unintelligible. Familiar voice with an increasingly impatient cold demand, precise consonants.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E059",
+      "source_v12": "T060",
+      "type": "direction",
+      "speaker": null,
+      "text": "เสียงเลียนแข็งขึ้น ลินดึงชายเสื้อกั๊กเมษา"
+    },
+    {
+      "event_id": "E060",
+      "source_v12": "T061",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "อย่าให้เขานะคะ พ่อหนูไม่เคยพูดแบบนั้น",
+      "performance": {
+        "emotion_th": "กลัวและเตือนพี่",
+        "intensity_1_to_5": 3,
+        "delivery": "Urgent but small voice, frightened recognition, no screaming.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. Urgent but small voice, frightened recognition, no screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E061",
+      "source_v12": "T062",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษาปล่อยมือจากกุญแจ ไม่ส่งให้เงา"
+    },
+    {
+      "event_id": "E062",
+      "source_v12": "T063",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ฉันให้ไม่ได้ค่ะ ถ้าคุณไม่ยอมให้เห็นหน้า",
+      "performance": {
+        "emotion_th": "ระแวงและตั้งขอบเขต",
+        "intensity_1_to_5": 3,
+        "delivery": "Polite at first, then a firmer refusal. The fear is underneath the words.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Polite at first, then a firmer refusal. The fear is underneath the words.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E063",
+      "source_v12": "T064",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "เงานั้นค่อย ๆ ถอยหายเข้าไปในผนัง\n\nเมษาดึงเก้าอี้ของลินมาใกล้ตัวกว่าเดิม",
+      "performance": {
+        "emotion_th": "ระแวงและเผยความผิดปกติ",
+        "intensity_1_to_5": 2,
+        "delivery": "Slow very slightly around the clue, restrained suspense, do not announce every detail as a shock.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Slow very slightly around the clue, restrained suspense, do not announce every detail as a shock.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E064",
+      "source_v12": "T064",
+      "type": "direction",
+      "speaker": null,
+      "text": "เงาถอยหายทางผนัง ไม่มีเสียงเท้า; ลินชี้ไปที่ภาพเก่า"
+    },
+    {
+      "event_id": "E065",
+      "source_v12": "T065",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "คุณลุงคนนั้นบอกว่า ถ้าไม่คืนกุญแจก็ออกไปไม่ได้",
+      "performance": {
+        "emotion_th": "เล่าตามที่จำได้",
+        "intensity_1_to_5": 1,
+        "delivery": "Matter-of-fact child recounting something remembered, no knowing sinister tone.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. Matter-of-fact child recounting something remembered, no knowing sinister tone.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E066",
+      "source_v12": "T066",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "ภาพที่ลินชี้ เป็นรูปพนักงานในวันเปิดกิจการ ผู้จัดการยืนอยู่ตรงกลาง แต่ดูอ่อนกว่าตอนนี้มาก วันที่ใต้ภาพระบุไว้เมื่อยี่สิบสามปีก่อน",
+      "performance": {
+        "emotion_th": "เชื่อมเหตุการณ์อย่างสุขุม",
+        "intensity_1_to_5": 1,
+        "delivery": "Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E067",
+      "source_v12": "T067",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "หนูเข้าพักวันไหนจ๊ะ",
+      "performance": {
+        "emotion_th": "สงสัยและค่อย ๆ เข้าใจความจริง",
+        "intensity_1_to_5": 3,
+        "delivery": "Careful questioning, slowed slightly by disbelief, clear rather than whispered.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Careful questioning, slowed slightly by disbelief, clear rather than whispered.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E068",
+      "source_v12": "T068",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "ลินบอกวันที่ ตรงกับวันนี้ แต่เป็นเมื่อยี่สิบปีก่อน\n\nเมษาค้นทะเบียนเก่าในตู้ใต้เคาน์เตอร์ เล่มที่ต้องการถูกดันไว้ลึกที่สุด ขอบปกมีรอยดำเหมือนถูกไฟ\n\nห้องสิบสาม นายภาคิน นางพิม และเด็กหญิงลลิน ชำระครบแล้ว แต่ช่องเช็กเอาต์ยังว่าง\n\nหมึกส่วนอื่นซีดจนแทบอ่านไม่ออก มีเพียงชื่อสามคนนี้ที่ดำเข้ม เหมือนเพิ่งเขียนลงไป\n\nระหว่างหน้ามีข่าวไฟไหม้โรงแรม ผู้เสียชีวิตสามราย แม่กับลูกติดอยู่ในทางเดินชั้นสอง ส่วนพ่อกลับเข้าอาคารเพื่อช่วยครอบครัว\n\nภาพเล็ก ๆ ข้างข่าว ทำให้เมษาหยุดหายใจไปชั่วขณะ\n\nเด็กอุ้มกระต่าย ผู้หญิงชุดสีอ่อน และชายที่มาขอกุญแจตอนเที่ยงคืน",
+      "performance": {
+        "emotion_th": "ระแวงและเผยความผิดปกติ",
+        "intensity_1_to_5": 2,
+        "delivery": "Slow very slightly around the clue, restrained suspense, do not announce every detail as a shock.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Slow very slightly around the clue, restrained suspense, do not announce every detail as a shock.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E069",
+      "source_v12": "T069",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "ผมกลับมาไม่ทัน",
+      "performance": {
+        "emotion_th": "เศร้าและโทษตัวเอง",
+        "intensity_1_to_5": 3,
+        "delivery": "Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "post_pause_ms": 600,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E070",
+      "source_v12": "T070",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษาสะดุ้งถอยชนแผงกุญแจ ภาคินไม่ตามเข้ามา"
+    },
+    {
+      "event_id": "E071",
+      "source_v12": "T071",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "ผมจอดรถรอแล้ว แต่ไม่มีใครลงมา พอขึ้นไป ควันก็เต็มบันได",
+      "performance": {
+        "emotion_th": "เศร้าและโทษตัวเอง",
+        "intensity_1_to_5": 3,
+        "delivery": "Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "post_pause_ms": 600,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E072",
+      "source_v12": "T072",
+      "type": "direction",
+      "speaker": null,
+      "text": "ภาคินมองลินที่หลับใต้เสื้อคลุม"
+    },
+    {
+      "event_id": "E073",
+      "source_v12": "T073",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "ทุกปีเรากลับมาตรงนี้ พิมโทรลงมา ลูกเดินลงบันได ส่วนผมมาขอกุญแจ",
+      "performance": {
+        "emotion_th": "เศร้าและโทษตัวเอง",
+        "intensity_1_to_5": 3,
+        "delivery": "Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "post_pause_ms": 600,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E074",
+      "source_v12": "T074",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ทำไมต้องขอกุญแจคะ",
+      "performance": {
+        "emotion_th": "สงสัยและค่อย ๆ เข้าใจความจริง",
+        "intensity_1_to_5": 3,
+        "delivery": "Careful questioning, slowed slightly by disbelief, clear rather than whispered.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Careful questioning, slowed slightly by disbelief, clear rather than whispered.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E075",
+      "source_v12": "T075",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "ประตูทางเดินหน้าห้องเราถูกล็อกจากข้างนอก คนที่ดูแลกุญแจอยู่ข้างล่าง",
+      "performance": {
+        "emotion_th": "เศร้าและโทษตัวเอง",
+        "intensity_1_to_5": 3,
+        "delivery": "Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "post_pause_ms": 600,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E076",
+      "source_v12": "T076",
+      "type": "direction",
+      "speaker": null,
+      "text": "ภาคินยกมือให้เห็นปลายนิ้วไหม้ ใช้ภาพและความเงียบแทนคำบรรยาย"
+    },
+    {
+      "event_id": "E077",
+      "source_v12": "T077",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "ผมพยายามเปิดแล้ว",
+      "performance": {
+        "emotion_th": "เศร้าและโทษตัวเอง",
+        "intensity_1_to_5": 3,
+        "delivery": "Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "post_pause_ms": 600,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Exhausted restrained grief, pauses shaped by memory, clarity maintained; no constant sobbing.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E078",
+      "source_v12": "T079",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "คุณภาคินใช่ไหมคะ",
+      "performance": {
+        "emotion_th": "สงสัยและค่อย ๆ เข้าใจความจริง",
+        "intensity_1_to_5": 3,
+        "delivery": "Careful questioning, slowed slightly by disbelief, clear rather than whispered.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Careful questioning, slowed slightly by disbelief, clear rather than whispered.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E079",
+      "source_v12": "T081",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "เขาไม่ควรเล่าเรื่องนั้นให้คุณฟัง",
+      "performance": {
+        "emotion_th": "ไม่พอใจและกดดัน",
+        "intensity_1_to_5": 3,
+        "delivery": "Controlled irritation and low authority; demand compliance without shouting.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Controlled irritation and low authority; demand compliance without shouting.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E080",
+      "source_v12": "T082",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการยืนตรงประตูสำนักงาน มองข่าวและสมุด; ภาคินอยู่ฝั่งแขก"
+    },
+    {
+      "event_id": "E081",
+      "source_v12": "T083",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "เก็บเข้าที่ แล้วกลับไปทำงาน",
+      "performance": {
+        "emotion_th": "ไม่พอใจและกดดัน",
+        "intensity_1_to_5": 3,
+        "delivery": "Controlled irritation and low authority; demand compliance without shouting.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Controlled irritation and low authority; demand compliance without shouting.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E082",
+      "source_v12": "T085",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "พวกเขาตายแล้วใช่ไหมคะ",
+      "performance": {
+        "emotion_th": "กลัวแต่กล้าถาม",
+        "intensity_1_to_5": 3,
+        "delivery": "Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E083",
+      "source_v12": "T086",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ใช่",
+      "performance": {
+        "emotion_th": "ปกปิดความผิด",
+        "intensity_1_to_5": 2,
+        "delivery": "Measured, emotionally guarded, evasive but not theatrical.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Measured, emotionally guarded, evasive but not theatrical.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E084",
+      "source_v12": "T087",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "แล้วทำไมยังอยู่ที่นี่",
+      "performance": {
+        "emotion_th": "กลัวแต่กล้าถาม",
+        "intensity_1_to_5": 3,
+        "delivery": "Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E085",
+      "source_v12": "T088",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "บางคนไม่ยอมไป เราถึงต้องมีกฎ",
+      "performance": {
+        "emotion_th": "ปกปิดความผิด",
+        "intensity_1_to_5": 2,
+        "delivery": "Measured, emotionally guarded, evasive but not theatrical.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Measured, emotionally guarded, evasive but not theatrical.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E086",
+      "source_v12": "T089",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการเดินเข้าหาเคาน์เตอร์"
+    },
+    {
+      "event_id": "E087",
+      "source_v12": "T090",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "เอาสมุดมา",
+      "performance": {
+        "emotion_th": "ไม่พอใจและกดดัน",
+        "intensity_1_to_5": 3,
+        "delivery": "Controlled irritation and low authority; demand compliance without shouting.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Controlled irritation and low authority; demand compliance without shouting.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E088",
+      "source_v12": "T091",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษากดหน้าทะเบียนไว้"
+    },
+    {
+      "event_id": "E089",
+      "source_v12": "T092",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "คืนนั้นใครล็อกประตูคะ",
+      "performance": {
+        "emotion_th": "กลัวแต่กล้าถาม",
+        "intensity_1_to_5": 3,
+        "delivery": "Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E090",
+      "source_v12": "T093",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการชะงัก เว้นจังหวะ 1–2 วินาที เสียงลูกตุ้มชัดขึ้น เมษาถามต่อเอง"
+    },
+    {
+      "event_id": "E091",
+      "source_v12": "T094",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ข่าวบอกว่าพวกเขาออกมาถึงทางเดินแล้ว ทำไมลงบันไดไม่ได้",
+      "performance": {
+        "emotion_th": "กลัวแต่กล้าถาม",
+        "intensity_1_to_5": 3,
+        "delivery": "Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Controlled fear shifting to firm questioning. Face the other person directly, not a heroic speech.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E092",
+      "source_v12": "T095",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "คืนนั้นมีของหาย ผมแค่ล็อกทางเดินไว้รอตรวจ",
+      "performance": {
+        "emotion_th": "ตั้งรับและรู้สึกผิด",
+        "intensity_1_to_5": 3,
+        "delivery": "Defensive, speech slightly quicker, tension in breath; trying to justify a terrible mistake.",
+        "post_pause_ms": 550,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Defensive, speech slightly quicker, tension in breath; trying to justify a terrible mistake.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E093",
+      "source_v12": "T097",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ผมไม่รู้ว่าไฟจะลาม ผมไม่ได้ตั้งใจให้ใครตาย",
+      "performance": {
+        "emotion_th": "ตั้งรับและรู้สึกผิด",
+        "intensity_1_to_5": 3,
+        "delivery": "Defensive, speech slightly quicker, tension in breath; trying to justify a terrible mistake.",
+        "post_pause_ms": 550,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Defensive, speech slightly quicker, tension in breath; trying to justify a terrible mistake.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E094",
+      "source_v12": "T099",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "แค่รอให้เช้า คุณก็รับเงินแล้วกลับบ้านได้",
+      "performance": {
+        "emotion_th": "ข่มขู่เบา ๆ",
+        "intensity_1_to_5": 2,
+        "delivery": "Low private threat, close and controlled, intelligible rather than breathy.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Low private threat, close and controlled, intelligible rather than breathy.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E095",
+      "source_v12": "T100",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "แล้วเด็กคนนั้นล่ะคะ",
+      "performance": {
+        "emotion_th": "เป็นห่วงเด็กและตัดสินใจยืนหยัด",
+        "intensity_1_to_5": 3,
+        "delivery": "Compassion with growing resolve, steady and direct, no melodramatic emphasis.",
+        "post_pause_ms": 550,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Compassion with growing resolve, steady and direct, no melodramatic emphasis.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E096",
+      "source_v12": "T102",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "พรุ่งนี้เธอก็ต้องรออีกใช่ไหม",
+      "performance": {
+        "emotion_th": "เป็นห่วงเด็กและตัดสินใจยืนหยัด",
+        "intensity_1_to_5": 3,
+        "delivery": "Compassion with growing resolve, steady and direct, no melodramatic emphasis.",
+        "post_pause_ms": 550,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Compassion with growing resolve, steady and direct, no melodramatic emphasis.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E097",
+      "source_v12": "T103",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการกระชากสมุด เก็บกุญแจ แล้วถอยเข้าสำนักงาน"
+    },
+    {
+      "event_id": "E098",
+      "source_v12": "T104",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ถ้าอยากกลับออกไปดี ๆ ก็อยู่เฉย ๆ จนเช้า",
+      "performance": {
+        "emotion_th": "สั่งการและเริ่มเสียการควบคุม",
+        "intensity_1_to_5": 3,
+        "delivery": "Insistent command, increasingly strained, keep the older male identity.",
+        "post_pause_ms": 350,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Insistent command, increasingly strained, keep the older male identity.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E099",
+      "source_v12": "T105",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "หลังประตูสำนักงานปิด เมษาลองเปิดประตูทางเข้า\n\nมันไม่ได้ล็อก ฝนหยุดแล้ว เธอเดินออกไปถึงถนนใหญ่ได้ ไม่มีใครขวาง",
+      "performance": {
+        "emotion_th": "เห็นใจและครุ่นคิด",
+        "intensity_1_to_5": 2,
+        "delivery": "Warm reflective empathy, quiet conviction, no sentimental overselling.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Warm reflective empathy, quiet conviction, no sentimental overselling.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E100",
+      "source_v12": "T105",
+      "type": "direction",
+      "speaker": null,
+      "text": "ประตูสำนักงานปิด ภาคินหายไป; เมษาเปิดประตูหน้า ก้าวออกไปหนึ่งขั้น ก่อนเสียงละเมอของลินดังจากในล็อบบี้"
+    },
+    {
+      "event_id": "E101",
+      "source_v12": "T106",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "แม่ หนูรอไม่ไหวแล้ว",
+      "performance": {
+        "emotion_th": "เหนื่อยและคิดถึงแม่",
+        "intensity_1_to_5": 3,
+        "delivery": "Sleepy distressed murmur, yearning for mother, soft but intelligible.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. Sleepy distressed murmur, yearning for mother, soft but intelligible.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E102",
+      "source_v12": "T107",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "เมษากลับมานั่งข้างลิน\n\nใกล้เช้าแล้ว แต่เธอเพิ่งเข้าใจว่า สำหรับคนบางคน เช้าอาจมาไม่ถึงเลย\n\nตีห้าสิบเจ็ดนาที โทรศัพท์จากห้องสิบสามดังขึ้นอีกครั้ง",
+      "performance": {
+        "emotion_th": "เห็นใจและครุ่นคิด",
+        "intensity_1_to_5": 2,
+        "delivery": "Warm reflective empathy, quiet conviction, no sentimental overselling.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Warm reflective empathy, quiet conviction, no sentimental overselling.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E103",
+      "source_v12": "T107",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษากลับเข้ามา ปิดประตู นั่งข้างลิน; จากนั้นเปลี่ยนสู่โทรศัพท์ชุดที่สอง"
+    },
+    {
+      "event_id": "E104",
+      "source_v12": "T108",
+      "type": "direction",
+      "speaker": null,
+      "text": "เสียงเรียกครั้งที่ 4: เสียงเลียนผู้จัดการออกจากโทรศัพท์ที่ยังวางบนฐาน"
+    },
+    {
+      "event_id": "E105",
+      "source_v12": "T108",
+      "type": "speech",
+      "speaker": "mimic_manager",
+      "text": "เมษา รับสาย",
+      "performance": {
+        "emotion_th": "เร่งเร้าและหลอกให้กลัว",
+        "intensity_1_to_5": 3,
+        "delivery": "Coercive urgency, low rough edge, press for compliance without becoming unintelligible.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Use the approved Gacrux manager identity but with cold urgent insistence; dialogue is clear. Telephone filtering is applied in postproduction. Coercive urgency, low rough edge, press for compliance without becoming unintelligible.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E106",
+      "source_v12": "T109",
+      "type": "direction",
+      "speaker": null,
+      "text": "ครั้งที่ 6 เมษาถอยจากโทรศัพท์ ห้ามให้เธอยกหู"
+    },
+    {
+      "event_id": "E107",
+      "source_v12": "T110",
+      "type": "speech",
+      "speaker": "mimic_manager",
+      "text": "มีเรื่องด่วน รับเดี๋ยวนี้",
+      "performance": {
+        "emotion_th": "เร่งเร้าและหลอกให้กลัว",
+        "intensity_1_to_5": 3,
+        "delivery": "Coercive urgency, low rough edge, press for compliance without becoming unintelligible.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Use the approved Gacrux manager identity but with cold urgent insistence; dialogue is clear. Telephone filtering is applied in postproduction. Coercive urgency, low rough edge, press for compliance without becoming unintelligible.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E108",
+      "source_v12": "T111",
+      "type": "direction",
+      "speaker": null,
+      "text": "ครั้งที่ 9 เสียงเลียนแห้งพร่า"
+    },
+    {
+      "event_id": "E109",
+      "source_v12": "T112",
+      "type": "speech",
+      "speaker": "mimic_manager",
+      "text": "เด็กหายไปแล้ว",
+      "performance": {
+        "emotion_th": "เร่งเร้าและหลอกให้กลัว",
+        "intensity_1_to_5": 3,
+        "delivery": "Coercive urgency, low rough edge, press for compliance without becoming unintelligible.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Use the approved Gacrux manager identity but with cold urgent insistence; dialogue is clear. Telephone filtering is applied in postproduction. Coercive urgency, low rough edge, press for compliance without becoming unintelligible.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E110",
+      "source_v12": "T113",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมษามองลินที่ยังหลับ; ครั้งที่ 12 เสียงเลียนตะโกน"
+    },
+    {
+      "event_id": "E111",
+      "source_v12": "T114",
+      "type": "speech",
+      "speaker": "mimic_manager",
+      "text": "อย่ารอ",
+      "performance": {
+        "emotion_th": "ตะโกนเร่งครั้งเดียว",
+        "intensity_1_to_5": 4,
+        "delivery": "A single sharp urgent command, do not prolong or add words.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Use the approved Gacrux manager identity but with cold urgent insistence; dialogue is clear. Telephone filtering is applied in postproduction. A single sharp urgent command, do not prolong or add words.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E112",
+      "source_v12": "T115",
+      "type": "direction",
+      "speaker": null,
+      "text": "หลังเสียงเรียกครั้งที่ 13 เสียงหลอกเงียบ เมษาจึงยกหู บทพิมเริ่มตรงนี้"
+    },
+    {
+      "event_id": "E113",
+      "source_v12": "T116",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "คุณยังอยู่",
+      "performance": {
+        "emotion_th": "มีความหวังและรีบช่วยลูก",
+        "intensity_1_to_5": 3,
+        "delivery": "Fragile hope becoming practical urgency, maternal warmth under tension.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Fragile hope becoming practical urgency, maternal warmth under tension.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E114",
+      "source_v12": "T118",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "ฉันจะช่วยพาลูกคุณออกไปค่ะ",
+      "performance": {
+        "emotion_th": "มุ่งมั่นและปลอบใจ",
+        "intensity_1_to_5": 3,
+        "delivery": "Sincere reassurance and determination, warm adult voice, quietly committed.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Sincere reassurance and determination, warm adult voice, quietly committed.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E115",
+      "source_v12": "T119",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "ต้องลงทะเบียนออกก่อน เขาเก็บชื่อเราไว้ตั้งแต่คืนนั้น",
+      "performance": {
+        "emotion_th": "มีความหวังและรีบช่วยลูก",
+        "intensity_1_to_5": 3,
+        "delivery": "Fragile hope becoming practical urgency, maternal warmth under tension.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Fragile hope becoming practical urgency, maternal warmth under tension.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E116",
+      "source_v12": "T120",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "สมุดอยู่กับผู้จัดการ",
+      "performance": {
+        "emotion_th": "เร่งด่วนและเห็นใจ",
+        "intensity_1_to_5": 3,
+        "delivery": "Urgent but caring, natural dialogue, soften slightly when asking her name.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Urgent but caring, natural dialogue, soften slightly when asking her name.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E117",
+      "source_v12": "T121",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "ฉันรู้ ฉันจะพาเขาขึ้นมา คุณรีบไปเอานะ",
+      "performance": {
+        "emotion_th": "มีความหวังและรีบช่วยลูก",
+        "intensity_1_to_5": 3,
+        "delivery": "Fragile hope becoming practical urgency, maternal warmth under tension.",
+        "post_pause_ms": 500,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Fragile hope becoming practical urgency, maternal warmth under tension.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E118",
+      "source_v12": "T122",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "เดี๋ยวค่ะ คุณชื่อพิมใช่ไหม",
+      "performance": {
+        "emotion_th": "เร่งด่วนและเห็นใจ",
+        "intensity_1_to_5": 3,
+        "delivery": "Urgent but caring, natural dialogue, soften slightly when asking her name.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Urgent but caring, natural dialogue, soften slightly when asking her name.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E119",
+      "source_v12": "T124",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "ฉันไม่ได้ยินใครเรียกชื่อนั้นมานานแล้ว",
+      "performance": {
+        "emotion_th": "สะเทือนใจและรู้สึกว่าถูกจดจำ",
+        "intensity_1_to_5": 3,
+        "delivery": "A small release of grief, touched by hearing her own name, restrained emotion.",
+        "post_pause_ms": 900,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. A small release of grief, touched by hearing her own name, restrained emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E120",
+      "source_v12": "T125",
+      "type": "direction",
+      "speaker": null,
+      "text": "พิมจบสาย เว้นความเงียบแล้วมีฝีเท้าจากชั้นสอง เสียงพิมย้ายจากโทรศัพท์ไปก้องบนบันได"
+    },
+    {
+      "event_id": "E121",
+      "source_v12": "T126",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "คุณผู้จัดการคะ ช่วยขึ้นมาเปิดประตูให้ฉันหน่อย",
+      "performance": {
+        "emotion_th": "เรียกอย่างอดกลั้น",
+        "intensity_1_to_5": 2,
+        "delivery": "Calling from a distance, sorrow held under deliberate calm. Room reverb added in post.",
+        "post_pause_ms": 550,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Calling from a distance, sorrow held under deliberate calm. Room reverb added in post.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E122",
+      "source_v12": "T127",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "เสียงเรียกดังซ้ำเป็นระยะ ผู้จัดการยังไม่ออกมา\n\nจนเกือบตีห้าห้าสิบ ประตูสำนักงานจึงเปิดออก ในมือเขามีกุญแจห้องสิบสาม",
+      "performance": {
+        "emotion_th": "เชื่อมเหตุการณ์อย่างสุขุม",
+        "intensity_1_to_5": 1,
+        "delivery": "Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E123",
+      "source_v12": "T127",
+      "type": "direction",
+      "speaker": null,
+      "text": "แสดงเวลาผ่านด้วยภาพเมษารอและเสียงเรียกห่าง ๆ ไม่เล่นเสียงพิมซ้ำจนรบกวนบท"
+    },
+    {
+      "event_id": "E124",
+      "source_v12": "T128",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "อยู่ตรงนี้",
+      "performance": {
+        "emotion_th": "สั่งการและเริ่มเสียการควบคุม",
+        "intensity_1_to_5": 3,
+        "delivery": "Insistent command, increasingly strained, keep the older male identity.",
+        "post_pause_ms": 350,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Insistent command, increasingly strained, keep the older male identity.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E125",
+      "source_v12": "T129",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "ทันทีที่เสียงรองเท้าพ้นชานพัก เมษาก็เข้าสำนักงาน\n\nสมุดเปิดค้างอยู่บนโต๊ะ ข้างกันมีรายงานไฟไหม้ คำให้การ และจดหมายหลายฉบับ ทุกฉบับขึ้นต้นถึงครอบครัวผู้เสียชีวิต แต่ไม่มีฉบับไหนเขียนจบ\n\nเธอคว้าสมุดกับปากกา กลับมาที่เคาน์เตอร์ตอนตีห้าห้าสิบสี่นาที",
+      "performance": {
+        "emotion_th": "เชื่อมเหตุการณ์อย่างสุขุม",
+        "intensity_1_to_5": 1,
+        "delivery": "Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E126",
+      "source_v12": "T129",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการขึ้นบันได กุญแจยังอยู่กับเขา; เมษาเข้าห้องสำนักงานแล้วนำสมุดกับปากกากลับมา ลินตื่นมองบันได"
+    },
+    {
+      "event_id": "E127",
+      "source_v12": "T130",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "แม่กำลังมา",
+      "performance": {
+        "emotion_th": "มีความหวัง",
+        "intensity_1_to_5": 2,
+        "delivery": "Quiet recognition and anticipation, a gentle lift rather than excitement.",
+        "post_pause_ms": 450,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. Quiet recognition and anticipation, a gentle lift rather than excitement.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E128",
+      "source_v12": "T131",
+      "type": "direction",
+      "speaker": null,
+      "text": "พิมยืนชานพัก ผู้จัดการขวางเธอ ประตูทางเดินห้อง 13 อยู่ด้านหลัง ควันบางเริ่มออกมา"
+    },
+    {
+      "event_id": "E129",
+      "source_v12": "T132",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "กลับเข้าห้อง",
+      "performance": {
+        "emotion_th": "สั่งการและเริ่มเสียการควบคุม",
+        "intensity_1_to_5": 3,
+        "delivery": "Insistent command, increasingly strained, keep the older male identity.",
+        "post_pause_ms": 350,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Insistent command, increasingly strained, keep the older male identity.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E130",
+      "source_v12": "T134",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "เราจ่ายค่าห้องแล้ว",
+      "performance": {
+        "emotion_th": "เจ็บปวดและทวงความยุติธรรม",
+        "intensity_1_to_5": 4,
+        "delivery": "Build grief across these lines, deliberate and wounded, voice slightly trembling, no screaming.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Build grief across these lines, deliberate and wounded, voice slightly trembling, no screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E131",
+      "source_v12": "T135",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "กลับเข้าไป",
+      "performance": {
+        "emotion_th": "สั่งการและเริ่มเสียการควบคุม",
+        "intensity_1_to_5": 3,
+        "delivery": "Insistent command, increasingly strained, keep the older male identity.",
+        "post_pause_ms": 350,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Insistent command, increasingly strained, keep the older male identity.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E132",
+      "source_v12": "T136",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "เราขอกุญแจแล้ว",
+      "performance": {
+        "emotion_th": "เจ็บปวดและทวงความยุติธรรม",
+        "intensity_1_to_5": 4,
+        "delivery": "Build grief across these lines, deliberate and wounded, voice slightly trembling, no screaming.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Build grief across these lines, deliberate and wounded, voice slightly trembling, no screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E133",
+      "source_v12": "T138",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "เรารอคุณแล้ว",
+      "performance": {
+        "emotion_th": "เจ็บปวดและทวงความยุติธรรม",
+        "intensity_1_to_5": 4,
+        "delivery": "Build grief across these lines, deliberate and wounded, voice slightly trembling, no screaming.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Build grief across these lines, deliberate and wounded, voice slightly trembling, no screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E134",
+      "source_v12": "T139",
+      "type": "direction",
+      "speaker": null,
+      "text": "ตัดสลับพิมกับเมษากรอกวันที่ เวลา และเซ็นชื่อ ช่องรับคืนกุญแจยังว่าง; ผู้จัดการเห็นจึงตะโกน"
+    },
+    {
+      "event_id": "E135",
+      "source_v12": "T140",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "หยุด",
+      "performance": {
+        "emotion_th": "ตกใจและตะโกนห้าม",
+        "intensity_1_to_5": 4,
+        "delivery": "One sharp alarmed command. Brief raised voice only, not continuous screaming.",
+        "post_pause_ms": 350,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. One sharp alarmed command. Brief raised voice only, not continuous screaming.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E136",
+      "source_v12": "T141",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการพุ่งลงบันได ภาคินก้าวขวางบนชานพัก"
+    },
+    {
+      "event_id": "E137",
+      "source_v12": "T142",
+      "type": "speech",
+      "speaker": "phakhin",
+      "text": "คืนนั้นคุณก็บอกให้ผมรอ",
+      "performance": {
+        "emotion_th": "เจ็บปวดและกล่าวโทษ",
+        "intensity_1_to_5": 3,
+        "delivery": "Firm wounded accusation, contained anger rather than a shout.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult male, restrained exhausted grief, clear and grounded, no horror voice distortion. Firm wounded accusation, contained anger rather than a shout.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E138",
+      "source_v12": "T144",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ถ้าพวกเขาออกไป ผมจะต้อง",
+      "performance": {
+        "emotion_th": "กลัวและพูดค้าง",
+        "intensity_1_to_5": 4,
+        "delivery": "Panic breaks the authority; leave the unfinished thought hanging. Do not add words.",
+        "post_pause_ms": 900,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Panic breaks the authority; leave the unfinished thought hanging. Do not add words.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E139",
+      "source_v12": "T145",
+      "type": "direction",
+      "speaker": null,
+      "text": "ผู้จัดการพูดค้าง; ภาพใกล้ช่องรับคืนกุญแจที่ว่าง ตัดมือผู้จัดการซึ่งยังกำกุญแจ ใส่เวลา 05:58 กลิ่นไหม้สื่อด้วยเมษาไอเบา ๆ กระจกแตก ควันไหล พิมค่อย ๆ แกะนิ้วผู้จัดการ เขาเริ่มร้องไห้"
+    },
+    {
+      "event_id": "E140",
+      "source_v12": "T146",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "ผมขอโทษ",
+      "performance": {
+        "emotion_th": "สำนึกผิดและสิ้นหวัง",
+        "intensity_1_to_5": 4,
+        "delivery": "Choked sincere apology, restrained tears audible in breath, every syllable still clear.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Choked sincere apology, restrained tears audible in breath, every syllable still clear.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E141",
+      "source_v12": "T148",
+      "type": "speech",
+      "speaker": "pim",
+      "text": "คุณควรพูด ตอนที่เราเคาะประตู",
+      "performance": {
+        "emotion_th": "เศร้าและกล่าวโทษอย่างสงบ",
+        "intensity_1_to_5": 4,
+        "delivery": "Quiet grief with moral finality, steady words, no anger shout. Leave silence after the line.",
+        "post_pause_ms": 1000,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult woman and mother, emotionally grounded and clear, restrained delivery. Quiet grief with moral finality, steady words, no anger shout. Leave silence after the line.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E142",
+      "source_v12": "T149",
+      "type": "direction",
+      "speaker": null,
+      "text": "กุญแจหลุด กระทบขอบขั้นแล้วตกพรม เมษาเก็บ สะดุ้งเพราะร้อนแต่กำไว้ วิ่งกลับแผง แขวนกุญแจและทำเครื่องหมายช่องสุดท้าย ภาพเวลายืนยัน 05:59"
+    },
+    {
+      "event_id": "E143",
+      "source_v12": "T150",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "รับคืนกุญแจแล้วค่ะ",
+      "performance": {
+        "emotion_th": "โล่งใจแต่ยังลุ้น",
+        "intensity_1_to_5": 3,
+        "delivery": "Breathless relief after running, clear professional words, not cheerful celebration.",
+        "post_pause_ms": 550,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Breathless relief after running, clear professional words, not cheerful celebration.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E144",
+      "source_v12": "T151",
+      "type": "direction",
+      "speaker": null,
+      "text": "เมื่อรายการครบ ประตูหน้าเปิด ลมเย็นพัด ควันจาง ลินลงจากเก้าอี้ แตะมือเมษาที่แดง"
+    },
+    {
+      "event_id": "E145",
+      "source_v12": "T152",
+      "type": "speech",
+      "speaker": "lin",
+      "text": "พี่ไม่ต้องรอแล้วนะ",
+      "performance": {
+        "emotion_th": "อ่อนโยนและขอบคุณ",
+        "intensity_1_to_5": 3,
+        "delivery": "Tender farewell, relieved and grateful, natural child voice, no weeping performance.",
+        "post_pause_ms": 900,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Leda",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Leda identity: fictional young Thai girl, gentle and youthful, clear natural pitch, no exaggerated squeaky voice. Tender farewell, relieved and grateful, natural child voice, no weeping performance.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E146",
+      "source_v12": "T153",
+      "type": "direction",
+      "speaker": null,
+      "text": "ลินวิ่งกอดพิม รอยดำบนชุดพิมจาง ภาคินลังเลก่อนรับมือพิม ทั้งสามออกประตูจนพ้นธรณี จึงให้นาฬิกาตี 6 ครั้ง; ผู้จัดการดูแก่ลง ประตูทางเดินเปิด เขาถอยเข้าไปด้านใน"
+    },
+    {
+      "event_id": "E147",
+      "source_v12": "T154",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "คุณเมษา ช่วยเรียกใครมารับผมหน่อย",
+      "performance": {
+        "emotion_th": "หวาดกลัวและวิงวอน",
+        "intensity_1_to_5": 4,
+        "delivery": "Fragile desperate plea, older voice weakened by fear; do not turn it into a growling monster.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Fragile desperate plea, older voice weakened by fear; do not turn it into a growling monster.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E148",
+      "source_v12": "T155",
+      "type": "direction",
+      "speaker": null,
+      "text": "ประตูทางเดินปิด ผู้จัดการรีบดึงลูกบิดไม่ทัน เสียงเคาะดังจากข้างใน"
+    },
+    {
+      "event_id": "E149",
+      "source_v12": "T156",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "เมษา",
+      "performance": {
+        "emotion_th": "หวาดกลัวและวิงวอน",
+        "intensity_1_to_5": 4,
+        "delivery": "Fragile desperate plea, older voice weakened by fear; do not turn it into a growling monster.",
+        "post_pause_ms": 700,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. Fragile desperate plea, older voice weakened by fear; do not turn it into a growling monster.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E150",
+      "source_v12": "T157",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "พอสัญญาณโทรศัพท์กลับมา เมษาก็แจ้งตำรวจ\n\nแต่หลังเจ้าหน้าที่เข้าไปตรวจ เขากลับมีคำถามที่เธอไม่คิดว่าจะได้ยิน",
+      "performance": {
+        "emotion_th": "เชื่อมเหตุการณ์อย่างสุขุม",
+        "intensity_1_to_5": 1,
+        "delivery": "Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Clear restrained bridge narration, natural pace, let surrounding dialogue carry the emotion.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E151",
+      "source_v12": "T157",
+      "type": "direction",
+      "speaker": null,
+      "text": "ไม่มีคำตอบ กลอนด้านนอกเลื่อนเอง เมษาฉีกหน้าทะเบียนพับใส่กระเป๋า ออกไปรอตำรวจหน้าประตู"
+    },
+    {
+      "event_id": "E152",
+      "source_v12": "T158",
+      "type": "speech",
+      "speaker": "police",
+      "text": "แน่ใจนะครับว่าเมื่อคืนเป็นที่นี่",
+      "performance": {
+        "emotion_th": "สงสัยและอธิบายตามข้อเท็จจริง",
+        "intensity_1_to_5": 1,
+        "delivery": "Ordinary professional Thai speech, neutral concern. Do not make the officer ominous.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult officer, ordinary conversational speech, professional and credible. Ordinary professional Thai speech, neutral concern. Do not make the officer ominous.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E153",
+      "source_v12": "T159",
+      "type": "direction",
+      "speaker": null,
+      "text": "ตำรวจพาเมษามองล็อบบี้ที่เต็มฝุ่น ผ้าคลุมเฟอร์นิเจอร์ และโคมไม่มีหลอด ให้เธอเห็นก่อนถามผู้จัดการ"
+    },
+    {
+      "event_id": "E154",
+      "source_v12": "T160",
+      "type": "speech",
+      "speaker": "police",
+      "text": "โรงแรมปิดมาหลายปีแล้วครับ",
+      "performance": {
+        "emotion_th": "สงสัยและอธิบายตามข้อเท็จจริง",
+        "intensity_1_to_5": 1,
+        "delivery": "Ordinary professional Thai speech, neutral concern. Do not make the officer ominous.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult officer, ordinary conversational speech, professional and credible. Ordinary professional Thai speech, neutral concern. Do not make the officer ominous.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E155",
+      "source_v12": "T161",
+      "type": "speech",
+      "speaker": "maysa",
+      "text": "แล้วผู้จัดการล่ะคะ",
+      "performance": {
+        "emotion_th": "สับสนและไม่อยากเชื่อ",
+        "intensity_1_to_5": 3,
+        "delivery": "Stunned, searching for a normal explanation, slight disbelief.",
+        "post_pause_ms": 550,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Kore",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved original Kore identity: Thai woman about 25, natural conversational speech and grounded acting, not an announcer. Stunned, searching for a normal explanation, slight disbelief.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E156",
+      "source_v12": "T162",
+      "type": "speech",
+      "speaker": "police",
+      "text": "ถ้าหมายถึงเจ้าของเดิม เสียตั้งแต่ปีก่อน ญาติกำลังจะขายที่",
+      "performance": {
+        "emotion_th": "สงสัยและอธิบายตามข้อเท็จจริง",
+        "intensity_1_to_5": 1,
+        "delivery": "Ordinary professional Thai speech, neutral concern. Do not make the officer ominous.",
+        "post_pause_ms": 400,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": null,
+        "voice_status": "not_selected",
+        "style": "Thai adult officer, ordinary conversational speech, professional and credible. Ordinary professional Thai speech, neutral concern. Do not make the officer ominous.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E157",
+      "source_v12": "T163",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "ประตูทางเดินเปิดได้ ข้างในไม่มีใคร โทรศัพท์สีงาช้างในห้องถูกตัดสายไปแล้ว\n\nแต่ลูกบิดด้านในมีรอยข่วนใหม่ ใต้ประตูมีเศษเล็บติดอยู่หนึ่งชิ้น\n\nเมษาไม่กลับไปที่โรงแรมอีก แผลใช้เวลาหลายสัปดาห์กว่าจะหาย ส่วนหน้าทะเบียนที่เธอเก็บมา ยังมีชื่อทั้งสามคนกับลายเซ็นของเธอ เวลาเช็กเอาต์ ห้านาฬิกาห้าสิบเก้านาที\n\nใต้ลงไป ในบรรทัดที่เคยว่าง มีชื่อผู้เข้าพักคนใหม่\n\nเป็นชื่อผู้จัดการ ห้องสิบสาม ไม่ระบุวันออก\n\nเธอคิดว่ามันจบแล้ว จนกระทั่งครบรอบหนึ่งปี\n\nตีสองสิบสามนาที โทรศัพท์มือถือของเมษาดังขึ้น ไม่มีเบอร์ผู้โทร มีเพียงเลขสิบสาม",
+      "performance": {
+        "emotion_th": "สงบแต่ทิ้งความไม่ปลอดภัย",
+        "intensity_1_to_5": 2,
+        "delivery": "Begin matter-of-fact, gradually return to unease for the anniversary phone call.",
+        "post_pause_ms": 650,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. Begin matter-of-fact, gradually return to unease for the anniversary phone call.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E158",
+      "source_v12": "T163",
+      "type": "direction",
+      "speaker": null,
+      "text": "หลัง Nox พูดถึงโทรศัพท์หนึ่งปีต่อมา: โทรศัพท์มือถือดังครบ 13 ครั้ง เมษายื่นมือหลังครั้งที่ 12 แต่หยุด หลังครั้งที่ 13 โทรศัพท์รับเอง ได้ยินลมหายใจชายชรา"
+    },
+    {
+      "event_id": "E159",
+      "source_v12": "T164",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "คุณเมษา",
+      "performance": {
+        "emotion_th": "โดดเดี่ยวและหมดหวัง",
+        "intensity_1_to_5": 3,
+        "delivery": "An exhausted trapped old man, quiet and pleading, with a trembling breath. Never shout. Let the question land.",
+        "post_pause_ms": 1000,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. An exhausted trapped old man, quiet and pleading, with a trembling breath. Never shout. Let the question land.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E160",
+      "source_v12": "T165",
+      "type": "direction",
+      "speaker": null,
+      "text": "หลังคำว่า “คุณเมษา…” เสียงเคาะประตูดังจากปลายสาย เว้นก่อนประโยคถัดไป ไม่มี Nox แทรก"
+    },
+    {
+      "event_id": "E161",
+      "source_v12": "T166",
+      "type": "speech",
+      "speaker": "manager",
+      "text": "หกโมงหรือยังครับ",
+      "performance": {
+        "emotion_th": "โดดเดี่ยวและหมดหวัง",
+        "intensity_1_to_5": 3,
+        "delivery": "An exhausted trapped old man, quiet and pleading, with a trembling breath. Never shout. Let the question land.",
+        "post_pause_ms": 1000,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Gacrux",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Gacrux identity: older Thai male hotel manager, mature low register; keep vocal age and identity consistent even when frightened. An exhausted trapped old man, quiet and pleading, with a trembling breath. Never shout. Let the question land.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E162",
+      "source_v12": "T167",
+      "type": "speech",
+      "speaker": "nox",
+      "text": "ถ้าคืนนี้มีใครโทรมาถามเวลา…\n\nดูให้แน่ใจก่อนนะครับ ว่าเขารอเช้าอยู่ที่ไหน",
+      "performance": {
+        "emotion_th": "เตือนอย่างสงบและชวนคิด",
+        "intensity_1_to_5": 2,
+        "delivery": "An intimate final warning, calm and lightly unsettling, leave the ending open.",
+        "post_pause_ms": 1000,
+        "pause_scope": "editorial hint after utterance; do not add blindly to natural pauses",
+        "voice": "Charon",
+        "voice_status": "user_approved_identity",
+        "style": "Maintain the approved Charon narrator identity: warm resonant Thai male storyteller; restrained cinematic narration, intelligible Thai, never read stage directions. An intimate final warning, calm and lightly unsettling, leave the ending open.",
+        "metadata_field": "speech_metadata.style"
+      }
+    },
+    {
+      "event_id": "E163",
+      "source_v12": "T167",
+      "type": "direction",
+      "speaker": null,
+      "text": "กลับ NOX ปิดนาฬิกาพก หลังประโยคปิด จึงมีเสียงโทรศัพท์ข้างผู้ชมหนึ่งครั้ง ค้างกุญแจแล้วตัดดำ ไม่มีใครรับ"
+    }
+  ]
+}
