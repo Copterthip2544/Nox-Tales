@@ -2,7 +2,7 @@
 
 [กลับหน้ารวม](README.md)
 
-ภาพที่ยังไม่อนุมัติในหน้านี้ต้องรอผู้ใช้ตรวจ ก่อนนำไปตัดต่อเพิ่ม
+ผู้ใช้อนุญาตให้นำภาพที่ตรวจแล้วไปตัดต่อได้ เวอร์ชันที่เลิกใช้แยกอยู่ใน archive
 
 ## I08_manager_trapped_v2 — ผู้จัดการติดอยู่หลังประตู — เอามือที่ทะลุบานประตูออก
 
@@ -21,3 +21,17 @@
 [เปิดภาพต้นฉบับ](../assets/I10_Lin_touch_hand.png)
 
 <img src="../assets/I10_Lin_touch_hand.png" width="800" alt="I10_Lin_touch_hand" />
+
+## J01_police_Maysa — J01_police_Maysa
+
+[เปิดภาพต้นฉบับ](../assets/J01_police_Maysa.png)
+
+<img src="../assets/J01_police_Maysa.png" width="800" alt="J01_police_Maysa" />
+
+## J02_abandoned_lobby — J02_abandoned_lobby
+
+[เปิดภาพต้นฉบับ](../assets/J02_abandoned_lobby.png)
+
+<img src="../assets/J02_abandoned_lobby.png" width="800" alt="J02_abandoned_lobby" />
+
+[ชุดถัดไป](batch_10.md)

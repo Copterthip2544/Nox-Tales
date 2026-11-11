@@ -71,8 +71,8 @@ def make_cuts(events,holds,rings,duration,alignment,opening):
     group([137,138],'I03_Phakhin_blocks_v2');group([140],'I09_manager_pleading')
     group([143],'I06_Maysa_returnskey_v2');group([145],'I10_Lin_touch_hand')
     group([147,149],'I08_manager_trapped_v2');group([150,152,155,156],'J01_police_Maysa')
-    group([154],'J02_abandoned_lobby');group([157],'J04_cut_phone')
-    group([159],'J07_phone13');group([161],'J08_Maysa_home_fear');group([162],'A01_NOX_host')
+    group([154],'J02_abandoned_lobby');group([157],'J04_cut_phone_v2')
+    group([159],'J07_phone13');group([161],'J08_Maysa_home_fear_v2');group([162],'A01_NOX_host')
     # Actual acoustic paragraph boundaries from approved narration recordings.
     para_assets={
       'E022':['L01_lobby_master','C01_Phakhin_shadow'],
@@ -85,7 +85,7 @@ def make_cuts(events,holds,rings,duration,alignment,opening):
       'E122':['H01_Pim_landing','H02_manager_key_stairs'],
       'E125':['H04_Maysa_takes_ledger','H03_office_papers_v2','H04_Maysa_takes_ledger'],
       'E150':['J01_police_Maysa','J01_police_Maysa'],
-      'E157':['J04_cut_phone','J03_scratched_door','J05_Maysa_home_ledger','J06_new_ledger_entry','J06_new_ledger_entry','J08_Maysa_home_fear','J07_phone13'],
+      'E157':['J04_cut_phone_v2','J03_scratched_door','J05_Maysa_home_ledger','J06_new_ledger_entry','J06_new_ledger_entry','J08_Maysa_home_fear_v2','J07_phone13'],
       'E162':['A01_NOX_host','A02_key13_insert']}
     for eid,assets in para_assets.items():
         pars=alignment['events'][eid]['paragraphs'];assert len(pars)==len(assets),(eid,len(pars),len(assets))
@@ -101,15 +101,15 @@ def make_cuts(events,holds,rings,duration,alignment,opening):
       101:'G01_Maysa_exit',102:'G02_Lin_sleep',121:'H01_Pim_landing',124:'H02_manager_key_stairs',
       125:'H02_manager_key_stairs',129:'I01_landing_confront',135:'I02_Maysa_writing_v2',
       137:'I03_Phakhin_blocks_v2',140:'I04_Pim_key_grip_v2',143:'I05_key_fallen',
-      145:'I10_Lin_touch_hand',147:'I07_family_exit',149:'I08_manager_trapped_v2',
-      152:'J01_police_Maysa',154:'J02_abandoned_lobby',159:'J07_phone13',161:'J08_Maysa_home_fear'}
+      145:'I10_Lin_touch_hand',147:'I07_family_exit_v2',149:'I08_manager_trapped_v2',
+      152:'J01_police_Maysa',154:'J02_abandoned_lobby',159:'J07_phone13',161:'J08_Maysa_home_fear_v2'}
     for h in holds:
         n=int(h['before'][1:])
         if n in actions:put(h['start'],actions[n],f'Action before {h["before"]}')
         if n==143:put(h['start']+3.,'I06_Maysa_returnskey_v2','hot key returned to rack')
     for r in rings:
         if r['kind']=='mobile':
-            put(r['start'],'J07_phone13','one-year call ring1');put(r['start']+17.6,'J08_Maysa_home_fear','ring12 - hand stops');put(r['start']+19.2,'J07_phone13','ring13 - automatic answer')
+            put(r['start'],'J07_phone13','one-year call ring1');put(r['start']+17.6,'J08_Maysa_home_fear_v2','ring12 - hand stops');put(r['start']+19.2,'J07_phone13','ring13 - automatic answer')
         else:put(r['start'],'A14_phone_insert','ring1 - handset remains on base')
     # Anchor first visible new action precisely after the approved opening.
     at('E006','B01_contract')

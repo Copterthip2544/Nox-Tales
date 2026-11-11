@@ -2,7 +2,7 @@
 
 [กลับหน้ารวม](README.md)
 
-ภาพที่ยังไม่อนุมัติในหน้านี้ต้องรอผู้ใช้ตรวจ ก่อนนำไปตัดต่อเพิ่ม
+ผู้ใช้อนุญาตให้นำภาพที่ตรวจแล้วไปตัดต่อได้ เวอร์ชันที่เลิกใช้แยกอยู่ใน archive
 
 ## I03_Phakhin_blocks_v2 — ภาคินขวางผู้จัดการ
 
@@ -28,10 +28,10 @@
 
 <img src="../assets/I06_Maysa_returnskey_v2.png" width="800" alt="I06_Maysa_returnskey_v2" />
 
-## I07_family_exit — ครอบครัวออกจากโรงแรม
+## I07_family_exit_v2 — ครอบครัวออกจากโรงแรม
 
-[เปิดภาพต้นฉบับ](../assets/I07_family_exit.png)
+[เปิดภาพต้นฉบับ](../assets/I07_family_exit_v2.png)
 
-<img src="../assets/I07_family_exit.png" width="800" alt="I07_family_exit" />
+<img src="../assets/I07_family_exit_v2.png" width="800" alt="I07_family_exit_v2" />
 
 [ชุดถัดไป](batch_09.md)

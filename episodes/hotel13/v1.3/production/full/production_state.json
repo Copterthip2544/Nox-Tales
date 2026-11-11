@@ -3,7 +3,7 @@
   "brand": "Frame Tales",
   "script": "v1.3",
   "priority": "Quality first; 19:00 Bangkok is desired, not a reason to skip QA",
-  "stage": "paused_for_user_image_review",
+  "stage": "editing_authorized",
   "audio": "111 approved turns ready, do not regenerate",
   "opening": "v03 approved, preserve 13 shots and corrected phone image",
   "style": "16:9 cinematic illustrated storytelling, single-direction pan OR gentle zoom; no shake",
@@ -134,7 +134,7 @@
       "status": "reviewed_for_edit",
       "user_approval": "approved",
       "visual_review": "User approved v3: pronated left hand, four fingers over cover, thumb on near/lower edge. Saved as E01_Maysa_archive.png.",
-      "github_integration": "approved_by_user",
+      "github_integration": "published_and_verified",
       "image_revision": 3,
       "source_generation": "exec-1f2906d8-e7f6-4529-bc51-8976dab41c4d.png"
     },
@@ -427,12 +427,12 @@
       "user_approval": "pending"
     },
     "I07_family_exit": {
-      "file": "assets/I07_family_exit.png",
+      "file": "archive/I07_family_exit.png",
       "sha256": "c614e332290a611a2c599a3393867d43af1d80023a88bcc595193d847514a161",
-      "status": "awaiting_visual_review",
-      "visual_review": "Candidate awaiting user review; inspect Lin footwear/proportions and family silhouettes.",
+      "status": "rejected",
+      "visual_review": "Child shoe heel inconsistent with flat Mary Jane reference; replaced by v2.",
       "source_generation": "exec-0b9ea3da-bc3c-4687-8ca3-5556cd6d0024.png",
-      "user_approval": "pending"
+      "user_approval": "not_applicable"
     },
     "I08_manager_trapped": {
       "file": "archive/I08_manager_trapped.png",
@@ -466,15 +466,107 @@
       "visual_review": "Original malformed left-hand grip replaced by user-approved v3 under canonical filename.",
       "user_approval": "not_applicable",
       "source_generation": "exec-c18d7aa9-ea1f-4fb1-8f81-787d770857e3.png"
+    },
+    "J01_police_Maysa": {
+      "file": "assets/J01_police_Maysa.png",
+      "sha256": "6f47ee04f3d5ff325b2e823d3c0030ea068ad7ed28359a49f7cdca0e2b382e94",
+      "status": "reviewed_for_edit",
+      "visual_review": "Two separated figures, correct Maysa skirt and single torn page, natural arms; same hotel daylight.",
+      "user_approval": "usable_selection_authorized",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-3bace8c6-c7f6-4883-a5b9-08bd21241965.png"
+    },
+    "J02_abandoned_lobby": {
+      "file": "assets/J02_abandoned_lobby.png",
+      "sha256": "be897e2b454f6dd40eb3f2a1896ecc3602bc27100099f353074caa3d930461c0",
+      "status": "reviewed_for_edit",
+      "visual_review": "Original lobby floor plan retained, dust/sheets/cobwebs, daylight and unlit lamps.",
+      "user_approval": "usable_selection_authorized",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-77993dec-82f4-4b6f-a7b7-9f1b43b7768b.png"
+    },
+    "J05_Maysa_home_ledger": {
+      "file": "assets/J05_Maysa_home_ledger.png",
+      "sha256": "94f5beaadd3de3dbbc93b9f3c0360e6ffe11cc56c11163e13ac01f013af208be",
+      "status": "reviewed_for_edit",
+      "visual_review": "One loose torn page, home cream cardigan and natural separate hands; no hotel uniform, page toward reader.",
+      "user_approval": "usable_selection_authorized",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-d8d037b6-a0cc-4612-81aa-4e7c178799d4.png"
+    },
+    "J03_scratched_door": {
+      "file": "assets/J03_scratched_door.png",
+      "sha256": "94e55ff6bd452320b20263171167cfa1535d2ca1cb075d2bd016651dd76494d0",
+      "status": "reviewed_for_edit",
+      "visual_review": "Inside door has fresh scratches and small pale fragment at threshold; no exterior bolt or body parts.",
+      "user_approval": "usable_selection_authorized",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-21b58731-94ff-4baf-9d77-54afe02608af.png"
+    },
+    "J04_cut_phone": {
+      "file": "archive/J04_cut_phone.png",
+      "sha256": "120c2629fae40d55e5d494169f0a7b03dda4de8bc5be8b263b1cd1126bca44b6",
+      "status": "rejected",
+      "visual_review": "Cut line and intact coiled cord correct, but room wrongly looks like lobby. Script specifies telephone inside room; replace background only.",
+      "source_generation": "exec-48c2f2d3-90dc-44b7-ab8f-9fd7016b696e.png",
+      "user_approval": "not_applicable"
+    },
+    "J06_new_ledger_entry": {
+      "file": "assets/J06_new_ledger_entry.png",
+      "sha256": "aedd291744c08c04f97c05f7b52154512b468cf7d8cd5ce7f364268e3485bf2f",
+      "status": "reviewed_for_edit",
+      "user_approval": "usable_selection_authorized",
+      "visual_review": "Names ภาคิน/พิม/ลลิน, time05:59, signatureเมษา, key receipt check; newผู้จัดการ row room13 has blank departure cells.",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-525e1749-ef7e-4905-bb5e-13e407ffd935.png"
+    },
+    "J04_cut_phone_v2": {
+      "file": "assets/J04_cut_phone_v2.png",
+      "sha256": "06994fe1e0275f296092e4ba14a4f8bf0ada953f2149a616ef014ebbc3847c4c",
+      "status": "reviewed_for_edit",
+      "user_approval": "usable_selection_authorized",
+      "visual_review": "Background corrected to abandoned guest room; handset on base, coiled handset cord intact, distinct gray line cut into separated ends.",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-021500aa-ebfc-4251-a85e-89ba953e5291.png"
+    },
+    "J07_phone13": {
+      "file": "assets/J07_phone13.png",
+      "sha256": "e69ca16125bb0aa29e01d05f71e72c37736da20d8989c25bb4dca215e2b38aa3",
+      "status": "reviewed_for_edit",
+      "user_approval": "usable_selection_authorized",
+      "visual_review": "Single smartphone incoming caller13, green button left/red right, home table/page/night setting; no people.",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-0012a2e9-802a-45ca-8915-3046ecf67130.png"
+    },
+    "J08_Maysa_home_fear": {
+      "file": "archive/J08_Maysa_home_fear.png",
+      "sha256": "97ba3f521c0ef22177b3d3a49aefcd1cc12d86866fb3276bf24c17a8a4cb9d46",
+      "status": "rejected",
+      "visual_review": "Replaced by v2 to match incoming-call UI button order with J07.",
+      "source_generation": "exec-a8c18185-77d0-45db-9129-a8dab9ec4920.png",
+      "user_approval": "not_applicable"
+    },
+    "J08_Maysa_home_fear_v2": {
+      "file": "assets/J08_Maysa_home_fear_v2.png",
+      "sha256": "0d3585c07fe9ff28a2a68c8a1a74c7ca39306757668277fe171ec43f548554e8",
+      "status": "reviewed_for_edit",
+      "user_approval": "usable_selection_authorized",
+      "visual_review": "Two separate natural arms; right hand stops above phone and left rests own knee. UI green left/red right matches close insert.",
+      "github_integration": "ready_to_upload",
+      "source_generation": "exec-8ddba296-1d3b-43cd-a234-63161dfd1fb1.png"
+    },
+    "I07_family_exit_v2": {
+      "file": "assets/I07_family_exit_v2.png",
+      "sha256": "e20354808102e61333bd3c0b645d5fab1cb6352fc54688419bd38d6bd2d60558",
+      "status": "reviewed_for_edit",
+      "user_approval": "usable_selection_authorized",
+      "visual_review": "Child shoes corrected to flat Mary Jane soles, family identities and doorway preserved. Two arms per person, coherent visible hands.",
+      "source_generation": "exec-79da8eaa-0bd0-4aa8-9262-60175047b208.png"
     }
   },
   "remaining": [
-    "Generate and visually inspect scene stills",
-    "Build performance timeline with all three 13-ring sequences",
-    "Edit full film against actual voice durations",
-    "Mix ambience and original restrained sound bed",
-    "Render 1080p 30fps H264/AAC",
-    "Check continuity, technical integrity and deliver downloadable MP4"
+    "อัปโหลดภาพชุดท้ายที่ตรวจแล้ว",
+    "เรนเดอร์คลิปเต็มและตรวจไฟล์จริง"
   ],
   "measured_full_plan": {
     "duration_seconds": 777.24,
@@ -484,13 +576,13 @@
   },
   "user_visual_correction": "When Maysa writes/reads, the book and baselines must face her naturally. Writing-shot data need not be readable; prioritize natural hand/pen/page orientation.",
   "hand_QA_correction": "Close hand shots require counting thumb bases and nails, not just overall silhouette. Reject duplicate thumb specifically at I04 x39.5%,y42.7%.",
-  "user_review_gate": "User must inspect scene images before any further editing/rendering. Upload latest images and make GitHub gallery. No final film export until user approves.",
+  "user_review_gate": "User now authorizes usable images to be uploaded and editing resumed: เอาที่ใช้ได้ขึ้นเลย / จะได้ตัดต่อกัน. Previously rejected versions remain excluded.",
   "github_review": {
     "commit": "118ee28b55722f1f28635b876423707f030ac9d3",
     "url": "https://github.com/Copterthip2544/Nox-Tales/blob/main/episodes/hotel13/v1.3/production/full/review/README.md",
-    "current_images": 43,
-    "archived_images": 12,
-    "batches": 9,
+    "current_images": 51,
+    "archived_images": 17,
+    "batches": 11,
     "verified_image_bytes": 55
   },
   "pending_github_integrations": {},
@@ -505,5 +597,16 @@
       "github_integration": "blocked_until_user_approves_preview"
     }
   },
-  "user_approval": "pending"
+  "image_generation_complete": true,
+  "image_preview_latest": [
+    "J01_police_Maysa",
+    "J02_abandoned_lobby",
+    "J03_scratched_door",
+    "J04_cut_phone_v2",
+    "J05_Maysa_home_ledger",
+    "J06_new_ledger_entry",
+    "J07_phone13",
+    "J08_Maysa_home_fear_v2"
+  ],
+  "user_approval": "authorized_usable_image_selection"
 }

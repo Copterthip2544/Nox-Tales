@@ -1,0 +1,140 @@
+{
+  "version": "v03",
+  "stage": "opening_assembly_not_final_film",
+  "duration_seconds": 61.32,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "source_voice_turn": "E001_nox.wav",
+  "visual_review_manifest": "visual_QA_opening_v03.json",
+  "voice_regenerated": false,
+  "unique_images": 11,
+  "alignment": "Audio-estimated paragraph boundaries; editorial subparagraph timing, not word-level forced alignment",
+  "motion": "Single-direction pan OR gentle zoom, no shake; 7680x4320 sampling canvas",
+  "references": "All six supplied character sheets extracted locally; pre-uniform Maysa has no waistcoat/badge",
+  "pending": [
+    "Final sound design/music",
+    "Rest of film"
+  ],
+  "shots": [
+    {
+      "shot": "SC01_SH01",
+      "start": 0.0,
+      "end": 3.3,
+      "asset": "A01_NOX_host.png",
+      "motion": "zoom_in",
+      "cue": "โรงแรมส่วนใหญ่",
+      "frames": 99
+    },
+    {
+      "shot": "SC01_SH02",
+      "start": 3.3,
+      "end": 8.4,
+      "asset": "L02_landing_master.png",
+      "motion": "pan_right",
+      "cue": "แขกบางคนจะออกไปได้",
+      "frames": 153
+    },
+    {
+      "shot": "SC01_SH03",
+      "start": 8.4,
+      "end": 11.4,
+      "asset": "A01_NOX_host.png",
+      "motion": "pan_left",
+      "cue": "ผมชื่อน็อกซ์",
+      "frames": 90
+    },
+    {
+      "shot": "SC01_SH04",
+      "start": 11.4,
+      "end": 21.8,
+      "asset": "A02_key13_insert.png",
+      "motion": "zoom_in",
+      "cue": "กุญแจห้องสิบสาม",
+      "frames": 312
+    },
+    {
+      "shot": "SC01_SH05",
+      "start": 21.8,
+      "end": 27.6,
+      "asset": "A03_Maysa_arrival.png",
+      "motion": "zoom_in",
+      "cue": "เมษาเห็นโรงแรมครั้งแรก",
+      "frames": 174
+    },
+    {
+      "shot": "SC01_SH06",
+      "start": 27.6,
+      "end": 32.2,
+      "asset": "L03_exterior_master.png",
+      "motion": "pan_right",
+      "cue": "อาคารเก่าหลังแนวต้นสน",
+      "frames": 138
+    },
+    {
+      "shot": "SC01_SH07",
+      "start": 32.2,
+      "end": 35.3,
+      "asset": "A07_Maysa_steps.png",
+      "motion": "zoom_in",
+      "cue": "โคมไฟเหนือทางเข้า",
+      "frames": 93
+    },
+    {
+      "shot": "SC01_SH08",
+      "start": 35.3,
+      "end": 39.1,
+      "asset": "A04_Maysa_phone_v03.png",
+      "motion": "zoom_in",
+      "cue": "เธอก้มตรวจที่อยู่ในโทรศัพท์",
+      "frames": 114
+    },
+    {
+      "shot": "SC01_SH09",
+      "start": 39.1,
+      "end": 41.8,
+      "asset": "A05_phone_map.png",
+      "motion": "zoom_in",
+      "cue": "ตรงกัน",
+      "frames": 81
+    },
+    {
+      "shot": "SC01_SH10",
+      "start": 41.8,
+      "end": 47.4,
+      "asset": "A06_Maysa_hope.png",
+      "motion": "zoom_in",
+      "cue": "เงื่อนไขงานกับเงินที่เหลือ",
+      "frames": 168
+    },
+    {
+      "shot": "SC01_SH11",
+      "start": 47.4,
+      "end": 53.6,
+      "asset": "A07_Maysa_steps.png",
+      "motion": "pan_left",
+      "cue": "ตัดสินใจเดินเข้าไป",
+      "frames": 186
+    },
+    {
+      "shot": "SC01_SH12",
+      "start": 53.6,
+      "end": 56.7,
+      "asset": "A08_lobby_entry.png",
+      "motion": "pan_right",
+      "cue": "ในล็อบบี้",
+      "frames": 93
+    },
+    {
+      "shot": "SC01_SH13",
+      "start": 56.7,
+      "end": 61.333333333333336,
+      "asset": "A09_manager_waiting.png",
+      "motion": "zoom_in",
+      "cue": "ชายในสูทสีเลือดหมูยืนรออยู่",
+      "frames": 139
+    }
+  ]
+}

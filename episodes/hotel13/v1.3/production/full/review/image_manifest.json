@@ -1,319 +1,362 @@
 {
-  "stage": "awaiting_user_image_review",
-  "editing_rendering_paused": true,
-  "current_images": 43,
   "images": [
     {
       "id": "B01_contract",
       "image": "../assets/B01_contract.png",
       "sha256": "cb891ceb632874f2b268e9702495c204966d200e9de7c87a07b9c53f495d4223",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "B02_Maysa_uniform",
       "image": "../assets/B02_Maysa_uniform.png",
       "sha256": "a4ee1108f68b5342a745b858e02a63812fa87a05c4932fd64a96330edb4b9ab3",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "C01_Phakhin_shadow",
       "image": "../assets/C01_Phakhin_shadow.png",
       "sha256": "d25c659b2012cb91e16e70b7e14207b332db1a57413d3731801cc26bf9e979ad",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "B03_checkout_ledger_v2",
       "image": "../assets/B03_checkout_ledger_v2.png",
       "sha256": "636a6e1b5e66ebcaad17f0fe4a6d9a12b50ba1f73f4d6e338997e63d7902d15b",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "C02_Phakhin_lit",
       "image": "../assets/C02_Phakhin_lit.png",
       "sha256": "715aa47e14ab15d38bc589c24d5a0cb18a5dcef6e15d0ff2ca7b3a4b6e9a156f",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "D01_Lin_arrives",
       "image": "../assets/D01_Lin_arrives.png",
       "sha256": "cccfb572afedb40dbeda8b5db5b0d6ea097c8298ac5e9c3c1d6f585b520149b5",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "D02_Lin_close",
       "image": "../assets/D02_Lin_close.png",
       "sha256": "e948f52e7f019e93a5683d2e520e5fc6f4d452940f790c53a6525112e080302c",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "D03_Maysa_receiver",
       "image": "../assets/D03_Maysa_receiver.png",
       "sha256": "3e41edbd2c3a45e103fe6816f1bf221bd3e0cdad997c2b0ae46965077b67ff12",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "D04_Pim_phone_shadow",
       "image": "../assets/D04_Pim_phone_shadow.png",
       "sha256": "6e64642806bcd9c70c3b73a3e49c3d2d7cbdff8ff09b275b10517ccbcf672433",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "D06_Maysa_Lin_blanket_v2",
       "image": "../assets/D06_Maysa_Lin_blanket_v2.png",
       "sha256": "b84df83dd856fd46a986bef9acda0e8269864ddc33736330ab19c92a0f4a3186",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "D08_faceless_shadow",
       "image": "../assets/D08_faceless_shadow.png",
       "sha256": "ef46e7db8fb29de34a7f04b93d5a6e52224b5187d04478886a9597b02d689524",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "D09_old_staff_photo",
       "image": "../assets/D09_old_staff_photo.png",
       "sha256": "48450f8373f5b97c577240eaeaba099c2a918dca1213b47d88c15a6177f2b0f7",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "E01_Maysa_archive",
       "image": "../assets/E01_Maysa_archive.png",
       "sha256": "cda2e253cb6b18870ac70ca9099ff460401a2703df26f0ecc7609843938b01e9",
       "technical_review": "reviewed_for_edit",
-      "user_review": "approved",
-      "revision": 3
+      "user_review": "approved"
     },
     {
       "id": "D07_Maysa_mobile",
       "image": "../assets/D07_Maysa_mobile.png",
       "sha256": "1d471798c17ee2ed8884acbcb9f33858c9289b1272345eb949c141adc5200811",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "E02_charred_ledger_v2",
       "image": "../assets/E02_charred_ledger_v2.png",
       "sha256": "93aba5def8c030c41c7e00fa3ceaa2e18273836ecdeed6fb14d2d57eadc8aa25",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "E03_news_family_v2",
       "image": "../assets/E03_news_family_v2.png",
       "sha256": "aedb23f4880dbfae050eae2b0b63344f19b91be686d7485fb200a261921abe66",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "E04_fire_corridor",
       "image": "../assets/E04_fire_corridor.png",
       "sha256": "261dcabb2ad8329db316a5ec65e5a48dd875321f320be00bb1ded49c514b0645",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "E05_Phakhin_sad",
       "image": "../assets/E05_Phakhin_sad.png",
       "sha256": "1b1d05649dca1da3616611a26ac3b323095cd65192a38ed98112bbf368a018d8",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "F01_manager_office",
       "image": "../assets/F01_manager_office.png",
       "sha256": "382343bee0fe8b5ffb564e421d254ad9b26ff62460a7a484b0eea0aff656cbf6",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "E06_burned_hand_v2",
       "image": "../assets/E06_burned_hand_v2.png",
       "sha256": "16592b8465c34236cb29e64d9d441b856692488c64f9e9db798a88d957a226a5",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "F02_Maysa_confront",
       "image": "../assets/F02_Maysa_confront.png",
       "sha256": "788791ce316553e55a19ea3f878fa32cca7c2806be0c20300f0fa1306569ad2a",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "F03_manager_guilt",
       "image": "../assets/F03_manager_guilt.png",
       "sha256": "e51c574a1e6849a7198c91e7044974393e4d1cf58b766ace3ab5ff0300e1be19",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "F04_manager_takes_ledger",
       "image": "../assets/F04_manager_takes_ledger.png",
       "sha256": "f28dbf0f916953d062b37de0ca083d47754c39cdc53a07fb4b69c234dbed948f",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "G01_Maysa_exit",
       "image": "../assets/G01_Maysa_exit.png",
       "sha256": "48385a81e64a7861aa62fc7a25d73c1ea44c628d5bd0e779a4612e68c1114929",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "G02_Lin_sleep",
       "image": "../assets/G02_Lin_sleep.png",
       "sha256": "efbe8d3ec0b1765349e6cd50d090833eeda4fe80cdcd52081d0ed308fb2abdaa",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "G02_Lin_sleep_solo",
       "image": "../assets/G02_Lin_sleep_solo.png",
       "sha256": "053d4eb14d1c6f32e24da713228b6c4a0b3078926bd74e3f2664d8e964102754",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "G04_Maysa_waiting",
       "image": "../assets/G04_Maysa_waiting.png",
       "sha256": "6149cc3408c5c2c6b9a5473156c4880423d8e691279749d3800a418aaeb709a8",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "H01_Pim_landing",
       "image": "../assets/H01_Pim_landing.png",
       "sha256": "31ab29aed43f0da1ef803a6bd9b19921bcc44daf1e2e101edf3384b11012b39b",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "H02_manager_key_stairs",
       "image": "../assets/H02_manager_key_stairs.png",
       "sha256": "6cd47d9f2f372d0f78033ec065e4483e7bb534bb80ec12bac63222bf168cce2c",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "C03_Maysa_key_v2",
       "image": "../assets/C03_Maysa_key_v2.png",
       "sha256": "e33b414251791ac7e817a2358fe99541aaa205dfbab53de15e2e1c8da52ddf7f",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "H03_office_papers_v2",
       "image": "../assets/H03_office_papers_v2.png",
       "sha256": "78c671bbbdc7a884d7d102c3583baec5571852678ffdbcfd2e361dddf5458f5b",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I01_landing_confront",
       "image": "../assets/I01_landing_confront.png",
       "sha256": "063f351dd5f5199d458b88a93a82a048633e2f8ed14bec5b81d4586e19ff347e",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "H04_Maysa_takes_ledger",
       "image": "../assets/H04_Maysa_takes_ledger.png",
       "sha256": "8342760e9d43160793c79779ffbb190b38b043094e88668d2e33d2526c412966",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I02_Maysa_writing_v2",
       "image": "../assets/I02_Maysa_writing_v2.png",
       "sha256": "664339a501c23423357a9d5f979ca61a3d6a8f9019bb72f01de7c538cae28a67",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I03_Phakhin_blocks_v2",
       "image": "../assets/I03_Phakhin_blocks_v2.png",
       "sha256": "fe44e5de9847b1a4864f1278add1306e554a9d609f4e4444ce9751f0a5cc9fb9",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I09_manager_pleading",
       "image": "../assets/I09_manager_pleading.png",
       "sha256": "30a6a5c568208f36694b10ad7dc90b3a88dc1d861b07aced65b587f9ce493e46",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "H05_Pim_close",
       "image": "../assets/H05_Pim_close.png",
       "sha256": "c3eec3c34d831a7888dd5c035401e65fbea7b15cfa051001b2df0bec72658e88",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I10_Lin_touch_hand",
       "image": "../assets/I10_Lin_touch_hand.png",
       "sha256": "b106f694e10cd47e4d2ea21c33ec0dc63eedba1d720ab4c11fbd5151e95e4f78",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I04_Pim_key_grip_v2",
       "image": "../assets/I04_Pim_key_grip_v2.png",
       "sha256": "2c46c78339ff3fca9e55773188be5e9a7671f8195015b65aa67b3fa932e3e8aa",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I05_key_fallen",
       "image": "../assets/I05_key_fallen.png",
       "sha256": "7372c9355ad71c8807e59c68128e0b04d97cfc5ff85d92dc4062ea913c7f4bf2",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I06_Maysa_returnskey_v2",
       "image": "../assets/I06_Maysa_returnskey_v2.png",
       "sha256": "80bd26069be954bace620319a2bbcec8c21a224e5af30a29a00175bb8bbefff1",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
-    },
-    {
-      "id": "I07_family_exit",
-      "image": "../assets/I07_family_exit.png",
-      "sha256": "c614e332290a611a2c599a3393867d43af1d80023a88bcc595193d847514a161",
-      "technical_review": "awaiting_visual_review",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
     },
     {
       "id": "I08_manager_trapped_v2",
       "image": "../assets/I08_manager_trapped_v2.png",
       "sha256": "ecc5e5d9279f7a979277f73995f8e6aaa4db5a9e0c45e760fb9fa0ef4167b3a2",
       "technical_review": "reviewed_for_edit",
-      "user_review": "pending"
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J01_police_Maysa",
+      "image": "../assets/J01_police_Maysa.png",
+      "sha256": "6f47ee04f3d5ff325b2e823d3c0030ea068ad7ed28359a49f7cdca0e2b382e94",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J02_abandoned_lobby",
+      "image": "../assets/J02_abandoned_lobby.png",
+      "sha256": "be897e2b454f6dd40eb3f2a1896ecc3602bc27100099f353074caa3d930461c0",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J05_Maysa_home_ledger",
+      "image": "../assets/J05_Maysa_home_ledger.png",
+      "sha256": "94f5beaadd3de3dbbc93b9f3c0360e6ffe11cc56c11163e13ac01f013af208be",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J03_scratched_door",
+      "image": "../assets/J03_scratched_door.png",
+      "sha256": "94e55ff6bd452320b20263171167cfa1535d2ca1cb075d2bd016651dd76494d0",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J06_new_ledger_entry",
+      "image": "../assets/J06_new_ledger_entry.png",
+      "sha256": "aedd291744c08c04f97c05f7b52154512b468cf7d8cd5ce7f364268e3485bf2f",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J04_cut_phone_v2",
+      "image": "../assets/J04_cut_phone_v2.png",
+      "sha256": "06994fe1e0275f296092e4ba14a4f8bf0ada953f2149a616ef014ebbc3847c4c",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J07_phone13",
+      "image": "../assets/J07_phone13.png",
+      "sha256": "e69ca16125bb0aa29e01d05f71e72c37736da20d8989c25bb4dca215e2b38aa3",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "J08_Maysa_home_fear_v2",
+      "image": "../assets/J08_Maysa_home_fear_v2.png",
+      "sha256": "0d3585c07fe9ff28a2a68c8a1a74c7ca39306757668277fe171ec43f548554e8",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
+    },
+    {
+      "id": "I07_family_exit_v2",
+      "image": "../assets/I07_family_exit_v2.png",
+      "sha256": "e20354808102e61333bd3c0b645d5fab1cb6352fc54688419bd38d6bd2d60558",
+      "technical_review": "reviewed_for_edit",
+      "user_review": "usable_selection_authorized"
     }
   ],
-  "not_yet_created": [
-    "J01",
-    "J02",
-    "J03",
-    "J04",
-    "J05",
-    "J06",
-    "J07",
-    "J08"
-  ]
+  "count": 51
 }

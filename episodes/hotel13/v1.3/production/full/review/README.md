@@ -1,10 +1,10 @@
 # โรงแรมห้อง 13 — หน้าตรวจภาพก่อนตัดต่อ
 
-สถานะ: **พักการตัดต่อและเรนเดอร์เพิ่ม รอผู้ใช้ตรวจภาพ** การตรวจเบื้องต้นของผู้ช่วยไม่ใช่การอนุมัติจากผู้ใช้
+สถานะ: **ผู้ใช้อนุญาตให้เลือกภาพที่ใช้ได้ขึ้น GitHub และเริ่มตัดต่อแล้ว**
 
-มีภาพใหม่เวอร์ชันปัจจุบัน **43 ภาพ** แบ่งชุดละ 5 ภาพ ส่วนภาพเก่าที่เลิกใช้เก็บแยกไว้ใน archive
+มีภาพใหม่เวอร์ชันปัจจุบัน **51 ภาพ** แบ่งชุดละ 5 ภาพ ส่วนภาพเก่าที่เลิกใช้เก็บแยกไว้ใน archive
 
-แจ้งรหัสภาพพร้อมจุดที่ต้องแก้ได้ เช่น I04, นิ้วโป้งซ้ำ หรือ I02, ทิศทางสมุด เมื่อตรวจครบแล้วจึงอนุญาตให้กลับไปตัดต่อ
+แจ้งรหัสภาพพร้อมจุดที่ต้องแก้ได้ เช่น I04, นิ้วโป้งซ้ำ หรือ I02, ทิศทางสมุด หากพบรายละเอียดที่ต้องแก้ สามารถระบุรหัสภาพได้
 
 ## จุดที่แก้ตามความคิดเห็นล่าสุด
 
@@ -27,8 +27,10 @@
 | [ชุด 05](batch_05.md) | F01_manager_office, F02_Maysa_confront, F03_manager_guilt, F04_manager_takes_ledger, G01_Maysa_exit |
 | [ชุด 06](batch_06.md) | G02_Lin_sleep, G02_Lin_sleep_solo, G04_Maysa_waiting, H01_Pim_landing, H02_manager_key_stairs |
 | [ชุด 07](batch_07.md) | H03_office_papers_v2, H04_Maysa_takes_ledger, H05_Pim_close, I01_landing_confront, I02_Maysa_writing_v2 |
-| [ชุด 08](batch_08.md) | I03_Phakhin_blocks_v2, I04_Pim_key_grip_v2, I05_key_fallen, I06_Maysa_returnskey_v2, I07_family_exit |
-| [ชุด 09](batch_09.md) | I08_manager_trapped_v2, I09_manager_pleading, I10_Lin_touch_hand |
+| [ชุด 08](batch_08.md) | I03_Phakhin_blocks_v2, I04_Pim_key_grip_v2, I05_key_fallen, I06_Maysa_returnskey_v2, I07_family_exit_v2 |
+| [ชุด 09](batch_09.md) | I08_manager_trapped_v2, I09_manager_pleading, I10_Lin_touch_hand, J01_police_Maysa, J02_abandoned_lobby |
+| [ชุด 10](batch_10.md) | J03_scratched_door, J04_cut_phone_v2, J05_Maysa_home_ledger, J06_new_ledger_entry, J07_phone13 |
+| [ชุด 11](batch_11.md) | J08_Maysa_home_fear_v2 |
 
 ## ภาพเดิมและประวัติ
 
@@ -38,6 +40,6 @@
 
 ## ส่วนที่ยังไม่เสร็จ
 
-ภาพหลังตำรวจมาถึงจนถึงโทรศัพท์หนึ่งปีให้หลัง (J01–J08) ยังไม่ได้สร้างในชุดนี้ คลิปเต็มยังไม่ได้ส่งออก
+ภาพหลังตำรวจมาถึงจนถึงโทรศัพท์หนึ่งปีให้หลัง (J01–J08) สร้างและตรวจเบื้องต้นแล้ว อยู่ระหว่างประกอบและเรนเดอร์คลิปเต็ม
 
 บท v1.3 และเสียงพากย์ที่อนุมัติครบ 111 ช่วงยังคงเดิม แผนความยาวรวมประมาณ 12:57 ยังต้องตรวจและปรับจากไฟล์เต็มจริง
