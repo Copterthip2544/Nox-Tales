@@ -2,6 +2,13 @@
   "model": "gemini-3.8-flash-tts",
   "samples": [
     {
+      "id": "maysa",
+      "character": "เมษา",
+      "voice": "Kore",
+      "style": "A young adult Thai woman, natural conversational delivery, polite and slightly nervous, clear standard Thai, grounded short-film acting, not a narrator and not a child.",
+      "text": "ค่ะ ขอโทษด้วยนะคะ ฝนตกแล้วรถก็ติด ต้องนับจริง ๆ เหรอคะ ถ้าเขาวางก่อนล่ะ ฉันจะช่วยพาลูกคุณออกไปค่ะ"
+    },
+    {
       "id": "nox",
       "character": "Nox",
       "voice": "Charon",
