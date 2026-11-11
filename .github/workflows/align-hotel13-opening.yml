@@ -1,0 +1,33 @@
+name: Frame Tales - align approved opening audio
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/align-hotel13-opening.yml]
+permissions:
+  contents: read
+  actions: read
+jobs:
+  align:
+    if: github.event.head_commit.message == 'align-hotel13-opening-01'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: hotel13-full-audio
+          path: production-output
+          run-id: 42983299790
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Estimate paragraph boundaries without regenerating speech
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/align_opening_audio.py
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: hotel13-opening-alignment
+          path: opening-alignment/
+          if-no-files-found: error
+          retention-days: 14
