@@ -1,0 +1,2817 @@
+{
+  "episode": "nightwatch9",
+  "brand": "Frame Tales",
+  "version": "audio-v1.0",
+  "model": "gemini-3.8-flash-tts",
+  "approval_source": "User: เช็คแล้ว ผ่าน เริ่มการพากย์เสียงได้เลย",
+  "speech_events": 145,
+  "units_count": 149,
+  "events": [
+    {
+      "event_id": "IN_E002",
+      "scene": "IN",
+      "speaker": "nox",
+      "text": "กฎบางข้อมีไว้ให้เราปลอดภัย แต่บางข้อมีไว้เพื่อปกปิดอะไรบางอย่าง ถ้ารู้แบบนี้คุณจะกล้าทำตามไหม",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Welcoming but unsettling, intimate conversational narrator.",
+      "unit_ids": [
+        "IN_E002"
+      ]
+    },
+    {
+      "event_id": "IN_E003",
+      "scene": "IN",
+      "speaker": "nox",
+      "text": "ผม น็อกซ์ ยินดีต้อนรับสู่ เฟรมเทลส์ คืนนี้ เป็นงานเฝ้ากล้องที่มีกฎอยู่เก้าข้อ และไม่มีใครรับรองว่าเขาจะได้กลับบ้าน",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Welcoming but unsettling, intimate conversational narrator.",
+      "unit_ids": [
+        "IN_E003"
+      ]
+    },
+    {
+      "event_id": "SC01_E004",
+      "scene": "SC01",
+      "speaker": "nox",
+      "text": "ตีห้าห้าสิบสองนาที ณัฐนั่งอยู่ในห้องควบคุม กล้องหมายเลขหกกลับแสดงภาพใครอีกคน ยืนอยู่หน้าประตูห้องเดียวกัน",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Immediate restrained fear; the double sounds polite, never demonic.",
+      "unit_ids": [
+        "SC01_E004"
+      ]
+    },
+    {
+      "event_id": "SC01_E005",
+      "scene": "SC01",
+      "speaker": "nat",
+      "text": "มันยังอยู่… หน้าเหมือนเราทุกอย่าง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Immediate restrained fear; the double sounds polite, never demonic.",
+      "unit_ids": [
+        "SC01_E005"
+      ]
+    },
+    {
+      "event_id": "SC01_E008",
+      "scene": "SC01",
+      "speaker": "double_nat",
+      "text": "เปิดหน่อย ผมมารับช่วงต่อ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Immediate restrained fear; the double sounds polite, never demonic.",
+      "unit_ids": [
+        "SC01_E008"
+      ]
+    },
+    {
+      "event_id": "SC01_E009",
+      "scene": "SC01",
+      "speaker": "nat",
+      "text": "เสียงเรานี่หว่า",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Immediate restrained fear; the double sounds polite, never demonic.",
+      "unit_ids": [
+        "SC01_E009"
+      ]
+    },
+    {
+      "event_id": "SC01_E010",
+      "scene": "SC01",
+      "speaker": "nox",
+      "text": "ภาพที่เขาเพิ่งเห็น มีเวลานำอยู่สิบนาที แต่เสียงจากอีกฝั่งของประตู ดังขึ้นแล้ว",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Immediate restrained fear; the double sounds polite, never demonic.",
+      "unit_ids": [
+        "SC01_E010"
+      ]
+    },
+    {
+      "event_id": "SC02_E012",
+      "scene": "SC02",
+      "speaker": "nox",
+      "text": "ก่อนเริ่มกะคืนนั้น ณัฐเพิ่งมาถึงอาคารวรินทร์ เขาอายุยี่สิบเก้า ค่าจ้างคืนละพันแปดร้อยบาท แลกกับการเฝ้ากล้องตั้งแต่สามทุ่มถึงหกโมงเช้า",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E012"
+      ]
+    },
+    {
+      "event_id": "SC02_E013",
+      "scene": "SC02",
+      "speaker": "nat",
+      "text": "สวัสดีครับ ผมณัฐ มาทำงานวันแรกครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E013"
+      ]
+    },
+    {
+      "event_id": "SC02_E014",
+      "scene": "SC02",
+      "speaker": "somchai",
+      "text": "คนใหม่ใช่ไหม ตามมา",
+      "voice": "Algenib",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E014"
+      ]
+    },
+    {
+      "event_id": "SC02_E016",
+      "scene": "SC02",
+      "speaker": "nat",
+      "text": "ผมต้องเดินตรวจด้วยไหมครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E016"
+      ]
+    },
+    {
+      "event_id": "SC02_E017",
+      "scene": "SC02",
+      "speaker": "somchai",
+      "text": "ไม่ต้อง หน้าที่นายคือดูจอ อยู่ในห้องนี้จนหมดกะ",
+      "voice": "Algenib",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E017"
+      ]
+    },
+    {
+      "event_id": "SC02_E019",
+      "scene": "SC02",
+      "speaker": "somchai",
+      "text": "กล้องเก้าตัว โทรศัพท์อยู่ตรงนี้ กฎอยู่บนโต๊ะ อ่านให้ครบก่อนเริ่มงาน",
+      "voice": "Algenib",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E019"
+      ]
+    },
+    {
+      "event_id": "SC02_E020",
+      "scene": "SC02",
+      "speaker": "nat",
+      "text": "ถ้ามีปัญหา ผมโทรหาพี่ได้ไหมครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E020"
+      ]
+    },
+    {
+      "event_id": "SC02_E021",
+      "scene": "SC02",
+      "speaker": "somchai",
+      "text": "ไม่ต้องโทรหาผม ถ้าจำเป็น เบอร์ศูนย์ศูนย์หนึ่งจะติดต่อมาเอง",
+      "voice": "Algenib",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E021"
+      ]
+    },
+    {
+      "event_id": "SC02_E022",
+      "scene": "SC02",
+      "speaker": "nat",
+      "text": "ถ้าไม่มีใครโทรมาล่ะครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E022"
+      ]
+    },
+    {
+      "event_id": "SC02_E023",
+      "scene": "SC02",
+      "speaker": "somchai",
+      "text": "ก็ทำตามกฎ รายชื่อกับรหัสคนมาเปลี่ยนเวร อยู่ในลิ้นชัก",
+      "voice": "Algenib",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E023"
+      ]
+    },
+    {
+      "event_id": "SC02_E025",
+      "scene": "SC02",
+      "speaker": "nat",
+      "text": "อะไรของเขาวะ… กฎอะไรนักหนา",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice.",
+      "unit_ids": [
+        "SC02_E025"
+      ]
+    },
+    {
+      "event_id": "SC03_E027",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "กฎเก้าข้อสำหรับเจ้าหน้าที่เฝ้ากล้องกะดึก อ่านให้ครบ และไม่ต้องลองพิสูจน์อะไรทั้งนั้น",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E027"
+      ]
+    },
+    {
+      "event_id": "SC03_E028",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อหนึ่ง ห้ามออกจากห้องก่อนหกโมงเช้า เว้นแต่จะได้รับคำสั่งจากหมายเลขศูนย์ศูนย์หนึ่ง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E028"
+      ]
+    },
+    {
+      "event_id": "SC03_E029",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อสอง กล้องหกแสดงภาพล่วงหน้าสิบนาที ห้ามปรับเวลาหรือถอดสายกล้องเด็ดขาด",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E029"
+      ]
+    },
+    {
+      "event_id": "SC03_E030",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อสาม ถ้าเห็นอันตรายในกล้องหก ให้ปิดเฉพาะจอของกล้องนี้ห้าวินาที แล้วเปิดทันที ทำได้คืนละครั้ง กล้องต้องยังทำงานอยู่",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E030"
+      ]
+    },
+    {
+      "event_id": "SC03_E031",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อสี่ หลังปิดจอ ให้ดูกล้องหนึ่ง ถ้าจำนวนประตูเปลี่ยนไป อย่านับซ้ำหรือหาสาเหตุ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E031"
+      ]
+    },
+    {
+      "event_id": "SC03_E032",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อห้า ถ้ามีเสียงเคาะ ห้ามเปิด ห้ามตอบ และห้ามใช้กล้องหกดูว่าใครอยู่ข้างนอก ยกเว้นการถามชื่อและเปิดรับผู้เปลี่ยนเวรตามข้อเก้า",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E032"
+      ]
+    },
+    {
+      "event_id": "SC03_E033",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อหก ถ้าศูนย์ศูนย์หนึ่งโทรมา ให้รับก่อนเสียงเรียกครั้งที่สี่ ถ้าเขาถามว่า เห็นใครอยู่หน้าห้องไหม ห้ามตอบ ให้วางสายทันที",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E033"
+      ]
+    },
+    {
+      "event_id": "SC03_E034",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อเจ็ด ถ้ากล้องหกแสดงภาพตัวคุณ อย่าสนใจ อย่าออกไปดู สิ่งนั้นไม่ใช่ตัวคุณ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E034"
+      ]
+    },
+    {
+      "event_id": "SC03_E035",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อแปด ถ้านาฬิกาผนังกับเวลาปัจจุบันบนจอหลักไม่ตรงกัน อย่าปรับ ให้รอจนตรงกัน ข้อนี้ไม่เกี่ยวกับเวลาล่วงหน้าบนกล้องหก",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E035"
+      ]
+    },
+    {
+      "event_id": "SC03_E036",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "ข้อเก้า เมื่อนาฬิกาผนังกับจอหลักตรงกันและถึงหกโมงเช้าแล้ว ให้รอคนกะเช้าเคาะสามครั้ง ถามชื่อกับรหัส ตรวจรายชื่อก่อนเปิด ไม่จำเป็นต้องเปิดทันทีที่หกโมง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E036"
+      ]
+    },
+    {
+      "event_id": "SC03_E037",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "หมายเหตุ ถ้าข้อไหนหายหรือข้อความเปลี่ยน อย่าเขียนแก้ ให้ทำตามข้อที่ยังอ่านได้ กล้องหกส่องหน้าประตูห้องนี้ จำไว้ว่า กฎทุกข้อมีเหตุผล และผมไม่อยากรับพนักงานใหม่ก่อนสิ้นเดือนอีก",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E037"
+      ]
+    },
+    {
+      "event_id": "SC03_E038",
+      "scene": "SC03",
+      "speaker": "nat",
+      "text": "กล้องเห็นอนาคตเนี่ยนะ… รับน้องกันหรือเปล่า เอาวะ คืนละพันแปด นั่งดูจอเอง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end.",
+      "unit_ids": [
+        "SC03_E038"
+      ]
+    },
+    {
+      "event_id": "SC04_E039",
+      "scene": "SC04",
+      "speaker": "nox",
+      "text": "สามทุ่มครึ่ง ณัฐสังเกตว่ากล้องหกแสดงเวลาสามทุ่มสี่สิบ ต่างจากจออื่นอยู่สิบนาที",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Skepticism turning to disbelief, not full panic.",
+      "unit_ids": [
+        "SC04_E039"
+      ]
+    },
+    {
+      "event_id": "SC04_E040",
+      "scene": "SC04",
+      "speaker": "nat",
+      "text": "ตั้งเวลาผิดหรือเปล่าวะ… อ้าว ใครเดินมา",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Skepticism turning to disbelief, not full panic.",
+      "unit_ids": [
+        "SC04_E040"
+      ]
+    },
+    {
+      "event_id": "SC04_E042",
+      "scene": "SC04",
+      "speaker": "nox",
+      "text": "เขาจำเสื้อสีเทากับจังหวะเดินนั้นไว้ พอเวลาปัจจุบันถึงสามทุ่มสี่สิบ ชายคนเดิมก็เดินเข้ามาในกล้องหนึ่ง",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Skepticism turning to disbelief, not full panic.",
+      "unit_ids": [
+        "SC04_E042"
+      ]
+    },
+    {
+      "event_id": "SC04_E044",
+      "scene": "SC04",
+      "speaker": "nat",
+      "text": "คนเดิมเลย… เสื้อเดียวกันด้วย มันเห็นล่วงหน้าได้จริงเหรอ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Skepticism turning to disbelief, not full panic.",
+      "unit_ids": [
+        "SC04_E044"
+      ]
+    },
+    {
+      "event_id": "SC05_E045",
+      "scene": "SC05",
+      "speaker": "nox",
+      "text": "ห้าทุ่มสิบหก กล้องหกเห็นแม่บ้านเข็นรถผ่านหน้าห้อง เวลาบนภาพคือห้าทุ่มยี่สิบหก",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E045"
+      ]
+    },
+    {
+      "event_id": "SC05_E046",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "แม่บ้านยังไม่กลับอีกเหรอ… เดี๋ยว!",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E046"
+      ]
+    },
+    {
+      "event_id": "SC05_E048",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "เฮ้ย! โดนเต็ม ๆ เลย",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E048"
+      ]
+    },
+    {
+      "event_id": "SC05_E049",
+      "scene": "SC05",
+      "speaker": "nox",
+      "text": "ในกล้องหนึ่ง ทางเดินยังว่าง เหตุการณ์นั้นยังมาไม่ถึง",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E049"
+      ]
+    },
+    {
+      "event_id": "SC05_E050",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "ข้อสาม… ปิดจอห้าวิ มันจะช่วยได้จริงเหรอ เอาวะ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E050"
+      ]
+    },
+    {
+      "event_id": "SC05_E052",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "หนึ่ง… สอง… สาม… สี่… ห้า",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "assembly": {
+        "type": "exact_five_second_count",
+        "onsets_seconds": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ],
+        "duration_seconds": 5.0
+      },
+      "unit_ids": [
+        "SC05_E052_N1",
+        "SC05_E052_N2",
+        "SC05_E052_N3",
+        "SC05_E052_N4",
+        "SC05_E052_N5"
+      ]
+    },
+    {
+      "event_id": "SC05_E054",
+      "scene": "SC05",
+      "speaker": "nox",
+      "text": "ภาพกลับมา ฝ้ายังถล่มลงจุดเดิม แต่ไม่มีแม่บ้านอยู่ใต้ฝ้าแล้ว",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E054"
+      ]
+    },
+    {
+      "event_id": "SC05_E055",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "แม่บ้านไม่อยู่แล้ว… ได้ผลจริงด้วย",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E055"
+      ]
+    },
+    {
+      "event_id": "SC05_E057",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "เดี๋ยว เมื่อกี้มีหกบานไม่ใช่เหรอ หนึ่ง สอง…",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E057"
+      ]
+    },
+    {
+      "event_id": "SC05_E059",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "ข้อสี่… ห้ามนับซ้ำ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E059"
+      ]
+    },
+    {
+      "event_id": "SC05_E060",
+      "scene": "SC05",
+      "speaker": "nox",
+      "text": "ณัฐปล่อยมือจากเมาส์ อีกเกือบสิบนาทีต่อมา เวลาปัจจุบันถึงห้าทุ่มยี่สิบหก เสียงเหล็กก็กระแทกพื้นหน้าห้อง",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E060"
+      ]
+    },
+    {
+      "event_id": "SC05_E062",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "มันเกิดขึ้นจริง… แล้วประตูอีกบานล่ะ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E062"
+      ]
+    },
+    {
+      "event_id": "SC05_E063",
+      "scene": "SC05",
+      "speaker": "nox",
+      "text": "เขาย้อนภาพทางเดินไปก่อนเริ่มกะ ในภาพเก่าก็มีแค่ห้าบาน",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E063"
+      ]
+    },
+    {
+      "event_id": "SC05_E064",
+      "scene": "SC05",
+      "speaker": "nat",
+      "text": "ไม่สิ… เราจำได้ว่ามีหก",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear.",
+      "unit_ids": [
+        "SC05_E064"
+      ]
+    },
+    {
+      "event_id": "SC06_E065",
+      "scene": "SC06",
+      "speaker": "nox",
+      "text": "ณัฐลุกไปล้างหน้าที่อ่างเล็กหลังโต๊ะ เขายังไม่ได้ออกจากห้อง",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner.",
+      "unit_ids": [
+        "SC06_E065"
+      ]
+    },
+    {
+      "event_id": "SC06_E067",
+      "scene": "SC06",
+      "speaker": "cleaner",
+      "text": "คุณคะ ฉันเป็นแม่บ้าน เมื่อกี้ฝ้าเพดานหล่น ช่วยเปิดประตูหน่อยได้ไหมคะ",
+      "voice": "Achernar",
+      "style": "Thai adult woman, practical everyday speech, asks for help after an accident. Concern rises to irritation at being ignored, not a theatrical ghost whisper. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner.",
+      "unit_ids": [
+        "SC06_E067"
+      ]
+    },
+    {
+      "event_id": "SC06_E068",
+      "scene": "SC06",
+      "speaker": "nat",
+      "text": "คนเมื่อกี้เหรอ…",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner.",
+      "unit_ids": [
+        "SC06_E068"
+      ]
+    },
+    {
+      "event_id": "SC06_E070",
+      "scene": "SC06",
+      "speaker": "cleaner",
+      "text": "คุณคะ ได้ยินไหม ฉันเห็นไฟในห้องเปิดอยู่นะ เปิดหน่อยสิคะ",
+      "voice": "Achernar",
+      "style": "Thai adult woman, practical everyday speech, asks for help after an accident. Concern rises to irritation at being ignored, not a theatrical ghost whisper. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner.",
+      "unit_ids": [
+        "SC06_E070"
+      ]
+    },
+    {
+      "event_id": "SC06_E072",
+      "scene": "SC06",
+      "speaker": "nox",
+      "text": "พอเสียงฝีเท้าหาย ณัฐเปิดดูกล้องหนึ่ง ทางเดินว่าง เหลือรอยเท้าเปียกมาถึงหน้าประตู แต่ไม่มีรอยเดินกลับ",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner.",
+      "unit_ids": [
+        "SC06_E072"
+      ]
+    },
+    {
+      "event_id": "SC06_E073",
+      "scene": "SC06",
+      "speaker": "nat",
+      "text": "แล้วเขาไปไหน…",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner.",
+      "unit_ids": [
+        "SC06_E073"
+      ]
+    },
+    {
+      "event_id": "SC07_E075",
+      "scene": "SC07",
+      "speaker": "nat",
+      "text": "ฮัลโหลครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E075"
+      ]
+    },
+    {
+      "event_id": "SC07_E076",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "ตอนนี้เรียบร้อยดีไหม",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E076"
+      ]
+    },
+    {
+      "event_id": "SC07_E077",
+      "scene": "SC07",
+      "speaker": "nat",
+      "text": "มีคนมาเคาะประตู แล้วก็มีประตูหายไปครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E077"
+      ]
+    },
+    {
+      "event_id": "SC07_E078",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "คุณเปิดให้เขาหรือเปล่า",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E078"
+      ]
+    },
+    {
+      "event_id": "SC07_E079",
+      "scene": "SC07",
+      "speaker": "nat",
+      "text": "ไม่ได้เปิดครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E079"
+      ]
+    },
+    {
+      "event_id": "SC07_E080",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "ดีแล้ว คืนนี้ปิดจอหกไปหรือยัง",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E080"
+      ]
+    },
+    {
+      "event_id": "SC07_E081",
+      "scene": "SC07",
+      "speaker": "nat",
+      "text": "ครั้งหนึ่งครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E081"
+      ]
+    },
+    {
+      "event_id": "SC07_E082",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "งั้นอย่าปิดอีก",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E082"
+      ]
+    },
+    {
+      "event_id": "SC07_E083",
+      "scene": "SC07",
+      "speaker": "nat",
+      "text": "เดี๋ยวครับ ที่นี่มันเกิดอะไรขึ้น ประตูมันหายไปจริง ๆ นะ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E083"
+      ]
+    },
+    {
+      "event_id": "SC07_E084",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "ผมทราบ",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E084"
+      ]
+    },
+    {
+      "event_id": "SC07_E085",
+      "scene": "SC07",
+      "speaker": "nat",
+      "text": "ทราบ? หมายความว่ายังไงครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E085"
+      ]
+    },
+    {
+      "event_id": "SC07_E087",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "ตอนนี้… คุณเห็นใครอยู่หน้าห้องไหม",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E087"
+      ]
+    },
+    {
+      "event_id": "SC07_E088",
+      "scene": "SC07",
+      "speaker": "nox",
+      "text": "คำถามตรงกับบรรทัดที่หก ณัฐวางหูโดยไม่ตอบ",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E088"
+      ]
+    },
+    {
+      "event_id": "SC07_E090",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "คุณณัฐ ผมมาจากฝ่ายตรวจสอบ เปิดให้หน่อยครับ",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E090"
+      ]
+    },
+    {
+      "event_id": "SC07_E092",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "เมื่อกี้เราเพิ่งคุยโทรศัพท์กัน ผมแค่มาตรวจกล้อง",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E092"
+      ]
+    },
+    {
+      "event_id": "SC07_E093",
+      "scene": "SC07",
+      "speaker": "voice001",
+      "text": "คุณณัฐ! ผมรู้ว่าคุณอยู่ในนั้น",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent.",
+      "unit_ids": [
+        "SC07_E093"
+      ]
+    },
+    {
+      "event_id": "SC08_E095",
+      "scene": "SC08",
+      "speaker": "nox",
+      "text": "ตีสามสี่สิบ ก่อนจะมีเสียงเคาะรอบใหม่ ณัฐเห็นคนในชุดรักษาความปลอดภัยอยู่บนกล้องหก",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E095"
+      ]
+    },
+    {
+      "event_id": "SC08_E096",
+      "scene": "SC08",
+      "speaker": "nat",
+      "text": "ใครมาอีก… เดี๋ยวนะ หน้าเหมือนเราเลย",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E096"
+      ]
+    },
+    {
+      "event_id": "SC08_E098",
+      "scene": "SC08",
+      "speaker": "nat",
+      "text": "สิ่งนั้นไม่ใช่ตัวคุณ… แล้วมันคือตัวอะไร",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E098"
+      ]
+    },
+    {
+      "event_id": "SC08_E100",
+      "scene": "SC08",
+      "speaker": "double_nat",
+      "text": "ณัฐ… ฉันรู้ว่านายอยู่ในนั้น เปิดประตูหน่อย",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E100"
+      ]
+    },
+    {
+      "event_id": "SC08_E102",
+      "scene": "SC08",
+      "speaker": "double_nat",
+      "text": "ฉันไม่ได้จะทำอะไร ฉันแค่อยากกลับเข้าไป",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E102"
+      ]
+    },
+    {
+      "event_id": "SC08_E103",
+      "scene": "SC08",
+      "speaker": "nat",
+      "text": "กลับเข้าไป?",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E103"
+      ]
+    },
+    {
+      "event_id": "SC08_E105",
+      "scene": "SC08",
+      "speaker": "double_nat",
+      "text": "นายได้ยินใช่ไหม ตอบหน่อยสิ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E105"
+      ]
+    },
+    {
+      "event_id": "SC08_E106",
+      "scene": "SC08",
+      "speaker": "nat",
+      "text": "หยุดพูดสักที!",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E106"
+      ]
+    },
+    {
+      "event_id": "SC08_E108",
+      "scene": "SC08",
+      "speaker": "nox",
+      "text": "พอคำพูดหลุดออกไป ทุกเสียงนอกห้องก็หยุดพร้อมกัน",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E108"
+      ]
+    },
+    {
+      "event_id": "SC08_E109",
+      "scene": "SC08",
+      "speaker": "nat",
+      "text": "ซวยแล้ว…",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it.",
+      "unit_ids": [
+        "SC08_E109"
+      ]
+    },
+    {
+      "event_id": "SC09_E110",
+      "scene": "SC09",
+      "speaker": "nox",
+      "text": "นาฬิกาผนังบอกตีห้าสามสิบเอ็ด แต่เวลาปัจจุบันบนจอหลักเป็นตีห้าสี่สิบเจ็ด เขาไม่รู้ว่าควรเชื่อเรือนไหน",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E110"
+      ]
+    },
+    {
+      "event_id": "SC09_E112",
+      "scene": "SC09",
+      "speaker": "nat",
+      "text": "ข้อแปด… อย่าปรับ รอให้ตรงกันเอง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E112"
+      ]
+    },
+    {
+      "event_id": "SC09_E114",
+      "scene": "SC09",
+      "speaker": "voice001",
+      "text": "คุณยังอยู่ในห้องใช่ไหม",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E114"
+      ]
+    },
+    {
+      "event_id": "SC09_E115",
+      "scene": "SC09",
+      "speaker": "nat",
+      "text": "ครับ มีคนหน้าตาเหมือนผมอยู่ข้างนอก",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E115"
+      ]
+    },
+    {
+      "event_id": "SC09_E116",
+      "scene": "SC09",
+      "speaker": "voice001",
+      "text": "เปิดให้เขาหรือยัง",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E116"
+      ]
+    },
+    {
+      "event_id": "SC09_E117",
+      "scene": "SC09",
+      "speaker": "nat",
+      "text": "ยังครับ ตกลงมันเป็นใคร",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E117"
+      ]
+    },
+    {
+      "event_id": "SC09_E118",
+      "scene": "SC09",
+      "speaker": "voice001",
+      "text": "อย่าให้เขาเข้ามา",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E118"
+      ]
+    },
+    {
+      "event_id": "SC09_E119",
+      "scene": "SC09",
+      "speaker": "nat",
+      "text": "ผมแค่อยากกลับบ้าน",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E119"
+      ]
+    },
+    {
+      "event_id": "SC09_E120",
+      "scene": "SC09",
+      "speaker": "voice001",
+      "text": "งั้นก็รอให้ถึงเวลา",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E120"
+      ]
+    },
+    {
+      "event_id": "SC09_E122",
+      "scene": "SC09",
+      "speaker": "nat",
+      "text": "เดี๋ยว… ข้อเจ็ดหายไปไหน เมื่อกี้ยังอยู่เลย",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E122"
+      ]
+    },
+    {
+      "event_id": "SC09_E124",
+      "scene": "SC09",
+      "speaker": "nat",
+      "text": "ห้ามแก้…",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E124"
+      ]
+    },
+    {
+      "event_id": "SC09_E125",
+      "scene": "SC09",
+      "speaker": "nox",
+      "text": "เมื่อเสียงนาฬิกากลับมาเดินเป็นจังหวะ ทั้งผนังและจอหลักก็แสดงตีห้าห้าสิบสอง กล้องหกจึงเป็นหกโมงสองนาที",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact.",
+      "unit_ids": [
+        "SC09_E125"
+      ]
+    },
+    {
+      "event_id": "SC10_E128",
+      "scene": "SC10",
+      "speaker": "double_nat",
+      "text": "เปิดหน่อย ผมมารับช่วงต่อ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E128"
+      ]
+    },
+    {
+      "event_id": "SC10_E129",
+      "scene": "SC10",
+      "speaker": "nat",
+      "text": "ไม่เปิด!",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E129"
+      ]
+    },
+    {
+      "event_id": "SC10_E131",
+      "scene": "SC10",
+      "speaker": "double_nat",
+      "text": "นายไม่ต้องกลัว เราเป็นคนเดียวกัน",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E131"
+      ]
+    },
+    {
+      "event_id": "SC10_E132",
+      "scene": "SC10",
+      "speaker": "nat",
+      "text": "แกไม่ใช่ฉัน",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E132"
+      ]
+    },
+    {
+      "event_id": "SC10_E133",
+      "scene": "SC10",
+      "speaker": "double_nat",
+      "text": "แน่ใจเหรอ ถ้านายไม่เปิด ฉันก็กลับเข้าไปไม่ได้ แล้วนายจะออกมาได้ยังไง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E133"
+      ]
+    },
+    {
+      "event_id": "SC10_E135",
+      "scene": "SC10",
+      "speaker": "nox",
+      "text": "ณัฐไม่ตอบอีก เขารอจนผนังกับจอหลักขึ้นหกโมงพร้อมกัน แล้วเสียงเคาะสามครั้งก็ดังขึ้น",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E135"
+      ]
+    },
+    {
+      "event_id": "SC10_E136",
+      "scene": "SC10",
+      "speaker": "nat",
+      "text": "อย่าเพิ่ง… ภาพเมื่อกี้ หกโมงสองมันยังอยู่",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E136"
+      ]
+    },
+    {
+      "event_id": "SC10_E137",
+      "scene": "SC10",
+      "speaker": "nox",
+      "text": "เขาจำได้ว่าห้ามใช้กล้องหกดูหลังเสียงเคาะ แต่สุดท้ายก็ห้ามตัวเองไม่ได้",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E137"
+      ]
+    },
+    {
+      "event_id": "SC10_E140",
+      "scene": "SC10",
+      "speaker": "nat",
+      "text": "มันหายไปแล้ว?",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E140"
+      ]
+    },
+    {
+      "event_id": "SC10_E141",
+      "scene": "SC10",
+      "speaker": "nox",
+      "text": "ภาพนั้นเป็นของหกโมงสิบสอง ณัฐจึงรอให้เวลาปัจจุบันไปถึงนาทีนั้นจริง ๆ",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E141"
+      ]
+    },
+    {
+      "event_id": "SC10_E144",
+      "scene": "SC10",
+      "speaker": "witthaya",
+      "text": "เจ้าหน้าที่กะเช้าครับ มาเปลี่ยนเวร",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E144"
+      ]
+    },
+    {
+      "event_id": "SC10_E145",
+      "scene": "SC10",
+      "speaker": "nat",
+      "text": "ชื่ออะไรครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E145"
+      ]
+    },
+    {
+      "event_id": "SC10_E146",
+      "scene": "SC10",
+      "speaker": "witthaya",
+      "text": "วิทยาครับ",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E146"
+      ]
+    },
+    {
+      "event_id": "SC10_E147",
+      "scene": "SC10",
+      "speaker": "nat",
+      "text": "รหัสพนักงาน",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E147"
+      ]
+    },
+    {
+      "event_id": "SC10_E148",
+      "scene": "SC10",
+      "speaker": "witthaya",
+      "text": "ศูนย์ สี่ เจ็ด สอง",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E148"
+      ]
+    },
+    {
+      "event_id": "SC10_E150",
+      "scene": "SC10",
+      "speaker": "nat",
+      "text": "วิทยา… ศูนย์สี่เจ็ดสอง ตรงครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional.",
+      "unit_ids": [
+        "SC10_E150"
+      ]
+    },
+    {
+      "event_id": "SC11_E152",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "เป็นไงบ้างครับ คืนแรก",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E152"
+      ]
+    },
+    {
+      "event_id": "SC11_E153",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "ที่นี่มันมีอะไรกันแน่ครับ มีประตูหายไป แล้วก็มีคนหน้าตาเหมือนผมอยู่ข้างนอก",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E153"
+      ]
+    },
+    {
+      "event_id": "SC11_E154",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "คุณเปิดให้เขาหรือเปล่า",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E154"
+      ]
+    },
+    {
+      "event_id": "SC11_E155",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "ไม่ได้เปิดครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E155"
+      ]
+    },
+    {
+      "event_id": "SC11_E156",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "ดีแล้ว",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E156"
+      ]
+    },
+    {
+      "event_id": "SC11_E157",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "พี่รู้อะไรใช่ไหม",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E157"
+      ]
+    },
+    {
+      "event_id": "SC11_E158",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "ผมรู้แค่ว่า ถ้าทำตามกฎ คุณก็มีโอกาสกลับบ้าน",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E158"
+      ]
+    },
+    {
+      "event_id": "SC11_E159",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "มีโอกาส?",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E159"
+      ]
+    },
+    {
+      "event_id": "SC11_E160",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "กลับไปพักเถอะครับ",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E160"
+      ]
+    },
+    {
+      "event_id": "SC11_E161",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "แล้วพี่สมชายเข้ากะตอนไหนครับ คนที่พาผมมาเมื่อคืน",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E161"
+      ]
+    },
+    {
+      "event_id": "SC11_E162",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "สมชายไหน หัวหน้าเราชื่อประสิทธิ์ ผมอยู่มาสามปี ไม่เคยมีคนชื่อสมชาย",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E162"
+      ]
+    },
+    {
+      "event_id": "SC11_E164",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "ครับหัวหน้า ครับ เขายังอยู่",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E164"
+      ]
+    },
+    {
+      "event_id": "SC11_E165",
+      "scene": "SC11",
+      "speaker": "witthaya",
+      "text": "หัวหน้าอยากคุยด้วยครับ",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E165"
+      ]
+    },
+    {
+      "event_id": "SC11_E166",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "ฮัลโหลครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E166"
+      ]
+    },
+    {
+      "event_id": "SC11_E167",
+      "scene": "SC11",
+      "speaker": "voice001",
+      "text": "เมื่อคืนคุณปิดจอหกหนึ่งครั้งใช่ไหม หลังจากนั้น มีอะไรเปลี่ยนไปบ้าง",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E167"
+      ]
+    },
+    {
+      "event_id": "SC11_E168",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "ประตูหายไปบานหนึ่ง แล้วก็มีคนหน้าตาเหมือนผม",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E168"
+      ]
+    },
+    {
+      "event_id": "SC11_E169",
+      "scene": "SC11",
+      "speaker": "voice001",
+      "text": "รู้ไหมว่าทำไมถึงปิดได้แค่ครั้งเดียว",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E169"
+      ]
+    },
+    {
+      "event_id": "SC11_E170",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "ไม่ครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E170"
+      ]
+    },
+    {
+      "event_id": "SC11_E171",
+      "scene": "SC11",
+      "speaker": "voice001",
+      "text": "เพราะเหตุการณ์ที่เห็น มันไม่ได้หายไปไหน",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E171"
+      ]
+    },
+    {
+      "event_id": "SC11_E172",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "หมายความว่ายังไง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E172"
+      ]
+    },
+    {
+      "event_id": "SC11_E173",
+      "scene": "SC11",
+      "speaker": "voice001",
+      "text": "เราเองก็ยังไม่รู้แน่ชัด แต่ทุกครั้งที่ปิดจอ บางอย่างในอาคารจะเปลี่ยนไป",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E173"
+      ]
+    },
+    {
+      "event_id": "SC11_E174",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "แล้วผมต้องทำยังไง",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E174"
+      ]
+    },
+    {
+      "event_id": "SC11_E175",
+      "scene": "SC11",
+      "speaker": "voice001",
+      "text": "คุณเลิกงานแล้ว กลับบ้านเถอะ",
+      "voice": "Algieba",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E175"
+      ]
+    },
+    {
+      "event_id": "SC11_E177",
+      "scene": "SC11",
+      "speaker": "nat",
+      "text": "ผมไม่กลับมาที่นี่อีกแล้ว",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil.",
+      "unit_ids": [
+        "SC11_E177"
+      ]
+    },
+    {
+      "event_id": "SC12_E178",
+      "scene": "SC12",
+      "speaker": "nox",
+      "text": "หกโมงสิบเก้านาที ณัฐเดินออกจากอาคาร ฝนหยุดแล้ว เขาคิดว่าอย่างน้อยคืนนี้ก็คงจบลงเสียที",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E178"
+      ]
+    },
+    {
+      "event_id": "SC12_E180",
+      "scene": "SC12",
+      "speaker": "nat",
+      "text": "ฮัลโหลครับ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E180"
+      ]
+    },
+    {
+      "event_id": "SC12_E181",
+      "scene": "SC12",
+      "speaker": "witthaya",
+      "text": "คุณณัฐ ตอนนี้อยู่ไหน",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E181"
+      ]
+    },
+    {
+      "event_id": "SC12_E182",
+      "scene": "SC12",
+      "speaker": "nat",
+      "text": "กำลังกลับบ้านครับ มีอะไรหรือเปล่า",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E182"
+      ]
+    },
+    {
+      "event_id": "SC12_E184",
+      "scene": "SC12",
+      "speaker": "witthaya",
+      "text": "แล้วใครกำลังเคาะประตูห้องควบคุมอยู่ เขาบอกว่าชื่อณัฐ หน้าตาเหมือนคุณทุกอย่าง",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E184"
+      ]
+    },
+    {
+      "event_id": "SC12_E185",
+      "scene": "SC12",
+      "speaker": "nat",
+      "text": "พี่อย่าล้อผมเล่นนะ",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E185"
+      ]
+    },
+    {
+      "event_id": "SC12_E186",
+      "scene": "SC12",
+      "speaker": "witthaya",
+      "text": "เขาบอกว่าเมื่อคืนเขาเป็นคนเฝ้ากล้องในห้อง แล้วคนที่ออกไปเมื่อกี้…",
+      "voice": "Iapetus",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E186"
+      ]
+    },
+    {
+      "event_id": "SC12_E187",
+      "scene": "SC12",
+      "speaker": "nat",
+      "text": "พี่วิทยา?",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E187"
+      ]
+    },
+    {
+      "event_id": "SC12_E189",
+      "scene": "SC12",
+      "speaker": "nox",
+      "text": "ณัฐโทรกลับ ไม่มีใครรับ สุดท้ายเขาเดินจากไป โดยไม่หันมองอีก",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E189"
+      ]
+    },
+    {
+      "event_id": "SC12_E191",
+      "scene": "SC12",
+      "speaker": "double_nat",
+      "text": "เปิดให้ผมหน่อย ผมเป็นคนเฝ้ากล้องเมื่อคืนจริง ๆ ได้ยินไหม ได้ยินผมหรือเปล่า",
+      "voice": "Puck",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster.",
+      "unit_ids": [
+        "SC12_E191"
+      ]
+    },
+    {
+      "event_id": "OUT_E193",
+      "scene": "OUT",
+      "speaker": "nox",
+      "text": "ถ้าคุณเห็นสิ่งที่จะเกิดขึ้นในอีกสิบนาที คุณจะกล้าเปลี่ยนมันไหม",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Quiet unsettling reflection. Warm Charon identity, no drawn-out dramatic pauses.",
+      "unit_ids": [
+        "OUT_E193"
+      ]
+    },
+    {
+      "event_id": "OUT_E194",
+      "scene": "OUT",
+      "speaker": "nox",
+      "text": "แล้วถ้าวันหนึ่งคุณเห็นตัวเองอยู่อีกฝั่งของประตู คุณจะแน่ใจได้ยังไง ว่าคนที่คุณกำลังมอง คือตัวคุณจริง ๆ",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Quiet unsettling reflection. Warm Charon identity, no drawn-out dramatic pauses.",
+      "unit_ids": [
+        "OUT_E194"
+      ]
+    },
+    {
+      "event_id": "OUT_E195",
+      "scene": "OUT",
+      "speaker": "nox",
+      "text": "แล้วพบกันในเรื่องต่อไป",
+      "voice": "Charon",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Quiet unsettling reflection. Warm Charon identity, no drawn-out dramatic pauses.",
+      "unit_ids": [
+        "OUT_E195"
+      ]
+    }
+  ],
+  "units": [
+    {
+      "unit_id": "IN_E002",
+      "event_id": "IN_E002",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "กฎบางข้อมีไว้ให้เราปลอดภัย แต่บางข้อมีไว้เพื่อปกปิดอะไรบางอย่าง ถ้ารู้แบบนี้คุณจะกล้าทำตามไหม",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Welcoming but unsettling, intimate conversational narrator."
+    },
+    {
+      "unit_id": "IN_E003",
+      "event_id": "IN_E003",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ผม น็อกซ์ ยินดีต้อนรับสู่ เฟรมเทลส์ คืนนี้ เป็นงานเฝ้ากล้องที่มีกฎอยู่เก้าข้อ และไม่มีใครรับรองว่าเขาจะได้กลับบ้าน",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Welcoming but unsettling, intimate conversational narrator."
+    },
+    {
+      "unit_id": "SC01_E004",
+      "event_id": "SC01_E004",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ตีห้าห้าสิบสองนาที ณัฐนั่งอยู่ในห้องควบคุม กล้องหมายเลขหกกลับแสดงภาพใครอีกคน ยืนอยู่หน้าประตูห้องเดียวกัน",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Immediate restrained fear; the double sounds polite, never demonic."
+    },
+    {
+      "unit_id": "SC01_E005",
+      "event_id": "SC01_E005",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "มันยังอยู่… หน้าเหมือนเราทุกอย่าง",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Immediate restrained fear; the double sounds polite, never demonic."
+    },
+    {
+      "unit_id": "SC01_E008",
+      "event_id": "SC01_E008",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "เปิดหน่อย ผมมารับช่วงต่อ",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Immediate restrained fear; the double sounds polite, never demonic."
+    },
+    {
+      "unit_id": "SC01_E009",
+      "event_id": "SC01_E009",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "เสียงเรานี่หว่า",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Immediate restrained fear; the double sounds polite, never demonic."
+    },
+    {
+      "unit_id": "SC01_E010",
+      "event_id": "SC01_E010",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ภาพที่เขาเพิ่งเห็น มีเวลานำอยู่สิบนาที แต่เสียงจากอีกฝั่งของประตู ดังขึ้นแล้ว",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Immediate restrained fear; the double sounds polite, never demonic."
+    },
+    {
+      "unit_id": "SC02_E012",
+      "event_id": "SC02_E012",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ก่อนเริ่มกะคืนนั้น ณัฐเพิ่งมาถึงอาคารวรินทร์ เขาอายุยี่สิบเก้า ค่าจ้างคืนละพันแปดร้อยบาท แลกกับการเฝ้ากล้องตั้งแต่สามทุ่มถึงหกโมงเช้า",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E013",
+      "event_id": "SC02_E013",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "สวัสดีครับ ผมณัฐ มาทำงานวันแรกครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E014",
+      "event_id": "SC02_E014",
+      "speaker": "somchai",
+      "voice": "Algenib",
+      "text": "คนใหม่ใช่ไหม ตามมา",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E016",
+      "event_id": "SC02_E016",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ผมต้องเดินตรวจด้วยไหมครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E017",
+      "event_id": "SC02_E017",
+      "speaker": "somchai",
+      "voice": "Algenib",
+      "text": "ไม่ต้อง หน้าที่นายคือดูจอ อยู่ในห้องนี้จนหมดกะ",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E019",
+      "event_id": "SC02_E019",
+      "speaker": "somchai",
+      "voice": "Algenib",
+      "text": "กล้องเก้าตัว โทรศัพท์อยู่ตรงนี้ กฎอยู่บนโต๊ะ อ่านให้ครบก่อนเริ่มงาน",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E020",
+      "event_id": "SC02_E020",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ถ้ามีปัญหา ผมโทรหาพี่ได้ไหมครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E021",
+      "event_id": "SC02_E021",
+      "speaker": "somchai",
+      "voice": "Algenib",
+      "text": "ไม่ต้องโทรหาผม ถ้าจำเป็น เบอร์ศูนย์ศูนย์หนึ่งจะติดต่อมาเอง",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E022",
+      "event_id": "SC02_E022",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ถ้าไม่มีใครโทรมาล่ะครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E023",
+      "event_id": "SC02_E023",
+      "speaker": "somchai",
+      "voice": "Algenib",
+      "text": "ก็ทำตามกฎ รายชื่อกับรหัสคนมาเปลี่ยนเวร อยู่ในลิ้นชัก",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC02_E025",
+      "event_id": "SC02_E025",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "อะไรของเขาวะ… กฎอะไรนักหนา",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Ordinary first-day workplace conversation. Nat polite and curious; Somchai curt and authoritative, mature deep voice."
+    },
+    {
+      "unit_id": "SC03_E027",
+      "event_id": "SC03_E027",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "กฎเก้าข้อสำหรับเจ้าหน้าที่เฝ้ากล้องกะดึก อ่านให้ครบ และไม่ต้องลองพิสูจน์อะไรทั้งนั้น",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E028",
+      "event_id": "SC03_E028",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อหนึ่ง ห้ามออกจากห้องก่อนหกโมงเช้า เว้นแต่จะได้รับคำสั่งจากหมายเลขศูนย์ศูนย์หนึ่ง",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E029",
+      "event_id": "SC03_E029",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อสอง กล้องหกแสดงภาพล่วงหน้าสิบนาที ห้ามปรับเวลาหรือถอดสายกล้องเด็ดขาด",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E030",
+      "event_id": "SC03_E030",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อสาม ถ้าเห็นอันตรายในกล้องหก ให้ปิดเฉพาะจอของกล้องนี้ห้าวินาที แล้วเปิดทันที ทำได้คืนละครั้ง กล้องต้องยังทำงานอยู่",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E031",
+      "event_id": "SC03_E031",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อสี่ หลังปิดจอ ให้ดูกล้องหนึ่ง ถ้าจำนวนประตูเปลี่ยนไป อย่านับซ้ำหรือหาสาเหตุ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E032",
+      "event_id": "SC03_E032",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อห้า ถ้ามีเสียงเคาะ ห้ามเปิด ห้ามตอบ และห้ามใช้กล้องหกดูว่าใครอยู่ข้างนอก ยกเว้นการถามชื่อและเปิดรับผู้เปลี่ยนเวรตามข้อเก้า",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E033",
+      "event_id": "SC03_E033",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อหก ถ้าศูนย์ศูนย์หนึ่งโทรมา ให้รับก่อนเสียงเรียกครั้งที่สี่ ถ้าเขาถามว่า เห็นใครอยู่หน้าห้องไหม ห้ามตอบ ให้วางสายทันที",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E034",
+      "event_id": "SC03_E034",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อเจ็ด ถ้ากล้องหกแสดงภาพตัวคุณ อย่าสนใจ อย่าออกไปดู สิ่งนั้นไม่ใช่ตัวคุณ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E035",
+      "event_id": "SC03_E035",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อแปด ถ้านาฬิกาผนังกับเวลาปัจจุบันบนจอหลักไม่ตรงกัน อย่าปรับ ให้รอจนตรงกัน ข้อนี้ไม่เกี่ยวกับเวลาล่วงหน้าบนกล้องหก",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E036",
+      "event_id": "SC03_E036",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อเก้า เมื่อนาฬิกาผนังกับจอหลักตรงกันและถึงหกโมงเช้าแล้ว ให้รอคนกะเช้าเคาะสามครั้ง ถามชื่อกับรหัส ตรวจรายชื่อก่อนเปิด ไม่จำเป็นต้องเปิดทันทีที่หกโมง",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E037",
+      "event_id": "SC03_E037",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "หมายเหตุ ถ้าข้อไหนหายหรือข้อความเปลี่ยน อย่าเขียนแก้ ให้ทำตามข้อที่ยังอ่านได้ กล้องหกส่องหน้าประตูห้องนี้ จำไว้ว่า กฎทุกข้อมีเหตุผล และผมไม่อยากรับพนักงานใหม่ก่อนสิ้นเดือนอีก",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC03_E038",
+      "event_id": "SC03_E038",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "กล้องเห็นอนาคตเนี่ยนะ… รับน้องกันหรือเปล่า เอาวะ คืนละพันแปด นั่งดูจอเอง",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Read the rules clearly in natural Thai as the security worker, not an announcer. Mild skepticism at the end."
+    },
+    {
+      "unit_id": "SC04_E039",
+      "event_id": "SC04_E039",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "สามทุ่มครึ่ง ณัฐสังเกตว่ากล้องหกแสดงเวลาสามทุ่มสี่สิบ ต่างจากจออื่นอยู่สิบนาที",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Skepticism turning to disbelief, not full panic."
+    },
+    {
+      "unit_id": "SC04_E040",
+      "event_id": "SC04_E040",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ตั้งเวลาผิดหรือเปล่าวะ… อ้าว ใครเดินมา",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Skepticism turning to disbelief, not full panic."
+    },
+    {
+      "unit_id": "SC04_E042",
+      "event_id": "SC04_E042",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "เขาจำเสื้อสีเทากับจังหวะเดินนั้นไว้ พอเวลาปัจจุบันถึงสามทุ่มสี่สิบ ชายคนเดิมก็เดินเข้ามาในกล้องหนึ่ง",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Skepticism turning to disbelief, not full panic."
+    },
+    {
+      "unit_id": "SC04_E044",
+      "event_id": "SC04_E044",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "คนเดิมเลย… เสื้อเดียวกันด้วย มันเห็นล่วงหน้าได้จริงเหรอ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Skepticism turning to disbelief, not full panic."
+    },
+    {
+      "unit_id": "SC05_E045",
+      "event_id": "SC05_E045",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ห้าทุ่มสิบหก กล้องหกเห็นแม่บ้านเข็นรถผ่านหน้าห้อง เวลาบนภาพคือห้าทุ่มยี่สิบหก",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E046",
+      "event_id": "SC05_E046",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "แม่บ้านยังไม่กลับอีกเหรอ… เดี๋ยว!",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E048",
+      "event_id": "SC05_E048",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "เฮ้ย! โดนเต็ม ๆ เลย",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E049",
+      "event_id": "SC05_E049",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ในกล้องหนึ่ง ทางเดินยังว่าง เหตุการณ์นั้นยังมาไม่ถึง",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E050",
+      "event_id": "SC05_E050",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อสาม… ปิดจอห้าวิ มันจะช่วยได้จริงเหรอ เอาวะ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E052_N1",
+      "event_id": "SC05_E052",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "หนึ่ง",
+      "style": "Thai male security worker age 29, approved Puck identity. Say exactly this single Thai numeral once, brisk and clear in less than one second. No introduction, repetition or other words."
+    },
+    {
+      "unit_id": "SC05_E052_N2",
+      "event_id": "SC05_E052",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "สอง",
+      "style": "Thai male security worker age 29, approved Puck identity. Say exactly this single Thai numeral once, brisk and clear in less than one second. No introduction, repetition or other words."
+    },
+    {
+      "unit_id": "SC05_E052_N3",
+      "event_id": "SC05_E052",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "สาม",
+      "style": "Thai male security worker age 29, approved Puck identity. Say exactly this single Thai numeral once, brisk and clear in less than one second. No introduction, repetition or other words."
+    },
+    {
+      "unit_id": "SC05_E052_N4",
+      "event_id": "SC05_E052",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "สี่",
+      "style": "Thai male security worker age 29, approved Puck identity. Say exactly this single Thai numeral once, brisk and clear in less than one second. No introduction, repetition or other words."
+    },
+    {
+      "unit_id": "SC05_E052_N5",
+      "event_id": "SC05_E052",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ห้า",
+      "style": "Thai male security worker age 29, approved Puck identity. Say exactly this single Thai numeral once, brisk and clear in less than one second. No introduction, repetition or other words."
+    },
+    {
+      "unit_id": "SC05_E054",
+      "event_id": "SC05_E054",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ภาพกลับมา ฝ้ายังถล่มลงจุดเดิม แต่ไม่มีแม่บ้านอยู่ใต้ฝ้าแล้ว",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E055",
+      "event_id": "SC05_E055",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "แม่บ้านไม่อยู่แล้ว… ได้ผลจริงด้วย",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E057",
+      "event_id": "SC05_E057",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "เดี๋ยว เมื่อกี้มีหกบานไม่ใช่เหรอ หนึ่ง สอง…",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E059",
+      "event_id": "SC05_E059",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อสี่… ห้ามนับซ้ำ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E060",
+      "event_id": "SC05_E060",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ณัฐปล่อยมือจากเมาส์ อีกเกือบสิบนาทีต่อมา เวลาปัจจุบันถึงห้าทุ่มยี่สิบหก เสียงเหล็กก็กระแทกพื้นหน้าห้อง",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E062",
+      "event_id": "SC05_E062",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "มันเกิดขึ้นจริง… แล้วประตูอีกบานล่ะ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E063",
+      "event_id": "SC05_E063",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "เขาย้อนภาพทางเดินไปก่อนเริ่มกะ ในภาพเก่าก็มีแค่ห้าบาน",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC05_E064",
+      "event_id": "SC05_E064",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ไม่สิ… เราจำได้ว่ามีหก",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Alarm and urgency, then brief relief and growing confusion. Keep narration clear."
+    },
+    {
+      "unit_id": "SC06_E065",
+      "event_id": "SC06_E065",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ณัฐลุกไปล้างหน้าที่อ่างเล็กหลังโต๊ะ เขายังไม่ได้ออกจากห้อง",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner."
+    },
+    {
+      "unit_id": "SC06_E067",
+      "event_id": "SC06_E067",
+      "speaker": "cleaner",
+      "voice": "Achernar",
+      "text": "คุณคะ ฉันเป็นแม่บ้าน เมื่อกี้ฝ้าเพดานหล่น ช่วยเปิดประตูหน่อยได้ไหมคะ",
+      "style": "Thai adult woman, practical everyday speech, asks for help after an accident. Concern rises to irritation at being ignored, not a theatrical ghost whisper. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner."
+    },
+    {
+      "unit_id": "SC06_E068",
+      "event_id": "SC06_E068",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "คนเมื่อกี้เหรอ…",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner."
+    },
+    {
+      "unit_id": "SC06_E070",
+      "event_id": "SC06_E070",
+      "speaker": "cleaner",
+      "voice": "Achernar",
+      "text": "คุณคะ ได้ยินไหม ฉันเห็นไฟในห้องเปิดอยู่นะ เปิดหน่อยสิคะ",
+      "style": "Thai adult woman, practical everyday speech, asks for help after an accident. Concern rises to irritation at being ignored, not a theatrical ghost whisper. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner."
+    },
+    {
+      "unit_id": "SC06_E072",
+      "event_id": "SC06_E072",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "พอเสียงฝีเท้าหาย ณัฐเปิดดูกล้องหนึ่ง ทางเดินว่าง เหลือรอยเท้าเปียกมาถึงหน้าประตู แต่ไม่มีรอยเดินกลับ",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner."
+    },
+    {
+      "unit_id": "SC06_E073",
+      "event_id": "SC06_E073",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "แล้วเขาไปไหน…",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Tense private murmurs for Nat, a normal woman asking for help then becoming impatient for cleaner."
+    },
+    {
+      "unit_id": "SC07_E075",
+      "event_id": "SC07_E075",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ฮัลโหลครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E076",
+      "event_id": "SC07_E076",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "ตอนนี้เรียบร้อยดีไหม",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E077",
+      "event_id": "SC07_E077",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "มีคนมาเคาะประตู แล้วก็มีประตูหายไปครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E078",
+      "event_id": "SC07_E078",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "คุณเปิดให้เขาหรือเปล่า",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E079",
+      "event_id": "SC07_E079",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ไม่ได้เปิดครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E080",
+      "event_id": "SC07_E080",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "ดีแล้ว คืนนี้ปิดจอหกไปหรือยัง",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E081",
+      "event_id": "SC07_E081",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ครั้งหนึ่งครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E082",
+      "event_id": "SC07_E082",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "งั้นอย่าปิดอีก",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E083",
+      "event_id": "SC07_E083",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "เดี๋ยวครับ ที่นี่มันเกิดอะไรขึ้น ประตูมันหายไปจริง ๆ นะ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E084",
+      "event_id": "SC07_E084",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "ผมทราบ",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E085",
+      "event_id": "SC07_E085",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ทราบ? หมายความว่ายังไงครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E087",
+      "event_id": "SC07_E087",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "ตอนนี้… คุณเห็นใครอยู่หน้าห้องไหม",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E088",
+      "event_id": "SC07_E088",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "คำถามตรงกับบรรทัดที่หก ณัฐวางหูโดยไม่ตอบ",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E090",
+      "event_id": "SC07_E090",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "คุณณัฐ ผมมาจากฝ่ายตรวจสอบ เปิดให้หน่อยครับ",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E092",
+      "event_id": "SC07_E092",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "เมื่อกี้เราเพิ่งคุยโทรศัพท์กัน ผมแค่มาตรวจกล้อง",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC07_E093",
+      "event_id": "SC07_E093",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "คุณณัฐ! ผมรู้ว่าคุณอยู่ในนั้น",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Nat flustered; 001 composed and precise, exterior inspector increasingly insistent."
+    },
+    {
+      "unit_id": "SC08_E095",
+      "event_id": "SC08_E095",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ตีสามสี่สิบ ก่อนจะมีเสียงเคาะรอบใหม่ ณัฐเห็นคนในชุดรักษาความปลอดภัยอยู่บนกล้องหก",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E096",
+      "event_id": "SC08_E096",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ใครมาอีก… เดี๋ยวนะ หน้าเหมือนเราเลย",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E098",
+      "event_id": "SC08_E098",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "สิ่งนั้นไม่ใช่ตัวคุณ… แล้วมันคือตัวอะไร",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E100",
+      "event_id": "SC08_E100",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "ณัฐ… ฉันรู้ว่านายอยู่ในนั้น เปิดประตูหน่อย",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E102",
+      "event_id": "SC08_E102",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "ฉันไม่ได้จะทำอะไร ฉันแค่อยากกลับเข้าไป",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E103",
+      "event_id": "SC08_E103",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "กลับเข้าไป?",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E105",
+      "event_id": "SC08_E105",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "นายได้ยินใช่ไหม ตอบหน่อยสิ",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E106",
+      "event_id": "SC08_E106",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "หยุดพูดสักที!",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E108",
+      "event_id": "SC08_E108",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "พอคำพูดหลุดออกไป ทุกเสียงนอกห้องก็หยุดพร้อมกัน",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC08_E109",
+      "event_id": "SC08_E109",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ซวยแล้ว…",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Nat increasingly frightened; the double quietly insists it wants to return. Nat shouts the stop line then regrets it."
+    },
+    {
+      "unit_id": "SC09_E110",
+      "event_id": "SC09_E110",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "นาฬิกาผนังบอกตีห้าสามสิบเอ็ด แต่เวลาปัจจุบันบนจอหลักเป็นตีห้าสี่สิบเจ็ด เขาไม่รู้ว่าควรเชื่อเรือนไหน",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E112",
+      "event_id": "SC09_E112",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ข้อแปด… อย่าปรับ รอให้ตรงกันเอง",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E114",
+      "event_id": "SC09_E114",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "คุณยังอยู่ในห้องใช่ไหม",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E115",
+      "event_id": "SC09_E115",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ครับ มีคนหน้าตาเหมือนผมอยู่ข้างนอก",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E116",
+      "event_id": "SC09_E116",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "เปิดให้เขาหรือยัง",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E117",
+      "event_id": "SC09_E117",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ยังครับ ตกลงมันเป็นใคร",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E118",
+      "event_id": "SC09_E118",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "อย่าให้เขาเข้ามา",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E119",
+      "event_id": "SC09_E119",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ผมแค่อยากกลับบ้าน",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E120",
+      "event_id": "SC09_E120",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "งั้นก็รอให้ถึงเวลา",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E122",
+      "event_id": "SC09_E122",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "เดี๋ยว… ข้อเจ็ดหายไปไหน เมื่อกี้ยังอยู่เลย",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E124",
+      "event_id": "SC09_E124",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ห้ามแก้…",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC09_E125",
+      "event_id": "SC09_E125",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "เมื่อเสียงนาฬิกากลับมาเดินเป็นจังหวะ ทั้งผนังและจอหลักก็แสดงตีห้าห้าสิบสอง กล้องหกจึงเป็นหกโมงสองนาที",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Exhausted unease and disbelief, 001 remains matter-of-fact."
+    },
+    {
+      "unit_id": "SC10_E128",
+      "event_id": "SC10_E128",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "เปิดหน่อย ผมมารับช่วงต่อ",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E129",
+      "event_id": "SC10_E129",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ไม่เปิด!",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E131",
+      "event_id": "SC10_E131",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "นายไม่ต้องกลัว เราเป็นคนเดียวกัน",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E132",
+      "event_id": "SC10_E132",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "แกไม่ใช่ฉัน",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E133",
+      "event_id": "SC10_E133",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "แน่ใจเหรอ ถ้านายไม่เปิด ฉันก็กลับเข้าไปไม่ได้ แล้วนายจะออกมาได้ยังไง",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E135",
+      "event_id": "SC10_E135",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ณัฐไม่ตอบอีก เขารอจนผนังกับจอหลักขึ้นหกโมงพร้อมกัน แล้วเสียงเคาะสามครั้งก็ดังขึ้น",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E136",
+      "event_id": "SC10_E136",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "อย่าเพิ่ง… ภาพเมื่อกี้ หกโมงสองมันยังอยู่",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E137",
+      "event_id": "SC10_E137",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "เขาจำได้ว่าห้ามใช้กล้องหกดูหลังเสียงเคาะ แต่สุดท้ายก็ห้ามตัวเองไม่ได้",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E140",
+      "event_id": "SC10_E140",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "มันหายไปแล้ว?",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E141",
+      "event_id": "SC10_E141",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ภาพนั้นเป็นของหกโมงสิบสอง ณัฐจึงรอให้เวลาปัจจุบันไปถึงนาทีนั้นจริง ๆ",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E144",
+      "event_id": "SC10_E144",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "เจ้าหน้าที่กะเช้าครับ มาเปลี่ยนเวร",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E145",
+      "event_id": "SC10_E145",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ชื่ออะไรครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E146",
+      "event_id": "SC10_E146",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "วิทยาครับ",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E147",
+      "event_id": "SC10_E147",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "รหัสพนักงาน",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E148",
+      "event_id": "SC10_E148",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "ศูนย์ สี่ เจ็ด สอง",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC10_E150",
+      "event_id": "SC10_E150",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "วิทยา… ศูนย์สี่เจ็ดสอง ตรงครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Controlled suspense nearing breaking point. Double insists calmly, Nat scared and determined. Morning guard is ordinary and professional."
+    },
+    {
+      "unit_id": "SC11_E152",
+      "event_id": "SC11_E152",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "เป็นไงบ้างครับ คืนแรก",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E153",
+      "event_id": "SC11_E153",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ที่นี่มันมีอะไรกันแน่ครับ มีประตูหายไป แล้วก็มีคนหน้าตาเหมือนผมอยู่ข้างนอก",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E154",
+      "event_id": "SC11_E154",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "คุณเปิดให้เขาหรือเปล่า",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E155",
+      "event_id": "SC11_E155",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ไม่ได้เปิดครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E156",
+      "event_id": "SC11_E156",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "ดีแล้ว",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E157",
+      "event_id": "SC11_E157",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "พี่รู้อะไรใช่ไหม",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E158",
+      "event_id": "SC11_E158",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "ผมรู้แค่ว่า ถ้าทำตามกฎ คุณก็มีโอกาสกลับบ้าน",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E159",
+      "event_id": "SC11_E159",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "มีโอกาส?",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E160",
+      "event_id": "SC11_E160",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "กลับไปพักเถอะครับ",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E161",
+      "event_id": "SC11_E161",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "แล้วพี่สมชายเข้ากะตอนไหนครับ คนที่พาผมมาเมื่อคืน",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E162",
+      "event_id": "SC11_E162",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "สมชายไหน หัวหน้าเราชื่อประสิทธิ์ ผมอยู่มาสามปี ไม่เคยมีคนชื่อสมชาย",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E164",
+      "event_id": "SC11_E164",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "ครับหัวหน้า ครับ เขายังอยู่",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E165",
+      "event_id": "SC11_E165",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "หัวหน้าอยากคุยด้วยครับ",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E166",
+      "event_id": "SC11_E166",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ฮัลโหลครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E167",
+      "event_id": "SC11_E167",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "เมื่อคืนคุณปิดจอหกหนึ่งครั้งใช่ไหม หลังจากนั้น มีอะไรเปลี่ยนไปบ้าง",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E168",
+      "event_id": "SC11_E168",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ประตูหายไปบานหนึ่ง แล้วก็มีคนหน้าตาเหมือนผม",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E169",
+      "event_id": "SC11_E169",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "รู้ไหมว่าทำไมถึงปิดได้แค่ครั้งเดียว",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E170",
+      "event_id": "SC11_E170",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ไม่ครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E171",
+      "event_id": "SC11_E171",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "เพราะเหตุการณ์ที่เห็น มันไม่ได้หายไปไหน",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E172",
+      "event_id": "SC11_E172",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "หมายความว่ายังไง",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E173",
+      "event_id": "SC11_E173",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "เราเองก็ยังไม่รู้แน่ชัด แต่ทุกครั้งที่ปิดจอ บางอย่างในอาคารจะเปลี่ยนไป",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E174",
+      "event_id": "SC11_E174",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "แล้วผมต้องทำยังไง",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E175",
+      "event_id": "SC11_E175",
+      "speaker": "voice001",
+      "voice": "Algieba",
+      "text": "คุณเลิกงานแล้ว กลับบ้านเถอะ",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC11_E177",
+      "event_id": "SC11_E177",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ผมไม่กลับมาที่นี่อีกแล้ว",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Apparent relief, then confusion about Somchai. 001 restrained and withholding. No character sounds knowingly evil."
+    },
+    {
+      "unit_id": "SC12_E178",
+      "event_id": "SC12_E178",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "หกโมงสิบเก้านาที ณัฐเดินออกจากอาคาร ฝนหยุดแล้ว เขาคิดว่าอย่างน้อยคืนนี้ก็คงจบลงเสียที",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E180",
+      "event_id": "SC12_E180",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "ฮัลโหลครับ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E181",
+      "event_id": "SC12_E181",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "คุณณัฐ ตอนนี้อยู่ไหน",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E182",
+      "event_id": "SC12_E182",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "กำลังกลับบ้านครับ มีอะไรหรือเปล่า",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E184",
+      "event_id": "SC12_E184",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "แล้วใครกำลังเคาะประตูห้องควบคุมอยู่ เขาบอกว่าชื่อณัฐ หน้าตาเหมือนคุณทุกอย่าง",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E185",
+      "event_id": "SC12_E185",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "พี่อย่าล้อผมเล่นนะ",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E186",
+      "event_id": "SC12_E186",
+      "speaker": "witthaya",
+      "voice": "Iapetus",
+      "text": "เขาบอกว่าเมื่อคืนเขาเป็นคนเฝ้ากล้องในห้อง แล้วคนที่ออกไปเมื่อกี้…",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E187",
+      "event_id": "SC12_E187",
+      "speaker": "nat",
+      "voice": "Puck",
+      "text": "พี่วิทยา?",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E189",
+      "event_id": "SC12_E189",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ณัฐโทรกลับ ไม่มีใครรับ สุดท้ายเขาเดินจากไป โดยไม่หันมองอีก",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "SC12_E191",
+      "event_id": "SC12_E191",
+      "speaker": "double_nat",
+      "voice": "Puck",
+      "text": "เปิดให้ผมหน่อย ผมเป็นคนเฝ้ากล้องเมื่อคืนจริง ๆ ได้ยินไหม ได้ยินผมหรือเปล่า",
+      "style": "Thai man age 29, ordinary security worker, exactly the approved Puck voice identity for Nat. Clear standard Thai. No pitch shift or monster voice. Final real fear, Witthaya shaken on the phone. Nat double sincerely desperate, human, not a monster."
+    },
+    {
+      "unit_id": "OUT_E193",
+      "event_id": "OUT_E193",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "ถ้าคุณเห็นสิ่งที่จะเกิดขึ้นในอีกสิบนาที คุณจะกล้าเปลี่ยนมันไหม",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Quiet unsettling reflection. Warm Charon identity, no drawn-out dramatic pauses."
+    },
+    {
+      "unit_id": "OUT_E194",
+      "event_id": "OUT_E194",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "แล้วถ้าวันหนึ่งคุณเห็นตัวเองอยู่อีกฝั่งของประตู คุณจะแน่ใจได้ยังไง ว่าคนที่คุณกำลังมอง คือตัวคุณจริง ๆ",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Quiet unsettling reflection. Warm Charon identity, no drawn-out dramatic pauses."
+    },
+    {
+      "unit_id": "OUT_E195",
+      "event_id": "OUT_E195",
+      "speaker": "nox",
+      "voice": "Charon",
+      "text": "แล้วพบกันในเรื่องต่อไป",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue. Scene performance: Quiet unsettling reflection. Warm Charon identity, no drawn-out dramatic pauses."
+    }
+  ],
+  "reference_is_final_film": false,
+  "reuse_approved_exact_text_voice_auditions": true
+}

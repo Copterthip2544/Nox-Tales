@@ -1,0 +1,174 @@
+name: Frame Tales - Nightwatch9 full speech v01
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/produce-nightwatch9-v01.yml]
+  workflow_dispatch:
+    inputs:
+      resume_run_id:
+        description: Prior run with saved speech; resume rather than regenerate
+        required: true
+        type: string
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: nightwatch9-full-speech-v01
+  cancel-in-progress: false
+jobs:
+  production:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'produce-nightwatch9-v01-start')
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Prepare audio tools
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+      - name: Restore approved audition source
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-voice-audition-v01
+          path: approved-auditions
+          run-id: 43214117186
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Resume saved production if requested
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-speech-v01
+          path: nightwatch9-full-speech
+          run-id: ${{ inputs.resume_run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Batch 01 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 02 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 03 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 04 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 05 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 06 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 07 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 08 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 09 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 10 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 11 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 12 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 13 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 14 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 15 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 16 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 17 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 18 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 19 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 20 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 21 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 22 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 23 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 24 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 25 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 26 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 27 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 28 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 29 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Batch 30 of 30 - at most five new speech units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Assemble complete speech and measure timing
+        run: python3 -u scripts/assemble_nightwatch9_audio.py
+      - name: Preserve completed work and measured audio
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nightwatch9-full-speech-v01
+          path: nightwatch9-full-speech/
+          if-no-files-found: ignore
+          retention-days: 14

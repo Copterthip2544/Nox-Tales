@@ -1,0 +1,98 @@
+{
+  "model": "gemini-3.8-flash-tts",
+  "cast": {
+    "nox": {
+      "character": "NOX",
+      "voice": "Charon",
+      "status": "user_approved",
+      "direction": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue.",
+      "audition_file": "01_nox_Charon.wav",
+      "audition_review": "ready_for_user_listening",
+      "approved_reference_run": 43214117186,
+      "approved_reference_artifact": 13943335785
+    },
+    "nat": {
+      "character": "ณัฐ",
+      "voice": "Puck",
+      "status": "user_approved",
+      "direction": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line.",
+      "audition_file": "02_nat_Puck.wav",
+      "audition_review": "ready_for_user_listening",
+      "approved_reference_run": 43214117186,
+      "approved_reference_artifact": 13943335785
+    },
+    "somchai": {
+      "character": "สมชาย",
+      "voice": "Algenib",
+      "status": "user_approved",
+      "direction": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh.",
+      "audition_file": "03_somchai_Algenib.wav",
+      "audition_review": "ready_for_user_listening",
+      "approved_reference_run": 43214117186,
+      "approved_reference_artifact": 13943335785
+    },
+    "voice001": {
+      "character": "เสียง 001 / เสียงชายฝ่ายตรวจสอบ",
+      "voice": "Algieba",
+      "status": "user_approved",
+      "direction": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes.",
+      "audition_file": "04_voice001_Algieba.wav",
+      "audition_review": "ready_for_user_listening",
+      "approved_reference_run": 43214117186,
+      "approved_reference_artifact": 13943335785
+    },
+    "cleaner": {
+      "character": "แม่บ้าน",
+      "voice": "Achernar",
+      "status": "user_approved",
+      "direction": "Thai adult woman, practical everyday speech, asks for help after an accident. Concern rises to irritation at being ignored, not a theatrical ghost whisper.",
+      "audition_file": "05_cleaner_Achernar.wav",
+      "audition_review": "ready_for_user_listening",
+      "approved_reference_run": 43214117186,
+      "approved_reference_artifact": 13943335785
+    },
+    "witthaya": {
+      "character": "วิทยา",
+      "voice": "Iapetus",
+      "status": "user_approved",
+      "direction": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister.",
+      "audition_file": "06_witthaya_Iapetus.wav",
+      "audition_review": "ready_for_user_listening",
+      "approved_reference_run": 43214117186,
+      "approved_reference_artifact": 13943335785
+    },
+    "double_nat": {
+      "character": "ณัฐอีกคน",
+      "voice": "Puck",
+      "status": "user_approved",
+      "direction": "Exactly the approved Nat voice identity, age and accent. Courteous at first, then ambiguous insistence, finally genuinely desperate. Do not change pitch to make a monster. Exterior-door filtering applied in edit, not different TTS casting.",
+      "inherits_voice_from": "nat",
+      "audition_file": "07_double_nat_Puck.wav",
+      "audition_review": "ready_for_user_listening",
+      "approved_reference_run": 43214117186,
+      "approved_reference_artifact": 13943335785
+    }
+  },
+  "only_nox_is_approved": false,
+  "audition_texts": {
+    "nat": "สวัสดีครับ ผมณัฐ มาทำงานวันแรกครับ เดี๋ยวนะ ทำไมมันหน้าตาเหมือนเรา ผมแค่อยากกลับบ้าน",
+    "somchai": "ไม่ต้อง หน้าที่นายคือดูจอ อยู่ในห้องนี้จนหมดกะ ถ้าจำเป็น เบอร์ศูนย์ศูนย์หนึ่งจะติดต่อมาเอง",
+    "voice001": "คุณเปิดประตูให้เขาหรือเปล่า ดีแล้ว ตอนนี้ คุณเห็นใครอยู่หน้าห้องไหม",
+    "cleaner": "คุณคะ ฉันเป็นแม่บ้าน เมื่อกี้ฝ้าเพดานหล่น ช่วยเปิดหน่อยได้ไหมคะ ฉันเห็นไฟในห้องเปิดอยู่นะ",
+    "witthaya": "เจ้าหน้าที่กะเช้าครับ มาเปลี่ยนเวร ผมอยู่มาสามปี ไม่เคยมีคนชื่อสมชาย คุณณัฐ ตอนนี้คุณอยู่ไหน"
+  },
+  "pronunciation_reference": {
+    "FRAME TALES": "เฟรมเทลส์",
+    "NOX": "น็อกซ์",
+    "ณัฐ": "นัด",
+    "วรินทร์": "วะริน",
+    "สมชาย": "สมชาย",
+    "วิทยา": "วิดทะยา",
+    "ประสิทธิ์": "ประสิด",
+    "001": "ศูนย์ศูนย์หนึ่ง",
+    "0472": "ศูนย์สี่เจ็ดสอง"
+  },
+  "audition_results": "audition/results.json",
+  "all_cast_approved": true,
+  "approval_source": "User: เช็คแล้ว ผ่าน เริ่มการพากย์เสียงได้เลย"
+}
