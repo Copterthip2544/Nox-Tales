@@ -1,0 +1,14 @@
+{
+  "episode": "nightwatch9",
+  "stage": "waiting_daily_quota_reset",
+  "failed_run": 43222572323,
+  "saved_artifact": 13948430062,
+  "completed_units": 72,
+  "total_units": 149,
+  "remaining_units": 77,
+  "reason": "API HTTP 429, daily quota; not evidence of an exhausted monetary balance",
+  "scheduled_resume_utc": "2026-11-13T08:15:00Z",
+  "scheduled_resume_bangkok": "2026-11-13T15:15:00+07:00",
+  "resume_policy": "Restore latest saved production manifest, verify hashes, generate only missing units",
+  "account_credit_balance": "not accessible"
+}
