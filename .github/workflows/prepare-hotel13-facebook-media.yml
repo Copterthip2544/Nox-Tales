@@ -1,0 +1,42 @@
+name: Frame Tales - prepare Hotel13 Facebook video media
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/prepare-hotel13-facebook-media.yml]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: hotel13-facebook-media
+  cancel-in-progress: false
+jobs:
+  media:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'hotel13-facebook-media-01')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Restore completed and verified v02 film without rerendering
+        uses: actions/download-artifact@v4
+        with:
+          name: hotel13-full-film-v02
+          path: approved-film
+          run-id: 43027612499
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Publish reusable video file for the Facebook scheduler
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          FILM_PATH="$(find approved-film -name Frame_Tales_Hotel13_Full_v02.mp4 -print -quit)"
+          test -n "$FILM_PATH"
+          test -s "$FILM_PATH"
+          if ! gh release view hotel13-v02-media --repo "$GITHUB_REPOSITORY" > /dev/null 2>&1; then
+            gh release create hotel13-v02-media --repo "$GITHUB_REPOSITORY" --target 3a45c6a2c22c1cf639114842253825d7d6fc4970 --title 'Frame Tales - Hotel13 v02 media' --notes 'Completed Hotel13 v02 film media, restored from the verified production artifact for scheduled Facebook publishing. This release stores the media file; it does not publish a social post.' --prerelease --latest=false
+          fi
+          if ! gh release view hotel13-v02-media --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[].name' | rg -Fx Frame_Tales_Hotel13_Full_v02.mp4; then
+            gh release upload hotel13-v02-media "$FILM_PATH" --repo "$GITHUB_REPOSITORY"
+          fi
+          gh release view hotel13-v02-media --repo "$GITHUB_REPOSITORY" --json assets --jq '.assets[] | select(.name=="Frame_Tales_Hotel13_Full_v02.mp4") | {name:.name,url:.url,size:.size}'
