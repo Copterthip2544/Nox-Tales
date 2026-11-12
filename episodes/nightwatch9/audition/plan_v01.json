@@ -1,0 +1,71 @@
+{
+  "episode": "nightwatch9",
+  "brand": "Frame Tales",
+  "model": "gemini-3.8-flash-tts",
+  "purpose": "User requested seven cast voice auditions, no full-episode generation",
+  "samples": [
+    {
+      "id": "nox",
+      "number": 1,
+      "character": "NOX",
+      "voice": "Charon",
+      "text": "กฎบางข้อมีไว้ให้เราปลอดภัย แต่บางข้อมีไว้เพื่อปกปิดอะไรบางอย่าง ถ้ารู้แบบนี้คุณจะกล้าทำตามไหม",
+      "style": "Thai male narrator, warm resonant Charon identity, intimate clear standard Thai, natural pace. Ground the action and chronology. Controlled urgency in SC05 and SC10, never talk over pivotal dialogue.",
+      "status": "not_generated"
+    },
+    {
+      "id": "nat",
+      "number": 2,
+      "character": "ณัฐ",
+      "voice": "Puck",
+      "text": "สวัสดีครับ ผมณัฐ มาทำงานวันแรกครับ เดี๋ยวนะ ทำไมมันหน้าตาเหมือนเรา ผมแค่อยากกลับบ้าน",
+      "style": "Thai man age 29, ordinary security worker. Natural conversational Thai, not a comedian or polished announcer. Starts skeptical, develops quiet dread, then breathless restrained panic, exhausted relief and renewed doubt. Do not shout every line.",
+      "status": "not_generated"
+    },
+    {
+      "id": "somchai",
+      "number": 3,
+      "character": "สมชาย",
+      "voice": "Algenib",
+      "text": "ไม่ต้อง หน้าที่นายคือดูจอ อยู่ในห้องนี้จนหมดกะ ถ้าจำเป็น เบอร์ศูนย์ศูนย์หนึ่งจะติดต่อมาเอง",
+      "style": "Thai older man age 57, mature deep slightly rough low register, curt practical authority, short matter-of-fact phrasing. Human supervisor demeanor, no demonic processing or villain laugh.",
+      "status": "not_generated"
+    },
+    {
+      "id": "voice001",
+      "number": 4,
+      "character": "เสียง 001 / เสียงชายฝ่ายตรวจสอบ",
+      "voice": "Algieba",
+      "text": "คุณเปิดประตูให้เขาหรือเปล่า ดีแล้ว ตอนนี้ คุณเห็นใครอยู่หน้าห้องไหม",
+      "style": "Thai adult man, calm smooth low-middle register, controlled precise questions and withheld information. Same voice identity across calls and exterior inspector lines, but this does not prove they are the same being. Only the acoustic space changes.",
+      "status": "not_generated"
+    },
+    {
+      "id": "cleaner",
+      "number": 5,
+      "character": "แม่บ้าน",
+      "voice": "Achernar",
+      "text": "คุณคะ ฉันเป็นแม่บ้าน เมื่อกี้ฝ้าเพดานหล่น ช่วยเปิดหน่อยได้ไหมคะ ฉันเห็นไฟในห้องเปิดอยู่นะ",
+      "style": "Thai adult woman, practical everyday speech, asks for help after an accident. Concern rises to irritation at being ignored, not a theatrical ghost whisper.",
+      "status": "not_generated"
+    },
+    {
+      "id": "witthaya",
+      "number": 6,
+      "character": "วิทยา",
+      "voice": "Iapetus",
+      "text": "เจ้าหน้าที่กะเช้าครับ มาเปลี่ยนเวร ผมอยู่มาสามปี ไม่เคยมีคนชื่อสมชาย คุณณัฐ ตอนนี้คุณอยู่ไหน",
+      "style": "Thai male colleague, clear grounded speech, ordinary professional manner. Mild confusion about Somchai, actual fear only on the final phone call. Never sound knowingly sinister.",
+      "status": "not_generated"
+    },
+    {
+      "id": "double_nat",
+      "number": 7,
+      "character": "ณัฐอีกคน",
+      "voice": "Puck",
+      "text": "เปิดหน่อย ผมมารับช่วงต่อ นายไม่ต้องกลัว เราเป็นคนเดียวกัน เปิดประตูให้ผมหน่อย ผมเป็นคนเฝ้ากล้องเมื่อคืนจริง ๆ",
+      "style": "Thai man age 29, ordinary security worker, exactly the same Puck identity as Nat: natural middle-low male register, clear standard Thai. Begin politely and calmly, grow insistent, final request genuinely desperate. No demonic pitch or monster whisper.",
+      "status": "not_generated"
+    }
+  ]
+}

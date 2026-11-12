@@ -1,0 +1,38 @@
+name: Frame Tales - Nightwatch9 voice audition v01
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/audition-nightwatch9-v01.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audition:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'audition-nightwatch9-v01-start')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Prepare audio assembly
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+      - name: Generate first five requested auditions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/audition_nightwatch9.py
+      - name: Generate remaining two requested auditions
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/audition_nightwatch9.py
+      - name: Make individual MP3s and combined listening file
+        run: python3 scripts/assemble_nightwatch9_audition.py
+      - name: Preserve every completed sample
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nightwatch9-voice-audition-v01
+          path: nightwatch9-auditions/
+          if-no-files-found: ignore
+          retention-days: 14
