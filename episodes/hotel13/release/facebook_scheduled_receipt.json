@@ -1,0 +1,23 @@
+{
+  "platform": "facebook",
+  "brand": "Frame Tales",
+  "facebook_page_id": "1529172283603712",
+  "metricool_brand_id": "8025752",
+  "post_id": 426143024,
+  "post_uuid": "8362078823340985205",
+  "publish_time": "2026-11-13T19:00:00+07:00",
+  "timezone": "Asia/Bangkok",
+  "auto_publish": true,
+  "draft": false,
+  "title": "โรงแรมห้อง 13 — แขกที่ห้ามเช็กเอาต์ | Frame Tales",
+  "film_version": "v02",
+  "duration_seconds": 782.23,
+  "scheduler_owns_video_and_cover": true,
+  "media_copy_sha256_verified": true,
+  "planner_url": "https://app.metricool.com/planner/calendar?blogId=8025752&openWithPostUuid=8362078823340985205",
+  "status": "scheduled",
+  "temporary_github_media_cleanup": "completed",
+  "note": "Scheduled on Facebook only; not yet published. Original film artifacts preserved.",
+  "temporary_workflows_removed": true
+}
+
