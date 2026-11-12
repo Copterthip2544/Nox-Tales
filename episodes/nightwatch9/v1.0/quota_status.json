@@ -1,14 +1,20 @@
 {
   "episode": "nightwatch9",
   "stage": "waiting_daily_quota_reset",
-  "failed_run": 43222572323,
-  "saved_artifact": 13948430062,
-  "completed_units": 72,
+  "failed_run": 43226426697,
+  "saved_artifact": 13948342502,
+  "completed_units": 73,
   "total_units": 149,
-  "remaining_units": 77,
+  "remaining_units": 76,
   "reason": "API HTTP 429, daily quota; not evidence of an exhausted monetary balance",
   "scheduled_resume_utc": "2026-11-13T08:15:00Z",
   "scheduled_resume_bangkok": "2026-11-13T15:15:00+07:00",
   "resume_policy": "Restore latest saved production manifest, verify hashes, generate only missing units",
-  "account_credit_balance": "not accessible"
+  "account_credit_balance": "not accessible",
+  "quota_value": 100,
+  "quota_id": "GenerateRequestsPerDayPerProjectPerModel",
+  "quota_metric": "generativelanguage.googleapis.com/generate_requests_per_model_per_day",
+  "last_success": "SC07_E092",
+  "blocked_unit": "SC07_E093",
+  "last_attempt_result": "One additional unit completed before explicit daily quota rejection"
 }
