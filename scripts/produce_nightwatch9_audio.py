@@ -38,9 +38,21 @@ for u in p['units']:
     break
    except HTTPError as ex:
     if ex.code!=429:raise
-    body=ex.read().decode(errors='replace');daily='perday' in body.lower().replace('_','').replace('-','')
-    if daily or attempt==3:raise
-    print(f'{uid}: rejected 429, waiting 45s',flush=True);time.sleep(45)
+    body=ex.read().decode(errors='replace')
+    try:err=json.loads(body).get('error',{})
+    except Exception:err={}
+    quotas=[];retry_seconds=45
+    for detail in err.get('details',[]):
+     if str(detail.get('@type','')).endswith('QuotaFailure'):
+      for violation in detail.get('violations',[]):quotas.append({k:violation[k] for k in ['quotaMetric','quotaId','quotaValue','quotaDimensions'] if k in violation})
+     if str(detail.get('@type','')).endswith('RetryInfo'):
+      try:retry_seconds=max(45,int(float(str(detail.get('retryDelay','45s')).rstrip('s')))+2)
+      except ValueError:pass
+    daily=any('perday' in (str(q.get('quotaMetric',''))+str(q.get('quotaId',''))).lower().replace('_','').replace('-','') for q in quotas)
+    m['last_rate_limit']={'unit':uid,'api_status':err.get('status'),'daily_quota_violation':daily,'quota_violations':quotas,'retry_seconds':retry_seconds};save()
+    print('Rate-limit details: '+json.dumps(m['last_rate_limit']),flush=True)
+    if daily or attempt==3 or retry_seconds>180:raise
+    print(f'{uid}: rejected 429, waiting {retry_seconds}s',flush=True);time.sleep(retry_seconds)
   c=result.get('candidates',[])
   if len(c)!=1 or c[0].get('finishReason')!='STOP':raise ValueError('Incomplete speech')
   parts=[x['inlineData'] for x in c[0].get('content',{}).get('parts',[]) if 'inlineData' in x]

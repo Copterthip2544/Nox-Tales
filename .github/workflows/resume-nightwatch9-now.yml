@@ -1,0 +1,132 @@
+name: Frame Tales - resume Nightwatch9 now
+on:
+  push:
+    branches: [main]
+    paths: [.github/workflows/resume-nightwatch9-now.yml]
+  workflow_dispatch:
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: nightwatch9-full-speech-v01
+  cancel-in-progress: false
+jobs:
+  resume:
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message, 'resume-nightwatch9-now-01')
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Prepare audio tools
+        run: |
+          command -v ffmpeg || (sudo apt-get update -qq && sudo apt-get install -y ffmpeg)
+      - name: Restore approved audition source
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-voice-audition-v01
+          path: approved-auditions
+          run-id: 43214117186
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Find latest saved production, including any newer manual completion
+        id: saved
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          resume_id="$(gh api "repos/$GITHUB_REPOSITORY/actions/artifacts?name=nightwatch9-full-speech-v01&per_page=100" --jq '.artifacts | map(select(.expired == false)) | sort_by(.created_at) | last | .workflow_run.id')"
+          test -n "$resume_id"
+          test "$resume_id" != null
+          echo "run_id=$resume_id" >> "$GITHUB_OUTPUT"
+      - name: Restore completed units and manifest before generating
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-speech-v01
+          path: nightwatch9-full-speech
+          run-id: ${{ steps.saved.outputs.run_id }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify saved work is present
+        run: |
+          python3 - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          r=Path('nightwatch9-full-speech');m=json.loads((r/'manifest.json').read_text())
+          saved=[v for v in m['units'].values() if v.get('status')=='complete']
+          assert len(saved)>=72
+          for v in saved:assert hashlib.sha256((r/v['file']).read_bytes()).hexdigest()==v['sha256']
+          print('Saved units verified:',len(saved))
+          PY
+      - name: Resume batch 01 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 02 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 03 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 04 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 05 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 06 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 07 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 08 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 09 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 10 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 11 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 12 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 13 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 14 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 15 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Resume batch 16 of 16 - at most five missing units
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 -u scripts/produce_nightwatch9_audio.py
+      - name: Assemble complete measured speech
+        run: python3 -u scripts/assemble_nightwatch9_audio.py
+      - name: Preserve all completed work even if quota is still unavailable
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: nightwatch9-full-speech-v01
+          path: nightwatch9-full-speech/
+          if-no-files-found: ignore
+          retention-days: 14
