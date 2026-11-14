@@ -1,0 +1,73 @@
+name: Targeted dialogue cue timing
+on:
+  workflow_dispatch:
+    inputs:
+      packed_plan:
+        type: string
+        required: true
+permissions:
+  actions: read
+  contents: read
+jobs:
+  timing:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [1, 2, 3]
+    steps:
+      - name: Download source stems
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PACKED_PLAN: ${{ inputs.packed_plan }}
+          BATCH: ${{ matrix.batch }}
+        run: |
+          SOURCE_RUN=$(python3 -c 'import os,json,base64,gzip; print(json.loads(gzip.decompress(base64.b64decode(os.environ["PACKED_PLAN"]))) ["source_run"])')
+          gh run download "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --name "scene-speech-batch-$BATCH" --dir speech-input
+      - name: Check individual acoustic cue boundaries
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PACKED_PLAN: ${{ inputs.packed_plan }}
+          BATCH: ${{ matrix.batch }}
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          import json,os,gzip,base64,io,wave,concurrent.futures
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          P=json.loads(gzip.decompress(base64.b64decode(os.environ['PACKED_PLAN'])));batch=int(os.environ['BATCH']);B=Path('speech-input');O=Path('timing-output');O.mkdir(exist_ok=True);key=os.environ['GEMINI_API_KEY']
+          def run(t):
+           dest=O/(t['cue_id']+'.json')
+           try:
+            with wave.open(str(B/(t['stem_id']+'.wav'))) as w:
+             sr=w.getframerate();duration=w.getnframes()/sr;lo=max(0,t['initial_start']-4);hi=min(duration,t['initial_end']+4);w.setpos(round(lo*sr));raw=w.readframes(round((hi-lo)*sr));params=w.getparams()
+            buf=io.BytesIO()
+            with wave.open(buf,'wb') as w:w.setnchannels(params.nchannels);w.setsampwidth(params.sampwidth);w.setframerate(sr);w.writeframes(raw)
+            prompt=('Listen to the actual Thai audio. Find ONLY the complete TARGET utterance below within this short excerpt, ignoring any neighboring utterances. '
+            'Return JSON {"start_seconds":0.0,"end_seconds":1.0,"heard_text":"actual spoken target","complete_target_present":true}. '
+            'Times are relative to the attached short excerpt, NOT the original recording. Locate audible phonemes, do not estimate from character count. '
+            'Include the entire first and final words. If target missing/truncated return complete_target_present false. '
+            f'Excerpt length {len(raw)/params.sampwidth/params.nchannels/sr:.3f} seconds. TARGET: '+t['text'])
+            body={'contents':[{'role':'user','parts':[{'text':prompt},{'inlineData':{'mimeType':'audio/wav','data':base64.b64encode(buf.getvalue()).decode()}}]}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':4096}}
+            req=Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',data=json.dumps(body,ensure_ascii=False).encode(),headers={'x-goog-api-key':key,'Content-Type':'application/json'},method='POST')
+            with urlopen(req,timeout=180) as f:resp=json.load(f)
+            txt=''.join(p.get('text','') for p in resp['candidates'][0]['content']['parts'] if not p.get('thought')).strip()
+            if txt.startswith('```'):txt=txt.split('\n',1)[1].rsplit('```',1)[0]
+            d=json.loads(txt);a=float(d['start_seconds']);z=float(d['end_seconds'])
+            if not d.get('complete_target_present') or not 0<=a<z<=hi-lo+.2:raise ValueError('Target not positively located')
+            r={**t,**d,'start_seconds':lo+a,'end_seconds':min(duration,lo+z),'method':'Targeted short-excerpt acoustic check','status':'complete'}
+            dest.write_text(json.dumps(r,ensure_ascii=False,indent=2));return t['cue_id']+' complete'
+           except Exception as e:
+            dest.write_text(json.dumps({**t,'status':'failed','error_type':type(e).__name__},ensure_ascii=False,indent=2));return t['cue_id']+' failed '+type(e).__name__
+          with concurrent.futures.ThreadPoolExecutor(max_workers=3) as pool:
+           for s in pool.map(run,[t for t in P['targets'] if t['batch']==batch]):print(s,flush=True)
+          PYCODE
+      - name: Retain timing corrections
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: targeted-timing-batch-${{ matrix.batch }}
+          path: timing-output/
+          if-no-files-found: ignore
+          retention-days: 14
