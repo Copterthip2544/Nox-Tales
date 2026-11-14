@@ -1,0 +1,78 @@
+name: Align generated scene dialogue
+on:
+  workflow_dispatch:
+    inputs:
+      source_run_id:
+        type: string
+        required: true
+permissions:
+  actions: read
+  contents: read
+jobs:
+  align:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    strategy:
+      fail-fast: false
+      matrix:
+        batch: [1, 2, 3]
+    steps:
+      - name: Download generated voice stems
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_RUN: ${{ inputs.source_run_id }}
+          BATCH: ${{ matrix.batch }}
+        run: gh run download "$SOURCE_RUN" --repo "$GITHUB_REPOSITORY" --name "scene-speech-batch-$BATCH" --dir speech-input
+      - name: Locate each spoken cue acoustically
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          import json,os,base64,wave,concurrent.futures,time
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          B=Path('speech-input');O=Path('alignment-output');O.mkdir(exist_ok=True)
+          m=json.loads((B/'manifest.json').read_text());key=os.environ['GEMINI_API_KEY']
+          def align(t):
+           dest=O/(t['id']+'.json')
+           with wave.open(str(B/t['file'])) as w:duration=w.getnframes()/w.getframerate()
+           cues=t['cue_texts']
+           if len(cues)==1:
+            r={'id':t['id'],'duration':duration,'method':'single cue entire recorded stem','cues':[{'index':0,'start_seconds':0,'end_seconds':duration,'cue_id':t['cue_ids'][0],'text':cues[0]}]};dest.write_text(json.dumps(r,ensure_ascii=False,indent=2));return t['id']+' single cue'
+           prompt=('Listen carefully to the attached Thai voice recording. It contains the supplied script cues consecutively, one speaker. '
+           'Find the ACTUAL audible start and end of EACH supplied cue, as seconds from the beginning. Do NOT allocate duration by text length. '
+           'Return JSON only {"cues":[{"index":0,"start_seconds":0.0,"end_seconds":1.0,"heard_text":"..."}],"extra_or_missing_speech":false}. '
+           'Index each script cue exactly once in order, zero-based. A cue can contain internal newlines: treat it as ONE cue. Include its whole spoken content. '
+           'Use audible evidence. If speech differs from script, record heard_text accurately and set extra_or_missing_speech true. '
+           f'Total clip duration {duration:.3f}s. Exact cue list: '+json.dumps(cues,ensure_ascii=False))
+           body={'contents':[{'role':'user','parts':[{'text':prompt},{'inlineData':{'mimeType':'audio/wav','data':base64.b64encode((B/t['file']).read_bytes()).decode()}}]}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':12000}}
+           req=Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',data=json.dumps(body,ensure_ascii=False).encode(),headers={'x-goog-api-key':key,'Content-Type':'application/json'},method='POST')
+           try:
+            with urlopen(req,timeout=240) as f:data=json.load(f)
+            txt=''.join(x.get('text','') for x in data['candidates'][0]['content']['parts'] if not x.get('thought')).strip()
+            (O/(t['id']+'_raw.txt')).write_text(txt)
+            if txt.startswith('```'):txt=txt.split('\n',1)[1].rsplit('```',1)[0]
+            d=json.loads(txt);items=d['cues'];previous=0
+            if len(items)!=len(cues):raise ValueError('Cue count differs')
+            for i,x in enumerate(items):
+             a=float(x['start_seconds']);b=float(x['end_seconds'])
+             if int(x['index'])!=i or not 0<=a<b<=duration+.25 or a<previous-.06:raise ValueError('Invalid acoustic bounds')
+             x.update(cue_id=t['cue_ids'][i],text=cues[i],start_seconds=a,end_seconds=min(duration,b));previous=b
+            r={'id':t['id'],'duration':duration,'method':'Gemini acoustic estimate; requires editorial/listening review','extra_or_missing_speech':d.get('extra_or_missing_speech'),'cues':items,'status':'aligned'}
+            dest.write_text(json.dumps(r,ensure_ascii=False,indent=2));return t['id']+' aligned '+str(len(items))
+           except Exception as e:
+            dest.write_text(json.dumps({'id':t['id'],'status':'failed','error_type':type(e).__name__},indent=2));return t['id']+' NEEDS REVIEW '+type(e).__name__
+          with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
+           for result in pool.map(align,m['samples']):print(result,flush=True)
+          results=[json.loads(f.read_text()) for f in O.glob('*.json')];summary={'stems':len(results),'aligned':sum('cues'in r for r in results),'failed':[r['id'] for r in results if 'cues'not in r],'speech_mismatch_flags':[r['id'] for r in results if r.get('extra_or_missing_speech')],'method':'Acoustic cue boundary estimates, no new speech generation'}
+          (O/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2));print(json.dumps(summary),flush=True)
+          PYCODE
+      - name: Retain cue timing results
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: cue-alignment-batch-${{ matrix.batch }}
+          path: alignment-output/
+          retention-days: 14
