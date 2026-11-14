@@ -1,11 +1,15 @@
 {
-  "status": "awaiting_user_review",
-  "youtube_scheduled": false,
-  "facebook_scheduled": false,
-  "publishing_authorized": false,
-  "user_instruction": "เตรียมไฟล์ให้พร้อมต้องการตรวจก่อน",
+  "status": "approved_and_scheduled",
+  "youtube_scheduled": true,
+  "facebook_scheduled": true,
+  "publishing_authorized": true,
+  "user_instruction": "ตั้งเวลาได้เลยสำหรับทั้ง Facebook และ Youtube",
   "applies_to": [
     "Short01",
     "Short02"
+  ],
+  "schedule_dates": [
+    "2026-11-15T19:00:00+07:00",
+    "2026-11-22T19:00:00+07:00"
   ]
 }
