@@ -1,0 +1,59 @@
+name: Nightwatch9 v04 direct MP4 download
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/deliver-nightwatch9-v04.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: nightwatch9-v04-download
+  cancel-in-progress: false
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Download the checked v04 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-film-v04-music
+          run-id: 43564089563
+          github-token: ${{ github.token }}
+          path: delivery
+      - name: Check package contents and MP4 hash
+        shell: python
+        run: |
+          from pathlib import Path
+          import json, hashlib
+          r=Path('delivery')
+          files=sorted(p for p in r.rglob('*') if p.is_file())
+          assert files and all(p.suffix.lower() in {'.mp4','.srt','.json','.mp3'} for p in files)
+          assert all(not p.is_symlink() for p in r.rglob('*'))
+          movie=r/'Frame_Tales_Nightwatch9_Full_v04.mp4'
+          qa=json.loads((r/'final_QA_v04.json').read_text())
+          assert qa['status']=='technical_checks_passed' and qa['full_file_decode_passed']
+          assert qa['picture_stream_unchanged']
+          assert hashlib.sha256(movie.read_bytes()).hexdigest()==qa['sha256']
+          assert movie.stat().st_size==qa['bytes']
+          with movie.open('rb') as f: assert b'ftyp' in f.read(32)
+          checks=''.join(hashlib.sha256(p.read_bytes()).hexdigest()+'  '+p.name+'\n' for p in files)
+          (r/'SHA256SUMS.txt').write_text(checks)
+          print(json.dumps({'checked_files':[p.name for p in files], 'no_executable_files_in_package':True, 'mp4_matches_verified_artifact':True, 'video_bytes':movie.stat().st_size},indent=2))
+      - name: Prepare direct downloads
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          DELIVERY_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          DELIVERY_TAG=nightwatch9-v04-download
+          if gh release view "$DELIVERY_TAG" >/dev/null 2>&1; then
+            echo 'Reusing existing delivery release.'
+          else
+            gh release create "$DELIVERY_TAG" --target "$DELIVERY_SHA" --draft --latest=false --title 'Frame Tales — Nightwatch9 v04 downloads' --notes 'Direct MP4 download of the checked 11:36 Thai film, with separate Thai subtitles, audio preview and SHA-256 checksums. No ZIP extraction is required.'
+          fi
+          gh release upload "$DELIVERY_TAG" delivery/Frame_Tales_Nightwatch9_Full_v04.mp4 delivery/Frame_Tales_Nightwatch9_th.srt delivery/preview_scene_changes_v04.mp3 delivery/final_QA_v04.json delivery/SHA256SUMS.txt --clobber
+          gh release edit "$DELIVERY_TAG" --draft=false --latest=false
+          gh release view "$DELIVERY_TAG" --json url,assets
