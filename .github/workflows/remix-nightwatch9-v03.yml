@@ -1,0 +1,64 @@
+name: Nightwatch9 scene music v03
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/remix-nightwatch9-v03.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: nightwatch9-music-v03
+  cancel-in-progress: false
+jobs:
+  remix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: episodes/nightwatch9/v1.0/production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install audio dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install 'numpy>=1.26,<3' 'scipy>=1.12,<2'
+      - name: Download verified approved picture
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-film-v02-audio
+          run-id: 43557684203
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/source_film
+      - name: Download approved speech
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-speech-v01
+          run-id: 43413607292
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/complete_speech
+      - name: Mix revised sound and stream-copy picture
+        run: |
+          python verify_speech.py
+          python build_film_v02.py
+          python compose_music_v03.py
+          python export_audio_v03.py
+      - name: Upload checked full film
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightwatch9-full-film-v03-music
+          compression-level: 0
+          retention-days: 30
+          path: |
+            episodes/nightwatch9/v1.0/production/outputs/v03/Frame_Tales_Nightwatch9_Full_v03.mp4
+            episodes/nightwatch9/v1.0/production/outputs/v03/Frame_Tales_Nightwatch9_th.srt
+            episodes/nightwatch9/v1.0/production/outputs/v03/final_QA_v03.json
+            episodes/nightwatch9/v1.0/production/outputs/v03/sound_report.json
+            episodes/nightwatch9/v1.0/production/outputs/v03/preview_final_phone_v03.mp3
+            episodes/nightwatch9/v1.0/production/outputs/v03/preview_music_tension_v03.mp3
