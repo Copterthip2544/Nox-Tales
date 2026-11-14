@@ -1,0 +1,31 @@
+{
+  "file": "/workspace/frame_tales_nightwatch9/production/v1.0/outputs/Frame_Tales_Nightwatch9_Full_v01.mp4",
+  "duration_seconds": 696.2666666666667,
+  "fps": 30,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "shots": 177,
+  "asset_keys": 62,
+  "unique_source_hashes": 56,
+  "loudness": {
+    "input_i": "-21.05",
+    "input_tp": "-0.45",
+    "input_lra": "8.00",
+    "input_thresh": "-32.47",
+    "output_i": "-16.58",
+    "output_tp": "-1.50",
+    "output_lra": "5.80",
+    "output_thresh": "-27.85",
+    "normalization_type": "dynamic",
+    "target_offset": "0.58"
+  },
+  "source_speech_regenerated": false,
+  "screen_reset_frames": {
+    "start_frame": 8312,
+    "end_frame": 8462,
+    "duration_seconds": 5
+  },
+  "motion": "Gentle single-axis pan or zoom; no shake"
+}

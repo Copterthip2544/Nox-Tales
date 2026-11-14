@@ -1,0 +1,59 @@
+name: Render Nightwatch9 full film v01
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/render-nightwatch9-v01.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: nightwatch9-film-v01
+  cancel-in-progress: false
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    defaults:
+      run:
+        working-directory: episodes/nightwatch9/v1.0/production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install render dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-noto-core fonts-dejavu-core
+          python -m pip install -r requirements.txt
+      - name: Download approved speech without API calls
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-speech-v01
+          run-id: 43413607292
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/complete_speech
+      - name: Verify immutable speech
+        run: python verify_speech.py
+      - name: Assemble and render
+        run: |
+          python prepare_fonts.py
+          python build_film.py
+          python render_film.py --workers 3
+          python check_film.py
+      - name: Save film and reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightwatch9-full-film-v01
+          retention-days: 30
+          path: |
+            episodes/nightwatch9/v1.0/production/outputs/Frame_Tales_Nightwatch9_Full_v01.mp4
+            episodes/nightwatch9/v1.0/production/outputs/Frame_Tales_Nightwatch9_th.srt
+            episodes/nightwatch9/v1.0/production/outputs/final_QA.json
+            episodes/nightwatch9/v1.0/production/outputs/render_report.json
+            episodes/nightwatch9/v1.0/production/outputs/sound_report.json
+            episodes/nightwatch9/v1.0/production/outputs/shot_list.csv

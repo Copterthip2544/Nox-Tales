@@ -1,0 +1,380 @@
+{
+  "hall_six": {
+    "file": "scene_assets/hall_six.png",
+    "sha256": "6792c039b62c73188551244ce5f24e716a1bdf237481c84a538fd0423b8e8191",
+    "status": "reviewed_for_edit",
+    "review": "Human silhouettes/arms and room or door state visually inspected; exact CCTV timing/graphics added in post."
+  },
+  "door_empty": {
+    "file": "scene_assets/door_empty.png",
+    "sha256": "5d42129109c3ec67b5d05b423fefb5916cf6a2a498fb01cdfbd4f6030edb9af2",
+    "status": "reviewed_for_edit",
+    "review": "Human silhouettes/arms and room or door state visually inspected; exact CCTV timing/graphics added in post."
+  },
+  "arrival_lobby": {
+    "file": "scene_assets/arrival_lobby.png",
+    "sha256": "79ccf73231c6aaa994b25d79ac4e6a2804974ad41036b4174c03c1b6dd4ae60f",
+    "status": "reviewed_for_edit",
+    "review": "Human silhouettes/arms and room or door state visually inspected; exact CCTV timing/graphics added in post."
+  },
+  "room_bathroom": {
+    "file": "scene_assets/room_bathroom.png",
+    "sha256": "cedd5d2e26bfd10cee2867d32dd3117c03a8bedb2c64bd2770d2ee3e1adf7fc5",
+    "status": "reviewed_for_edit",
+    "review": "Human silhouettes/arms and room or door state visually inspected; exact CCTV timing/graphics added in post."
+  },
+  "hall_five": {
+    "file": "scene_assets/hall_five.png",
+    "sha256": "cd8daa5e0764f66fd7900e9fcffe62f1fd3151a4865a69be42c38361acd662bd",
+    "status": "reviewed_for_edit",
+    "review": "Viewed full frame: correct door count or coherent human shoulder/elbow/wrist and finger grip; no obvious extra limbs. Clock/feed/text composites remain postproduction."
+  },
+  "cleaner_preview": {
+    "file": "scene_assets/cleaner_preview.png",
+    "sha256": "98a91ccf80ca61ea95712aaf0840ed633602dcc5978eaa26065d3225df800e25",
+    "status": "reviewed_for_edit",
+    "review": "Viewed full frame: correct door count or coherent human shoulder/elbow/wrist and finger grip; no obvious extra limbs. Clock/feed/text composites remain postproduction."
+  },
+  "phone_insert": {
+    "file": "scene_assets/phone_insert.png",
+    "sha256": "4d258c7064ccfbab058ffa4d24fdcc726184099c66b88fac60b2f3c6c83606ad",
+    "status": "reviewed_for_edit",
+    "review": "Viewed full frame: correct door count or coherent human shoulder/elbow/wrist and finger grip; no obvious extra limbs. Clock/feed/text composites remain postproduction."
+  },
+  "nat_answers001": {
+    "file": "scene_assets/nat_answers001.png",
+    "sha256": "11c57d27c069ba8f3a9d611d875fd763b85d6492a86896fee0bba24d27dd4243",
+    "status": "reviewed_for_edit",
+    "review": "Viewed full frame: correct door count or coherent human shoulder/elbow/wrist and finger grip; no obvious extra limbs. Clock/feed/text composites remain postproduction."
+  },
+  "sign_in": {
+    "file": "scene_assets/sign_in.png",
+    "sha256": "adb1fc3215def8eaed7a6503e6d578d916c7b6af98a263160a5d3ca955f070af",
+    "status": "reviewed_for_edit",
+    "review": "Viewed full frame: correct door count or coherent human shoulder/elbow/wrist and finger grip; no obvious extra limbs. Clock/feed/text composites remain postproduction."
+  },
+  "nat_basin": {
+    "file": "scene_assets/nat_basin.png",
+    "sha256": "a47dd80bbedbe9ce6094ff9f7f3760aa988076a505ed98f6de9975687d67b1d8",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "nat_stops_at_door": {
+    "file": "scene_assets/nat_stops_at_door.png",
+    "sha256": "b9327f367fa01042089d7ec1a6917e37a0b886249e3ff78c2489d9c546760c1e",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "nat_covers_ears": {
+    "file": "scene_assets/nat_covers_ears.png",
+    "sha256": "3e5e6f971a527117b3ca951c9aafd70bfa60f247be2979ab7f7d3e33c0cbb805",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "duty_drawer": {
+    "file": "scene_assets/duty_drawer.png",
+    "sha256": "bd1177508f0d3fd2298cd2f2f9e3615adf20520e7848b7828cb7d2135b13f91b",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "ceiling_danger": {
+    "file": "scene_assets/ceiling_danger.png",
+    "sha256": "779c16abbd8d8a13ede7db8bdaa5a9c96765efa32f3226f4e7e5d2f3fcd19c03",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "hall_after_collapse": {
+    "file": "scene_assets/hall_after_collapse.png",
+    "sha256": "6cdba3e5a24e15ce527c131e4d25a1e3965788f728cec78d656e137cc90c9d83",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "building_dawn": {
+    "file": "scene_assets/building_dawn.png",
+    "sha256": "7e8a3bd58ec6c270969d61cdbd9c6e0e6b9af25a0a80e2984533bd34be9b1e27",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "nat_outside_call": {
+    "file": "scene_assets/nat_outside_call.png",
+    "sha256": "b69deaeb0a3513dc923c8b4ff4e6bc5395258dde3fc7b9c3dd47799d7cca4234",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected."
+  },
+  "ceiling_empty": {
+    "file": "scene_assets/ceiling_empty.png",
+    "sha256": "f4e8e022804363ca43bc887111f91e02597fbb23376fd4757719702d694333ad",
+    "status": "reviewed_for_edit",
+    "review": "Inspected full frame: coherent hands/arms for actions or fixed same corridor/door geometry. Ceiling-empty corrected to same right-side hole as danger shot."
+  },
+  "grey_future": {
+    "file": "scene_assets/grey_future.png",
+    "sha256": "574f1213eeb280f9e4d604ffe0cdfbf778294c4e3d6c25bf2b3c27ab5ac76c41",
+    "status": "reviewed_for_edit",
+    "review": "Inspected full frame: coherent hands/arms for actions or fixed same corridor/door geometry. Ceiling-empty corrected to same right-side hole as danger shot."
+  },
+  "grey_live": {
+    "file": "scene_assets/grey_live.png",
+    "sha256": "265ccc01dbae62e48805423e9a26c781b7754def2f29072d5eaa8d213116f9e6",
+    "status": "reviewed_for_edit",
+    "review": "Inspected full frame: coherent hands/arms for actions or fixed same corridor/door geometry. Ceiling-empty corrected to same right-side hole as danger shot."
+  },
+  "nat_reads_rules": {
+    "file": "scene_assets/nat_reads_rules.png",
+    "sha256": "623c9e3573e0c7ee76af3ecb78030ee983e7e699c658ca954c6ea69227b4a841",
+    "status": "reviewed_for_edit",
+    "review": "Inspected full frame: coherent hands/arms for actions or fixed same corridor/door geometry. Ceiling-empty corrected to same right-side hole as danger shot."
+  },
+  "nat_stops_pen": {
+    "file": "scene_assets/nat_stops_pen.png",
+    "sha256": "c61d8d731c1e14abf0d735f1c0c046ce7c49e5191127a2a395676545addbab8c",
+    "status": "reviewed_for_edit",
+    "review": "Inspected full frame: coherent hands/arms for actions or fixed same corridor/door geometry. Ceiling-empty corrected to same right-side hole as danger shot."
+  },
+  "nat_backs_chair": {
+    "file": "scene_assets/nat_backs_chair.png",
+    "sha256": "2e2b3cd5162951f74ddbf0a9a5157820c31abd62807b9b5d8a0dbd94fd2939c3",
+    "status": "reviewed_for_edit",
+    "review": "Inspected full frame: coherent hands/arms for actions or fixed same corridor/door geometry. Ceiling-empty corrected to same right-side hole as danger shot."
+  },
+  "witthaya_arrives": {
+    "file": "scene_assets/witthaya_arrives.png",
+    "sha256": "8105086f3a3f35d95922c9647f486407c0d481489de2c78adb2678c6d97a387f",
+    "status": "reviewed_for_edit",
+    "review": "Two-person anatomy, receiver grip and doorway side inspected in full frame."
+  },
+  "handover": {
+    "file": "scene_assets/handover.png",
+    "sha256": "bab6f5018780669523a60c4bcbbf1f4247f993b95480ace23dc5db3aa8930788",
+    "status": "reviewed_for_edit",
+    "review": "Two-person anatomy, receiver grip and doorway side inspected in full frame."
+  },
+  "nat_somchai_question": {
+    "file": "scene_assets/nat_somchai_question.png",
+    "sha256": "47a05b721f779d319f3fa6962aeadcabfb8e4b89167a4055ab0cbe23146eff2f",
+    "status": "reviewed_for_edit",
+    "review": "Two-person anatomy, receiver grip and doorway side inspected in full frame."
+  },
+  "witthaya_passes_phone": {
+    "file": "scene_assets/witthaya_passes_phone.png",
+    "sha256": "ecda99c655ed4498a60ac6584d819ed45a1e6dc52b57b0691aa73f2036152920",
+    "status": "reviewed_for_edit",
+    "review": "Handedness and receiver single-person grip preserved; dedicated C6 background corrected from stairs to S1 door."
+  },
+  "door_bolt": {
+    "file": "scene_assets/door_bolt.png",
+    "sha256": "9120e54a95f211a92993c5b1f4f3bc7c598a86ff0ba721bca480ef0787fdebab",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only."
+  },
+  "door_empty_after": {
+    "file": "scene_assets/door_empty_after.png",
+    "sha256": "fe338569fd7bc91041db4c74c106827b84fe9d3ccaa9f1a0d25b33593e3ee037",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only."
+  },
+  "wet_tracks": {
+    "file": "scene_assets/wet_tracks.png",
+    "sha256": "df36512555592e21c572f74709d012523da9a0d2ffeeb156f43aa7afcf84a034",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only."
+  },
+  "inspector_door": {
+    "file": "scene_assets/inspector_door.png",
+    "sha256": "ef05443ea0b2c2a30390fea54077d7ace11a2984a4c8e2857eada479bfb98363",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only."
+  },
+  "double_smile": {
+    "file": "scene_assets/double_smile.png",
+    "sha256": "e67e98f7ed209a969b7c23b71f33ce3dbd6b09828fa21b333376f786835b6ced",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only."
+  },
+  "nat_hangs_up": {
+    "file": "scene_assets/nat_hangs_up.png",
+    "sha256": "505901295ac2136b6a30ac867132d34abf8ec52f6b6eceeb72f8cb6262d1b3f9",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only."
+  },
+  "double_pleads": {
+    "file": "scene_assets/double_pleads.png",
+    "sha256": "7b471f8ecce813fced1cc053f71f1ce8b1f2cd1483e1d1e6cf5097eb73a6aade",
+    "status": "reviewed_for_edit",
+    "review": "Corrected to USER visual markers: remove watch from lower wrist, add single watch to raised wrist at marker3; raised LEFT hand with thumb on image-right. Prior right-hand revision rejected. User annotation positions override previous inferred handedness."
+  },
+  "witthaya_live_call": {
+    "file": "scene_assets/witthaya_live_call.png",
+    "sha256": "4ea0d9abb5c92c27ead4fe82852961810c7cd9c4095a913d42f1104f5d5d4fbc",
+    "status": "reviewed_for_edit",
+    "review": "Corrected and inspected: Nat raised right palm now has thumb on left edge; Witthaya camera6 now shows same S1 door while his hands remain coherent."
+  },
+  "nat_walks_away": {
+    "file": "scene_assets/nat_walks_away.png",
+    "sha256": "be6d0d9246d41691218763416df5e9246635f4e8450a6f9a6e15c61884a6db5b",
+    "status": "reviewed_for_edit",
+    "review": "Rear walking posture and two limbs per side inspected; incorrect ID/radio on shirt back removed, front-mounted props not visible in rear view."
+  },
+  "nox": {
+    "file": "scene_assets/nox.png",
+    "sha256": "4425a10fa9f538f58352ae85ad8ffa171d3b38b98e234f70443acf322734eac4",
+    "status": "reviewed_for_edit",
+    "review": "User supplied reference or visually inspected authorized scene. Nox v05 explicitly user approved."
+  },
+  "room_master": {
+    "file": "scene_assets/room_master.png",
+    "sha256": "1575d64e825285f8035450c4ba44d2a23ee9b822ea4bdf1fd78546a9906fe062",
+    "status": "reviewed_for_edit",
+    "review": "User supplied reference or visually inspected authorized scene. Nox v05 explicitly user approved."
+  },
+  "nat_fear": {
+    "file": "scene_assets/nat_fear.png",
+    "sha256": "a4e2c1b9ef8a7c90164841415ea58884d3115428e1b45dcfdebbcd5bedbe6551",
+    "status": "reviewed_for_edit",
+    "review": "User supplied reference or visually inspected authorized scene. Nox v05 explicitly user approved."
+  },
+  "double_at_door": {
+    "file": "scene_assets/double_at_door.png",
+    "sha256": "e67e98f7ed209a969b7c23b71f33ce3dbd6b09828fa21b333376f786835b6ced",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only.",
+    "reuse_of": "double_smile after-collapse state"
+  },
+  "somchai_briefing": {
+    "file": "scene_assets/somchai_briefing.png",
+    "sha256": "7edb46d3cd4006d9cc4fcdb9c5f1490f3e9f568a43729007f8ce36ad0932f57e",
+    "status": "reviewed_for_edit",
+    "review": "User supplied reference or visually inspected authorized scene. Nox v05 explicitly user approved."
+  },
+  "building_night": {
+    "file": "scene_assets/building_night.png",
+    "sha256": "72e51080920714a20dd66e7d83fb5d3a9573d7c516a1d29f00526b520d74dea6",
+    "status": "reviewed_for_edit",
+    "review": "User supplied reference or visually inspected authorized scene. Nox v05 explicitly user approved."
+  },
+  "nat_power_button": {
+    "file": "scene_assets/nat_power_button.png",
+    "sha256": "d1ccd5cc8d5afdf0deabc647f8d4beb45700e726fb3fd32fd278e1943298c333",
+    "status": "reviewed_for_edit",
+    "review": "User found handedness error in v01; v02 index-finger right-hand correction visually inspected, wristwatch removed from right wrist."
+  },
+  "rules_full": {
+    "file": "scene_assets/rules_full.png",
+    "sha256": "8242abaefe23ac276d7a1b7f8f0e1bf0a3516b8571da2f01bb13e6f24cacab91",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "rules_missing7": {
+    "file": "scene_assets/rules_missing7.png",
+    "sha256": "b21b7d4e2b0a79b464fa8a669a5fd9fb8af82d7c84a9f4f699f3f203f826a6fb",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_2100": {
+    "file": "scene_assets/clock_2100.png",
+    "sha256": "c63383dfb6501572e303b7009c936e96ec70a61963a41b6027f0bd9d0d334220",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_hook": {
+    "file": "scene_assets/clock_hook.png",
+    "sha256": "365982d420340daa9574dc2270869959fa2c33b92aa70cbe1e99a50dc491cdd4",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_mismatch": {
+    "file": "scene_assets/clock_mismatch.png",
+    "sha256": "4b8d323a052864494be477a65900bf2a1e4f2ef9dee47eb54d995630dbc94e4a",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_0600": {
+    "file": "scene_assets/clock_0600.png",
+    "sha256": "a079886b3d044147fa0de871e4786b914c5e2c5a50336386a2206e0bc2a698a4",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_0602": {
+    "file": "scene_assets/clock_0602.png",
+    "sha256": "b611b4e92eddcb7c0617afef3b21810745844ef2d548a18765499c13ca98a93c",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_0612": {
+    "file": "scene_assets/clock_0612.png",
+    "sha256": "7ec7fe278717b7f0b8214f9219060360c49db851e58126cd639fcb14bf993218",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_2130": {
+    "file": "scene_assets/clock_2130.png",
+    "sha256": "356b0e90bb7cfcada3c52d7df0ed1b5558ab0f90e89a4b2a84dbf39b77cf37fa",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_2140": {
+    "file": "scene_assets/clock_2140.png",
+    "sha256": "7943e1cf2285eb35f44029472afaa08b2fe1b2552f28f637abb7140fed7f8cc5",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "clock_2326": {
+    "file": "scene_assets/clock_2326.png",
+    "sha256": "1beb232700f1311061134044f1fa2121b6fa305f5ba73f87ecd48a1f3fc338d9",
+    "status": "reviewed_for_edit",
+    "review": "Deterministic typesetting/clock hands from actual prescribed times; missing7 leaves position blank without renumbering."
+  },
+  "double_looks_up": {
+    "file": "scene_assets/double_looks_up.png",
+    "sha256": "e67e98f7ed209a969b7c23b71f33ce3dbd6b09828fa21b333376f786835b6ced",
+    "status": "reviewed_for_edit",
+    "review": "Full frame inspected: natural left-hand receiver placement or correct door/bolt/settled-debris state. Wet tracks approach S1 only.",
+    "reuse_of": "double_at_door"
+  },
+  "nat_bolt_close": {
+    "file": "scene_assets/nat_bolt_close.png",
+    "sha256": "b9327f367fa01042089d7ec1a6917e37a0b886249e3ff78c2489d9c546760c1e",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected.",
+    "reuse_of": "nat_stops_at_door"
+  },
+  "nat_rule7_close": {
+    "file": "scene_assets/nat_rule7_close.png",
+    "sha256": "623c9e3573e0c7ee76af3ecb78030ee983e7e699c658ca954c6ea69227b4a841",
+    "status": "reviewed_for_edit",
+    "review": "Inspected full frame: coherent hands/arms for actions or fixed same corridor/door geometry. Ceiling-empty corrected to same right-side hole as danger shot.",
+    "reuse_of": "nat_reads_rules"
+  },
+  "double_live_door": {
+    "file": "scene_assets/double_live_door.png",
+    "sha256": "7b471f8ecce813fced1cc053f71f1ce8b1f2cd1483e1d1e6cf5097eb73a6aade",
+    "status": "reviewed_for_edit",
+    "review": "Corrected to USER visual markers: remove watch from lower wrist, add single watch to raised wrist at marker3; raised LEFT hand with thumb on image-right. Prior right-hand revision rejected. User annotation positions override previous inferred handedness.",
+    "reuse_of": "double_pleads"
+  },
+  "nat_back_at_building": {
+    "file": "scene_assets/nat_back_at_building.png",
+    "sha256": "b69deaeb0a3513dc923c8b4ff4e6bc5395258dde3fc7b9c3dd47799d7cca4234",
+    "status": "reviewed_for_edit",
+    "review": "Full-frame human limb/hand and spatial state inspected.",
+    "reuse_of": "nat_outside_call"
+  },
+  "nat_rule6_close": {
+    "file": "scene_assets/nat_rule6_close.png",
+    "sha256": "4f9278b5815980d517fd3436ecd35922463bb6b8573b5102603523d74a625c21",
+    "status": "reviewed_for_edit",
+    "review": "Editorial close crop of checked phone-holding scene; coherent receiver and left hand retained."
+  },
+  "monitor_off": {
+    "file": "scene_assets/monitor_off.png",
+    "sha256": "4ce72a463e41772973041776752b9672468144bea60597d1273b0c913d143a99",
+    "status": "reviewed_for_edit",
+    "review": "Postproduction shutdown of dedicated lower-middle C6 screen only; five seconds in frame timeline, other displays remain on."
+  },
+  "monitor_detail": {
+    "file": "scene_assets/monitor_detail.png",
+    "sha256": "c69e71cb382ca27d416a7261baef62c73940c2232e74841069ff98ff329fe3a8",
+    "status": "reviewed_for_edit",
+    "review": "Full-resolution dedicated camera6 doorway plate, avoiding a soft deep crop of a small background screen."
+  }
+}

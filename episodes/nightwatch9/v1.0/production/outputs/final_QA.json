@@ -1,0 +1,23 @@
+{
+  "status": "technical_checks_passed",
+  "file": "Frame_Tales_Nightwatch9_Full_v01.mp4",
+  "bytes": 269560557,
+  "sha256": "366ed1a063f81d06c4b0ebd7b1dde5048f505116bfb670e17a884ae780c828da",
+  "duration_seconds": 696.266667,
+  "resolution": [
+    1920,
+    1080
+  ],
+  "fps": 30,
+  "audio": "AAC stereo 48kHz",
+  "shots": 177,
+  "speech_events": 145,
+  "source_audio_regenerated": false,
+  "reset_duration_seconds": 5,
+  "no_missing_assets": true,
+  "full_file_decode_passed": true,
+  "latest_user_hand_corrections_hash_verified": true,
+  "nox_approved_v05_hash_verified": true,
+  "visual_review_scope": "Full stills inspected for hands/arms and source continuity. This is not a guarantee that every generated pixel is anatomically perfect.",
+  "final_user_film_review": "ready_for_review_not_published"
+}

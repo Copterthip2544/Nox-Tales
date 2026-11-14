@@ -1,0 +1,178 @@
+﻿start_frame,end_frame,asset,cue,id,motion,crop_variant
+0,203,nox,IN_E002,SH001,zoom_in,0
+203,405,nox,IN_E002,SH002,pan_right,1
+405,608,nox,IN_E002,SH003,pan_left,0
+608,746,room_master,SC01_E004,SH004,zoom_in,0
+746,918,double_at_door,SC01_E004 insert,SH005,pan_right,0
+918,1020,nat_fear,SC01_E005,SH006,pan_left,0
+1020,1146,door_bolt,action before SC01_E008,SH007,zoom_in,0
+1146,1295,nat_fear,SC01_E009,SH008,pan_right,0
+1295,1456,clock_hook,SC01_E010 insert,SH009,pan_left,0
+1456,1672,building_night,SC02_E012,SH010,zoom_in,0
+1672,1832,arrival_lobby,SC02_E012 insert,SH011,pan_right,0
+1832,1992,arrival_lobby,SC02_E012 insert,SH012,pan_left,1
+1992,2037,sign_in,action before SC02_E016,SH013,zoom_in,0
+2037,2154,somchai_briefing,SC02_E016,SH014,pan_right,0
+2154,2245,room_bathroom,SC02_E017 insert,SH015,pan_left,0
+2245,2308,somchai_briefing,SC02_E019,SH016,zoom_in,0
+2308,2452,phone_insert,SC02_E019 insert,SH017,pan_right,0
+2452,2634,somchai_briefing,SC02_E020,SH018,pan_left,0
+2634,2817,somchai_briefing,SC02_E020,SH019,zoom_in,1
+2817,2901,duty_drawer,SC02_E023 insert,SH020,pan_right,0
+2901,2931,door_bolt,action before SC02_E025,SH021,pan_left,0
+2931,3022,room_master,SC02_E025,SH022,zoom_in,0
+3022,3241,rules_full,SC03_E027,SH023,pan_right,0
+3241,3451,door_bolt,SC03_E028,SH024,pan_left,0
+3451,3573,clock_2100,SC03_E029,SH025,zoom_in,0
+3573,3695,clock_2100,SC03_E029,SH026,pan_right,1
+3695,3875,monitor_detail,SC03_E030 insert,SH027,pan_left,0
+3875,4012,phone_insert,SC03_E030 insert,SH028,zoom_in,0
+4012,4136,hall_six,SC03_E031 insert,SH029,pan_right,0
+4136,4260,hall_six,SC03_E031 insert,SH030,pan_left,1
+4260,4440,door_bolt,SC03_E032,SH031,zoom_in,0
+4440,4621,door_bolt,SC03_E032,SH032,pan_right,1
+4621,4807,phone_insert,SC03_E033,SH033,pan_left,0
+4807,4994,phone_insert,SC03_E033,SH034,zoom_in,1
+4994,5124,rules_full,SC03_E034,SH035,pan_right,0
+5124,5253,rules_full,SC03_E034,SH036,pan_left,1
+5253,5407,clock_2100,SC03_E035,SH037,zoom_in,0
+5407,5562,clock_2100,SC03_E035,SH038,pan_right,1
+5562,5723,duty_drawer,SC03_E036,SH039,pan_left,0
+5723,5884,duty_drawer,SC03_E036,SH040,zoom_in,1
+5884,6045,duty_drawer,SC03_E036,SH041,pan_right,0
+6045,6250,rules_full,SC03_E037,SH042,pan_left,0
+6250,6455,rules_full,SC03_E037,SH043,zoom_in,1
+6455,6637,room_master,SC03_E038,SH044,pan_right,0
+6637,6819,room_master,SC03_E038,SH045,pan_left,1
+6819,6962,clock_2130,SC04_E039 insert,SH046,zoom_in,0
+6962,7034,nat_fear,SC04_E040,SH047,pan_right,0
+7034,7116,grey_future,SC04_E040 insert,SH048,pan_left,0
+7116,7251,clock_2140,action before SC04_E042,SH049,zoom_in,0
+7251,7418,grey_live,SC04_E042 insert,SH050,pan_right,0
+7418,7628,nat_fear,SC04_E044,SH051,pan_left,0
+7628,7834,cleaner_preview,SC05_E045,SH052,zoom_in,0
+7834,7915,nat_fear,SC05_E046,SH053,pan_right,0
+7915,7929,ceiling_danger,action before SC05_E048,SH054,pan_left,0
+7929,7989,nat_fear,SC05_E048,SH055,zoom_in,0
+7989,8125,hall_six,SC05_E049 insert,SH056,pan_right,0
+8125,8312,nat_power_button,SC05_E050,SH057,pan_left,0
+8312,8462,monitor_off,exact five-second reset,SH058,zoom_in,0
+8462,8469,ceiling_empty,screen returns after exactly five seconds,SH059,pan_right,0
+8469,8473,monitor_off,action before SC05_E054,SH060,pan_left,0
+8473,8637,ceiling_empty,SC05_E054 insert,SH061,zoom_in,0
+8637,8750,nat_fear,SC05_E055,SH062,pan_right,0
+8750,8923,hall_five,action before SC05_E057,SH063,pan_left,0
+8923,9022,nat_fear,SC05_E059,SH064,zoom_in,0
+9022,9172,clock_2326,SC05_E060 insert,SH065,pan_right,0
+9172,9321,hall_after_collapse,SC05_E060 insert,SH066,pan_left,0
+9321,9416,nat_fear,SC05_E062,SH067,zoom_in,0
+9416,9563,hall_five,SC05_E063 insert,SH068,pan_right,0
+9563,9664,nat_fear,SC05_E064,SH069,pan_left,0
+9664,9736,room_bathroom,SC06_E065 insert,SH070,zoom_in,0
+9736,9859,nat_basin,SC06_E065 insert,SH071,pan_right,0
+9859,10015,nat_stops_at_door,SC06_E067,SH072,pan_left,0
+10015,10055,nat_fear,SC06_E068,SH073,zoom_in,0
+10055,10223,nat_stops_at_door,SC06_E070,SH074,pan_right,0
+10223,10363,wet_tracks,SC06_E072,SH075,pan_left,0
+10363,10504,wet_tracks,SC06_E072,SH076,zoom_in,1
+10504,10586,nat_fear,SC06_E073,SH077,pan_right,0
+10586,10664,phone_insert,action before SC07_E075,SH078,pan_left,0
+10664,10690,nat_answers001,SC07_E075,SH079,zoom_in,0
+10690,10765,nat_rule6_close,SC07_E076,SH080,pan_right,0
+10765,10861,nat_answers001,SC07_E077,SH081,pan_left,0
+10861,10915,nat_rule6_close,SC07_E078,SH082,zoom_in,0
+10915,10965,nat_answers001,SC07_E079,SH083,pan_right,0
+10965,11078,nat_rule6_close,SC07_E080,SH084,pan_left,0
+11078,11114,nat_answers001,SC07_E081,SH085,zoom_in,0
+11114,11159,nat_rule6_close,SC07_E082,SH086,pan_right,0
+11159,11234,nat_answers001,SC07_E083,SH087,pan_left,0
+11234,11329,nat_rule6_close,SC07_E083 insert,SH088,zoom_in,0
+11329,11416,nat_fear,SC07_E085,SH089,pan_right,0
+11416,11435,nat_answers001,action before SC07_E087,SH090,pan_left,0
+11435,11530,nat_rule6_close,SC07_E087,SH091,zoom_in,0
+11530,11659,nat_hangs_up,SC07_E088 insert,SH092,pan_right,0
+11659,11701,door_bolt,action before SC07_E090,SH093,pan_left,0
+11701,11875,inspector_door,SC07_E090,SH094,zoom_in,0
+11875,12048,inspector_door,SC07_E090,SH095,pan_right,1
+12048,12138,room_master,SC08_E095,SH096,pan_left,0
+12138,12266,double_looks_up,SC08_E095 insert,SH097,zoom_in,0
+12266,12406,nat_fear,SC08_E096,SH098,pan_right,0
+12406,12566,nat_rule7_close,SC08_E098 insert,SH099,pan_left,0
+12566,12707,nat_backs_chair,action before SC08_E100,SH100,zoom_in,0
+12707,12848,nat_backs_chair,action before SC08_E100,SH101,pan_right,1
+12848,12885,nat_fear,SC08_E103,SH102,pan_left,0
+12885,12988,nat_backs_chair,SC08_E105,SH103,zoom_in,0
+12988,13062,nat_covers_ears,SC08_E106 insert,SH104,pan_right,0
+13062,13200,door_bolt,SC08_E108 insert,SH105,pan_left,0
+13200,13287,nat_fear,SC08_E109,SH106,zoom_in,0
+13287,13432,clock_mismatch,SC09_E110 insert,SH107,pan_right,0
+13432,13577,clock_mismatch,SC09_E110 insert,SH108,pan_left,1
+13577,13690,nat_fear,SC09_E112,SH109,zoom_in,0
+13690,13768,phone_insert,action before SC09_E114,SH110,pan_right,0
+13768,13853,nat_rule6_close,SC09_E114,SH111,pan_left,0
+13853,13938,nat_answers001,SC09_E115,SH112,zoom_in,0
+13938,13983,nat_rule6_close,SC09_E116,SH113,pan_right,0
+13983,14068,nat_answers001,SC09_E117,SH114,pan_left,0
+14068,14133,nat_rule6_close,SC09_E118,SH115,zoom_in,0
+14133,14182,nat_answers001,SC09_E119,SH116,pan_right,0
+14182,14255,nat_rule6_close,SC09_E120,SH117,pan_left,0
+14255,14412,rules_missing7,action before SC09_E122,SH118,zoom_in,0
+14412,14461,nat_stops_pen,SC09_E124 insert,SH119,pan_right,0
+14461,14611,clock_hook,SC09_E125 insert,SH120,pan_left,0
+14611,14760,double_smile,SC09_E125 insert,SH121,zoom_in,0
+14760,14802,door_bolt,action before SC10_E128,SH122,pan_right,0
+14802,14880,double_smile,SC10_E128,SH123,pan_left,0
+14880,14917,nat_fear,SC10_E129,SH124,zoom_in,0
+14917,15000,double_smile,SC10_E131,SH125,pan_right,0
+15000,15050,nat_fear,SC10_E132,SH126,pan_left,0
+15050,15211,double_smile,SC10_E133,SH127,zoom_in,0
+15211,15444,clock_0600,SC10_E135,SH128,pan_right,0
+15444,15483,door_bolt,action before SC10_E136,SH129,pan_left,0
+15483,15632,nat_fear,SC10_E136,SH130,zoom_in,0
+15632,15722,clock_0600,SC10_E137,SH131,pan_right,0
+15722,15812,double_at_door,SC10_E137 insert,SH132,pan_left,0
+15812,15866,clock_0602,action before SC10_E140,SH133,zoom_in,0
+15866,15913,door_empty_after,SC10_E140 insert,SH134,pan_right,0
+15913,15991,clock_0602,SC10_E141 insert,SH135,pan_left,0
+15991,16045,clock_0612,SC10_E141 insert,SH136,zoom_in,0
+16045,16090,door_empty_after,SC10_E141 insert,SH137,pan_right,0
+16090,16304,witthaya_arrives,action before SC10_E144,SH138,pan_left,0
+16304,16428,duty_drawer,SC10_E147,SH139,zoom_in,0
+16428,16551,duty_drawer,SC10_E147,SH140,pan_right,1
+16551,16669,handover,action before SC11_E152,SH141,pan_left,0
+16669,16765,nat_somchai_question,SC11_E153,SH142,zoom_in,0
+16765,16870,nat_fear,SC11_E153 insert,SH143,pan_right,0
+16870,17094,nat_somchai_question,SC11_E154,SH144,pan_left,0
+17094,17318,nat_somchai_question,SC11_E154,SH145,zoom_in,1
+17318,17542,nat_somchai_question,SC11_E154,SH146,pan_right,0
+17542,17663,nat_fear,SC11_E162 insert,SH147,pan_left,0
+17663,17741,phone_insert,action before SC11_E164,SH148,zoom_in,0
+17741,17891,witthaya_passes_phone,SC11_E164,SH149,pan_right,0
+17891,17918,nat_answers001,SC11_E166,SH150,pan_left,0
+17918,18126,nat_rule6_close,SC11_E167,SH151,zoom_in,0
+18126,18236,nat_answers001,SC11_E168,SH152,pan_right,0
+18236,18326,nat_rule6_close,SC11_E169,SH153,pan_left,0
+18326,18371,nat_answers001,SC11_E170,SH154,zoom_in,0
+18371,18505,nat_rule6_close,SC11_E171,SH155,pan_right,0
+18505,18569,nat_answers001,SC11_E172,SH156,pan_left,0
+18569,18659,nat_rule6_close,SC11_E173,SH157,zoom_in,0
+18659,18778,hall_after_collapse,SC11_E173 insert,SH158,pan_right,0
+18778,18822,nat_answers001,SC11_E174,SH159,pan_left,0
+18822,18895,nat_rule6_close,SC11_E175,SH160,zoom_in,0
+18895,18978,nat_bolt_close,SC11_E177,SH161,pan_right,0
+18978,19098,building_dawn,SC12_E178 insert,SH162,pan_left,0
+19098,19301,nat_outside_call,SC12_E178 insert,SH163,zoom_in,0
+19301,19368,witthaya_live_call,SC12_E181,SH164,pan_right,0
+19368,19441,nat_outside_call,SC12_E182,SH165,pan_left,0
+19441,19506,witthaya_live_call,action before SC12_E184,SH166,zoom_in,0
+19506,19627,double_live_door,SC12_E184 insert,SH167,pan_right,0
+19627,19675,nat_outside_call,SC12_E185,SH168,pan_left,0
+19675,19835,witthaya_live_call,SC12_E186,SH169,zoom_in,0
+19835,19876,nat_outside_call,SC12_E187,SH170,pan_right,0
+19876,20008,nat_back_at_building,SC12_E189 insert,SH171,pan_left,0
+20008,20102,nat_walks_away,SC12_E189 insert,SH172,zoom_in,0
+20102,20289,double_pleads,SC12_E191,SH173,pan_right,0
+20289,20457,nox,OUT_E193,SH174,pan_left,0
+20457,20625,nox,OUT_E193,SH175,zoom_in,1
+20625,20793,nox,OUT_E193,SH176,pan_right,0
+20793,20888,door_bolt,final three knocks,SH177,pan_left,0

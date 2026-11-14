@@ -1,0 +1,13 @@
+{
+  "duration_seconds": 696.2666666666667,
+  "speech_events": 145,
+  "shots": 177,
+  "unique_asset_keys": 60,
+  "reset_exactly_five_seconds": true,
+  "source_audio_regenerated": false,
+  "music_source": "Original procedural sparse harmonic score synthesized locally; no third-party tracks.",
+  "sfx_source": "Original locally synthesized practical sounds",
+  "mix_peak_before_mastering": 0.949999988079071,
+  "output_loudness_target": "-16 LUFS, -1.5 dBTP in final two-pass master",
+  "listening_review": "Final mix still requires listening review"
+}
