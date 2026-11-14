@@ -25,7 +25,10 @@ jobs:
           github-token: ${{ github.token }}
           path: episodes/nightwatch9/v1.0/production/outputs
       - name: Check actual encoded file without rerendering
-        run: python check_film.py
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python check_film.py
       - uses: actions/upload-artifact@v4
         with:
           name: nightwatch9-full-film-verified-v01
