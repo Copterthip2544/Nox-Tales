@@ -1,0 +1,64 @@
+name: Build Nightwatch9 vertical shorts v01
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/build-nightwatch9-shorts-v01.yml']
+permissions:
+  contents: write
+concurrency:
+  group: nightwatch9-shorts-v01
+  cancel-in-progress: false
+jobs:
+  shorts:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    defaults:
+      run:
+        working-directory: episodes/nightwatch9/v1.0/production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install rendering tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg fonts-noto-core
+          python -m pip install 'pillow>=10,<14' 'fonttools>=4.50,<5'
+          python prepare_fonts.py
+      - name: Download approved full film
+        run: |
+          mkdir -p source_film
+          curl --fail --location --retry 2 'https://github.com/Copterthip2544/Nox-Tales/releases/download/nightwatch9-v05-download/Frame_Tales_Nightwatch9_Full_v05.mp4' -o source_film/Frame_Tales_Nightwatch9_Full_v05.mp4
+          echo '6e7fb078979fedfcd3e643859825049210050f2150e8ec5cbb623b1e4a80762f  source_film/Frame_Tales_Nightwatch9_Full_v05.mp4' | sha256sum -c -
+      - name: Render and check both vertical cuts
+        run: python build_shorts.py --source source_film/Frame_Tales_Nightwatch9_Full_v05.mp4
+      - name: Save production package
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightwatch9-shorts-v01
+          compression-level: 0
+          retention-days: 30
+          path: |
+            episodes/nightwatch9/v1.0/production/shorts/outputs/*.mp4
+            episodes/nightwatch9/v1.0/production/shorts/outputs/*.jpg
+            episodes/nightwatch9/v1.0/production/shorts/outputs/shorts_package.json
+      - name: Provide direct downloads without social publication
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          DELIVERY_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          cd shorts/outputs
+          sha256sum *.mp4 *.jpg shorts_package.json > SHA256SUMS.txt
+          DELIVERY_TAG=nightwatch9-shorts-v01
+          if ! gh release view "$DELIVERY_TAG" >/dev/null 2>&1; then
+            gh release create "$DELIVERY_TAG" --target "$DELIVERY_SHA" --draft --latest=false --title 'Frame Tales — Nightwatch9 vertical shorts v01' --notes 'Two checked 1080x1920 promo clips with burned-in Thai captions. Includes platform text and previews. This prepares download files only; no YouTube or Facebook posts are scheduled or published.'
+          fi
+          gh release upload "$DELIVERY_TAG" *.mp4 *.jpg shorts_package.json SHA256SUMS.txt --clobber
+          gh release edit "$DELIVERY_TAG" --draft=false --latest=false
+          gh release view "$DELIVERY_TAG" --json url,assets
