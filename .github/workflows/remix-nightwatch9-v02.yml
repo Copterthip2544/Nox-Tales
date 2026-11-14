@@ -1,0 +1,62 @@
+name: Nightwatch9 audio remix v02
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/remix-nightwatch9-v02.yml']
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: nightwatch9-audio-v02
+  cancel-in-progress: false
+jobs:
+  remix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: episodes/nightwatch9/v1.0/production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install audio dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install 'numpy>=1.26,<3' 'scipy>=1.12,<2'
+      - name: Download verified approved picture
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-film-verified-v01
+          run-id: 43555663021
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/source_film
+      - name: Download approved speech
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-speech-v01
+          run-id: 43413607292
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/complete_speech
+      - name: Mix revised sound and stream-copy picture
+        run: |
+          python verify_speech.py
+          python build_film_v02.py
+          python export_audio_v02.py
+      - name: Upload checked full film
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightwatch9-full-film-v02-audio
+          compression-level: 0
+          retention-days: 30
+          path: |
+            episodes/nightwatch9/v1.0/production/outputs/v02/Frame_Tales_Nightwatch9_Full_v02.mp4
+            episodes/nightwatch9/v1.0/production/outputs/v02/Frame_Tales_Nightwatch9_th.srt
+            episodes/nightwatch9/v1.0/production/outputs/v02/final_QA_v02.json
+            episodes/nightwatch9/v1.0/production/outputs/v02/sound_report.json
+            episodes/nightwatch9/v1.0/production/outputs/v02/preview_final_phone_v02.mp3
