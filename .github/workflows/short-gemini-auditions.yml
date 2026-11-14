@@ -1,0 +1,76 @@
+name: Short Gemini voice auditions
+on:
+  workflow_dispatch:
+    inputs:
+      audition_plan:
+        description: JSON plan containing at most eight short samples
+        required: true
+        type: string
+permissions:
+  contents: read
+jobs:
+  audition:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - name: Generate requested short samples
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          AUDITION_PLAN: ${{ inputs.audition_plan }}
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,base64,wave,io,hashlib
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          out=Path('voice-auditions');out.mkdir(exist_ok=True)
+          plan=json.loads(os.environ['AUDITION_PLAN'])
+          if len(plan['samples'])>8:raise SystemExit('Maximum 8 short samples')
+          model=plan['model']
+          if model!='gemini-3.8-flash-tts':raise SystemExit('Unexpected model')
+          key=os.environ['GEMINI_API_KEY']
+          manifest={'model':model,'samples':[]};mf=out/'manifest.json'
+          for t in plan['samples']:
+           if len(t['text'])>600:raise SystemExit('Sample too long')
+           dest=out/(t['id']+'.wav')
+           rec={**t,'status':'request_started','file':dest.name};manifest['samples'].append(rec)
+           mf.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+           payload={'contents':[{'role':'user','parts':[{'text':t['text'],'speech_metadata':{'style':t['style']}}]}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'voiceConfig':{'voice':t['voice']}}}}
+           req=Request(f'https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':key,'Content-Type':'application/json'},method='POST')
+           try:
+            with urlopen(req,timeout=180) as r:data=json.load(r)
+            c=data.get('candidates',[])
+            if len(c)!=1 or c[0].get('finishReason')!='STOP':raise ValueError('Generation incomplete')
+            audio=[x['inlineData'] for x in c[0]['content']['parts'] if 'inlineData'in x]
+            if len(audio)!=1:raise ValueError('Expected one audio file')
+            raw=base64.b64decode(audio[0]['data'],validate=True)
+            if raw[:4]==b'RIFF':dest.write_bytes(raw)
+            elif 'L16' in audio[0].get('mimeType','') or 'pcm' in audio[0].get('mimeType','').lower():
+             with wave.open(str(dest),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes(raw)
+            else:raise ValueError('Unexpected audio format')
+            with wave.open(str(dest)) as w:
+             seconds=w.getnframes()/w.getframerate()
+             if seconds<=0:raise ValueError('Empty audio')
+            rec.update(status='complete',duration_seconds=seconds,sha256=hashlib.sha256(dest.read_bytes()).hexdigest())
+            print(t['id']+': saved '+str(round(seconds,2))+' seconds',flush=True)
+           except HTTPError as e:
+            rec.update(status='http_error',http_status=e.code)
+            mf.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+            print('HTTP '+str(e.code)+'; stopped without retry',flush=True)
+            raise SystemExit(1)
+           except Exception as e:
+            rec.update(status='uncertain',error_type=type(e).__name__)
+            mf.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+            print('Stopped without retry: '+type(e).__name__,flush=True)
+            raise SystemExit(1)
+           mf.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+          PYCODE
+      - name: Retain completed previews and status
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: requested-voice-auditions
+          path: voice-auditions/
+          if-no-files-found: ignore
+          retention-days: 7
