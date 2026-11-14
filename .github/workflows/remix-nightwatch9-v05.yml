@@ -1,0 +1,81 @@
+name: Nightwatch9 scene music v05
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/remix-nightwatch9-v05.yml']
+permissions:
+  contents: write
+  actions: read
+concurrency:
+  group: nightwatch9-music-v05
+  cancel-in-progress: false
+jobs:
+  remix:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: episodes/nightwatch9/v1.0/production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install audio dependencies
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install 'numpy>=1.26,<3' 'scipy>=1.12,<2'
+      - name: Download verified approved picture
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-film-v02-audio
+          run-id: 43557684203
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/source_film
+      - name: Download approved speech
+        uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-speech-v01
+          run-id: 43413607292
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/complete_speech
+      - name: Mix revised sound and stream-copy picture
+        run: |
+          python verify_speech.py
+          python build_film_v02.py
+          python compose_music_v05.py
+          python export_audio_v05.py
+      - name: Upload checked full film
+        uses: actions/upload-artifact@v4
+        with:
+          name: nightwatch9-full-film-v05-music
+          compression-level: 0
+          retention-days: 30
+          path: |
+            episodes/nightwatch9/v1.0/production/outputs/v05/Frame_Tales_Nightwatch9_Full_v05.mp4
+            episodes/nightwatch9/v1.0/production/outputs/v05/Frame_Tales_Nightwatch9_th.srt
+            episodes/nightwatch9/v1.0/production/outputs/v05/final_QA_v05.json
+            episodes/nightwatch9/v1.0/production/outputs/v05/sound_report.json
+            episodes/nightwatch9/v1.0/production/outputs/v05/preview_final_phone_v05.mp3
+            episodes/nightwatch9/v1.0/production/outputs/v05/preview_music_tension_v05.mp3
+            episodes/nightwatch9/v1.0/production/outputs/v05/preview_scene_changes_v05.mp3
+      - name: Publish direct MP4 download
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPO: ${{ github.repository }}
+          DELIVERY_SHA: ${{ github.sha }}
+        run: |
+          set -euo pipefail
+          cd outputs/v05
+          sha256sum Frame_Tales_Nightwatch9_Full_v05.mp4 Frame_Tales_Nightwatch9_th.srt final_QA_v05.json preview_scene_changes_v05.mp3 > SHA256SUMS.txt
+          DELIVERY_TAG=nightwatch9-v05-download
+          if ! gh release view "$DELIVERY_TAG" >/dev/null 2>&1; then
+            gh release create "$DELIVERY_TAG" --target "$DELIVERY_SHA" --draft --latest=false --title 'Frame Tales — Nightwatch9 v05 downloads' --notes 'v05 keeps the scene-specific music and removes speech-triggered music ducking. Checked 11:36 Thai film, with direct MP4 download, separate subtitles, preview and SHA-256 checksums.'
+          fi
+          gh release upload "$DELIVERY_TAG" Frame_Tales_Nightwatch9_Full_v05.mp4 Frame_Tales_Nightwatch9_th.srt preview_scene_changes_v05.mp3 final_QA_v05.json SHA256SUMS.txt --clobber
+          gh release edit "$DELIVERY_TAG" --draft=false --latest=false
+          gh release view "$DELIVERY_TAG" --json url,assets
