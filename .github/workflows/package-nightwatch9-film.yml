@@ -1,0 +1,40 @@
+name: Verify and package Nightwatch9 film
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths: ['.github/workflows/package-nightwatch9-film.yml']
+permissions:
+  contents: read
+  actions: read
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: episodes/nightwatch9/v1.0/production
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@v4
+        with:
+          name: nightwatch9-full-film-v01
+          run-id: 43553549197
+          github-token: ${{ github.token }}
+          path: episodes/nightwatch9/v1.0/production/outputs
+      - name: Check actual encoded file without rerendering
+        run: python check_film.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: nightwatch9-full-film-verified-v01
+          retention-days: 30
+          compression-level: 0
+          path: |
+            episodes/nightwatch9/v1.0/production/outputs/Frame_Tales_Nightwatch9_Full_v01.mp4
+            episodes/nightwatch9/v1.0/production/outputs/Frame_Tales_Nightwatch9_th.srt
+            episodes/nightwatch9/v1.0/production/outputs/final_QA.json
+            episodes/nightwatch9/v1.0/production/outputs/render_report.json
+            episodes/nightwatch9/v1.0/production/outputs/sound_report.json
+            episodes/nightwatch9/v1.0/production/outputs/shot_list.csv
