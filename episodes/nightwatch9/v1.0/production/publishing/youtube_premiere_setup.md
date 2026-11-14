@@ -11,6 +11,12 @@
 3. ใส่ชื่อและคำอธิบายด้านล่าง เลือกหมวดบันเทิง และไม่ใช่เนื้อหาสำหรับเด็ก ระบุภาพและเสียงพากย์สร้างด้วย AI
 4. ที่การมองเห็น เลือกตั้งเวลา วันที่ 20 พฤศจิกายน 2026 เวลา 18:45 น. ตามเวลาไทย และติ๊ก Set as Premiere / ตั้งเป็น Premiere แล้วกดตั้งเวลา
 
+## ปกคลิป
+
+JPG ขนาด 1280×720: https://raw.githubusercontent.com/Copterthip2544/Nox-Tales/main/episodes/nightwatch9/v1.0/production/thumbnail/Frame_Tales_Nightwatch9_Thumbnail_v01.jpg
+
+เลือก Upload thumbnail / อัปโหลดภาพขนาดย่อ ในหน้ารายละเอียดวิดีโอ
+
 ## ชื่อคลิป
 
 กฎ 9 ข้อสำหรับเจ้าหน้าที่เฝ้ากล้องกะดึก | เรื่องเล่าสยองขวัญ | FRAME TALES
