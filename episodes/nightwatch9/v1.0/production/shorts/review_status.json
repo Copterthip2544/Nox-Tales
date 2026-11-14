@@ -1,0 +1,11 @@
+{
+  "status": "awaiting_user_review",
+  "youtube_scheduled": false,
+  "facebook_scheduled": false,
+  "publishing_authorized": false,
+  "user_instruction": "เตรียมไฟล์ให้พร้อมต้องการตรวจก่อน",
+  "applies_to": [
+    "Short01",
+    "Short02"
+  ]
+}
