@@ -1,0 +1,196 @@
+name: Gemini scene voice production
+on:
+  workflow_dispatch:
+    inputs:
+      packed_plan:
+        description: Gzip base64 JSON of approved scene voice production plan
+        type: string
+        required: true
+permissions:
+  contents: read
+concurrency:
+  group: gemini-scene-voice-production
+  cancel-in-progress: false
+jobs:
+  batch1:
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Generate five scenes
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PACKED_PLAN: ${{ inputs.packed_plan }}
+          BATCH: '1'
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,gzip,base64,wave,hashlib,time
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          plan=json.loads(gzip.decompress(base64.b64decode(os.environ['PACKED_PLAN'],validate=True)))
+          batch=int(os.environ['BATCH']);lo=(batch-1)*5+1;hi=batch*5
+          samples=[s for s in plan['samples'] if lo<=s['scene']<=hi]
+          if plan['model']!='gemini-3.8-flash-tts' or not 1<=batch<=3 or len(samples)>35:raise SystemExit('Invalid bounded production plan')
+          voices={'Charon','Puck','Achernar','Algenib','Leda','Gacrux'}
+          key=os.environ['GEMINI_API_KEY'];out=Path('speech-output');out.mkdir(exist_ok=True)
+          m={'model':plan['model'],'batch':batch,'scenes':[lo,hi],'samples':[]};mf=out/'manifest.json'
+          for t in samples:
+           if t['voice'] not in voices or len(t['text'])>2500 or not all(c.isalnum() or c=='_' for c in t['id']):raise SystemExit('Invalid sample')
+           start=time.monotonic();dest=out/(t['id']+'.wav');r={**t,'status':'request_started','file':dest.name};m['samples'].append(r);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2))
+           data={'contents':[{'role':'user','parts':[{'text':t['text'],'speech_metadata':{'style':t['style']}}]}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'voiceConfig':{'voice':t['voice']}}}}
+           req=Request('https://generativelanguage.googleapis.com/v1beta/models/'+plan['model']+':generateContent',data=json.dumps(data,ensure_ascii=False).encode(),headers={'x-goog-api-key':key,'Content-Type':'application/json'},method='POST')
+           try:
+            with urlopen(req,timeout=240) as resp:d=json.load(resp)
+            cs=d.get('candidates',[])
+            if len(cs)!=1 or cs[0].get('finishReason')!='STOP':raise ValueError('Incomplete response')
+            aa=[x['inlineData'] for x in cs[0]['content']['parts'] if 'inlineData'in x]
+            if len(aa)!=1:raise ValueError('Expected single audio payload')
+            raw=base64.b64decode(aa[0]['data'],validate=True)
+            if raw[:4]==b'RIFF':dest.write_bytes(raw)
+            elif 'L16'in aa[0].get('mimeType','') or 'pcm'in aa[0].get('mimeType','').lower():
+             with wave.open(str(dest),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes(raw)
+            else:raise ValueError('Unexpected audio format')
+            with wave.open(str(dest)) as w:
+             secs=w.getnframes()/w.getframerate();rate=w.getframerate();ch=w.getnchannels()
+             if secs<=0:raise ValueError('Empty audio')
+            r.update(status='complete',duration_seconds=secs,sample_rate=rate,channels=ch,sha256=hashlib.sha256(dest.read_bytes()).hexdigest())
+            print(t['id']+' complete '+str(round(secs,2))+' seconds',flush=True)
+           except HTTPError as e:
+            r.update(status='http_error',http_status=e.code);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2));print('HTTP '+str(e.code)+'; stopped, no retry, completed files retained',flush=True);raise SystemExit(1)
+           except Exception as e:
+            r.update(status='uncertain',error_type=type(e).__name__);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2));print('Stopped with uncertain response, no retry: '+type(e).__name__,flush=True);raise SystemExit(1)
+           mf.write_text(json.dumps(m,ensure_ascii=False,indent=2))
+           if t!=samples[-1]:time.sleep(max(0,8-(time.monotonic()-start)))
+          print('Batch complete: '+str(len(samples))+' files',flush=True)
+          PYCODE
+      - name: Save all completed audio and status
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scene-speech-batch-1
+          path: speech-output/
+          if-no-files-found: ignore
+          retention-days: 14
+  batch2:
+    needs: batch1
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Generate five scenes
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PACKED_PLAN: ${{ inputs.packed_plan }}
+          BATCH: '2'
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,gzip,base64,wave,hashlib,time
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          plan=json.loads(gzip.decompress(base64.b64decode(os.environ['PACKED_PLAN'],validate=True)))
+          batch=int(os.environ['BATCH']);lo=(batch-1)*5+1;hi=batch*5
+          samples=[s for s in plan['samples'] if lo<=s['scene']<=hi]
+          if plan['model']!='gemini-3.8-flash-tts' or not 1<=batch<=3 or len(samples)>35:raise SystemExit('Invalid bounded production plan')
+          voices={'Charon','Puck','Achernar','Algenib','Leda','Gacrux'}
+          key=os.environ['GEMINI_API_KEY'];out=Path('speech-output');out.mkdir(exist_ok=True)
+          m={'model':plan['model'],'batch':batch,'scenes':[lo,hi],'samples':[]};mf=out/'manifest.json'
+          for t in samples:
+           if t['voice'] not in voices or len(t['text'])>2500 or not all(c.isalnum() or c=='_' for c in t['id']):raise SystemExit('Invalid sample')
+           start=time.monotonic();dest=out/(t['id']+'.wav');r={**t,'status':'request_started','file':dest.name};m['samples'].append(r);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2))
+           data={'contents':[{'role':'user','parts':[{'text':t['text'],'speech_metadata':{'style':t['style']}}]}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'voiceConfig':{'voice':t['voice']}}}}
+           req=Request('https://generativelanguage.googleapis.com/v1beta/models/'+plan['model']+':generateContent',data=json.dumps(data,ensure_ascii=False).encode(),headers={'x-goog-api-key':key,'Content-Type':'application/json'},method='POST')
+           try:
+            with urlopen(req,timeout=240) as resp:d=json.load(resp)
+            cs=d.get('candidates',[])
+            if len(cs)!=1 or cs[0].get('finishReason')!='STOP':raise ValueError('Incomplete response')
+            aa=[x['inlineData'] for x in cs[0]['content']['parts'] if 'inlineData'in x]
+            if len(aa)!=1:raise ValueError('Expected single audio payload')
+            raw=base64.b64decode(aa[0]['data'],validate=True)
+            if raw[:4]==b'RIFF':dest.write_bytes(raw)
+            elif 'L16'in aa[0].get('mimeType','') or 'pcm'in aa[0].get('mimeType','').lower():
+             with wave.open(str(dest),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes(raw)
+            else:raise ValueError('Unexpected audio format')
+            with wave.open(str(dest)) as w:
+             secs=w.getnframes()/w.getframerate();rate=w.getframerate();ch=w.getnchannels()
+             if secs<=0:raise ValueError('Empty audio')
+            r.update(status='complete',duration_seconds=secs,sample_rate=rate,channels=ch,sha256=hashlib.sha256(dest.read_bytes()).hexdigest())
+            print(t['id']+' complete '+str(round(secs,2))+' seconds',flush=True)
+           except HTTPError as e:
+            r.update(status='http_error',http_status=e.code);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2));print('HTTP '+str(e.code)+'; stopped, no retry, completed files retained',flush=True);raise SystemExit(1)
+           except Exception as e:
+            r.update(status='uncertain',error_type=type(e).__name__);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2));print('Stopped with uncertain response, no retry: '+type(e).__name__,flush=True);raise SystemExit(1)
+           mf.write_text(json.dumps(m,ensure_ascii=False,indent=2))
+           if t!=samples[-1]:time.sleep(max(0,8-(time.monotonic()-start)))
+          print('Batch complete: '+str(len(samples))+' files',flush=True)
+          PYCODE
+      - name: Save all completed audio and status
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scene-speech-batch-2
+          path: speech-output/
+          if-no-files-found: ignore
+          retention-days: 14
+  batch3:
+    needs: batch2
+    runs-on: ubuntu-latest
+    timeout-minutes: 35
+    steps:
+      - name: Generate five scenes
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          PACKED_PLAN: ${{ inputs.packed_plan }}
+          BATCH: '3'
+        shell: bash
+        run: |
+          python3 - <<'PYCODE'
+          import os,json,gzip,base64,wave,hashlib,time
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          plan=json.loads(gzip.decompress(base64.b64decode(os.environ['PACKED_PLAN'],validate=True)))
+          batch=int(os.environ['BATCH']);lo=(batch-1)*5+1;hi=batch*5
+          samples=[s for s in plan['samples'] if lo<=s['scene']<=hi]
+          if plan['model']!='gemini-3.8-flash-tts' or not 1<=batch<=3 or len(samples)>35:raise SystemExit('Invalid bounded production plan')
+          voices={'Charon','Puck','Achernar','Algenib','Leda','Gacrux'}
+          key=os.environ['GEMINI_API_KEY'];out=Path('speech-output');out.mkdir(exist_ok=True)
+          m={'model':plan['model'],'batch':batch,'scenes':[lo,hi],'samples':[]};mf=out/'manifest.json'
+          for t in samples:
+           if t['voice'] not in voices or len(t['text'])>2500 or not all(c.isalnum() or c=='_' for c in t['id']):raise SystemExit('Invalid sample')
+           start=time.monotonic();dest=out/(t['id']+'.wav');r={**t,'status':'request_started','file':dest.name};m['samples'].append(r);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2))
+           data={'contents':[{'role':'user','parts':[{'text':t['text'],'speech_metadata':{'style':t['style']}}]}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'voiceConfig':{'voice':t['voice']}}}}
+           req=Request('https://generativelanguage.googleapis.com/v1beta/models/'+plan['model']+':generateContent',data=json.dumps(data,ensure_ascii=False).encode(),headers={'x-goog-api-key':key,'Content-Type':'application/json'},method='POST')
+           try:
+            with urlopen(req,timeout=240) as resp:d=json.load(resp)
+            cs=d.get('candidates',[])
+            if len(cs)!=1 or cs[0].get('finishReason')!='STOP':raise ValueError('Incomplete response')
+            aa=[x['inlineData'] for x in cs[0]['content']['parts'] if 'inlineData'in x]
+            if len(aa)!=1:raise ValueError('Expected single audio payload')
+            raw=base64.b64decode(aa[0]['data'],validate=True)
+            if raw[:4]==b'RIFF':dest.write_bytes(raw)
+            elif 'L16'in aa[0].get('mimeType','') or 'pcm'in aa[0].get('mimeType','').lower():
+             with wave.open(str(dest),'wb') as w:w.setnchannels(1);w.setsampwidth(2);w.setframerate(24000);w.writeframes(raw)
+            else:raise ValueError('Unexpected audio format')
+            with wave.open(str(dest)) as w:
+             secs=w.getnframes()/w.getframerate();rate=w.getframerate();ch=w.getnchannels()
+             if secs<=0:raise ValueError('Empty audio')
+            r.update(status='complete',duration_seconds=secs,sample_rate=rate,channels=ch,sha256=hashlib.sha256(dest.read_bytes()).hexdigest())
+            print(t['id']+' complete '+str(round(secs,2))+' seconds',flush=True)
+           except HTTPError as e:
+            r.update(status='http_error',http_status=e.code);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2));print('HTTP '+str(e.code)+'; stopped, no retry, completed files retained',flush=True);raise SystemExit(1)
+           except Exception as e:
+            r.update(status='uncertain',error_type=type(e).__name__);mf.write_text(json.dumps(m,ensure_ascii=False,indent=2));print('Stopped with uncertain response, no retry: '+type(e).__name__,flush=True);raise SystemExit(1)
+           mf.write_text(json.dumps(m,ensure_ascii=False,indent=2))
+           if t!=samples[-1]:time.sleep(max(0,8-(time.monotonic()-start)))
+          print('Batch complete: '+str(len(samples))+' files',flush=True)
+          PYCODE
+      - name: Save all completed audio and status
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scene-speech-batch-3
+          path: speech-output/
+          if-no-files-found: ignore
+          retention-days: 14
