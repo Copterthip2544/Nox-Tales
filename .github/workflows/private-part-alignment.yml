@@ -149,58 +149,31 @@ jobs:
               record.update(status='complete',file=file.name,duration_seconds=seconds,sha256=hashlib.sha256(file.read_bytes()).hexdigest());save()
               print(t['id']+' complete '+str(round(seconds,2))+' seconds',flush=True)
               if t!=plan['samples'][-1]:time.sleep(max(0,14.5-(time.monotonic()-start)))
-            import subprocess,contextlib
-            print('Speech chunks complete; aligning original cue boundaries',flush=True)
-            dep=subprocess.run(['python3','-m','pip','-q','install','torch==2.9.1+cpu','--index-url','https://download.pytorch.org/whl/cpu'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
-            (out/'dependency_torch.log').write_text(dep.stdout)
-            if dep.returncode:raise RuntimeError('CPU torch installation failed')
-            dep=subprocess.run(['python3','-m','pip','-q','install','stable-ts==2.19.1'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
-            (out/'dependency_alignment.log').write_text(dep.stdout)
-            if dep.returncode:raise RuntimeError('Alignment installation failed')
-            import torch,stable_whisper
-            torch.set_num_threads(4)
-            debug=io.StringIO()
-            with contextlib.redirect_stdout(debug),contextlib.redirect_stderr(debug):aligner=stable_whisper.load_model('small',device='cpu',download_root='/tmp/scene-whisper-models')
-            def repair(cue,record,lo,hi):
-              # Acoustic verification of a short real excerpt; never infer time from character count.
-              import subprocess,difflib
-              clip=subprocess.check_output(['ffmpeg','-v','error','-ss',str(lo),'-t',str(hi-lo),'-i',str(out/record['file']),'-ar','24000','-ac','1','-f','wav','pipe:1'])
-              prompt='Listen to the actual Thai audio. Locate ONLY the complete TARGET utterance below; ignore neighboring speech. Return JSON with start_seconds,end_seconds,heard_text,complete_target_present. Times must be audible phoneme boundaries relative to this excerpt, not estimated from text length. Include entire first and final words. If absent/truncated return complete_target_present false. Excerpt duration '+str(hi-lo)+' seconds. TARGET: '+cue['text']
-              payload={'contents':[{'role':'user','parts':[{'text':prompt},{'inlineData':{'mimeType':'audio/wav','data':base64.b64encode(clip).decode()}}]}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':4096}}
-              req=Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
-              with urlopen(req,timeout=180) as resp:answer=json.load(resp)
-              txt=''.join(p.get('text','') for p in answer['candidates'][0]['content']['parts'] if not p.get('thought')).strip()
-              if txt.startswith('```'):txt=txt.split('\n',1)[1].rsplit('```',1)[0]
-              d=json.loads(txt);a=float(d['start_seconds']);b=float(d['end_seconds'])
-              if not d.get('complete_target_present') or not 0<=a<b<=hi-lo+.2:raise ValueError('Acoustic target not positively found')
-              clean=lambda x:re.sub(r'[^ก-๙A-Za-z0-9]','',x).lower()
-              if difflib.SequenceMatcher(None,clean(d.get('heard_text','')),clean(cue['text'])).ratio()<.50:raise ValueError('Acoustic target transcript mismatch')
-              return {'cue_id':cue['cue_id'],'speaker':cue['speaker'],'voice':cue['voice'],'text':cue['text'],'start':lo+a,'end':min(record['duration_seconds'],lo+b),'method':'short-excerpt acoustic check','heard_text':d.get('heard_text')}
+            import subprocess,difflib
             for record in manifest['samples']:
               if record.get('alignment_status')=='complete':
                 print(record['id']+' existing timing retained',flush=True);continue
-              turns=record['turns'];transcript='\n'.join(v['text'].replace('\n',' ') for v in turns)
-              with contextlib.redirect_stdout(debug),contextlib.redirect_stderr(debug):result=aligner.align(str(out/record['file']),transcript,language='th',original_split=True,regroup=False,token_step=50,verbose=False)
-              (out/(record['id']+'_alignment_raw.json')).write_text(json.dumps(result.to_dict(),ensure_ascii=False))
-              segments=result.segments
-              if len(segments)!=len(turns):raise ValueError('Cue alignment count mismatch')
-              cue_times=[]
-              for i,(turn,segment) in enumerate(zip(turns,segments)):
-                valid=0<=segment.start<segment.end<=record['duration_seconds']+.15
-                if valid:
-                  cue_times.append({'cue_id':turn['cue_id'],'speaker':turn['speaker'],'voice':turn['voice'],'text':turn['text'],'start':segment.start,'end':min(segment.end,record['duration_seconds']),'method':'source-constrained Whisper alignment'})
-                else:
-                  before=segments[i-1].end if i else 0
-                  after=segments[i+1].start if i+1<len(segments) else record['duration_seconds']
-                  lo=max(0,min(segment.start,before)-4);hi=min(record['duration_seconds'],max(segment.end,after)+4)
-                  try:fixed=repair(turn,record,lo,hi)
-                  except Exception:fixed=repair(turn,record,0,record['duration_seconds'])
-                  cue_times.append(fixed)
-              if any(cue_times[i]['start']<cue_times[i-1]['start'] or cue_times[i]['end']<cue_times[i-1]['end'] for i in range(1,len(cue_times))):raise ValueError('Nonmonotonic acoustic cue order')
+              turns=record['turns']
+              audio=(out/record['file']).read_bytes()
+              targets=[{'cue_id':t['cue_id'],'speaker':t['speaker'],'text':t['text']} for t in turns]
+              prompt='Listen closely to this ACTUAL Thai audio and align the provided ordered script utterances to the speech. Return JSON {"cues":[{"cue_id":"...","start":0.0,"end":1.0,"heard_text":"actual Thai words heard"}]}. Include every cue exactly once in source order. Times are seconds from beginning of audio, audible first and last phoneme, based on listening, NEVER estimate by character count or divide duration uniformly. No music or directions are targets. Short responses and pauses matter. Speech can use natural pronunciation variants of script. The entire file duration is '+str(record['duration_seconds'])+' seconds. TARGETS: '+json.dumps(targets,ensure_ascii=False)
+              payload={'contents':[{'role':'user','parts':[{'text':prompt},{'inlineData':{'mimeType':'audio/flac','data':base64.b64encode(audio).decode()}}]}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':24000}}
+              req=Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
+              with urlopen(req,timeout=240) as resp:answer=json.load(resp)
+              txt=''.join(p.get('text','') for p in answer['candidates'][0]['content']['parts'] if not p.get('thought')).strip()
+              if txt.startswith('```'):txt=txt.split('\n',1)[1].rsplit('```',1)[0]
+              (out/(record['id']+'_acoustic_response.json')).write_text(txt)
+              aligned=json.loads(txt)['cues']
+              if len(aligned)!=len(turns):raise ValueError('Acoustic cue count mismatch '+record['id'])
+              cue_times=[];clean=lambda x:re.sub(r'[^ก-๙A-Za-z0-9]','',x).lower()
+              for turn,cue in zip(turns,aligned):
+                a=float(cue['start']);b=float(cue['end'])
+                if cue['cue_id']!=turn['cue_id'] or not 0<=a<b<=record['duration_seconds']+.2:raise ValueError('Acoustic cue boundary invalid '+record['id'])
+                if difflib.SequenceMatcher(None,clean(cue.get('heard_text','')),clean(turn['text'])).ratio()<.45:raise ValueError('Acoustic transcript differs '+turn['cue_id'])
+                if cue_times and a<cue_times[-1]['end']-.12:raise ValueError('Acoustic cue overlap '+record['id'])
+                cue_times.append({**turn,'start':a,'end':min(b,record['duration_seconds']),'method':'whole-audio acoustic script alignment','heard_text':cue.get('heard_text')})
               record['cue_alignment']=cue_times;record['alignment_status']='complete';save()
-              (out/'alignment_debug.log').write_text(debug.getvalue())
-              print(record['id']+' aligned '+str(len(cue_times))+' cues',flush=True)
-            (out/'alignment_debug.log').write_text(debug.getvalue())
+              print(record['id']+' acoustically aligned '+str(len(cue_times))+' cues',flush=True)
             manifest['status']='complete';manifest['alignment_status']='complete';save()
           except Exception as e:
             failed=True;detail=e.read(20000).decode(errors='replace') if isinstance(e,HTTPError) else '';manifest.update(status='stopped_without_retry',error_type=type(e).__name__,http_status=getattr(e,'code',None),provider_error_body=detail,error_message=str(e));save()
