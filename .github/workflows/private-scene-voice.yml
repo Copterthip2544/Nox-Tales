@@ -100,10 +100,10 @@ jobs:
               file=out/(t['id']+'.wav');file.write_bytes(raw)
               record.update(status='complete',file=file.name,duration_seconds=seconds,sha256=hashlib.sha256(raw).hexdigest());save()
               print(t['id']+' complete '+str(round(seconds,2))+' seconds',flush=True)
-              if t!=plan['samples'][-1]:time.sleep(max(0,7.2-(time.monotonic()-start)))
+              if t!=plan['samples'][-1]:time.sleep(max(0,14.5-(time.monotonic()-start)))
             manifest['status']='complete';save()
           except Exception as e:
-            failed=True;manifest.update(status='stopped_without_retry',error_type=type(e).__name__,http_status=getattr(e,'code',None));save()
+            failed=True;detail=e.read(20000).decode(errors='replace') if isinstance(e,HTTPError) else '';manifest.update(status='stopped_without_retry',error_type=type(e).__name__,http_status=getattr(e,'code',None),provider_error_body=detail);save()
             print('Stopped without retry: '+type(e).__name__,flush=True)
           finally:
             stream=io.BytesIO()
