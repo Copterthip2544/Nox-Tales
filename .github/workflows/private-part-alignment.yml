@@ -12,6 +12,7 @@ on:
         type: string
 permissions:
   contents: read
+  actions: read
 concurrency:
   group: private-source-aligned-dialogue
   cancel-in-progress: false
@@ -47,6 +48,7 @@ jobs:
           retention-days: 1
       - name: Receive encrypted request and synthesize bounded scene
         env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           REPO_READ_TOKEN: ${{ github.token }}
         shell: bash
         run: |
@@ -83,6 +85,32 @@ jobs:
             key=private.decrypt(base64.b64decode(incoming['wrapped_key']),oaep)
             plain=AESGCM(key).decrypt(base64.b64decode(incoming['nonce']),base64.b64decode(incoming['ciphertext']),rid.encode())
             plan=json.loads(plain)
+            # Read encrypted prior outputs with a fresh unauthenticated redirect request.
+            if plan.get('source_archives'):
+              from urllib.request import build_opener,HTTPRedirectHandler
+              class NoRedirect(HTTPRedirectHandler):
+                def redirect_request(self,req,fp,code,msg,headers,newurl):return None
+              archived={}
+              for archive in plan['source_archives']:
+                req=Request('https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/actions/artifacts/'+str(archive['artifact_id'])+'/zip',headers={'Authorization':'Bearer '+os.environ['REPO_READ_TOKEN'],'Accept':'application/vnd.github+json'})
+                try:
+                  with build_opener(NoRedirect).open(req,timeout=60) as resp:blob=resp.read()
+                except HTTPError as redirect:
+                  if redirect.code not in (301,302,303,307,308):raise
+                  with urlopen(redirect.headers['Location'],timeout=120) as resp:blob=resp.read()
+                with zipfile.ZipFile(io.BytesIO(blob)) as z:old=json.loads(z.read('encrypted-scene-result.json'))
+                oldkey=serialization.load_pem_private_key(archive['delivery_private_pem'].encode(),password=None)
+                aes=oldkey.decrypt(base64.b64decode(old['wrapped_key']),oaep)
+                restored=AESGCM(aes).decrypt(base64.b64decode(old['nonce']),base64.b64decode(old['ciphertext']),old['request_id'].encode())
+                with zipfile.ZipFile(io.BytesIO(restored)) as z:
+                  oldmanifest=json.loads(z.read('manifest.json'))
+                  for oldrecord in oldmanifest['samples']:
+                    if oldrecord.get('status')=='complete':archived[oldrecord['id']]=(oldrecord,z.read(oldrecord['file']))
+              for t in plan['samples']:
+                oldrecord,blob=archived[t['id']]
+                if hashlib.sha256(blob).hexdigest()!=oldrecord['sha256']:raise ValueError('Archived audio hash mismatch')
+                t['existing_flac']=base64.b64encode(blob).decode()
+                if oldrecord.get('alignment_status')=='complete':t['cue_alignment']=oldrecord['cue_alignment'];t['alignment_status']='complete'
             if not all(t.get('existing_flac') for t in plan['samples']):raise ValueError('Alignment worker accepts existing audio only')
             if plan['model']!='gemini-3.8-flash-tts' or not 1<=len(plan['samples'])<=30:raise ValueError('Invalid bounded plan')
             for t in plan['samples']:
@@ -133,16 +161,44 @@ jobs:
             torch.set_num_threads(4)
             debug=io.StringIO()
             with contextlib.redirect_stdout(debug),contextlib.redirect_stderr(debug):aligner=stable_whisper.load_model('small',device='cpu',download_root='/tmp/scene-whisper-models')
+            def repair(cue,record,lo,hi):
+              # Acoustic verification of a short real excerpt; never infer time from character count.
+              import subprocess,difflib
+              clip=subprocess.check_output(['ffmpeg','-v','error','-ss',str(lo),'-t',str(hi-lo),'-i',str(out/record['file']),'-ar','24000','-ac','1','-f','wav','pipe:1'])
+              prompt='Listen to the actual Thai audio. Locate ONLY the complete TARGET utterance below; ignore neighboring speech. Return JSON with start_seconds,end_seconds,heard_text,complete_target_present. Times must be audible phoneme boundaries relative to this excerpt, not estimated from text length. Include entire first and final words. If absent/truncated return complete_target_present false. Excerpt duration '+str(hi-lo)+' seconds. TARGET: '+cue['text']
+              payload={'contents':[{'role':'user','parts':[{'text':prompt},{'inlineData':{'mimeType':'audio/wav','data':base64.b64encode(clip).decode()}}]}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':4096}}
+              req=Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
+              with urlopen(req,timeout=180) as resp:answer=json.load(resp)
+              txt=''.join(p.get('text','') for p in answer['candidates'][0]['content']['parts'] if not p.get('thought')).strip()
+              if txt.startswith('```'):txt=txt.split('\n',1)[1].rsplit('```',1)[0]
+              d=json.loads(txt);a=float(d['start_seconds']);b=float(d['end_seconds'])
+              if not d.get('complete_target_present') or not 0<=a<b<=hi-lo+.2:raise ValueError('Acoustic target not positively found')
+              clean=lambda x:re.sub(r'[^ก-๙A-Za-z0-9]','',x).lower()
+              if difflib.SequenceMatcher(None,clean(d.get('heard_text','')),clean(cue['text'])).ratio()<.50:raise ValueError('Acoustic target transcript mismatch')
+              return {'cue_id':cue['cue_id'],'speaker':cue['speaker'],'voice':cue['voice'],'text':cue['text'],'start':lo+a,'end':min(record['duration_seconds'],lo+b),'method':'short-excerpt acoustic check','heard_text':d.get('heard_text')}
             for record in manifest['samples']:
+              if record.get('alignment_status')=='complete':
+                print(record['id']+' existing timing retained',flush=True);continue
               turns=record['turns'];transcript='\n'.join(v['text'].replace('\n',' ') for v in turns)
-              with contextlib.redirect_stdout(debug),contextlib.redirect_stderr(debug):result=aligner.align(str(out/record['file']),transcript,language='th',original_split=True,regroup=False,word_dur_factor=None,max_word_dur=None,verbose=False)
+              with contextlib.redirect_stdout(debug),contextlib.redirect_stderr(debug):result=aligner.align(str(out/record['file']),transcript,language='th',original_split=True,regroup=False,token_step=50,verbose=False)
+              (out/(record['id']+'_alignment_raw.json')).write_text(json.dumps(result.to_dict(),ensure_ascii=False))
               segments=result.segments
               if len(segments)!=len(turns):raise ValueError('Cue alignment count mismatch')
               cue_times=[]
-              for turn,segment in zip(turns,segments):
-                if not 0<=segment.start<segment.end<=record['duration_seconds']+.15:raise ValueError('Invalid cue times')
-                cue_times.append({'cue_id':turn['cue_id'],'speaker':turn['speaker'],'voice':turn['voice'],'text':turn['text'],'start':segment.start,'end':segment.end})
+              for i,(turn,segment) in enumerate(zip(turns,segments)):
+                valid=0<=segment.start<segment.end<=record['duration_seconds']+.15
+                if valid:
+                  cue_times.append({'cue_id':turn['cue_id'],'speaker':turn['speaker'],'voice':turn['voice'],'text':turn['text'],'start':segment.start,'end':min(segment.end,record['duration_seconds']),'method':'source-constrained Whisper alignment'})
+                else:
+                  before=segments[i-1].end if i else 0
+                  after=segments[i+1].start if i+1<len(segments) else record['duration_seconds']
+                  lo=max(0,min(segment.start,before)-4);hi=min(record['duration_seconds'],max(segment.end,after)+4)
+                  try:fixed=repair(turn,record,lo,hi)
+                  except Exception:fixed=repair(turn,record,0,record['duration_seconds'])
+                  cue_times.append(fixed)
+              if any(cue_times[i]['start']<cue_times[i-1]['start'] or cue_times[i]['end']<cue_times[i-1]['end'] for i in range(1,len(cue_times))):raise ValueError('Nonmonotonic acoustic cue order')
               record['cue_alignment']=cue_times;record['alignment_status']='complete';save()
+              (out/'alignment_debug.log').write_text(debug.getvalue())
               print(record['id']+' aligned '+str(len(cue_times))+' cues',flush=True)
             (out/'alignment_debug.log').write_text(debug.getvalue())
             manifest['status']='complete';manifest['alignment_status']='complete';save()
