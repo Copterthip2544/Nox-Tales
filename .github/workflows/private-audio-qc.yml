@@ -1,0 +1,93 @@
+name: Private source voice acoustic audit
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        type: string
+        required: true
+      delivery_public_key:
+        type: string
+        required: true
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Prepare ephemeral request key
+        run: |
+          python3 -m pip -q install cryptography
+          python3 - <<'PYKEY'
+          from cryptography.hazmat.primitives.asymmetric import rsa
+          from cryptography.hazmat.primitives import serialization
+          from pathlib import Path
+          k=rsa.generate_private_key(public_exponent=65537,key_size=2048)
+          Path('/tmp/audio-qc-private.pem').write_bytes(k.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.PKCS8,serialization.NoEncryption()))
+          Path('audio-qc-request-public.pem').write_bytes(k.public_key().public_bytes(serialization.Encoding.PEM,serialization.PublicFormat.SubjectPublicKeyInfo))
+          PYKEY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: audio-qc-request-public-key
+          path: audio-qc-request-public.pem
+          retention-days: 1
+      - name: Compare existing performances with approved references
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REQUEST_ID: ${{ inputs.request_id }}
+          DELIVERY_PUBLIC_KEY: ${{ inputs.delivery_public_key }}
+        run: |
+          python3 - <<'PYWORK'
+          import os,re,json,time,base64,secrets,zipfile,io
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          from cryptography.hazmat.primitives import serialization,hashes
+          from cryptography.hazmat.primitives.asymmetric import padding
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+          rid=os.environ['REQUEST_ID'];repo=os.environ['GITHUB_REPOSITORY'];token=os.environ['GH_TOKEN'];oaep=padding.OAEP(mgf=padding.MGF1(hashes.SHA256()),algorithm=hashes.SHA256(),label=None)
+          private=serialization.load_pem_private_key(Path('/tmp/audio-qc-private.pem').read_bytes(),password=None);delivery=serialization.load_pem_public_key(base64.b64decode(os.environ['DELIVERY_PUBLIC_KEY']));out=Path('/tmp/audio-qc-result');out.mkdir(exist_ok=True);status={'status':'started','request_id':rid,'jobs':[]}
+          failed=False
+          try:
+           meta=None
+           for i in range(120):
+            req=Request('https://api.github.com/repos/'+repo+'/contents/.audio_qc_requests/'+rid+'.json',headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','Cache-Control':'no-cache'})
+            try:
+             with urlopen(req,timeout=90) as r:meta=json.load(r)
+             break
+            except HTTPError as e:
+             if e.code!=404:raise
+            time.sleep(4)
+           if meta is None:raise TimeoutError('Audio audit request missing')
+           if meta.get('encoding')=='base64':env=json.loads(base64.b64decode(meta['content']))
+           else:
+            with urlopen(meta['download_url'],timeout=90) as r:env=json.load(r)
+           k=private.decrypt(base64.b64decode(env['wrapped_key']),oaep);plan=json.loads(AESGCM(k).decrypt(base64.b64decode(env['nonce']),base64.b64decode(env['ciphertext']),rid.encode()));assert 1<=len(plan['jobs'])<=3
+           for job in plan['jobs']:
+            assert re.fullmatch('[A-Z_]{1,20}',job['id'])
+            prompt='Compare these SYNTHETIC fictional-character performances acoustically against the approved synthetic reference recordings. Reference A is the required character voice, Reference B is Kawin (another actor, Orus). The PRODUCTION PACK contains isolated source utterances separated by 0.6 seconds silence; exact cue timing map follows. For EVERY cue in source order return JSON {"cues":[{"cue_id":"...","heard_text":"actual Thai words heard","words_match":true,"target_timbre":"matches|different|uncertain","closer_to":"target_reference|kawin_reference|neither|uncertain","pace":"rushed|natural|slow|uncertain","needs_retake":true,"reason":"brief Thai explanation"}]}. Judge audible timbre and delivery, not pitch alone. Never assume the intended actor is correct from the text labels. Mark uncertainty for very short utterances, boundary contamination, compression or insufficient evidence. If words belong to a neighboring script line, flag alignment/boundary error rather than conclude a voice changed. This is triage for listening review, not automatic proof of speaker identity. Required voice '+job['target_voice']+'. Cue map: '+json.dumps(job['cues'],ensure_ascii=False)
+            parts=[{'text':prompt},{'text':'REFERENCE A — approved target voice'},{'inlineData':{'mimeType':'audio/mpeg','data':job['target_reference_b64']}},{'text':'REFERENCE B — approved Kawin/Orus voice'},{'inlineData':{'mimeType':'audio/mpeg','data':job['comparison_reference_b64']}},{'text':'PRODUCTION PACK — inspect each mapped utterance'},{'inlineData':{'mimeType':'audio/mpeg','data':job['production_audio_b64']}}]
+            payload={'contents':[{'role':'user','parts':parts}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':20000}}
+            req=Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
+            with urlopen(req,timeout=240) as r:response=json.load(r)
+            txt=''.join(x.get('text','') for x in response['candidates'][0]['content']['parts'] if not x.get('thought')).strip()
+            if txt.startswith('```'):txt=txt.split('\n',1)[1].rsplit('```',1)[0]
+            result=json.loads(txt);assert [c['cue_id'] for c in result['cues']]==[c['cue_id'] for c in job['cues']],'Audit cue coverage mismatch'
+            (out/(job['id']+'_audit.json')).write_text(json.dumps(result,ensure_ascii=False,indent=2));status['jobs'].append({'id':job['id'],'status':'complete','cues':len(result['cues'])});print('Acoustic audit complete: '+job['id'],flush=True)
+           status['status']='complete'
+          except Exception as e:
+           failed=True;status.update(status='stopped_without_retry',error_type=type(e).__name__,error=str(e));print('Audio audit stopped: '+type(e).__name__,flush=True)
+          finally:
+           (out/'status.json').write_text(json.dumps(status,indent=2));s=io.BytesIO()
+           with zipfile.ZipFile(s,'w',zipfile.ZIP_DEFLATED) as z:
+            for f in out.glob('*'):z.writestr(f.name,f.read_bytes())
+           k=secrets.token_bytes(32);n=secrets.token_bytes(12);env={'request_id':rid,'wrapped_key':base64.b64encode(delivery.encrypt(k,oaep)).decode(),'nonce':base64.b64encode(n).decode(),'ciphertext':base64.b64encode(AESGCM(k).encrypt(n,s.getvalue(),rid.encode())).decode()};Path('encrypted-audio-qc-result.json').write_text(json.dumps(env))
+          if failed:raise SystemExit(1)
+          PYWORK
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: encrypted-audio-qc-result
+          path: encrypted-audio-qc-result.json
+          retention-days: 7
