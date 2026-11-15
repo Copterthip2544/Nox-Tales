@@ -1,0 +1,92 @@
+name: Private reviewed video delivery
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  deliver:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Prepare bounded transfer
+        env:
+          REQUEST_ID: ${{ inputs.request_id }}
+        run: |
+          python3 -m pip -q install cryptography
+          python3 - <<'PY'
+          import os,re
+          from pathlib import Path
+          from cryptography.hazmat.primitives.asymmetric import rsa
+          from cryptography.hazmat.primitives import serialization
+          assert re.fullmatch('[0-9a-f]{24}',os.environ['REQUEST_ID'])
+          k=rsa.generate_private_key(public_exponent=65537,key_size=2048)
+          Path('/tmp/video-request-private.pem').write_bytes(k.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.PKCS8,serialization.NoEncryption()))
+          Path('video-request-public.pem').write_bytes(k.public_key().public_bytes(serialization.Encoding.PEM,serialization.PublicFormat.SubjectPublicKeyInfo))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: video-request-public-key
+          path: video-request-public.pem
+          retention-days: 1
+      - name: Receive encrypted request, verify master, upload private draft asset
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUEST_ID: ${{ inputs.request_id }}
+        run: |
+          python3 - <<'PY'
+          import os,re,json,time,base64,hashlib,subprocess
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          from cryptography.hazmat.primitives import serialization,hashes
+          from cryptography.hazmat.primitives.asymmetric import padding
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+          repo=os.environ['GITHUB_REPOSITORY'];rid=os.environ['REQUEST_ID'];token=os.environ['GH_TOKEN']
+          def get(path):
+            req=Request('https://api.github.com/'+path,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','Cache-Control':'no-cache'})
+            with urlopen(req,timeout=120) as r:return json.load(r)
+          meta=None
+          for i in range(120):
+            try:meta=get('repos/'+repo+'/contents/.video_requests/'+rid+'.json');break
+            except HTTPError as e:
+              if e.code!=404:raise
+            time.sleep(4)
+          if meta is None:raise TimeoutError('Encrypted transfer plan did not arrive')
+          env=json.loads(base64.b64decode(meta['content']))
+          private=serialization.load_pem_private_key(Path('/tmp/video-request-private.pem').read_bytes(),password=None)
+          oaep=padding.OAEP(mgf=padding.MGF1(hashes.SHA256()),algorithm=hashes.SHA256(),label=None)
+          k=private.decrypt(base64.b64decode(env['wrapped_key']),oaep)
+          plan=json.loads(AESGCM(k).decrypt(base64.b64decode(env['nonce']),base64.b64decode(env['ciphertext']),rid.encode()))
+          assert re.fullmatch('[A-Za-z0-9_.-]+\.mp4',plan['filename']) and 1<=plan['size']<=1024**3
+          assert len(plan['chunks'])<=150
+          release=get('repos/'+repo+'/releases/'+str(plan['release_id']))
+          assert release['draft'] is True,'Delivery must remain a private draft'
+          aes=AESGCM(base64.b64decode(plan['key']));dest=Path('/tmp')/plan['filename'];sha=hashlib.sha256()
+          with dest.open('wb') as f:
+            for i,c in enumerate(plan['chunks']):
+              assert c['index']==i and re.fullmatch('[0-9a-f]{40}',c['sha'])
+              blob=get('repos/'+repo+'/git/blobs/'+c['sha']);encrypted=base64.b64decode(blob['content'])
+              raw=aes.decrypt(base64.b64decode(c['nonce']),encrypted,c['aad'].encode());assert len(raw)==c['plain_bytes'];f.write(raw);sha.update(raw)
+          assert dest.stat().st_size==plan['size'] and sha.hexdigest()==plan['sha256']
+          print('Verified exact master bytes and SHA-256',flush=True)
+          if subprocess.run(['which','ffmpeg'],stdout=subprocess.DEVNULL).returncode:
+            subprocess.run(['sudo','apt-get','update','-qq'],check=True);subprocess.run(['sudo','apt-get','install','-y','ffmpeg'],check=True)
+          with open('/tmp/video-decode.log','w') as log:subprocess.run(['ffmpeg','-v','error','-xerror','-threads','2','-i',str(dest),'-f','null','-'],stderr=log,check=True)
+          from urllib.parse import quote
+          url='https://uploads.github.com/repos/'+repo+'/releases/'+str(plan['release_id'])+'/assets?name='+quote(plan['filename'])
+          req=Request(url,data=dest.read_bytes(),headers={'Authorization':'Bearer '+token,'Content-Type':'video/mp4','Accept':'application/vnd.github+json'},method='POST')
+          with urlopen(req,timeout=300) as response:asset=json.load(response)
+          assert asset['state']=='uploaded' and asset['size']==plan['size']
+          receipt={'status':'complete','release_id':plan['release_id'],'release_url':release['html_url'],'draft':True,'asset_id':asset['id'],'filename':asset['name'],'bytes':asset['size'],'sha256':plan['sha256'],'browser_download_url':asset['browser_download_url'],'full_decode':'pass'}
+          Path('video_delivery_receipt.json').write_text(json.dumps(receipt,indent=2));print('Verified master uploaded to private draft',flush=True)
+          PY
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: video-delivery-receipt
+          path: video_delivery_receipt.json
+          retention-days: 7
