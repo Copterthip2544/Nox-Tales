@@ -18,7 +18,7 @@ concurrency:
 jobs:
   voice:
     runs-on: ubuntu-latest
-    timeout-minutes: 18
+    timeout-minutes: 55
     steps:
       - name: Prepare ephemeral request key
         shell: bash
@@ -81,11 +81,17 @@ jobs:
             plan=json.loads(plain)
             if plan['model']!='gemini-3.8-flash-tts' or not 1<=len(plan['samples'])<=30:raise ValueError('Invalid bounded plan')
             for t in plan['samples']:
-              if t['voice'] not in {'Orus','Iapetus'} or not re.fullmatch('[A-Z0-9_]{1,40}',t['id']) or not 1<=len(t['text'])<=600:raise ValueError('Invalid cue')
+              if t['voice'] not in {'Charon','Orus','Callirrhoe','Schedar','Erinome','Vindemiatrix','Rasalgethi','Iapetus','Gacrux','Algieba','Kore','Alnilam','Achird'} or not re.fullmatch('[A-Z0-9_]{1,40}',t['id']) or not 1<=len(t['text'])<=5000:raise ValueError('Invalid cue')
             manifest.update(status='generating',model=plan['model'],request_id=rid);save()
             for t in plan['samples']:
               start=time.monotonic();record={**t,'status':'request_started'};manifest['samples'].append(record);save()
-              payload={'contents':[{'role':'user','parts':[{'text':t['text'],'speech_metadata':{'style':t['style']}}]}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'voiceConfig':{'voice':t['voice']}}}}
+              turns=t.get('turns') or [{'text':t['text'],'style':t['style'],'speaker':'Voice','voice':t['voice']}]
+              voices={v['speaker']:v['voice'] for v in turns}
+              if not 1<=len(set(voices.values()))<=2:raise ValueError('Maximum two voices per chunk')
+              multi=len(set(voices.values()))>1
+              parts=[{'text':v['text'],'speech_metadata':dict(style=v['style'],**({'speaker':v['speaker']} if multi else {}))} for v in turns]
+              speech={'multiSpeakerVoiceConfig':{'speakerVoiceConfigs':[{'speaker':who,'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':voice}}} for who,voice in voices.items()]}} if multi else {'voiceConfig':{'voice':t['voice']}}
+              payload={'contents':[{'role':'user','parts':parts}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':speech}}
               req=Request('https://generativelanguage.googleapis.com/v1beta/models/'+plan['model']+':generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
               with urlopen(req,timeout=180) as response:result=json.load(response)
               cs=result.get('candidates',[])
@@ -97,11 +103,38 @@ jobs:
               with wave.open(io.BytesIO(raw),'rb') as w:
                 seconds=w.getnframes()/w.getframerate()
                 if seconds<=0:raise ValueError('Empty audio')
-              file=out/(t['id']+'.wav');file.write_bytes(raw)
-              record.update(status='complete',file=file.name,duration_seconds=seconds,sha256=hashlib.sha256(raw).hexdigest());save()
+              import subprocess
+              wavfile=out/(t['id']+'.wav');wavfile.write_bytes(raw);file=out/(t['id']+'.flac')
+              subprocess.run(['ffmpeg','-v','error','-y','-i',str(wavfile),'-c:a','flac',str(file)],check=True)
+              wavfile.unlink()
+              record.update(status='complete',file=file.name,duration_seconds=seconds,sha256=hashlib.sha256(file.read_bytes()).hexdigest());save()
               print(t['id']+' complete '+str(round(seconds,2))+' seconds',flush=True)
               if t!=plan['samples'][-1]:time.sleep(max(0,14.5-(time.monotonic()-start)))
-            manifest['status']='complete';save()
+            import subprocess,contextlib
+            print('Speech chunks complete; aligning original cue boundaries',flush=True)
+            dep=subprocess.run(['python3','-m','pip','-q','install','torch==2.8.0','--index-url','https://download.pytorch.org/whl/cpu'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+            (out/'dependency_torch.log').write_text(dep.stdout)
+            if dep.returncode:raise RuntimeError('CPU torch installation failed')
+            dep=subprocess.run(['python3','-m','pip','-q','install','stable-ts==2.19.1'],stdout=subprocess.PIPE,stderr=subprocess.STDOUT,text=True)
+            (out/'dependency_alignment.log').write_text(dep.stdout)
+            if dep.returncode:raise RuntimeError('Alignment installation failed')
+            import torch,stable_whisper
+            torch.set_num_threads(4)
+            debug=io.StringIO()
+            with contextlib.redirect_stdout(debug),contextlib.redirect_stderr(debug):aligner=stable_whisper.load_model('small',device='cpu',download_root='/tmp/scene-whisper-models')
+            for record in manifest['samples']:
+              turns=record['turns'];transcript='\n'.join(v['text'].replace('\n',' ') for v in turns)
+              with contextlib.redirect_stdout(debug),contextlib.redirect_stderr(debug):result=aligner.align(str(out/record['file']),transcript,language='th',original_split=True,regroup=False,word_dur_factor=None,max_word_dur=None,verbose=False)
+              segments=result.segments
+              if len(segments)!=len(turns):raise ValueError('Cue alignment count mismatch')
+              cue_times=[]
+              for turn,segment in zip(turns,segments):
+                if not 0<=segment.start<segment.end<=record['duration_seconds']+.15:raise ValueError('Invalid cue times')
+                cue_times.append({'cue_id':turn['cue_id'],'speaker':turn['speaker'],'voice':turn['voice'],'text':turn['text'],'start':segment.start,'end':segment.end})
+              record['cue_alignment']=cue_times;record['alignment_status']='complete';save()
+              print(record['id']+' aligned '+str(len(cue_times))+' cues',flush=True)
+            (out/'alignment_debug.log').write_text(debug.getvalue())
+            manifest['status']='complete';manifest['alignment_status']='complete';save()
           except Exception as e:
             failed=True;detail=e.read(20000).decode(errors='replace') if isinstance(e,HTTPError) else '';manifest.update(status='stopped_without_retry',error_type=type(e).__name__,http_status=getattr(e,'code',None),provider_error_body=detail);save()
             print('Stopped without retry: '+type(e).__name__,flush=True)
