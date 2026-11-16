@@ -111,7 +111,7 @@ jobs:
           except Exception as e:
            status={'status':'failed','error':str(e),'type':type(e).__name__};
            if (root/'deliverables/render_v05_ffmpeg.log').exists():(proof/'render_error_tail.txt').write_text((root/'deliverables/render_v05_ffmpeg.log').read_text()[-4000:])
-          print('Render stopped:',type(e).__name__,str(e)[:500],flush=True);raise
+           print('Render stopped:',type(e).__name__,str(e)[:500],flush=True);raise
           finally:(proof/'status.json').write_text(json.dumps(status,indent=2))
           PYWORK
       - uses: actions/upload-artifact@v4
