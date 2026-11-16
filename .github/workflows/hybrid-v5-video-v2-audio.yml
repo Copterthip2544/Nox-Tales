@@ -81,8 +81,16 @@ jobs:
            assert dest.stat().st_size==media['size'] and hashlib.sha256(dest.read_bytes()).hexdigest()==media['sha256']==plan['audio_provenance']['sha256']
            return media
           def pcm(path):return np.frombuffer(subprocess.check_output(['ffmpeg','-v','error','-i',str(path),'-map','0:a:0','-ar','24000','-ac','1','-f','f32le','pipe:1']),dtype='<f4')
+          def ahash(path):return subprocess.check_output(['ffmpeg','-v','error','-i',str(path),'-map','0:a:0','-c:a','copy','-f','hash','-hash','sha256','-']).decode().strip()
           try:
            video=R/'source_v5.mp4';audio=R/'original_v2_voices_only.flac';download_asset(plan['video_asset_id'],video,plan['video_sha256']);media=restore_original_speech(audio);print('Verified actual v5 video and isolated original v2 voice recordings; no background tracks',flush=True)
+           # Complete all audio validation before the expensive picture encode.
+           sms_start,sms_end=plan['speech_free_window'];assert 0<sms_start<sms_end<plan['duration_seconds']
+           encoded_audio=R/'original_v2_voices_only.m4a';subprocess.run(['ffmpeg','-v','error','-y','-i',str(audio),'-c:a','aac','-b:a','160k','-ar','48000','-ac','2',str(encoded_audio)],check=True)
+           original=pcm(audio);result=pcm(encoded_audio);n=min(len(original),len(result));original=original[:n];result=result[:n];signal=float(np.mean(original.astype(float)**2));error=float(np.mean((original.astype(float)-result.astype(float))**2));snr=10*math.log10(max(signal,1e-15)/max(error,1e-15));assert snr>20.,('Encoded voice differs from original source',snr)
+           quiet_peak=float(np.max(np.abs(result[round((sms_start+.5)*24000):round((sms_end-.5)*24000)])));assert quiet_peak<1e-4,('Unexpected audio in speech-free scene',quiet_peak)
+           voice_aac_hash=ahash(encoded_audio);(P/'Voice_Only_Preflight_QA.json').write_text(json.dumps({'status':'passed','snr_db':snr,'no_speech_scene_peak_dbfs':20*math.log10(max(quiet_peak,1e-15)),'aac_hash':voice_aac_hash,'new_voice_generated':False},indent=2));del original,result
+           print('Speech-only preflight passed: original performances retained and message-only scene is silent',flush=True)
            fps=plan['fps'];frames=round(plan['duration_seconds']*fps);times=np.arange(frames)/fps;anchors=plan['anchors'];src_t=np.interp(times,[a['output_v2'] for a in anchors],[a['source_v5'] for a in anchors]);indices=np.clip(np.rint(src_t*fps).astype(np.int32),0,round(plan['video_source_duration']*fps)-1)
            sh=plan['source_shots'];which=np.searchsorted([s['start'] for s in sh],indices/fps,side='right')-1;cuts=np.r_[0,np.flatnonzero(np.diff(which)!=0)+1,frames];short=[]
            # Do not flash pre-action poses for fractions of a second where v2 has no extra Nox bridge.
@@ -90,7 +98,7 @@ jobs:
             if hi-lo<12 and lo>0:short.append({'start':lo/fps,'end':hi/fps,'visual':sh[which[lo]]['visual']});indices[lo:hi]=indices[lo-1]
            assert np.all(np.diff(indices)>=0),'Picture mapping must remain monotonic'
            destination=R/'FRAME_TALES_The_Sealed_Case_Part1_v06_VideoV5_VoicesV2_ONLY.mp4';tmp=destination.with_name(destination.stem+'.rendering.mp4')
-           cmd=['ffmpeg','-hide_banner','-loglevel','warning','-y','-f','rawvideo','-pixel_format','yuv420p','-video_size','1920x1080','-framerate',str(fps),'-i','pipe:0','-i',str(audio),'-map','0:v:0','-map','1:a:0','-frames:v',str(frames),'-t',str(plan['duration_seconds']),'-c:v','libx264','-preset','fast','-crf','18','-threads','2','-c:a','aac','-b:a','160k','-ar','48000','-ac','2','-movflags','+faststart','-progress',str(R/'progress.txt'),str(tmp)]
+           cmd=['ffmpeg','-hide_banner','-loglevel','warning','-y','-f','rawvideo','-pixel_format','yuv420p','-video_size','1920x1080','-framerate',str(fps),'-i','pipe:0','-i',str(encoded_audio),'-map','0:v:0','-map','1:a:0','-frames:v',str(frames),'-t',str(plan['duration_seconds']),'-c:v','libx264','-preset','veryfast','-crf','18','-threads','2','-c:a','copy','-movflags','+faststart','-progress',str(R/'progress.txt'),str(tmp)]
            expected={round(float(t)*fps):None for t in plan['proof_times']};probe_sources={int(indices[i]) for i in expected};proof_indices={}
            with (R/'encode.log').open('w') as log:
             enc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log);container=av.open(str(video));vstream=container.streams.video[0];vstream.thread_type='AUTO';out=0
@@ -108,17 +116,15 @@ jobs:
              assert out==frames,(out,frames)
             finally:container.close();enc.stdin.close()
             assert enc.wait()==0,'Encoder failed'
-           os.replace(tmp,destination);print('Visual assembly complete; checking final audio against unmixed original voice track',flush=True)
-           original=pcm(audio);result=pcm(destination);n=min(len(original),len(result));original=original[:n];result=result[:n];signal=float(np.mean(original.astype(float)**2));error=float(np.mean((original.astype(float)-result.astype(float))**2));snr=10*math.log10(max(signal,1e-15)/max(error,1e-15));assert snr>20.,('Encoded voice differs from original source',snr)
-           # A whole no-dialogue scene contains no music, ambience, ringtones, typing or other effects.
-           sms_start=next(a['output_v2'] for a in anchors if a['reason']=='SC6_start');sms_end=next(a['output_v2'] for a in anchors if a['reason']=='SC6_end');quiet_peak=float(np.max(np.abs(result[round((sms_start+.5)*24000):round((sms_end-.5)*24000)])));assert quiet_peak<1e-4,('Unexpected audio in speech-free scene',quiet_peak)
+           os.replace(tmp,destination);print('Visual assembly complete; checking final speech packets against verified voice-only track',flush=True)
+           assert ahash(destination)==voice_aac_hash,'Final voice-only AAC packets must match preflight exactly'
            ff=json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-show_format','-of','json',str(destination)]));vs=next(x for x in ff['streams'] if x['codec_type']=='video');assert int(vs['nb_read_frames'])==frames and vs['width']==1920 and vs['height']==1080;assert abs(float(ff['format']['duration'])-plan['duration_seconds'])<.05
            subprocess.run(['ffmpeg','-v','error','-xerror','-i',str(destination),'-f','null','-'],check=True,stderr=subprocess.PIPE)
            # Compare encoded output images with the exact source v5 frames chosen by the map.
            from PIL import Image
            diffs=[]
            for frame_index,source_index in proof_indices.items():
-            path=P/f'output_{frame_index}.jpg';subprocess.run(['ffmpeg','-v','error','-ss',str(frame_index/fps),'-i',str(destination),'-frames:v','1','-vf','scale=960:540','-q:v','2',str(path)],check=True);aa=np.asarray(Image.open(P/f'source_{source_index}.jpg').convert('RGB'),dtype=float);bb=np.asarray(Image.open(path).convert('RGB'),dtype=float);diff=float(np.mean(np.abs(aa-bb)));assert diff<8.,(frame_index,diff);diffs.append({'output_frame':frame_index,'source_frame':source_index,'mean_abs_error':diff})
+            path=P/f'output_{frame_index}.jpg';subprocess.run(['ffmpeg','-v','error','-ss',str(max(0,(frame_index-.25)/fps)),'-i',str(destination),'-frames:v','1','-vf','scale=960:540','-q:v','2',str(path)],check=True);aa=np.asarray(Image.open(P/f'source_{source_index}.jpg').convert('RGB'),dtype=float);bb=np.asarray(Image.open(path).convert('RGB'),dtype=float);diff=float(np.mean(np.abs(aa-bb)));assert diff<8.,(frame_index,diff);diffs.append({'output_frame':frame_index,'source_frame':source_index,'mean_abs_error':diff})
            (P/'Timeline_Map_v06.json').write_text(json.dumps(plan,indent=2));(P/'Visual_Frame_Comparisons.json').write_text(json.dumps(diffs,indent=2));(P/'Short_Flash_Suppression.json').write_text(json.dumps(short,indent=2))
            release=api('repos/'+repo+'/releases/'+str(release_id));assert release['draft'];url=release['upload_url'].split('{')[0]+'?name='+destination.name;q=urllib.request.Request(url,data=destination.read_bytes(),method='POST',headers={'Authorization':'Bearer '+token,'Content-Type':'video/mp4'})
            with urllib.request.urlopen(q,timeout=900) as f:asset=json.load(f)
@@ -136,3 +142,9 @@ jobs:
           name: hybrid-v06-proof-and-receipt
           path: /tmp/hybrid-v06/proof
           retention-days: 7
+      - uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: hybrid-v06-completed-video-recovery
+          path: /tmp/hybrid-v06/*VoicesV2_ONLY.mp4
+          retention-days: 2
