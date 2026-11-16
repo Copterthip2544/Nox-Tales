@@ -47,7 +47,7 @@ jobs:
           from cryptography.hazmat.primitives.asymmetric import padding
           from cryptography.hazmat.primitives.ciphers.aead import AESGCM
           rid=os.environ['REQUEST_ID'];repo=os.environ['GITHUB_REPOSITORY'];token=os.environ['GH_TOKEN'];oaep=padding.OAEP(mgf=padding.MGF1(hashes.SHA256()),algorithm=hashes.SHA256(),label=None)
-          private=serialization.load_pem_private_key(Path('/tmp/audio-qc-private.pem').read_bytes(),password=None);delivery=serialization.load_pem_public_key(base64.b64decode(os.environ['DELIVERY_PUBLIC_KEY']));out=Path('/tmp/audio-qc-result');out.mkdir(exist_ok=True);status={'status':'started','request_id':rid,'jobs':[]}
+          private=serialization.load_pem_private_key(Path('/tmp/audio-qc-private.pem').read_bytes(),password=None);delivery=serialization.load_pem_public_key(base64.b64decode(os.environ['DELIVERY_PUBLIC_KEY']));out=Path('/tmp/audio-qc-result');out.mkdir(exist_ok=True);status={'status':'started','stage':'read_request','request_id':rid,'jobs':[]}
           failed=False
           try:
            meta=None
@@ -60,17 +60,19 @@ jobs:
              if e.code!=404:raise
             time.sleep(4)
            if meta is None:raise TimeoutError('Audio audit request missing')
-           if meta.get('encoding')=='base64':env=json.loads(base64.b64decode(meta['content']))
+           if meta.get('encoding')=='base64' and meta.get('content'):env=json.loads(base64.b64decode(meta['content']))
            else:
             with urlopen(meta['download_url'],timeout=90) as r:env=json.load(r)
-           k=private.decrypt(base64.b64decode(env['wrapped_key']),oaep);plan=json.loads(AESGCM(k).decrypt(base64.b64decode(env['nonce']),base64.b64decode(env['ciphertext']),rid.encode()));assert 1<=len(plan['jobs'])<=16
+           status['stage']='decrypt_request';k=private.decrypt(base64.b64decode(env['wrapped_key']),oaep);plan=json.loads(AESGCM(k).decrypt(base64.b64decode(env['nonce']),base64.b64decode(env['ciphertext']),rid.encode()));assert 1<=len(plan['jobs'])<=16
            for job in plan['jobs']:
+            status['stage']='analyze_'+job['id']
             assert re.fullmatch('[A-Z_0-9]{1,20}',job['id'])
             prompt='Analyze actual Thai audio without assuming the intended text. Reference A is the USER APPROVED speaking pace and loudness benchmark. Production is an excerpt to compare (may be identical to reference for transcription). Return JSON with keys transcript, utterances:[{text,start,end}], active_speech_seconds, speaking_style, production_vs_reference_pace, recommended_production_atempo, pause_notes, harshness_notes, comparison_confidence. Only suggest a numerical atempo if acoustically justified; do not compare different text by raw total duration. Transcribe complete words. Identify reference sentence pauses and syllabic articulation rate approximately, flag uncertainty. This concerns fictional voices and prosody, not identity. Do not change speaker casting. Additional job context: '+job.get('context','')
             parts=[{'text':prompt},{'text':'REFERENCE A — approved target voice'},{'inlineData':{'mimeType':'audio/mpeg','data':job['target_reference_b64']}},{'text':'REFERENCE B — comparison cast voice'},{'inlineData':{'mimeType':'audio/mpeg','data':job['comparison_reference_b64']}},{'text':'PRODUCTION PACK — inspect each mapped utterance'},{'inlineData':{'mimeType':'audio/mpeg','data':job['production_audio_b64']}}]
-            payload={'contents':[{'role':'user','parts':parts}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':20000}}
+            payload={'contents':[{'role':'user','parts':parts}],'generationConfig':{'responseMimeType':'application/json','temperature':0,'maxOutputTokens':10000,'thinkingConfig':{'thinkingBudget':1024}}}
             req=Request('https://generativelanguage.googleapis.com/v1beta/models/gemini-3.8-flash:generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
             with urlopen(req,timeout=240) as r:response=json.load(r)
+            (out/(job['id']+'_raw_response.json')).write_text(json.dumps(response,ensure_ascii=False))
             txt=''.join(x.get('text','') for x in response['candidates'][0]['content']['parts'] if not x.get('thought')).strip()
             if txt.startswith('```'):txt=txt.split('\n',1)[1].rsplit('```',1)[0]
             result=json.loads(txt)
