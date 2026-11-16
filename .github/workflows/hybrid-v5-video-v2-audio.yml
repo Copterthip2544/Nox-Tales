@@ -1,0 +1,99 @@
+name: Hybrid v5 picture with unchanged v2 audio
+on:
+  workflow_dispatch:
+    inputs:
+      timeline_b64:
+        type: string
+        required: true
+      release_id:
+        type: string
+        required: true
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Install video tools
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python3 -m pip -q install av numpy Pillow
+      - name: Assemble existing video and copy existing audio
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TIMELINE_B64: ${{ inputs.timeline_b64 }}
+          RELEASE_ID: ${{ inputs.release_id }}
+        run: |
+          python3 - <<'PYWORK'
+          from pathlib import Path
+          import os,json,zlib,base64,hashlib,subprocess,urllib.request,math
+          import numpy as np
+          import av
+          R=Path('/tmp/hybrid-v06');R.mkdir(exist_ok=True);P=R/'proof';P.mkdir(exist_ok=True);repo=os.environ['GITHUB_REPOSITORY'];token=os.environ['GH_TOKEN'];plan=json.loads(zlib.decompress(base64.b64decode(os.environ['TIMELINE_B64'])));release_id=int(os.environ['RELEASE_ID']);status={'status':'starting'}
+          def api(path):
+           q=urllib.request.Request('https://api.github.com/'+path,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json'})
+           with urllib.request.urlopen(q,timeout=120) as f:return json.load(f)
+          def download_asset(id,dest,sha):
+           q=urllib.request.Request('https://api.github.com/repos/'+repo+'/releases/assets/'+str(id),headers={'Authorization':'Bearer '+token,'Accept':'application/octet-stream','Cache-Control':'no-cache'})
+           with urllib.request.urlopen(q,timeout=300) as response,dest.open('wb') as f:
+            while True:
+             b=response.read(4*1024*1024)
+             if not b:break
+             f.write(b)
+           assert hashlib.sha256(dest.read_bytes()).hexdigest()==sha,'Source asset SHA mismatch'
+          def ahash(path):return subprocess.check_output(['ffmpeg','-v','error','-i',str(path),'-map','0:a:0','-c:a','copy','-f','hash','-hash','sha256','-']).decode().strip()
+          try:
+           video=R/'source_v5.mp4';audio=R/'source_v2.mp4';download_asset(plan['video_asset_id'],video,plan['video_sha256']);download_asset(plan['audio_asset_id'],audio,plan['audio_sha256']);print('Verified original v5 video and v2 audio sources',flush=True)
+           fps=plan['fps'];frames=round(plan['duration_seconds']*fps);times=np.arange(frames)/fps;anchors=plan['anchors'];src_t=np.interp(times,[a['output_v2'] for a in anchors],[a['source_v5'] for a in anchors]);indices=np.clip(np.rint(src_t*fps).astype(np.int32),0,round(plan['video_source_duration']*fps)-1)
+           sh=plan['source_shots'];which=np.searchsorted([s['start'] for s in sh],indices/fps,side='right')-1;cuts=np.r_[0,np.flatnonzero(np.diff(which)!=0)+1,frames];short=[]
+           # Do not flash pre-action poses for fractions of a second where v2 has no extra Nox bridge.
+           for lo,hi in zip(cuts,cuts[1:]):
+            if hi-lo<12 and lo>0:short.append({'start':lo/fps,'end':hi/fps,'visual':sh[which[lo]]['visual']});indices[lo:hi]=indices[lo-1]
+           assert np.all(np.diff(indices)>=0),'Picture mapping must remain monotonic'
+           destination=R/'FRAME_TALES_The_Sealed_Case_Part1_v06_VideoV5_AudioV2.mp4';tmp=destination.with_name(destination.stem+'.rendering.mp4')
+           cmd=['ffmpeg','-hide_banner','-loglevel','warning','-y','-f','rawvideo','-pixel_format','yuv420p','-video_size','1920x1080','-framerate',str(fps),'-i','pipe:0','-i',str(audio),'-map','0:v:0','-map','1:a:0','-frames:v',str(frames),'-t',str(plan['duration_seconds']),'-c:v','libx264','-preset','fast','-crf','18','-threads','2','-c:a','copy','-movflags','+faststart','-progress',str(R/'progress.txt'),str(tmp)]
+           expected={round(float(t)*fps):None for t in plan['proof_times']};probe_sources={int(indices[i]) for i in expected};proof_indices={}
+           with (R/'encode.log').open('w') as log:
+            enc=subprocess.Popen(cmd,stdin=subprocess.PIPE,stderr=log);container=av.open(str(video));vstream=container.streams.video[0];vstream.thread_type='AUTO';out=0
+            try:
+             for source_index,frame in enumerate(container.decode(vstream)):
+              if source_index in probe_sources:frame.to_image().resize((960,540)).save(P/f'source_{source_index}.jpg',quality=93)
+              if out>=frames:break
+              if indices[out]>source_index:continue
+              raw=frame.to_ndarray(format='yuv420p').tobytes()
+              while out<frames and indices[out]<=source_index:
+               enc.stdin.write(raw)
+               if out in expected:proof_indices[out]=source_index
+               out+=1
+              if source_index%(fps*120)==0:print('Picture source seconds',round(source_index/fps),'output frames',out,flush=True)
+             assert out==frames,(out,frames)
+            finally:container.close();enc.stdin.close()
+            assert enc.wait()==0,'Encoder failed'
+           os.replace(tmp,destination);print('Visual assembly complete; checking copied original audio packets',flush=True)
+           original_hash=ahash(audio);result_hash=ahash(destination);assert original_hash==result_hash,'Original v2 AAC audio must be byte-identical'
+           ff=json.loads(subprocess.check_output(['ffprobe','-v','error','-count_frames','-show_streams','-show_format','-of','json',str(destination)]));vs=next(x for x in ff['streams'] if x['codec_type']=='video');assert int(vs['nb_read_frames'])==frames and vs['width']==1920 and vs['height']==1080;assert abs(float(ff['format']['duration'])-plan['duration_seconds'])<.05
+           subprocess.run(['ffmpeg','-v','error','-xerror','-i',str(destination),'-f','null','-'],check=True,stderr=subprocess.PIPE)
+           # Compare encoded output images with the exact source v5 frames chosen by the map.
+           from PIL import Image
+           diffs=[]
+           for frame_index,source_index in proof_indices.items():
+            path=P/f'output_{frame_index}.jpg';subprocess.run(['ffmpeg','-v','error','-ss',str(frame_index/fps),'-i',str(destination),'-frames:v','1','-vf','scale=960:540','-q:v','2',str(path)],check=True);aa=np.asarray(Image.open(P/f'source_{source_index}.jpg').convert('RGB'),dtype=float);bb=np.asarray(Image.open(path).convert('RGB'),dtype=float);diff=float(np.mean(np.abs(aa-bb)));assert diff<8.,(frame_index,diff);diffs.append({'output_frame':frame_index,'source_frame':source_index,'mean_abs_error':diff})
+           (P/'Timeline_Map_v06.json').write_text(json.dumps(plan,indent=2));(P/'Visual_Frame_Comparisons.json').write_text(json.dumps(diffs,indent=2));(P/'Short_Flash_Suppression.json').write_text(json.dumps(short,indent=2))
+           release=api('repos/'+repo+'/releases/'+str(release_id));assert release['draft'];url=release['upload_url'].split('{')[0]+'?name='+destination.name;q=urllib.request.Request(url,data=destination.read_bytes(),method='POST',headers={'Authorization':'Bearer '+token,'Content-Type':'video/mp4'})
+           with urllib.request.urlopen(q,timeout=900) as f:asset=json.load(f)
+           sha=hashlib.sha256(destination.read_bytes()).hexdigest();assert asset['state']=='uploaded' and asset['size']==destination.stat().st_size;assert asset.get('digest') in [None,'sha256:'+sha]
+           receipt={'status':'complete_verified','video_source':'v05 actual encoded frames','audio_source':'v02 original AAC packets, unchanged','audio_packet_hash_original':original_hash,'audio_packet_hash_output':result_hash,'new_audio_generated':False,'tts_api_calls':0,'duration_seconds':plan['duration_seconds'],'frames':frames,'anchors':len(anchors),'source_v5_sha256':plan['video_sha256'],'source_v2_sha256':plan['audio_sha256'],'sha256':sha,'bytes':destination.stat().st_size,'full_decode':True,'visual_proof_count':len(diffs),'release_url':release['html_url'],'asset':asset};(P/'Hybrid_Delivery_Receipt_v06.json').write_text(json.dumps(receipt,indent=2));status={'status':'complete_verified'};print('Verified hybrid uploaded',sha,flush=True)
+          except Exception as e:
+           status={'status':'failed','type':type(e).__name__,'error':str(e)}
+           if (R/'encode.log').exists():(P/'encode_error_tail.txt').write_text((R/'encode.log').read_text()[-3000:])
+           raise
+          finally:(P/'status.json').write_text(json.dumps(status,indent=2))
+          PYWORK
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: hybrid-v06-proof-and-receipt
+          path: /tmp/hybrid-v06/proof
+          retention-days: 7
