@@ -66,6 +66,10 @@ jobs:
            for n in z.namelist():
             target=root/n;assert target.resolve().is_relative_to(root);target.parent.mkdir(exist_ok=True,parents=True);target.write_bytes(z.read(n))
           del bundle
+          # Complete Thai/Latin font includes numerals and punctuation used by location/time captions.
+          with urlopen('https://raw.githubusercontent.com/google/fonts/main/ofl/notosansthai/NotoSansThai%5Bwdth,wght%5D.ttf',timeout=60) as f:font_bytes=f.read()
+          assert hashlib.sha256(font_bytes).hexdigest()=='5a1c559bb539583c8a1fd99d1c5b9491e5e14478c9cd2bd0970d5c3096cc9ef8'
+          (root/'font.ttf').write_bytes(font_bytes)
           print('Encrypted source package verified and restored',flush=True)
           subprocess.run(['python3',str(root/'render_part2.py')],check=True)
           proof=root/'proof';qa=json.loads((proof/'Render_QA.json').read_text());video=root/'output'/qa['filename'];release=api('repos/'+repo+'/releases/'+str(plan['release_id']));assert release['draft']
