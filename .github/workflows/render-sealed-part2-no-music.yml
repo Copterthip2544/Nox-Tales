@@ -1,0 +1,84 @@
+name: Render Sealed Case Part2 without music
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+permissions:
+  contents: write
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - name: Prepare renderer and ephemeral encryption key
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq ffmpeg
+          python3 -m pip -q install cryptography
+          python3 - <<'PYKEY'
+          from pathlib import Path
+          from cryptography.hazmat.primitives.asymmetric import rsa
+          from cryptography.hazmat.primitives import serialization
+          k=rsa.generate_private_key(public_exponent=65537,key_size=2048)
+          Path('/tmp/part2-private.pem').write_bytes(k.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.PKCS8,serialization.NoEncryption()))
+          Path('part2-render-public.pem').write_bytes(k.public_key().public_bytes(serialization.Encoding.PEM,serialization.PublicFormat.SubjectPublicKeyInfo))
+          PYKEY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: part2-render-public-key
+          path: part2-render-public.pem
+          retention-days: 1
+      - name: Restore encrypted media, render, verify and upload draft video
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REQUEST_ID: ${{ inputs.request_id }}
+        run: |
+          python3 - <<'PYWORK'
+          from pathlib import Path
+          import os,json,base64,time,hashlib,zipfile,io,subprocess,concurrent.futures
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          from cryptography.hazmat.primitives import serialization,hashes
+          from cryptography.hazmat.primitives.asymmetric import padding
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+          repo=os.environ['GITHUB_REPOSITORY'];token=os.environ['GH_TOKEN'];rid=os.environ['REQUEST_ID'];root=Path('/tmp/sealed-part2');root.mkdir(exist_ok=True)
+          def api(path,data=None,method=None):
+           req=Request('https://api.github.com/'+path,data=None if data is None else json.dumps(data).encode(),method=method,headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+           with urlopen(req,timeout=180) as r:return json.load(r)
+          meta=None
+          for i in range(180):
+           try:meta=api('repos/'+repo+'/contents/.part2_render_requests/'+rid+'.json');break
+           except HTTPError as e:
+            if e.code!=404:raise
+           time.sleep(4)
+          assert meta,'Encrypted request missing'
+          env=json.loads(base64.b64decode(meta['content']))
+          key=serialization.load_pem_private_key(Path('/tmp/part2-private.pem').read_bytes(),password=None).decrypt(base64.b64decode(env['wrapped_key']),padding.OAEP(mgf=padding.MGF1(hashes.SHA256()),algorithm=hashes.SHA256(),label=None))
+          plan=json.loads(AESGCM(key).decrypt(base64.b64decode(env['nonce']),base64.b64decode(env['ciphertext']),rid.encode()));aes=AESGCM(base64.b64decode(plan['media_key']))
+          def fetch(c):
+           b=api('repos/'+repo+'/git/blobs/'+c['sha']);raw=aes.decrypt(base64.b64decode(c['nonce']),base64.b64decode(b['content']),c['aad'].encode());assert hashlib.sha256(raw).hexdigest()==c['plain_sha256'];return c['index'],raw
+          with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:pieces=dict(pool.map(fetch,plan['chunks']))
+          bundle=b''.join(pieces[i] for i in range(len(pieces)));assert hashlib.sha256(bundle).hexdigest()==plan['bundle_sha256'];del pieces
+          with zipfile.ZipFile(io.BytesIO(bundle)) as z:
+           assert z.testzip() is None
+           for n in z.namelist():
+            target=root/n;assert target.resolve().is_relative_to(root);target.parent.mkdir(exist_ok=True,parents=True);target.write_bytes(z.read(n))
+          del bundle
+          print('Encrypted source package verified and restored',flush=True)
+          subprocess.run(['python3',str(root/'render_part2.py')],check=True)
+          proof=root/'proof';qa=json.loads((proof/'Render_QA.json').read_text());video=root/'output'/qa['filename'];release=api('repos/'+repo+'/releases/'+str(plan['release_id']));assert release['draft']
+          upload=release['upload_url'].split('{')[0]+'?name='+video.name
+          req=Request(upload,data=video.read_bytes(),method='POST',headers={'Authorization':'Bearer '+token,'Content-Type':'video/mp4'})
+          with urlopen(req,timeout=900) as r:asset=json.load(r)
+          assert asset['state']=='uploaded' and asset['size']==qa['size'];assert not asset.get('digest') or asset['digest']=='sha256:'+qa['sha256']
+          receipt={**qa,'status':'delivered_verified','asset':asset,'release_url':release['html_url'],'draft':True,'request_id':rid}
+          (proof/'Delivery_Receipt.json').write_text(json.dumps(receipt,indent=2));print('Verified draft video delivered',asset['id'],flush=True)
+          PYWORK
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: sealed-part2-proof
+          path: /tmp/sealed-part2/proof
+          retention-days: 7
