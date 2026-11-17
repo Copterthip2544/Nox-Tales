@@ -65,7 +65,7 @@ jobs:
           k=private.decrypt(base64.b64decode(env['wrapped_key']),oaep)
           plan=json.loads(AESGCM(k).decrypt(base64.b64decode(env['nonce']),base64.b64decode(env['ciphertext']),rid.encode()))
           assert re.fullmatch('[A-Za-z0-9_.-]+\.mp4',plan['filename']) and 1<=plan['size']<=1024**3
-          assert len(plan['chunks'])<=150
+          assert len(plan['chunks'])<=1200
           release=get('repos/'+repo+'/releases/'+str(plan['release_id']))
           assert release['draft'] is True,'Delivery must remain a private draft'
           if plan.get('release_metadata'):
@@ -99,3 +99,4 @@ jobs:
           name: video-delivery-receipt
           path: video_delivery_receipt.json
           retention-days: 7
+
