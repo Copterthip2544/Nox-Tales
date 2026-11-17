@@ -1,5 +1,8 @@
 name: Private one actor production blocks
 on:
+  push:
+    paths:
+      - ".part2_voice_triggers/**"
   workflow_dispatch:
     inputs:
       request_id:
@@ -59,7 +62,14 @@ jobs:
           from cryptography.hazmat.primitives import serialization,hashes
           from cryptography.hazmat.primitives.asymmetric import padding
           from cryptography.hazmat.primitives.ciphers.aead import AESGCM
-          event=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text());args=event['inputs']
+          event=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text());args=event.get('inputs')
+          if not args:
+            ids=re.findall(r'\b[a-f0-9]{24}\b',event.get('head_commit',{}).get('message',''))
+            if len(ids)!=1:raise SystemExit('Missing unique trigger id')
+            trigger_url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/contents/.part2_voice_triggers/'+ids[0]+'.json?ref=main'
+            trigger_req=Request(trigger_url,headers={'Authorization':'Bearer '+os.environ['REPO_READ_TOKEN'],'Accept':'application/vnd.github+json'})
+            with urlopen(trigger_req,timeout=30) as resp:trigger_meta=json.load(resp)
+            args=json.loads(base64.b64decode(trigger_meta['content']))
           rid=args['request_id']
           if not re.fullmatch('[a-f0-9]{24}',rid):raise SystemExit('Invalid request id')
           public=serialization.load_pem_public_key(base64.b64decode(args['delivery_public_key'],validate=True))
@@ -87,7 +97,14 @@ jobs:
             if plan['model']!='gemini-3.8-flash-tts' or not 1<=len(plan['samples'])<=30:raise ValueError('Invalid bounded plan')
             for t in plan['samples']:
               if t['voice'] not in {'Charon','Orus','Callirrhoe','Schedar','Erinome','Vindemiatrix','Rasalgethi','Iapetus','Gacrux','Algieba','Kore','Alnilam','Achird'} or not re.fullmatch('[A-Z0-9_]{1,40}',t['id']) or not 1<=len(t['text'])<=5000:raise ValueError('Invalid cue')
-            manifest.update(status='generating',model=plan['model'],request_id=rid);save()
+            actor_sequence=[t['turns'][0]['speaker'] for t in plan['samples']]
+            closed=set();previous=None
+            for who in actor_sequence:
+              if who!=previous:
+                if who in closed:raise ValueError('Actor requests must be contiguous')
+                if previous is not None:closed.add(previous)
+                previous=who
+            manifest.update(status='generating',model=plan['model'],request_id=rid,actor_order=plan.get('actor_order',[]));save()
             for t in plan['samples']:
               start=time.monotonic();record={**t,'status':'request_started'};manifest['samples'].append(record);save()
               if t.get('existing_flac'):
@@ -98,7 +115,7 @@ jobs:
                 print(t['id']+' recovered without API call',flush=True);continue
               turns=t.get('turns') or [{'text':t['text'],'style':t['style'],'speaker':'Voice','voice':t['voice']}]
               voices={v['speaker']:v['voice'] for v in turns}
-              if not 1<=len(turns)<=3 or len(voices)!=1:raise ValueError('Exactly one actor, at most three utterances per request')
+              if not 1<=len(turns)<=16 or len(voices)!=1 or any(v['voice']!=t['voice'] for v in turns):raise ValueError('Exactly one actor and one approved voice per request, maximum 16 utterances')
               multi=len(set(voices.values()))>1
               parts=[{'text':v['text'],'speech_metadata':dict(style=v['style'],**({'speaker':v['speaker']} if multi else {}))} for v in turns]
               speech={'multiSpeakerVoiceConfig':{'speakerVoiceConfigs':[{'speaker':who,'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':voice}}} for who,voice in voices.items()]}} if multi else {'voiceConfig':{'voice':t['voice']}}
