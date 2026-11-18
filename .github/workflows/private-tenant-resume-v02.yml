@@ -1,0 +1,234 @@
+{
+  "name": "Tenant voices resume after corrected Nox v02",
+  "on": {
+    "workflow_dispatch": {
+      "inputs": {
+        "request_id": {
+          "required": true,
+          "type": "string"
+        },
+        "delivery_public_key": {
+          "required": true,
+          "type": "string"
+        }
+      }
+    }
+  },
+  "permissions": {
+    "contents": "read"
+  },
+  "concurrency": {
+    "group": "tenant-voice-production-sequential",
+    "cancel-in-progress": false
+  },
+  "jobs": {
+    "voice": {
+      "runs-on": "ubuntu-latest",
+      "timeout-minutes": 150,
+      "steps": [
+        {
+          "name": "Use Python312",
+          "uses": "actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1",
+          "with": {
+            "python-version": "3.12"
+          }
+        },
+        {
+          "name": "Prepare bounded voice worker and recognition tools",
+          "shell": "bash",
+          "run": "command -v ffmpeg >/dev/null || { sudo apt-get update -qq; sudo apt-get install -y -qq ffmpeg; }\npython3 -m pip -q install cryptography==46.0.3 faster-whisper==1.2.1\ncat > worker.py <<'WORKER_PY'\n\"\"\"Bounded, sequential one-actor Gemini production. No credentials in reports.\"\"\"\nimport os, sys, json, re, time, io, wave, base64, hashlib, secrets, zipfile\nimport subprocess, difflib, contextlib, unicodedata\nfrom pathlib import Path\nfrom urllib.request import Request, urlopen\nfrom urllib.error import HTTPError\nfrom cryptography.hazmat.primitives import serialization, hashes\nfrom cryptography.hazmat.primitives.asymmetric import rsa, padding\nfrom cryptography.hazmat.primitives.ciphers.aead import AESGCM\n\nROOT=Path('private-work')\nOAEP=padding.OAEP(mgf=padding.MGF1(hashes.SHA256()),algorithm=hashes.SHA256(),label=None)\nCAST={'NOX':'Charon','เมษา':'Callirrhoe','ประสงค์':'Algieba','สุดา':'Gacrux','ฝน':'Erinome','มาลี':'Achernar','สุดาเด็ก':'Leda'}\n\ndef write(path,obj):\n    path.parent.mkdir(parents=True,exist_ok=True)\n    tmp=path.with_suffix(path.suffix+'.tmp')\n    tmp.write_text(json.dumps(obj,ensure_ascii=False,indent=2));tmp.replace(path)\n\ndef setup():\n    ROOT.mkdir(mode=0o700,exist_ok=True)\n    key=rsa.generate_private_key(public_exponent=65537,key_size=2048)\n    p=ROOT/'request_private.pem'\n    p.write_bytes(key.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.PKCS8,serialization.NoEncryption()));p.chmod(0o600)\n    Path('request_public.pem').write_bytes(key.public_key().public_bytes(serialization.Encoding.PEM,serialization.PublicFormat.SubjectPublicKeyInfo))\n\ndef event():\n    args=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text())['inputs']\n    assert re.fullmatch('[a-f0-9]{24}',args['request_id'])\n    return args\n\ndef receive():\n    args=event();rid=args['request_id']\n    url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/contents/.voice_requests/'+rid+'.json?ref=main'\n    incoming=None\n    for _ in range(150):\n        req=Request(url,headers={'Authorization':'Bearer '+os.environ['REPO_READ_TOKEN'],'Accept':'application/vnd.github+json','Cache-Control':'no-cache'})\n        try:\n            with urlopen(req,timeout=30) as response:meta=json.load(response)\n            incoming=json.loads(base64.b64decode(meta['content']));break\n        except HTTPError as exc:\n            if exc.code!=404:raise RuntimeError('Request retrieval HTTP '+str(exc.code)) from None\n        time.sleep(4)\n    if incoming is None:raise TimeoutError('Encrypted request did not arrive')\n    private=serialization.load_pem_private_key((ROOT/'request_private.pem').read_bytes(),password=None)\n    aes=private.decrypt(base64.b64decode(incoming['wrapped_key']),OAEP)\n    plan=json.loads(AESGCM(aes).decrypt(base64.b64decode(incoming['nonce']),base64.b64decode(incoming['ciphertext']),rid.encode()))\n    assert plan['model']=='gemini-3.8-flash-tts' and plan['approved_cast']==CAST\n    assert plan['actor_order']==list(CAST) and len(plan['actors'])==7\n    for actor in plan['actors']:\n        assert actor['voice']==CAST[actor['actor']]\n        assert 1<=len(actor['samples'])<=40\n        for sample in actor['samples']:\n            assert 1<=len(sample['turns'])<=6 and len(sample['text'])<=610\n            assert sample['voice']==actor['voice']\n            assert all(t['voice']==actor['voice'] and t['speaker']==actor['actor'] for t in sample['turns'])\n    write(ROOT/'plan.json',plan)\n    prior=plan['verified_previous_actor']\n    assert plan['resume_after_actor']=='NOX' and prior['status']=='passed' and prior['source_sha256']==plan['source_sha256'] and prior['cues']==35\n    write(ROOT/'NOX'/'Quality_Report.json',prior)\n    print('Validated seven approved actors, contiguous sequential processing only.',flush=True)\n\ndef actor_data(index):\n    plan=json.loads((ROOT/'plan.json').read_text());actor=plan['actors'][index]\n    out=ROOT/actor['code'];out.mkdir(exist_ok=True)\n    return plan,actor,out\n\ndef synthesize(index):\n    plan,actor,out=actor_data(index)\n    if index:\n        previous=plan['actors'][index-1]['code']\n        prior=json.loads((ROOT/previous/'Quality_Report.json').read_text())\n        assert prior['status']=='passed', 'Previous actor has not passed checks'\n    mf=out/'manifest.json'\n    manifest=json.loads(mf.read_text()) if mf.exists() else {'actor':actor['actor'],'code':actor['code'],'voice':actor['voice'],'model':plan['model'],'source_version':plan['source_version'],'source_sha256':plan['source_sha256'],'samples':[]}\n    manifest['status']='generating';write(mf,manifest)\n    try:\n        for sample in actor['samples']:\n            previous=next((x for x in manifest['samples'] if x['id']==sample['id']),None)\n            if previous:\n                if previous['status']=='complete' and hashlib.sha256((out/previous['file']).read_bytes()).hexdigest()==previous['sha256']:continue\n                raise RuntimeError('Uncertain previous API request; refusing automatic duplicate')\n            record={**sample,'status':'request_started'};manifest['samples'].append(record);write(mf,manifest)\n            started=time.monotonic()\n            parts=[{'text':turn['text'],'speech_metadata':{'style':turn['style']}} for turn in sample['turns']]\n            payload={'contents':[{'role':'user','parts':parts}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'voiceConfig':{'voice':actor['voice']}}}}\n            request=Request('https://generativelanguage.googleapis.com/v1beta/models/'+plan['model']+':generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')\n            with urlopen(request,timeout=240) as response:response_data=json.load(response)\n            candidates=response_data.get('candidates',[])\n            if len(candidates)!=1 or candidates[0].get('finishReason')!='STOP':raise ValueError('Incomplete generation')\n            audio=[x['inlineData'] for x in candidates[0].get('content',{}).get('parts',[]) if 'inlineData' in x]\n            if len(audio)!=1:raise ValueError('Expected one audio payload')\n            raw=base64.b64decode(audio[0]['data'],validate=True)\n            if raw[:4]!=b'RIFF' or raw[8:12]!=b'WAVE':raise ValueError('Unexpected audio format')\n            with wave.open(io.BytesIO(raw)) as w:\n                seconds=w.getnframes()/w.getframerate();rate=w.getframerate();channels=w.getnchannels()\n                if not 0<seconds<600:raise ValueError('Invalid duration')\n            wav=out/(sample['id']+'.wav');flac=out/(sample['id']+'.flac');wav.write_bytes(raw)\n            subprocess.run(['ffmpeg','-v','error','-y','-i',str(wav),'-c:a','flac',str(flac)],check=True)\n            wav.unlink()\n            subprocess.run(['ffmpeg','-v','error','-i',str(flac),'-f','null','-'],check=True)\n            record.update(status='complete',file=flac.name,duration_seconds=seconds,sample_rate=rate,channels=channels,sha256=hashlib.sha256(flac.read_bytes()).hexdigest())\n            write(mf,manifest)\n            print(actor['code']+' '+sample['id']+' complete '+str(round(seconds,2))+'s',flush=True)\n            if sample!=actor['samples'][-1]:time.sleep(max(0,15-(time.monotonic()-started)))\n        manifest['status']='generated_waiting_quality_check';write(mf,manifest)\n    except Exception as exc:\n        # Never expose request headers, API keys or remote signed URLs.\n        detail=exc.read(12000).decode(errors='replace') if isinstance(exc,HTTPError) else ''\n        manifest.update(status='stopped_without_retry',error_type=type(exc).__name__,http_status=getattr(exc,'code',None),provider_error_body=detail)\n        write(mf,manifest)\n        print(actor['code']+' stopped without retry: '+type(exc).__name__+' '+str(getattr(exc,'code','')),flush=True)\n        raise RuntimeError('Actor synthesis stopped; completed files preserved') from None\n\ndef norm(text):\n    return ''.join(c for c in unicodedata.normalize('NFC',text) if c.isalnum() or '\\u0e00'<=c<='\\u0e7f')\n\ndef check(index):\n    import numpy as np\n    from faster_whisper import WhisperModel\n    from recognition_boundaries import recover\n    plan,actor,out=actor_data(index)\n    manifest=json.loads((out/'manifest.json').read_text())\n    assert len(manifest['samples'])==len(actor['samples']) and all(x['status']=='complete' for x in manifest['samples'])\n    model=WhisperModel('small',device='cpu',compute_type='int8',cpu_threads=4,download_root='/tmp/tenant-recognition-models')\n    cues=[];reports=[];critical=[];warnings=[]\n    for record,sample in zip(manifest['samples'],actor['samples']):\n        assert record['id']==sample['id']\n        flac=out/record['file']\n        assert hashlib.sha256(flac.read_bytes()).hexdigest()==record['sha256']\n        pcm=subprocess.check_output(['ffmpeg','-v','error','-i',str(flac),'-f','f32le','-acodec','pcm_f32le','-ar','16000','-ac','1','-'])\n        segments,_=model.transcribe(np.frombuffer(pcm,dtype=np.float32),language='th',word_timestamps=True,beam_size=5,condition_on_previous_text=False)\n        recognized=[]\n        for seg in segments:\n            recognized.append({'text':seg.text,'start':seg.start,'end':seg.end,'words':[{'word':w.word,'start':w.start,'end':w.end} for w in (seg.words or [])]})\n        recovered,part_qa=recover(sample['turns'],recognized,record['duration_seconds'])\n        if part_qa['similarity']<.60:critical.append(record['id']+': low independent transcript similarity')\n        critical.extend(part_qa['critical']);warnings.extend(part_qa['listening_flags'])\n        for c in recovered:c['block_file']=record['file']\n        cues.extend(recovered)\n        reports.append({'block':record['id'],'expected_text':sample['text'],'heard_text':' '.join(x['text'] for x in recognized),'recognized':{'segments':recognized},**part_qa})\n        write(out/'Recognition_Report.json',reports);write(out/'Cue_Index.json',cues)\n        print(actor['code']+' '+record['id']+' checked '+str(len(recovered))+' cues; transcript similarity '+str(round(part_qa['similarity'],3)),flush=True)\n    if len(cues)!=actor['generation_cues']:critical.append('Missing cue intervals')\n    report={'actor':actor['actor'],'voice':actor['voice'],'status':'passed' if not critical else 'needs_correction','source_sha256':plan['source_sha256'],'generated_cues':len(cues),'blocks':len(reports),'critical':critical,'listening_flags':warnings,'checks':{'single_approved_actor_per_request':True,'exact_source_text_sent':True,'original_audio_hashes_checked':True,'independent_recognition_per_block':True,'cue_timing_recovered_from_recognized_words':True},'note':'Automatic text/timing checks; emotional naturalness remains available for listening review.'}\n    write(out/'Quality_Report.json',report)\n    (out/'Comparison_Script_TH.txt').write_text('\\n\\n'.join(c['cue_id']+' | '+c['speaker']+' | '+c['voice']+'\\n'+c['text'] for c in cues))\n    if critical:\n        print(actor['code']+' needs correction; next actor blocked.',flush=True)\n        raise RuntimeError('Actor quality gate failed; completed files preserved')\n    manifest['status']='complete_checked';write(out/'manifest.json',manifest)\n    print(actor['code']+' passed checks; next actor may begin.',flush=True)\n\ndef package(index):\n    plan,actor,out=actor_data(index)\n    args=event();rid=args['request_id']\n    public=serialization.load_pem_public_key(base64.b64decode(args['delivery_public_key'],validate=True))\n    stream=io.BytesIO()\n    with zipfile.ZipFile(stream,'w',zipfile.ZIP_DEFLATED) as archive:\n        for path in sorted(out.iterdir()):\n            if path.is_file():archive.writestr(path.name,path.read_bytes())\n    key=secrets.token_bytes(32);nonce=secrets.token_bytes(12)\n    envelope={'request_id':rid,'actor':actor['actor'],'code':actor['code'],'zip_sha256':hashlib.sha256(stream.getvalue()).hexdigest(),'wrapped_key':base64.b64encode(public.encrypt(key,OAEP)).decode(),'nonce':base64.b64encode(nonce).decode(),'ciphertext':base64.b64encode(AESGCM(key).encrypt(nonce,stream.getvalue(),rid.encode())).decode()}\n    write(Path('encrypted-'+actor['code']+'-result.json'),envelope)\n    print('Preserved encrypted actor checkpoint '+actor['code'],flush=True)\n\nif __name__=='__main__':\n    cmd=sys.argv[1]\n    if cmd=='setup':setup()\n    elif cmd=='receive':receive()\n    elif cmd=='synth':synthesize(int(sys.argv[2]))\n    elif cmd=='check':check(int(sys.argv[2]))\n    elif cmd=='package':package(int(sys.argv[2]))\n    else:raise SystemExit('Unknown operation')\n\nWORKER_PY\ncat > recognition_boundaries.py <<'BOUNDARY_PY'\n\"\"\"Recover original cue boundaries from independently recognized word times.\"\"\"\nimport difflib,unicodedata\n\ndef normalize(text):\n    return ''.join(c for c in unicodedata.normalize('NFC',text) if c.isalnum() or '\\u0e00'<=c<='\\u0e7f')\n\ndef recover(turns,segments,duration,ignore=None):\n    ignore=set(ignore or [])\n    expected_parts=[normalize(x['text']) for x in turns]\n    expected=''.join(expected_parts)\n    chars=[];times=[]\n    for segment in segments:\n        words=segment.get('words') or [{'word':segment.get('text',''),'start':segment['start'],'end':segment['end']}]\n        for word in words:\n            text=normalize(word.get('word',word.get('text','')))\n            start,end=float(word['start']),float(word['end'])\n            for n,char in enumerate(text):\n                chars.append(char)\n                times.append((start+(end-start)*n/max(1,len(text)),start+(end-start)*(n+1)/max(1,len(text))))\n    actual=''.join(chars)\n    matcher=difflib.SequenceMatcher(None,expected,actual,autojunk=False)\n    mapped={}\n    for a,b,length in matcher.get_matching_blocks():\n        for n in range(length):mapped[a+n]=b+n\n    cues=[];offset=0;critical=[];flags=[]\n    for turn,text in zip(turns,expected_parts):\n        indices=[mapped[x] for x in range(offset,offset+len(text)) if x in mapped]\n        coverage=len(indices)/max(1,len(text));cid=turn['cue_id'];missing=[];chunk=''\n        for n,char in enumerate(text):\n            if offset+n not in mapped:chunk+=char\n            else:\n                if len(chunk)>=18:missing.append(chunk)\n                chunk=''\n        if len(chunk)>=18:missing.append(chunk)\n        if cid not in ignore:\n            if not indices:\n                critical.append(cid+': no confirmed spoken interval')\n            else:\n                start=times[indices[0]][0];end=times[indices[-1]][1]\n                if not 0<=start<end<=duration+.15:critical.append(cid+': invalid recognized cue timing')\n                if len(text)>=25 and (coverage<.50 or missing):critical.append(cid+': incomplete phrase requires correction')\n                elif coverage<.65:flags.append(cid+': recognition uncertain; listening review recommended')\n                cues.append({**turn,'start':start,'end':end,'asr_character_coverage':round(coverage,4),'boundary_method':'independent recognized words matched to original cue'})\n        offset+=len(text)\n    for previous,current in zip(cues,cues[1:]):\n        if current['start']<previous['end']-.08:critical.append(current['cue_id']+': overlapping recognized cue intervals')\n    return cues,{'similarity':matcher.ratio(),'critical':critical,'listening_flags':flags,'recognized_characters':len(actual)}\n\nBOUNDARY_PY\npython3 worker.py setup"
+        },
+        {
+          "name": "Publish request public key",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "tenant-resume-request-public-key",
+            "path": "request_public.pem",
+            "retention-days": 1
+          }
+        },
+        {
+          "name": "Receive plan and verified NOX checkpoint",
+          "env": {
+            "REPO_READ_TOKEN": "${{ github.token }}"
+          },
+          "run": "python3 worker.py receive"
+        },
+        {
+          "name": "2 Generate only MAYSA in short actor-only chunks",
+          "id": "gen1",
+          "env": {
+            "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}"
+          },
+          "run": "python3 -u worker.py synth 1"
+        },
+        {
+          "name": "2 Verify MAYSA text and actual word boundaries",
+          "id": "check1",
+          "run": "python3 -u worker.py check 1"
+        },
+        {
+          "name": "Preserve MAYSA checkpoint",
+          "if": "${{ always() && (steps.gen1.outcome == 'success' || steps.gen1.outcome == 'failure') }}",
+          "run": "python3 worker.py package 1"
+        },
+        {
+          "name": "Upload encrypted MAYSA checkpoint",
+          "if": "${{ always() && (steps.gen1.outcome == 'success' || steps.gen1.outcome == 'failure') }}",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "tenant-maysa-voice-v02",
+            "path": "encrypted-MAYSA-result.json",
+            "if-no-files-found": "ignore",
+            "retention-days": 14
+          }
+        },
+        {
+          "name": "3 Generate only PRASONG in short actor-only chunks",
+          "id": "gen2",
+          "env": {
+            "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}"
+          },
+          "run": "python3 -u worker.py synth 2"
+        },
+        {
+          "name": "3 Verify PRASONG text and actual word boundaries",
+          "id": "check2",
+          "run": "python3 -u worker.py check 2"
+        },
+        {
+          "name": "Preserve PRASONG checkpoint",
+          "if": "${{ always() && (steps.gen2.outcome == 'success' || steps.gen2.outcome == 'failure') }}",
+          "run": "python3 worker.py package 2"
+        },
+        {
+          "name": "Upload encrypted PRASONG checkpoint",
+          "if": "${{ always() && (steps.gen2.outcome == 'success' || steps.gen2.outcome == 'failure') }}",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "tenant-prasong-voice-v02",
+            "path": "encrypted-PRASONG-result.json",
+            "if-no-files-found": "ignore",
+            "retention-days": 14
+          }
+        },
+        {
+          "name": "4 Generate only SUDA in short actor-only chunks",
+          "id": "gen3",
+          "env": {
+            "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}"
+          },
+          "run": "python3 -u worker.py synth 3"
+        },
+        {
+          "name": "4 Verify SUDA text and actual word boundaries",
+          "id": "check3",
+          "run": "python3 -u worker.py check 3"
+        },
+        {
+          "name": "Preserve SUDA checkpoint",
+          "if": "${{ always() && (steps.gen3.outcome == 'success' || steps.gen3.outcome == 'failure') }}",
+          "run": "python3 worker.py package 3"
+        },
+        {
+          "name": "Upload encrypted SUDA checkpoint",
+          "if": "${{ always() && (steps.gen3.outcome == 'success' || steps.gen3.outcome == 'failure') }}",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "tenant-suda-voice-v02",
+            "path": "encrypted-SUDA-result.json",
+            "if-no-files-found": "ignore",
+            "retention-days": 14
+          }
+        },
+        {
+          "name": "5 Generate only FON in short actor-only chunks",
+          "id": "gen4",
+          "env": {
+            "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}"
+          },
+          "run": "python3 -u worker.py synth 4"
+        },
+        {
+          "name": "5 Verify FON text and actual word boundaries",
+          "id": "check4",
+          "run": "python3 -u worker.py check 4"
+        },
+        {
+          "name": "Preserve FON checkpoint",
+          "if": "${{ always() && (steps.gen4.outcome == 'success' || steps.gen4.outcome == 'failure') }}",
+          "run": "python3 worker.py package 4"
+        },
+        {
+          "name": "Upload encrypted FON checkpoint",
+          "if": "${{ always() && (steps.gen4.outcome == 'success' || steps.gen4.outcome == 'failure') }}",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "tenant-fon-voice-v02",
+            "path": "encrypted-FON-result.json",
+            "if-no-files-found": "ignore",
+            "retention-days": 14
+          }
+        },
+        {
+          "name": "6 Generate only MALI in short actor-only chunks",
+          "id": "gen5",
+          "env": {
+            "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}"
+          },
+          "run": "python3 -u worker.py synth 5"
+        },
+        {
+          "name": "6 Verify MALI text and actual word boundaries",
+          "id": "check5",
+          "run": "python3 -u worker.py check 5"
+        },
+        {
+          "name": "Preserve MALI checkpoint",
+          "if": "${{ always() && (steps.gen5.outcome == 'success' || steps.gen5.outcome == 'failure') }}",
+          "run": "python3 worker.py package 5"
+        },
+        {
+          "name": "Upload encrypted MALI checkpoint",
+          "if": "${{ always() && (steps.gen5.outcome == 'success' || steps.gen5.outcome == 'failure') }}",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "tenant-mali-voice-v02",
+            "path": "encrypted-MALI-result.json",
+            "if-no-files-found": "ignore",
+            "retention-days": 14
+          }
+        },
+        {
+          "name": "7 Generate only CHILDSUDA in short actor-only chunks",
+          "id": "gen6",
+          "env": {
+            "GEMINI_API_KEY": "${{ secrets.GEMINI_API_KEY }}"
+          },
+          "run": "python3 -u worker.py synth 6"
+        },
+        {
+          "name": "7 Verify CHILDSUDA text and actual word boundaries",
+          "id": "check6",
+          "run": "python3 -u worker.py check 6"
+        },
+        {
+          "name": "Preserve CHILDSUDA checkpoint",
+          "if": "${{ always() && (steps.gen6.outcome == 'success' || steps.gen6.outcome == 'failure') }}",
+          "run": "python3 worker.py package 6"
+        },
+        {
+          "name": "Upload encrypted CHILDSUDA checkpoint",
+          "if": "${{ always() && (steps.gen6.outcome == 'success' || steps.gen6.outcome == 'failure') }}",
+          "uses": "actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02",
+          "with": {
+            "name": "tenant-childsuda-voice-v02",
+            "path": "encrypted-CHILDSUDA-result.json",
+            "if-no-files-found": "ignore",
+            "retention-days": 14
+          }
+        }
+      ]
+    }
+  }
+}
