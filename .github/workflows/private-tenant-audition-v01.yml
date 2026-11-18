@@ -1,0 +1,141 @@
+name: Tenant seven-character voice audition v01
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        description: Nonsecret request identifier
+        required: true
+        type: string
+      delivery_public_key:
+        description: Base64 public encryption key for returned audio
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: private-tenant-audition-v01
+  cancel-in-progress: false
+jobs:
+  voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 55
+    steps:
+      - name: Prepare ephemeral request key
+        shell: bash
+        run: |
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq; sudo apt-get install -y -qq ffmpeg; }
+          ffmpeg -version >/dev/null
+          python3 -m pip -q install cryptography==46.0.3
+          python3 - <<'PY'
+          from pathlib import Path
+          from cryptography.hazmat.primitives.asymmetric import rsa
+          from cryptography.hazmat.primitives import serialization
+          p=Path('private-work');p.mkdir(mode=0o700)
+          k=rsa.generate_private_key(public_exponent=65537,key_size=2048)
+          (p/'request_private.pem').write_bytes(k.private_bytes(serialization.Encoding.PEM,serialization.PrivateFormat.PKCS8,serialization.NoEncryption()))
+          (p/'request_private.pem').chmod(0o600)
+          Path('request_public.pem').write_bytes(k.public_key().public_bytes(serialization.Encoding.PEM,serialization.PublicFormat.SubjectPublicKeyInfo))
+          PY
+      - name: Publish only the ephemeral public key
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: scene-request-public-key
+          path: request_public.pem
+          retention-days: 1
+      - name: Receive encrypted request and synthesize bounded scene
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          REPO_READ_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import os,json,base64,time,io,wave,hashlib,re,zipfile,secrets
+          from pathlib import Path
+          from urllib.request import Request,urlopen
+          from urllib.error import HTTPError
+          from cryptography.hazmat.primitives import serialization,hashes
+          from cryptography.hazmat.primitives.asymmetric import padding
+          from cryptography.hazmat.primitives.ciphers.aead import AESGCM
+          event=json.loads(Path(os.environ['GITHUB_EVENT_PATH']).read_text());args=event['inputs']
+          rid=args['request_id']
+          if not re.fullmatch('[a-f0-9]{24}',rid):raise SystemExit('Invalid request id')
+          public=serialization.load_pem_public_key(base64.b64decode(args['delivery_public_key'],validate=True))
+          private=serialization.load_pem_private_key(Path('private-work/request_private.pem').read_bytes(),password=None)
+          oaep=padding.OAEP(mgf=padding.MGF1(algorithm=hashes.SHA256()),algorithm=hashes.SHA256(),label=None)
+          out=Path('private-work/audio');out.mkdir();manifest={'status':'waiting_for_request','samples':[]}
+          mf=out/'manifest.json'
+          def save():mf.write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
+          save();failed=False
+          try:
+            url='https://api.github.com/repos/'+os.environ['GITHUB_REPOSITORY']+'/contents/.voice_requests/'+rid+'.json?ref=main'
+            incoming=None
+            for attempt in range(120):
+              req=Request(url,headers={'Authorization':'Bearer '+os.environ['REPO_READ_TOKEN'],'Accept':'application/vnd.github+json','Cache-Control':'no-cache'})
+              try:
+                with urlopen(req,timeout=30) as response:meta=json.load(response)
+                incoming=json.loads(base64.b64decode(meta['content'])) if meta.get('encoding')=='base64' else json.load(urlopen(meta['download_url'],timeout=30));break
+              except HTTPError as e:
+                if e.code!=404:raise
+              time.sleep(4)
+            if incoming is None:raise TimeoutError('Encrypted request did not arrive')
+            key=private.decrypt(base64.b64decode(incoming['wrapped_key']),oaep)
+            plain=AESGCM(key).decrypt(base64.b64decode(incoming['nonce']),base64.b64decode(incoming['ciphertext']),rid.encode())
+            plan=json.loads(plain)
+            if plan['model']!='gemini-3.8-flash-tts' or not 1<=len(plan['samples'])<=7:raise ValueError('Invalid bounded plan')
+            for t in plan['samples']:
+              if t['voice'] not in {'Charon','Orus','Callirrhoe','Schedar','Erinome','Vindemiatrix','Rasalgethi','Iapetus','Gacrux','Algieba','Kore','Alnilam','Achird','Achernar','Leda'} or not re.fullmatch('[A-Z0-9_]{1,40}',t['id']) or not 1<=len(t['text'])<=600:raise ValueError('Invalid cue')
+            manifest.update(status='generating',model=plan['model'],request_id=rid);save()
+            for t in plan['samples']:
+              start=time.monotonic();record={**t,'status':'request_started'};manifest['samples'].append(record);save()
+              if t.get('existing_flac'):
+                import subprocess
+                file=out/(t['id']+'.flac');file.write_bytes(base64.b64decode(t['existing_flac'],validate=True))
+                seconds=float(subprocess.check_output(['ffprobe','-v','error','-show_entries','format=duration','-of','default=nw=1:nk=1',str(file)]))
+                record.pop('existing_flac',None);record.update(status='complete',file=file.name,duration_seconds=seconds,sha256=hashlib.sha256(file.read_bytes()).hexdigest(),reused=True);save()
+                print(t['id']+' recovered without API call',flush=True);continue
+              turns=t.get('turns') or [{'text':t['text'],'style':t['style'],'speaker':'Voice','voice':t['voice']}]
+              voices={v['speaker']:v['voice'] for v in turns}
+              if len(set(voices.values()))!=1:raise ValueError('One actor per audition request required')
+              multi=len(set(voices.values()))>1
+              parts=[{'text':v['text'],'speech_metadata':dict(style=v['style'],**({'speaker':v['speaker']} if multi else {}))} for v in turns]
+              speech={'multiSpeakerVoiceConfig':{'speakerVoiceConfigs':[{'speaker':who,'voiceConfig':{'prebuiltVoiceConfig':{'voiceName':voice}}} for who,voice in voices.items()]}} if multi else {'voiceConfig':{'voice':t['voice']}}
+              payload={'contents':[{'role':'user','parts':parts}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':speech}}
+              req=Request('https://generativelanguage.googleapis.com/v1beta/models/'+plan['model']+':generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
+              with urlopen(req,timeout=180) as response:result=json.load(response)
+              cs=result.get('candidates',[])
+              if len(cs)!=1 or cs[0].get('finishReason')!='STOP':raise ValueError('Incomplete generation')
+              aa=[p['inlineData'] for p in cs[0].get('content',{}).get('parts',[]) if 'inlineData' in p]
+              if len(aa)!=1:raise ValueError('Expected one audio payload')
+              raw=base64.b64decode(aa[0]['data'],validate=True)
+              if raw[:4]!=b'RIFF' or raw[8:12]!=b'WAVE':raise ValueError('Expected WAV, refusing guessed PCM settings')
+              with wave.open(io.BytesIO(raw),'rb') as w:
+                seconds=w.getnframes()/w.getframerate()
+                if seconds<=0:raise ValueError('Empty audio')
+              import subprocess
+              wavfile=out/(t['id']+'.wav');wavfile.write_bytes(raw);file=out/(t['id']+'.flac')
+              subprocess.run(['ffmpeg','-v','error','-y','-i',str(wavfile),'-c:a','flac',str(file)],check=True)
+              wavfile.unlink()
+              record.update(status='complete',file=file.name,duration_seconds=seconds,sha256=hashlib.sha256(file.read_bytes()).hexdigest());save()
+              print(t['id']+' complete '+str(round(seconds,2))+' seconds',flush=True)
+              if t!=plan['samples'][-1]:time.sleep(max(0,14.5-(time.monotonic()-start)))
+            manifest['status']='complete';manifest['alignment_status']='not_needed_for_audition';save()
+          except Exception as e:
+            failed=True;detail=e.read(20000).decode(errors='replace') if isinstance(e,HTTPError) else '';manifest.update(status='stopped_without_retry',error_type=type(e).__name__,http_status=getattr(e,'code',None),provider_error_body=detail,error_message=str(e));save()
+            print('Stopped without retry: '+type(e).__name__,flush=True)
+          finally:
+            stream=io.BytesIO()
+            with zipfile.ZipFile(stream,'w',zipfile.ZIP_DEFLATED) as z:
+              for f in sorted(out.glob('*')):z.writestr(f.name,f.read_bytes())
+            key=secrets.token_bytes(32);nonce=secrets.token_bytes(12)
+            envelope={'request_id':rid,'wrapped_key':base64.b64encode(public.encrypt(key,oaep)).decode(),'nonce':base64.b64encode(nonce).decode(),'ciphertext':base64.b64encode(AESGCM(key).encrypt(nonce,stream.getvalue(),rid.encode())).decode()}
+            Path('encrypted-scene-result.json').write_text(json.dumps(envelope))
+          if failed:raise SystemExit(1)
+          PY
+      - name: Retain encrypted audio only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: encrypted-scene-result
+          path: encrypted-scene-result.json
+          if-no-files-found: ignore
+          retention-days: 7
