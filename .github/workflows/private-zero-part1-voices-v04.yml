@@ -1,0 +1,190 @@
+name: Zero Document Part 1 approved single actor production
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+      delivery_public_key:
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: zero-document-approved-part1-voice
+  cancel-in-progress: false
+jobs:
+  serial_voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 160
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install audio tools
+        run: |
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq; sudo apt-get install -y -qq ffmpeg; }
+          python3 -m pip -q install cryptography==46.0.3 faster-whisper==1.2.1
+      - name: Create ephemeral encryption key
+        run: python3 scripts/zero_voice_worker_v04.py setup
+      - name: Publish public request key only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-request-public-key
+          path: request_public.pem
+          retention-days: 1
+      - name: Receive locked Part 1 only
+        env:
+          REPO_READ_TOKEN: ${{ github.token }}
+        run: python3 scripts/zero_voice_worker_v04.py receive
+      - name: Generate only NOX with approved Charon
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 0
+      - name: Independently check NOX
+        run: python3 scripts/zero_voice_worker_v04.py check 0
+      - name: Encrypt NOX checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 0
+      - name: Retain encrypted NOX only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-NOX
+          path: encrypted-NOX.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only ETHAN with approved Orus
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 1
+      - name: Independently check ETHAN
+        run: python3 scripts/zero_voice_worker_v04.py check 1
+      - name: Encrypt ETHAN checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 1
+      - name: Retain encrypted ETHAN only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-ETHAN
+          path: encrypted-ETHAN.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only MAYA with approved Kore
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 2
+      - name: Independently check MAYA
+        run: python3 scripts/zero_voice_worker_v04.py check 2
+      - name: Encrypt MAYA checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 2
+      - name: Retain encrypted MAYA only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-MAYA
+          path: encrypted-MAYA.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only ARTHUR with approved Algenib
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 3
+      - name: Independently check ARTHUR
+        run: python3 scripts/zero_voice_worker_v04.py check 3
+      - name: Encrypt ARTHUR checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 3
+      - name: Retain encrypted ARTHUR only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-ARTHUR
+          path: encrypted-ARTHUR.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only CLAIRE with approved Achernar
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 4
+      - name: Independently check CLAIRE
+        run: python3 scripts/zero_voice_worker_v04.py check 4
+      - name: Encrypt CLAIRE checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 4
+      - name: Retain encrypted CLAIRE only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-CLAIRE
+          path: encrypted-CLAIRE.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only GABRIEL with approved Algieba
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 5
+      - name: Independently check GABRIEL
+        run: python3 scripts/zero_voice_worker_v04.py check 5
+      - name: Encrypt GABRIEL checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 5
+      - name: Retain encrypted GABRIEL only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-GABRIEL
+          path: encrypted-GABRIEL.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only MICHAEL with approved Iapetus
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 6
+      - name: Independently check MICHAEL
+        run: python3 scripts/zero_voice_worker_v04.py check 6
+      - name: Encrypt MICHAEL checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 6
+      - name: Retain encrypted MICHAEL only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-MICHAEL
+          path: encrypted-MICHAEL.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only MARGARET with approved Gacrux
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 7
+      - name: Independently check MARGARET
+        run: python3 scripts/zero_voice_worker_v04.py check 7
+      - name: Encrypt MARGARET checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 7
+      - name: Retain encrypted MARGARET only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-MARGARET
+          path: encrypted-MARGARET.json
+          if-no-files-found: ignore
+          retention-days: 7
+      - name: Generate only DELIVERY with approved Rasalgethi
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_v04.py synth 8
+      - name: Independently check DELIVERY
+        run: python3 scripts/zero_voice_worker_v04.py check 8
+      - name: Encrypt DELIVERY checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_v04.py package 8
+      - name: Retain encrypted DELIVERY only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-DELIVERY
+          path: encrypted-DELIVERY.json
+          if-no-files-found: ignore
+          retention-days: 7
