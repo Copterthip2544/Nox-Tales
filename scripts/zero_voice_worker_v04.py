@@ -54,12 +54,20 @@ def synth(index):
    t=time.monotonic();record={**c,'voice':a['voice'],'status':'request_started'};m['cues'].append(record);write(mf,m)
    payload={'contents':[{'role':'user','parts':[{'text':c['text'],'speech_metadata':{'style':c['style']}}]}],'generationConfig':{'responseModalities':['AUDIO'],'speechConfig':{'voiceConfig':{'voice':a['voice']}}}}
    req=Request('https://generativelanguage.googleapis.com/v1beta/models/'+p['model']+':generateContent',data=json.dumps(payload,ensure_ascii=False).encode(),headers={'x-goog-api-key':os.environ['GEMINI_API_KEY'],'Content-Type':'application/json'},method='POST')
-   with urlopen(req,timeout=240) as response:result=json.load(response)
-   cs=result.get('candidates',[])
-   assert len(cs)==1 and cs[0].get('finishReason')=='STOP','Incomplete generation'
-   data=[x['inlineData'] for x in cs[0].get('content',{}).get('parts',[]) if 'inlineData' in x]
-   assert len(data)==1,'Expected single audio payload'
-   raw=base64.b64decode(data[0]['data'],validate=True)
+   if c.get('recovered_raw_flac'):
+    recovered=out/(c['cue_id']+'.recovered.flac');recovered.write_bytes(base64.b64decode(c['recovered_raw_flac']))
+    raw=subprocess.check_output(['ffmpeg','-v','error','-i',str(recovered),'-c:a','pcm_s16le','-f','wav','-'])
+    # Rewrite RIFF length from seekable file rather than streaming WAV header.
+    recovered_wav=out/(c['cue_id']+'.recovered.wav')
+    subprocess.run(['ffmpeg','-v','error','-y','-i',str(recovered),'-c:a','pcm_s16le',str(recovered_wav)],check=True)
+    raw=recovered_wav.read_bytes();recovered.unlink();recovered_wav.unlink();record.pop('recovered_raw_flac',None)
+   else:
+    with urlopen(req,timeout=240) as response:result=json.load(response)
+    cs=result.get('candidates',[])
+    assert len(cs)==1 and cs[0].get('finishReason')=='STOP','Incomplete generation'
+    data=[x['inlineData'] for x in cs[0].get('content',{}).get('parts',[]) if 'inlineData' in x]
+    assert len(data)==1,'Expected single audio payload'
+    raw=base64.b64decode(data[0]['data'],validate=True)
    assert raw[:4]==b'RIFF' and raw[8:12]==b'WAVE','Unexpected audio format'
    with wave.open(io.BytesIO(raw)) as w:
     duration=w.getnframes()/w.getframerate();rate=w.getframerate();channels=w.getnchannels();width=w.getsampwidth();frames=w.readframes(w.getnframes())
@@ -68,7 +76,7 @@ def synth(index):
    file=out/(c['cue_id']+'.wav')
    # Two-pass loudness matching keeps each original performance and speaking speed.
    measure=subprocess.run(['ffmpeg','-hide_banner','-i',str(rawfile),'-af','loudnorm=I=-19.2:TP=-4.5:LRA=7:print_format=json','-f','null','-'],capture_output=True,text=True,check=True)
-   measure=json.loads(measure.stderr[measure.stderr.rfind('{'):])
+   measure=json.JSONDecoder().raw_decode(measure.stderr[measure.stderr.rfind('{'):])[0]
    filt='loudnorm=I=-19.2:TP=-4.5:LRA=7:measured_I='+measure['input_i']+':measured_TP='+measure['input_tp']+':measured_LRA='+measure['input_lra']+':measured_thresh='+measure['input_thresh']+':offset='+measure['target_offset']+':linear=true'
    if measure['input_i']=='-inf':raise ValueError('Silent audio')
    subprocess.run(['ffmpeg','-v','error','-y','-i',str(rawfile),'-af',filt,'-ar',str(rate),'-ac',str(channels),'-c:a','pcm_s16le',str(file)],check=True)
