@@ -35,23 +35,6 @@ jobs:
         env:
           REPO_READ_TOKEN: ${{ github.token }}
         run: python3 scripts/zero_voice_worker_v04.py receive
-      - name: Generate only NOX with approved Charon
-        env:
-          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
-        run: python3 scripts/zero_voice_worker_v04.py synth 0
-      - name: Independently check NOX
-        run: python3 scripts/zero_voice_worker_v04.py check 0
-      - name: Encrypt NOX checkpoint
-        if: ${{ always() }}
-        run: python3 scripts/zero_voice_worker_v04.py package 0
-      - name: Retain encrypted NOX only
-        if: ${{ always() }}
-        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
-        with:
-          name: zero-voice-NOX
-          path: encrypted-NOX.json
-          if-no-files-found: ignore
-          retention-days: 7
       - name: Generate only ETHAN with approved Orus
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
