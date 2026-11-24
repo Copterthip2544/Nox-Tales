@@ -24,7 +24,12 @@ def receive():
   try:
    req=Request(url,headers={'Authorization':'Bearer '+os.environ['REPO_READ_TOKEN'],'Accept':'application/vnd.github+json','Cache-Control':'no-cache'})
    with urlopen(req,timeout=30) as response:meta=json.load(response)
-   incoming=json.loads(base64.b64decode(meta['content']));break
+   if meta.get('encoding')=='base64' and meta.get('content'):
+    incoming=json.loads(base64.b64decode(meta['content']))
+   else:
+    rawreq=Request(url,headers={'Authorization':'Bearer '+os.environ['REPO_READ_TOKEN'],'Accept':'application/vnd.github.raw+json','Cache-Control':'no-cache'})
+    with urlopen(rawreq,timeout=30) as rawresp:incoming=json.load(rawresp)
+   break
   except HTTPError as e:
    if e.code!=404:raise RuntimeError('Encrypted request retrieval HTTP '+str(e.code)) from None
   time.sleep(4)
