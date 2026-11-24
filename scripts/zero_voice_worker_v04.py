@@ -44,6 +44,13 @@ def receive():
   assert 1<=len(actor['cues'])<=60
   assert all(c['actor']==actor['actor'] and c['cue_id'].startswith('P1_') and 0<len(c['text'])<=600 for c in actor['cues'])
  write(R/'plan.json',p)
+ for previous in p.get('verified_complete_actors',[]):
+  assert previous['status']=='passed' and previous['source_sha256']==p['source_sha256']
+  assert previous['voice']==CAST[previous['actor']]
+  expected=next(a for a in p['actors'] if a['actor']==previous['actor'])
+  assert previous['cues']==len(expected['cues'])
+  folder=R/previous['actor'];folder.mkdir(exist_ok=True)
+  write(folder/'QA.json',previous)
  print('Locked Part 1 only; 197 cues; nine actors; serial one actor at a time.',flush=True)
 def actor(index):
  p=json.loads((R/'plan.json').read_text());a=p['actors'][index];out=R/a['actor'];out.mkdir(exist_ok=True)
@@ -98,13 +105,15 @@ def synth(index):
 def norm(t):return ''.join(c for c in unicodedata.normalize('NFC',t) if c.isalnum() or '\u0e00'<=c<='\u0e7f')
 def check(index):
  from faster_whisper import WhisperModel
+ import numpy as np
  p,a,out=actor(index);m=json.loads((out/'Manifest.json').read_text());assert len(m['cues'])==len(a['cues']) and all(c['status']=='complete' for c in m['cues'])
- model=WhisperModel('small',device='cpu',compute_type='int8',cpu_threads=4)
+ model=WhisperModel('small',device='cpu',compute_type='int8',cpu_threads=4,download_root=os.environ.get('ZERO_WHISPER_MODEL_ROOT'))
  reports=[];critical=[]
  for c in m['cues']:
   f=out/c['file'];assert hashlib.sha256(f.read_bytes()).hexdigest()==c['sha256']
   subprocess.run(['ffmpeg','-v','error','-i',str(f),'-f','null','-'],check=True)
-  segments,_=model.transcribe(str(f),language='th',beam_size=3,temperature=0,condition_on_previous_text=False)
+  audio=np.frombuffer(subprocess.check_output(['ffmpeg','-v','error','-i',str(f),'-ac','1','-ar','16000','-f','f32le','-']),dtype='<f4')
+  segments,_=model.transcribe(audio,language='th',beam_size=3,temperature=0,condition_on_previous_text=False)
   segments=[{'text':s.text,'start':s.start,'end':s.end} for s in segments]
   heard=' '.join(s['text'] for s in segments);sim=difflib.SequenceMatcher(None,norm(c['text']),norm(heard),autojunk=False).ratio()
   flag=sim<.72
