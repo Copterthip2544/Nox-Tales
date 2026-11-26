@@ -1,0 +1,36 @@
+name: Deliver existing verified Zero Document 1080p master
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+permissions:
+  contents: write
+concurrency:
+  group: zero-document-master-v02-delivery
+  cancel-in-progress: false
+jobs:
+  deliver_master:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install encryption dependency
+        run: python3 -m pip -q install cryptography==46.0.3
+      - name: Create ephemeral request key
+        run: python3 scripts/zero_master_transfer_v02.py setup
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: media-request-public-key
+          path: media_request_public.pem
+          retention-days: 1
+      - name: Restore and verify original master, then deliver one MP4
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: python3 scripts/zero_master_transfer_v02.py run
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: master-delivery-receipt
+          path: Master_Delivery_Receipt.json
+          retention-days: 7
