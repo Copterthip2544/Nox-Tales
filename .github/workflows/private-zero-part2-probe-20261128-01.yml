@@ -1,0 +1,57 @@
+name: Zero Document Part 2 user-requested bounded quota probe
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+      delivery_public_key:
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: zero-document-part2-probe-20261128-01
+  cancel-in-progress: false
+jobs:
+  serial_voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 160
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install audio tools
+        run: |
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq; sudo apt-get install -y -qq ffmpeg; }
+          python3 -m pip -q install cryptography==46.0.3
+      - name: Create ephemeral encryption key
+        run: python3 scripts/zero_voice_worker_part2_probe_20261128_01.py setup
+      - name: Publish public request key only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-request-public-key
+          path: request_public.pem
+          retention-days: 1
+      - name: Receive locked approved Part 2 only
+        env:
+          REPO_READ_TOKEN: ${{ github.token }}
+        run: python3 scripts/zero_voice_worker_part2_probe_20261128_01.py receive
+      - name: Generate only NOX with approved Charon
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_part2_probe_20261128_01.py synth 0
+      - name: Install transcription checker after successful generation
+        run: python3 -m pip -q install faster-whisper==1.2.1
+      - name: Independently check completed NOX cues
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_probe_20261128_01.py check 0 partial
+      - name: Encrypt NOX checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_probe_20261128_01.py package 0
+      - name: Retain encrypted NOX only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-NOX
+          path: encrypted-NOX.json
+          if-no-files-found: ignore
+          retention-days: 30
