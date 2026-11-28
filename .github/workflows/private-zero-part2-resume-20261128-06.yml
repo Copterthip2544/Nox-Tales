@@ -1,0 +1,109 @@
+name: Zero Document Part 2 continuation excluding 188 existing performances
+on:
+  workflow_dispatch:
+    inputs:
+      request_id:
+        required: true
+        type: string
+      delivery_public_key:
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: zero-document-part2-resume-20261128-06
+  cancel-in-progress: false
+jobs:
+  serial_voice:
+    runs-on: ubuntu-latest
+    timeout-minutes: 160
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+      - name: Install audio tools
+        run: |
+          command -v ffmpeg >/dev/null || { sudo apt-get update -qq; sudo apt-get install -y -qq ffmpeg; }
+          python3 -m pip -q install cryptography==46.0.3 faster-whisper==1.2.1
+      - name: Create ephemeral encryption key
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py setup
+      - name: Publish public request key only
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-request-public-key
+          path: request_public.pem
+          retention-days: 1
+      - name: Receive locked approved Part 2 only
+        env:
+          REPO_READ_TOKEN: ${{ github.token }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py receive
+      - name: Generate only CLAIRE with approved Achernar
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py synth 4
+      - name: Independently check completed CLAIRE cues
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py check 4 partial
+      - name: Encrypt CLAIRE checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py package 4
+      - name: Retain encrypted CLAIRE only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-CLAIRE
+          path: encrypted-CLAIRE.json
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Generate only GABRIEL with approved Algieba
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py synth 5
+      - name: Independently check completed GABRIEL cues
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py check 5 partial
+      - name: Encrypt GABRIEL checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py package 5
+      - name: Retain encrypted GABRIEL only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-GABRIEL
+          path: encrypted-GABRIEL.json
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Generate only MARCUS with approved Fenrir
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py synth 6
+      - name: Independently check completed MARCUS cues
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py check 6 partial
+      - name: Encrypt MARCUS checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py package 6
+      - name: Retain encrypted MARCUS only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-MARCUS
+          path: encrypted-MARCUS.json
+          if-no-files-found: ignore
+          retention-days: 30
+      - name: Generate only COLLEAGUE with approved Rasalgethi
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py synth 7
+      - name: Independently check completed COLLEAGUE cues
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py check 7 partial
+      - name: Encrypt COLLEAGUE checkpoint
+        if: ${{ always() }}
+        run: python3 scripts/zero_voice_worker_part2_resume_20261128_06.py package 7
+      - name: Retain encrypted COLLEAGUE only
+        if: ${{ always() }}
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: zero-voice-COLLEAGUE
+          path: encrypted-COLLEAGUE.json
+          if-no-files-found: ignore
+          retention-days: 30
